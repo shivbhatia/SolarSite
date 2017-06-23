@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { OwlModule } from 'ng2-owl-carousel';
 
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -14,6 +15,7 @@ import { HOME_DECLARATIONS } from "./home/index";
   ],
   imports: [
     BrowserModule,
+    OwlModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],

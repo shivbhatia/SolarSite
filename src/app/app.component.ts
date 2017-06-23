@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router} from '@angular/router';
+import {OwlCarousel} from 'ng2-owl-carousel';
 
 @Component({
   selector: 'app-root',

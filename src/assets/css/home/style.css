@@ -59,7 +59,7 @@ header.smaller h1#logo{ margin: 5px 0px;}
 .phone { margin: 35px auto 0; text-align: center; width: auto; float: left; }
 .phone li { color: #fff; display: inline; font-family: 'gotham_htflight'; margin: 0 5px; }
 .peach-btn { background-color: #FDB910; border-radius: 50px; -webkit-border-radius: 50px; -ms-border-radius: 50px; color: #fff; font-family: 'gotham_htfbold'; border: 0px; width: 160px; height: 35px; font-size:14px; }
-.peach-btn:hover { background: #ED5224; color:#fff; }
+.peach-btn:hover { background: #FDB910; color:#fff; }
 header .business-btn { float: right; margin: 30px 0px 0px 0px; }
 .business-btn button{float:right;}
 .business-btn > .peach-btn {
@@ -90,7 +90,7 @@ header .business-btn { float: right; margin: 30px 0px 0px 0px; }
 }
 /*banner*/
 .work-box { width: 100%; float: left; text-align: right; transition: all 1s ease-in-out 0s; -webkit-transition: all 1s ease-in-out 0s; -ms-transition: all 1s ease-in-out 0s; -o-transition: all 1s ease-in-out 0s; cursor: pointer; }
-.allwork { float: right; width: 40px; height: 40px; text-indent: -99999px; background-image: url("/img/Home-User/allwork.png"); background-repeat: no-repeat; }
+.allwork { float: right; width: 40px; height: 40px; text-indent: -99999px; background-image: url("/assets//img/Home-User/allwork.png"); background-repeat: no-repeat; }
 .work-box:hover { padding-right: 30px; transition: all 1s ease-in-out 0s; -webkit-transition: all 1s ease-in-out 0s; -ms-transition: all 1s ease-in-out 0s; -o-transition: all 1s ease-in-out 0s; }
 .work-box:hover, .work-box:hover h4, .work-box:hover p, .work-box:hover .download { color: #FDB910; background-position: 0 -42px; }
 .globe { background-position: 0 -84px; }
@@ -101,7 +101,7 @@ header .business-btn { float: right; margin: 30px 0px 0px 0px; }
 .works .nav{padding-left:15px; padding-right:15px;}
 .sm-visi{display:none;}
 /*how its work*/
-.clients { background-image: url("/img/Home-User/clients-bg.jpg"); background-repeat: no-repeat; background-position: center top; background-size: cover; padding-bottom:20px; }
+.clients { background-image: url("/assets/img/Home-User/clients-bg.jpg"); background-repeat: no-repeat; background-position: center top; background-size: cover; padding-bottom:20px; }
 /*happy clients*/
 .ourcustomer h5 { font-size: 18px; color: #FDB910; font-family: 'gotham_htfmedium'; margin:20px 0px 30px 0px; }
 .customer-pic {
@@ -117,7 +117,7 @@ header .business-btn { float: right; margin: 30px 0px 0px 0px; }
   height: 40px;
   width: 40px;-webkit-transition: all 1s ease; -moz-transition: all 1s ease; -ms-transition: all 1s ease; transition: all 1s ease; 
 }
-.ourcustomer img:hover{width:70px; height:70px; border:2px solid #ff8273;border-radius: 100px; -webkit-border-radius: 100px; -ms-border-radius: 100px; -o-border-radius: 100px;}
+.ourcustomer img:hover{width:70px; height:70px; border:2px solid #FDB910;border-radius: 100px; -webkit-border-radius: 100px; -ms-border-radius: 100px; -o-border-radius: 100px;}
 .cus1 {
   border-radius: 100px;-webkit-border-radius: 100px; -ms-border-radius: 100px; -o-border-radius: 100px;
   display: inline-block;

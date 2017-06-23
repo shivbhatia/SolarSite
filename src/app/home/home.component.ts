@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
+import {OwlCarousel} from 'ng2-owl-carousel';
 
 
 //import { navbarFixedComponent } from "../layout/homelayout/navbar-fixed/navbarFixed.component";
