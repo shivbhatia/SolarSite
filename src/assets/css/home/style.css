@@ -1,0 +1,523 @@
+@font-face {
+    font-family: 'gotham_htflight';
+    src: url('/assets/fonts/gothamhtf-light-webfont.eot');
+    src: url('/assets/fonts/gothamhtf-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/gothamhtf-light-webfont.woff') format('woff'),
+         url('/assets/fonts/gothamhtf-light-webfont.ttf') format('truetype'),
+         url('/assets/fonts/gothamhtf-light-webfont.svg#gotham_htflight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'gotham_htfmedium';
+    src: url('/assets/fonts/gothamhtf-medium-webfont.eot');
+    src: url('/assets/fonts/gothamhtf-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/gothamhtf-medium-webfont.woff') format('woff'),
+         url('/assets/fonts/gothamhtf-medium-webfont.ttf') format('truetype'),
+         url('/assets/fonts/gothamhtf-medium-webfont.svg#gotham_htfmedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'gotham_htfbold_italic';
+    src: url('/assets/fonts/gothamhtf-bolditalic-webfont.eot');
+    src: url('/assets/fonts/gothamhtf-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/gothamhtf-bolditalic-webfont.woff') format('woff'),
+         url('/assets/fonts/gothamhtf-bolditalic-webfont.ttf') format('truetype'),
+         url('/assets/fonts/gothamhtf-bolditalic-webfont.svg#gotham_htfbold_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'gotham_htfbold';
+    src: url('/assets/fonts/gothamhtf-bold-webfont.eot');
+    src: url('/assets/fonts/gothamhtf-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/gothamhtf-bold-webfont.woff') format('woff'),
+         url('/assets/fonts/gothamhtf-bold-webfont.ttf') format('truetype'),
+         url('/assets/fonts/gothamhtf-bold-webfont.svg#gotham_htfbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body { margin: 0px; padding: 0px; color: #404040; font-size: 16px; font-family: 'gotham_htflight';}
+html, body { height: 100%; }
+a:hover, a:focus{text-decoration:none;}
+a, img { border: none; outline: none; }
+ul, li { margin: 0px; padding: 0px; list-style-type: none; }
+h1, h2, h3, h4, h5, h6, p { margin: 0px; }
+p { color: #404040; font-size: 16px; font-family: 'gotham_htflight'; }
+header { height: auto; left: 0; overflow: hidden; padding: 0px; position: fixed; top: 0; -webkit-transition: height 0.3s; -moz-transition: height 0.3s; -ms-transition: height 0.3s; -o-transition: height 0.3s; transition: height 0.3s; width: 100%; z-index: 999; }
+header h1#logo { display: inline-block; float: left; transition: all 0.3s ease 0s; -webkit-transition: all 0.3s; -moz-transition: all 0.3s; -ms-transition: all 0.3s; -o-transition: all 0.3s; transition: all 0.3s; margin: 25px 0; }
+header.smaller { height: auto; background: #fff; box-shadow:0 1px 2px #ddd;}
+.smaller .phone{margin-top:14px;}
+.smaller .phone li{color:#000;}
+header.smaller h1#logo{ margin: 5px 0px;}
+ .smaller .business-btn{margin:10px 0px 0px 0px;}
+.phone { margin: 35px auto 0; text-align: center; width: auto; float: left; }
+.phone li { color: #fff; display: inline; font-family: 'gotham_htflight'; margin: 0 5px; }
+.peach-btn { background-color: #FDB910; border-radius: 50px; -webkit-border-radius: 50px; -ms-border-radius: 50px; color: #fff; font-family: 'gotham_htfbold'; border: 0px; width: 160px; height: 35px; font-size:14px; }
+.peach-btn:hover { background: #ED5224; color:#fff; }
+header .business-btn { float: right; margin: 30px 0px 0px 0px; }
+.business-btn button{float:right;}
+.business-btn > .peach-btn {
+    float: right;
+    line-height: 35px;
+    text-align: center;
+}
+.business-btn button i {
+  font-size: 16px;
+  font-weight: bold;
+}
+/*header*/
+.banner { background-image: url("/assets/img/Home-User/banner.jpg"); background-size: cover; background-repeat: no-repeat; height: 650px; position: relative; z-index: 0; }
+.left-content { float: left; margin: 190px 0px 0px 0px; width: auto; }
+.left-content h2 { font-family: 'gotham_htfbold'; font-size: 50px; color: #fff; margin-bottom: 20px; }
+.left-content p { color: #fff; font-size: 20px; font-family: 'gotham_htflight'; margin-bottom: 20px; }
+.banner-btn a {
+  display: inline-block;
+  margin-right: 15px;
+  margin-top: 10px;
+  width: 208px;
+}
+.right-content {
+  bottom: 0;
+  position: absolute;
+  right: 105px;
+  text-align: right;
+}
+/*banner*/
+.work-box { width: 100%; float: left; text-align: right; transition: all 1s ease-in-out 0s; -webkit-transition: all 1s ease-in-out 0s; -ms-transition: all 1s ease-in-out 0s; -o-transition: all 1s ease-in-out 0s; cursor: pointer; }
+.allwork { float: right; width: 40px; height: 40px; text-indent: -99999px; background-image: url("/img/Home-User/allwork.png"); background-repeat: no-repeat; }
+.work-box:hover { padding-right: 30px; transition: all 1s ease-in-out 0s; -webkit-transition: all 1s ease-in-out 0s; -ms-transition: all 1s ease-in-out 0s; -o-transition: all 1s ease-in-out 0s; }
+.work-box:hover, .work-box:hover h4, .work-box:hover p, .work-box:hover .download { color: #FDB910; background-position: 0 -42px; }
+.globe { background-position: 0 -84px; }
+.work-box:hover .globe { background-position: 0px -126px; }
+.smile { background-position: 0 -168px; }
+.work-box:hover .smile { background-position: 0px -210px; }
+.howitwrk img{display:inline-block;}
+.works .nav{padding-left:15px; padding-right:15px;}
+.sm-visi{display:none;}
+/*how its work*/
+.clients { background-image: url("/img/Home-User/clients-bg.jpg"); background-repeat: no-repeat; background-position: center top; background-size: cover; padding-bottom:20px; }
+/*happy clients*/
+.ourcustomer h5 { font-size: 18px; color: #FDB910; font-family: 'gotham_htfmedium'; margin:20px 0px 30px 0px; }
+.customer-pic {
+  float: left;
+  height: 70px;
+  line-height: 70px;
+  text-align: center;
+  width: 100%;
+}
+.ourcustomer img {
+  border-radius: 100px; -webkit-border-radius: 100px; -ms-border-radius: 100px; -o-border-radius: 100px;
+  display: inline-block;
+  height: 40px;
+  width: 40px;-webkit-transition: all 1s ease; -moz-transition: all 1s ease; -ms-transition: all 1s ease; transition: all 1s ease; 
+}
+.ourcustomer img:hover{width:70px; height:70px; border:2px solid #ff8273;border-radius: 100px; -webkit-border-radius: 100px; -ms-border-radius: 100px; -o-border-radius: 100px;}
+.cus1 {
+  border-radius: 100px;-webkit-border-radius: 100px; -ms-border-radius: 100px; -o-border-radius: 100px;
+  display: inline-block;
+  text-align: center; margin:0px 5px;
+}
+/* our customer*/
+.app-btn a {
+  display: inline-block;
+  margin: 0 10px;
+}
+footer { background-image: url("/assets/img/Home-User/footer-bg.jpg"); background-repeat: repeat; text-align:center;}
+.social-footer { float: left; width: 100%; padding: 40px 0px; text-align: center; }
+.social-footer li { display: inline-block; margin:0px 35px;}
+.social-ic i {
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+}
+.social-footer li a {
+  display: block;
+}
+.social-ic.fb i:hover{color:#195fad;}
+.social-ic.tw i:hover{color:#24c7fe;}
+.social-ic.in i:hover{color:#017fb2;}
+.social-ic.gplus i:hover{color:#195fad;}
+.social-ic.you i:hover{color:#e02f2f;}
+.footer-link{width:100%; float:left; margin-bottom:20px; text-align:center;}
+.footer-link li {
+  display: inline-block;
+  line-height: 35px;
+  margin: 0 15px 10px;
+}
+.footer-link li a{display:inline-block; text-decoration:none; color:#ababab;}
+.footer-link li a:hover{color:#fff;}
+.footer-link .peach-btn > a , .peach-btn > a{
+  color: #fff;
+}
+.footer-link .peach-btn > a i{
+  font-size: 16px;
+  font-weight: bold;
+}
+footer p{color:#474747; margin-bottom:10px; font-size:14px;}
+/*footer*/
+/*Business Page*/
+.inn-banner{background-image: url("/img/Home-User/banner2.jpg"); background-size: cover; background-repeat: no-repeat; height: 650px; position: relative; z-index: 0; }
+.top-menu {
+  margin-top: 30px; float:right !important;
+}
+
+.top-menu ul{
+  float: right;
+}
+.top-menu ul li {
+  display: inline-block;
+  margin-left: 30px;
+}
+.top-menu ul li a {
+  color: #fff;
+  line-height:32px;
+  padding: 0;
+}
+.smaller .top-menu li a {
+  color: #000;
+}
+.smaller .top-menu li.peach-btn a{color:#fff;}
+.top-menu .peach-btn {
+  height: 35px;
+  line-height: 36px;
+  text-align: center;
+  width: 90px;
+}
+.smaller .top-menu {
+  margin-top: 11px;
+  float:right;
+}
+.inn-banner-content {
+  margin: 225px auto 0;
+  text-align: center;
+  width: 100%;
+}
+.inn-banner-content h2 { font-family: 'gotham_htfbold'; font-size:40px; color: #fff; margin-bottom:15px; }
+.inn-banner-content p {width:84%; margin:0px auto; color: #fff; font-size: 18px; font-family: 'gotham_htflight'; margin-bottom: 20px; }
+.inn-banner-content .peach-btn {
+  display: inline-block;
+  height: 64px;
+  margin: 0 auto;
+  width: 380px; margin-top:25px; font-size:20px;font-family: 'gotham_htfmedium'; line-height:62px;
+}
+/*features*/
+.features .work-box{transition:none;}.features .work-box:hover{transition:none; padding-right:0px;}
+.feat-center img {
+  margin: 0 auto;
+}
+.feat-left {
+  float: left;
+  text-align: right;
+  width: 34%;
+}
+.feat-center  {
+
+  float: left;
+  margin: 0 68px;
+  text-align: center;
+  width: 228px;
+}
+.feat-right {
+  float: right;
+  text-align: left;
+  width: 34%;
+}
+.feat-right .work-box {
+  text-align: left;
+}
+.feat-right .allwork{float:left;}
+
+.calendar{ background-position: 0 -252px; }
+.work-box:hover .calendar{ background-position: 0 -294px; }
+.noti {
+  background-position: 0 -336px;
+}
+.work-box:hover .noti {
+  background-position: 0 -378px;
+}
+.video-btn .peach-btn {
+  display: block;
+  font-size: 14px;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 310px;margin:0px auto;
+}
+/*Business Page*/
+/*common css*/
+.block { display: block; }
+.peach { color: #FDB910; }
+.padtop100{padding-top:100px;}
+.padbtm100{padding-bottom:100px;}
+.padtop50{padding-top:50px;}
+.padbtm50{padding-bottom:50px;}
+.padtop30{padding-top:30px;}
+.padtop40{padding-top:40px;}
+.padbtm40{padding-bottom:40px;}
+.padbtm60{padding-bottom:60px;}
+.title { font-size: 32px; color: #000000; font-family: 'gotham_htfmedium'; text-align: center; }
+h4 { font-family: 'gotham_htfmedium'; color: #000; margin: 10px 0px 15px 0px; }
+.align-right { text-align: right; }
+.bold-it {font-family: 'gotham_htfbold_italic';}
+.bottom-line { background-color: #000; height: 1px; width: 100%; float: left; }
+.responsive{max-width:100%; height:auto;}
+.font-s18{font-size:18px !important;}
+/*common css*/
+/*Media css*/
+@media (min-width: 993px) and (max-width: 1199px)
+{
+.right-content{right:0px;}	
+.feat-left, .feat-right{width:36%;} .feat-center{margin:0px 17px;}
+.inn-banner-content h2{font-size:36px;}
+}
+@media (min-width: 768px) and (max-width: 992px)
+{
+.phone {
+  float: left;
+  margin: 30px 0 0 4%;
+  text-align: center;
+  width: auto;
+}
+header .business-btn {
+  margin: 23px 0 0;
+}
+.right-content{right:21px;}
+.left-content h2{font-size:40px;}
+.left-content p{font-size:17px;}
+.banner, .inn-banner{height:560px;}
+.inn-banner-content{margin-top:160px;}
+.footer-link li{margin: 0 10px 10px;}
+.banner-btn a {
+  display: inline-block;
+  margin-right: 15px;
+  margin-top: 10px;
+  width: 180px;
+}
+.left-content{margin-top:160px;}
+/*features*/
+.inn-banner-content h2{font-size:27px;}
+.inn-banner-content p{font-size:16px;}
+.feat-left, .feat-right{width:36%;} .feat-center{margin:0px 17px;}
+.features p {
+  font-size: 15px;
+}
+.feat-left, .feat-right {
+  width: 35%;
+}
+.feat-center {
+  margin: 0 15px;width:186px;
+}
+.top-menu ul li {
+  margin-left: 22px;
+}
+}
+@media (min-width: 850px) and (max-width: 991px)
+{
+.right-content {
+  width: 38%;
+}
+	}
+@media (max-width: 767px)
+{
+header{top:30px;}
+.phone {
+  float: left;
+  margin: 0;
+  padding: 2px 0;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 100%;
+  z-index: 20;
+}
+header.smaller{top:0px;}
+.banner, .inn-banner{height:450px;}
+.block{display:inline;}
+.left-content h2{font-size:30px;}
+.left-content p{font-size:16px; margin-bottom:10px;}
+.padtop100{padding-top:30px;}
+.padbtm100{padding-bottom:30px;}
+.padtop30{padding-top:30px;}
+.padbtm30{padding-bottom:30px;}
+.padtop50{padding-top:30px;}
+.padbtm50{padding-bottom:30px;}
+.padtop40{padding-top:30px;}
+.padbtm40{padding-bottom:30px;}
+.padbtm60{padding-bottom:30px;}
+.howitwrk{overflow:hidden; position:relative;}
+.work-box{width:33%; text-align:center; transition: none 0s ease 0s ; -webkit-transition: none 0s ease 0s ;}
+.allwork{display:block; margin:0px auto; float:none;}
+.work-box:hover {
+  padding-right: 0;
+  transition: none 0s ease 0s ; -webkit-transition: none 0s ease 0s ;
+}
+.sm-hide{display:none;}
+.sm-visi {
+  background: rgba(255, 255, 255, 0.8) none repeat scroll 0 0;
+  color: #000;
+  display: inline-block;
+  font-weight: bold;
+  left: 0;
+  padding: 20px 0;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+}
+.footer-link li{margin-left:10px; margin-right:10px;}
+.howitwrk img {
+  display: block;
+  margin: 0 auto;
+}
+.clear-sm {
+  clear: both;
+  display: block;
+}
+header .business-btn{margin-top:25px;}
+.social-footer li{margin:0px 22px;}
+.banner-btn a {
+  display: inline-block;
+  margin-right: 15px;
+  margin-top: 10px;
+  width: 180px;
+}
+.work-box.padtop40 {
+  padding-top: 0;
+}
+.inn-banner-content h2{font-size:30px;}
+.inn-banner-content p {
+  font-size: 13px;
+  margin-bottom: 5px;
+  width: 100%;
+}
+.inn-banner-content{margin-top:190px;}
+.inn-banner-content .peach-btn{width:280px; height:36px; line-height:36px; font-size:16px; margin-top:10px;}
+.feat-left, .feat-right {width: 100%;}
+.features .work-box {
+  padding-top: 0;
+  transition: none 0s ease 0s ;
+  width: 50%; text-align:center; padding-bottom:30px;
+  
+}
+.feat-right .allwork {
+  float: none;
+}
+
+.features .work-box .block{display:block;}
+.feat-center{width:100%; margin:0px auto;}
+.sm-top-menu{
+  margin: 0;
+  padding: 2px 0;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 100%;
+  z-index: 20;
+}
+.sm-top-menu ul{ text-align:center;}
+.sm-top-menu ul li{ display:inline !important; margin:0px 20px;}
+.sm-top-menu ul li a {
+  color: #fff;
+  padding: 0;
+}
+.top-menu {
+  margin-top: 25px;
+}
+.top-menu ul li{margin-left:0px;}
+}
+@media (max-width: 480px)
+{
+.smaller .business-btn {
+  margin: 3px 0 0;
+}
+.banner, .inn-banner{height:400px;}
+.left-content{margin-top:160px;}
+.left-content h2{font-size:20px;}
+.left-content p{font-size:15px; margin-bottom:10px;}
+header .business-btn {
+  margin-top: 20px;
+  padding-right: 0;
+}
+.peach-btn {
+  background-color: #ff8273;
+  border: 0 none;
+  border-radius: 50px;-webkit-border-radius: 50px; -ms-border-radius: 50px; -o-border-radius: 50px;
+  color: #fff;
+  font-size: 15px;
+  font-family: 'gotham_htfbold';
+  height: 30px;
+  padding: 0;
+  width: 130px;
+}
+.banner-btn .col-sm-3{width:50%; float:left;}
+.title{font-size:30px;}
+
+.social-footer{padding:20px 0px;}
+footer .peach-btn {
+  background-color: #ff8273;
+  border: 0 none;
+  border-radius: 50px;-webkit-border-radius: 50px; -ms-border-radius: 50px; -o-border-radius: 50px;
+  color: #fff;
+  font-family: 'gotham_htfbold';
+  height: 35px;
+  width: 160px;
+}
+.app-btn a {
+  display: inline-block;
+  float: left;
+  margin: 0 auto;
+  padding: 0 15px;
+  width: 50%;
+}
+.ourcustomer img:hover{width:50px; height:50px; border:2px solid #ff8273;}
+.social-footer li{margin:0px 10px;}
+.social-ic i{font-size:25px;}
+.banner-btn a {
+  display: inline-block;
+  margin-right: 10px;
+  margin-top: 10px;
+  width: 45%;
+}
+.work-box h4{font-size:15px;}
+.sm-visi{top:45%; padding:10px 0px;}
+.title{font-size:20px;}
+.ourcustomer h5{margin:20px 0px;}
+.business-btn .peach-btn{font-size:13px;}
+.inn-banner-content h2{font-size:20px;}
+.features .work-box{width:100%;}
+.inn-banner-content p{display:none;}
+.video-btn .peach-btn{font-size:12px; width:auto;}
+.top-menu {
+  margin-top: 20px;
+}
+.smaller .top-menu {
+  margin-top: 2px;
+}
+.top-menu .peach-btn {
+  height: auto;
+  line-height: 20px;
+  padding: 0 14px;
+  text-align: center;
+  width: auto;
+}
+.smaller .top-menu li.peach-btn a {
+  font-size: 13px;
+}
+
+}
+#success_hide{
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+}
+
+.top-menu ul li.hidden-xs{
+    font-family:"gotham_htflight";
+    font-size: 16px;
+}

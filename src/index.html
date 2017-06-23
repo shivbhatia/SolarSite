@@ -7,8 +7,227 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <link href="./assets/css/home/bootstrap.min.css" rel="stylesheet">
+        <link href="./assets/css/home/style.css" rel=stylesheet>
+        <link href="./assets/css/home/jquery.bxslider.css" rel=stylesheet>
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700,900,500italic,700italic' rel='stylesheet' type='text/css'>
+        <link rel=stylesheet href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
+        <link rel=stylesheet href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script>
+        function init(){window.addEventListener('scroll',function(e){var distanceY=window.pageYOffset||document.documentElement.scrollTop,shrinkOn=0,header=document.querySelector("header");if(distanceY>shrinkOn){classie.add(header,"smaller");  document.getElementById("logoImg").src= "./assets/img/SLogoTr.png";}else{if(classie.has(header,"smaller")){classie.remove(header,"smaller");  document.getElementById("logoImg").src= "./assets/img/logo.png";}}});}
+        window.onload=init();</script>
+        <style>
+	.loader-container {
+	    background: rgba(0, 0, 0, 0.5);
+	    height: 100%;
+	    position: fixed;
+	    width: 100%;
+	    z-index: 1;
+	}
+	.loader-container .inner-loader {
+	    left: 50%;
+	    margin-left: -16px;
+	    margin-top: -16px;
+	    position: absolute;
+	    top: 50%;
+	}
+	</style>
+	<style>
+	#logoImg{
+		max-width: 32%;
+		max-height: 35%;
+	}
+	</style>
 </head>
 <body>
+<div class="modal fade bs-example-modal-sm" id="mySmallModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+	</div>
+	<div class="modal fade"  id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+	<header class="">
+            <section class="container">
+                        <h1 id="logo" class="col-sm-5 col-md-5 col-xs-6">
+                                    <section class="row"><a href="/"><img src="./assets/img/logo.png" alt="bookcarspa" title="bookcarspa" class="img-responsive" id="logoImg"></a></section>
+                        </h1>
+                        <section class="top-menu col-sm-6 col-xs-6">
+                                    <section class="row">
+                                                <ul>
+                                                            <li class="hidden-xs"><a href="/homes/index_new">Home</a></li>
+                                                                                                              <li class="hidden-xs"><a href="/Business/signup">List Your Business</a></li>
+                                                           
+                                                            
+                                                            <li class="peach-btn"><a href="javascript:void(0)" class="userLoginModal mainLogin" data-href="/users/login">LOGIN</a></li><li>                                                </li></ul>
+                                    </section>
+                        </section>
+            </section>
+</header>
+<div class ="main_login" style='display: none'></div>
+
+
+
+
+
+<section class="banner">
+    <section class="container">
+        <section class="left-content"> 
+            <h2>No more waiting in queue for a <span class="block"><font class="peach">car wash</font> or <font class="peach">service.</font></span></h2>
+            <p>Find and book you auto needs online anywhere, anytime</p>
+            <p class="font-s18">Search auto care centers near you.</p>
+            <section class="banner-btn">
+                <a href="#"><img src="./assets/img/Home-User/app-icon.png" class="img-responsive" alt=""></a>
+                <a href="#"><img src="./assets/img/Home-User/google-icon.png" class="img-responsive" alt=""></a>
+            </section>
+        </section>
+        <section class="right-content col-md-5 col-sm-5 hidden-xs">
+            <img class="responsive" src="./assets/img/10.png" alt="">
+        </section>
+    </section>
+</section>
+
+
+
+
+<section class="features padtop100 padbtm100"><!--how its work-->
+  
+	<section class="container">
+		<h2 class="title padbtm60">Features</h2>
+		<section class="feat-left">
+			<section class="work-box padtop30">
+				<a href="#">
+					<span class="allwork calendar"></span>
+					<section class="clearfix"></section>
+					<h4>Calendar</h4>
+					<p>The BookCarSpa calendar allows you to view the scheduale of multiple service providers on one screen. Conveniently change <span class="block">Learn more...</span></p>
+				</a>
+			</section>
+			<section class="work-box padtop40">
+				<a href="#">
+					<span class="allwork noti"></span>
+					<section class="clearfix"></section>
+					<h4>Book Online</h4>
+					<p>Eliminate No-Shows and confirmation calls. BookCarSpa automatically sends email, text, or push notification <span class="block">Learn more...</span></p>
+				</a>
+			</section>
+		</section>
+		
+		<section class="feat-center text-center hidden-xs"> <img src="./assets/img/03.jpg" class="img-responsive" alt=""></section>
+		
+		<section class="feat-right">
+			<section class="work-box padtop30">
+				<a href="#">
+					<span class="allwork download"></span>
+					<section class="clearfix"></section>
+					<h4>Download App</h4>
+					<p>Bookcarspa is the new way to find auto care center and services.Download now on the App Store and Google play. <span class="block">Learn more...</span></p>
+				</a>
+			</section>
+			<section class="work-box padtop40">
+				<a href="#">
+					<span class="allwork globe"></span>
+					<section class="clearfix"></section>
+					<h4>Book Online</h4>
+					<p>Choose your service and book an appointment online directly from the auto center calenda. <span class="block">Learn more...</span></p>
+				</a>
+			</section>
+		</section>
+		<section class="feat-center text-center visible-xs"> <img src="./assets/img/Home-User/feat-img.png" class="img-responsive" alt=""></section>
+		<div class="clearfix"></div>
+		<section class="video-btn col-sm-12 padtop50"><a href="#" class="peach-btn"><i class="fa fa-play-circle" aria-hidden="true"></i> View videos of the software</a></section>
+	</section>
+</section>
+
+<section class="clearfix"></section>
+<section class="clients text-center">
+    <section class="container">
+        <h2 class="title padtop40 padbtm40">We have a lot of <font class="bold-it">Happy</font> clients</h2>
+        <div class="bx-wrapper" style="max-width: 1060px; margin: 0px auto;"><div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 100px;"><div class="slider1" style="width: 1415%; position: relative; transition-duration: 0s; transform: translate3d(-1080px, 0px, 0px);"><div class="slide bx-clone" style="float: left; list-style: none; position: relative; width: 160px; margin-right: 20px;"><img src="./assets/img/Home-User/client-1.png" alt=""></div><div class="slide bx-clone" style="float: left; list-style: none; position: relative; width: 160px; margin-right: 20px;"><img src="./assets/img/Home-User/client-2.png" alt=""></div><div class="slide bx-clone" style="float: left; list-style: none; position: relative; width: 160px; margin-right: 20px;"><img src="./assets/img/Home-User/client-3.png" alt=""></div><div class="slide bx-clone" style="float: left; list-style: none; position: relative; width: 160px; margin-right: 20px;"><img src="./assets/img/Home-User/client-4.png" alt=""></div><div class="slide bx-clone" style="float: left; list-style: none; position: relative; width: 160px; margin-right: 20px;"><img src="./assets/img/Home-User/client-5.png" alt=""></div><div class="slide bx-clone" style="float: left; list-style: none; position: relative; width: 160px; margin-right: 20px;"><img src="./assets/img/Home-User/client-6.png" alt=""></div>
+            <div class="slide" style="float: left; list-style: none; position: relative; width: 160px; margin-right: 20px;"><img src="./assets/img/Home-User/client-1.png" alt=""></div>
+            <div class="slide" style="float: left; list-style: none; position: relative; width: 160px; margin-right: 20px;"><img src="./assets/img/Home-User/client-2.png" alt=""></div>
+            <div class="slide" style="float: left; list-style: none; position: relative; width: 160px; margin-right: 20px;"><img src="./assets/img/Home-User/client-3.png" alt=""></div>
+            <div class="slide" style="float: left; list-style: none; position: relative; width: 160px; margin-right: 20px;"><img src="./assets/img/Home-User/client-4.png" alt=""></div>
+            <div class="slide" style="float: left; list-style: none; position: relative; width: 160px; margin-right: 20px;"><img src="./assets/img/Home-User/client-5.png" alt=""></div>
+            <div class="slide" style="float: left; list-style: none; position: relative; width: 160px; margin-right: 20px;"><img src="./assets/img/Home-User/client-6.png" alt=""></div>
+            <div class="slide" style="float: left; list-style: none; position: relative; width: 160px; margin-right: 20px;"><img src="./assets/img/Home-User/client-1.png" alt=""></div>
+            <div class="slide" style="float: left; list-style: none; position: relative; width: 160px; margin-right: 20px;"><img src="./assets/img/Home-User/client-2.png" alt=""></div>
+            <div class="slide" style="float: left; list-style: none; position: relative; width: 160px; margin-right: 20px;"><img src="./assets/img/Home-User/client-3.png" alt=""></div>
+            <div class="slide" style="float: left; list-style: none; position: relative; width: 160px; margin-right: 20px;"><img src="./assets/img/Home-User/client-4.png" alt=""></div>
+            <div class="slide" style="float: left; list-style: none; position: relative; width: 160px; margin-right: 20px;"><img src="./assets/img/Home-User/client-5.png" alt=""></div>
+            <div class="slide" style="float: left; list-style: none; position: relative; width: 160px; margin-right: 20px;"><img src="./assets/img/Home-User/client-6.png" alt=""></div>
+        <div class="slide bx-clone" style="float: left; list-style: none; position: relative; width: 160px; margin-right: 20px;"><img src="./assets/img/Home-User/client-1.png" alt=""></div><div class="slide bx-clone" style="float: left; list-style: none; position: relative; width: 160px; margin-right: 20px;"><img src="./assets/img/Home-User/client-2.png" alt=""></div><div class="slide bx-clone" style="float: left; list-style: none; position: relative; width: 160px; margin-right: 20px;"><img src="./assets/img/Home-User/client-3.png" alt=""></div><div class="slide bx-clone" style="float: left; list-style: none; position: relative; width: 160px; margin-right: 20px;"><img src="./assets/img/Home-User/client-4.png" alt=""></div><div class="slide bx-clone" style="float: left; list-style: none; position: relative; width: 160px; margin-right: 20px;"><img src="./assets/img/Home-User/client-5.png" alt=""></div><div class="slide bx-clone" style="float: left; list-style: none; position: relative; width: 160px; margin-right: 20px;"><img src="./assets/img/Home-User/client-6.png" alt=""></div></div></div><div class="bx-controls bx-has-controls-direction"><div class="bx-controls-direction"><a class="bx-prev" href="">Prev</a><a class="bx-next" href="">Next</a></div></div></div>
+    </section>
+</section>
+<section class="clearfix"></section>
+
+
+
+
+<section class="ourcustomer text-center padtop100 padbtm100"><!--our customer-->
+    <section class="container">
+        <h2 class="title padbtm40">What our <font class="bold-it">Customers</font> are saying</h2>
+        
+        <p> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
+        <h5>John Smith</h5>
+        <div class="customer-pic">
+        <div class="cus1"><img src="./assets/img/Home-User/cust1.jpg" alt=""></div>
+        <div class="cus1"><img src="./assets/img/Home-User/cust3.jpg" alt=""></div>
+        
+        <div class="cus1"><img src="./assets/img/Home-User/cust5.jpg" alt=""></div>
+        
+        <div class="cus1"><img src="./assets/img/Home-User/cust2.jpg" alt=""></div>
+        
+        <div class="cus1"><img src="./assets/img/Home-User/cust4.jpg" alt=""></div>
+        
+        </div>
+    </section>
+</section>
+<section class="clearfix"></section>
+
+<footer>
+    <section class="container">
+        <section class="text-center app-btn padtop50 padbtm50">
+            <a href="#"><img src="./assets/img/Home-User/app-icon.png" class="img-responsive" alt=""></a>
+            <a href="#"><img src="./assets/img/Home-User/google-icon.png" class="img-responsive" alt=""></a>
+            <section class="clearfix"></section>
+        </section>
+    </section>
+    <section class="bottom-line"></section>
+    <section class="container">
+        <section class="social-footer">
+            <ul>
+                <li class="social-ic fb"><a href="http://www.facebook.com" taget="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li class="social-ic tw"><a href="http://www.twitter.com" taget="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li class="social-ic in"><a href="http://www.linkedin.com" taget="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i>
+                </a></li>
+                <li class="social-ic gplus"><a href="http://www.plus.google.com" taget="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i> </a></li>
+                <li class="social-ic you"><a href="http://www.youtube.com" taget="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+            </ul>
+        </section>
+        
+        <section class="footer-link">
+            <ul>
+                <li><a href="about-us">About us</a></li>
+                <li><a href="contact-us">Contact</a></li>
+                <li><a href="feedback">Feedback</a></li>
+                <li><a href="privacy-and-cookie-policy">Legal</a></li>
+                <li><a href="sitemap">Sitemap</a></li>
+                <!--<li><a href="#">Business</a></li>-->
+                <li><a href="enquires">Enquires</a></li>
+                <li><a href="support">Support</a></li>
+                <span class="clear-sm"></span>
+                            </ul>
+        </section>
+        <p>Copyright � 2016 Bookcar.spa. All Rights Reserved.</p>
+    </section>
+</footer>
+
+<script src="./assets/js/home/bootstrap.min.js"></script> 
+        <script src="./assets/js/home/header-small.js"></script>
+        <script src="./assets/js/home/jquery.bxslider.min.js"></script>
+
+
+
   <app-root></app-root>
 </body>
 </html>
