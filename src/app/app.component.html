@@ -1,5 +1,9 @@
-<homemenu></homemenu>
-<homebanner></homebanner>
-<homefeature></homefeature>
-<homeclient></homeclient>
+<homemenu *ngIf="isHomePage()"></homemenu>
+<homebanner *ngIf="isHomePage()"></homebanner>
+<homefeature *ngIf="isHomePage()"></homefeature>
+<homeclient *ngIf="isHomePage()"></homeclient>
+<homecustomer *ngIf="isHomePage()"></homecustomer>
+<homefooter *ngIf="isHomePage()"></homefooter>
+
+<registerheader></registerheader>
 <router-outlet></router-outlet>

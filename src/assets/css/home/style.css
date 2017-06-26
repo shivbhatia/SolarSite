@@ -92,9 +92,9 @@ header .business-btn { float: right; margin: 30px 0px 0px 0px; }
 .work-box { width: 100%; float: left; text-align: right; transition: all 1s ease-in-out 0s; -webkit-transition: all 1s ease-in-out 0s; -ms-transition: all 1s ease-in-out 0s; -o-transition: all 1s ease-in-out 0s; cursor: pointer; }
 .allwork { float: right; width: 40px; height: 40px; text-indent: -99999px; background-image: url("/assets//img/Home-User/allwork.png"); background-repeat: no-repeat; }
 .work-box:hover { padding-right: 30px; transition: all 1s ease-in-out 0s; -webkit-transition: all 1s ease-in-out 0s; -ms-transition: all 1s ease-in-out 0s; -o-transition: all 1s ease-in-out 0s; }
-.work-box:hover, .work-box:hover h4, .work-box:hover p, .work-box:hover .download { color: #FDB910; background-position: 0 -42px; }
+.work-box:hover, .work-box:hover h4, .work-box:hover p, .work-box:hover .download { color: #FDB910; background-position: 0 -0px; }
 .globe { background-position: 0 -84px; }
-.work-box:hover .globe { background-position: 0px -126px; }
+.work-box:hover .globe { background-position: 0px -84px; }
 .smile { background-position: 0 -168px; }
 .work-box:hover .smile { background-position: 0px -210px; }
 .howitwrk img{display:inline-block;}
@@ -234,12 +234,12 @@ footer p{color:#474747; margin-bottom:10px; font-size:14px;}
 .feat-right .allwork{float:left;}
 
 .calendar{ background-position: 0 -252px; }
-.work-box:hover .calendar{ background-position: 0 -294px; }
+.work-box:hover .calendar{ background-position: 0 -252px; }
 .noti {
   background-position: 0 -336px;
 }
 .work-box:hover .noti {
-  background-position: 0 -378px;
+  background-position: 0 -334px;
 }
 .video-btn .peach-btn {
   display: block;

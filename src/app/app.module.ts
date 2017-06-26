@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
 import { appRoutes } from "./app.routes";
 import { HOME_DECLARATIONS } from "./home/index";
+import { REGISTER_DECLARATIONS } from "./register/index";
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ...HOME_DECLARATIONS,
+    ...REGISTER_DECLARATIONS,
   ],
   imports: [
     BrowserModule,

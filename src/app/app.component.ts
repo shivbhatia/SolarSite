@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router} from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import {OwlCarousel} from 'ng2-owl-carousel';
 
 @Component({
@@ -9,5 +9,11 @@ import {OwlCarousel} from 'ng2-owl-carousel';
 })
 export class AppComponent {
   title = 'app';
-  constructor(private router: Router){}
+  constructor(private router: Router, private route: ActivatedRoute){}
+  isHomePage() { 
+    if (this.router.url == '/') {
+      return true;
+    }
+    
+  }
 }
