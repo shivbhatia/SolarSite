@@ -5,7 +5,6 @@ import { NgForm } from '@angular/forms';
 @Component({
   selector: 'register',
   templateUrl: "./register.html",
-  styleUrls:['../../assets/cssnew/bootstrap.min.css'],
   
 })
 

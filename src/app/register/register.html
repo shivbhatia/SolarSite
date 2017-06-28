@@ -1,748 +1,282 @@
-<div id="update_ajax"><div class="container">
-<style>
-.select2-container .select2-choice span {
-    display: inline !important;
-}
-</style>
-<script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script> 
-<div class="radio_tabs" onload="">
-    <form action="/Business/signup" novalidate="novalidate" id="msform" method="post" accept-charset="utf-8" data-role="validator">
-    
-        <div class="col-sm-12 pos-rgt">
-            <div class="well text-left custom_well">
-                <img src="../../assets/img/SLogoTr.png" alt="" class="responsive-img valign profile-image-login">
-                
-                <fieldset> 
-                <legend>Are You:</legend>
-                        <div class="col-sm-12">
-                            <input type="radio" name="user_type" id="UserUserTypeOriginator" value="originator" required="required">
-                            <label for="UserUserTypeOriginator" class="new-chk">An Originator? - Subscribe for Free</label>
-
-                            <input type="radio" name="user_type" id="UserUserTypeCompany" value="company" required="required" validate="1" class="with-gap">
-                            <label for="UserUserTypeCompany" class="new-chk">A Fulfillment Company? Start 10 day Trial Access of Solar Site Design Commercial Marketplace<br> then $79.00 Monthly Membership</label>                   
-                            
-                            <div class="row"></div>
-                        </div>
-                </fieldset>
-
-
-                <div class="form-group col-sm-6">
-                    <label for="UserFirstname" data-error="wrong" data-success="" class="">First Name</label>
-                    <input name="firstname" minlength="2" maxlength="15" class="form-control" value="" type="text" id="UserFirstname" required="required">                  
-                </div>
-
-                <div class="form-group col-sm-6">
-                    <label for="UserLastname" class="" data-error="wrong" data-success="">Last Name</label>
-                    <input name="lastname" minlength="2" maxlength="15" class="form-control" value="" type="text" id="UserLastname" required="required">                    
-                </div>
-
-                <div class="form-group col-sm-6">
-                    <label for="UserJobTitle" class="">Job Title</label>
-                    <input name="job_title"  maxlength="15" class="form-control" type="text" id="UserJobTitle">          
-                </div>
-
-                <div class="form-group col-sm-6">
-                    <label for="UserEmail" class="" data-error="wrong" data-success="">Email Address</label>
-                    <input name="email" autocomplete="off" maxlength="40" class="form-control" value="" type="email" id="UserEmail" required="required">                    
-                </div>
-
-                <div class="form-group col-sm-6">
-                    <label for="UserNewpassword" class="" data-error="wrong" data-success="">Password</label>
-                    <input name="newpassword" minlength="8" maxlength="25" class="form-control" value="" type="password" id="UserNewpassword" required="required">                  
-                </div>
-
-                <div class="form-group col-sm-6">
-                    <label for="UserConfirmpassword" class="" data-error="wrong" data-success="">Confirm Password</label>
-                    <input name="confirmpassword" minlength="8" maxlength="25" class="form-control right-alert" type="password" id="UserConfirmpassword" required="required">   
-                </div>
-
-                <div class="form-group col-sm-12">
-                    <label for="UserCompanyName" class="">Company Name</label>
-                    <input name="data[User][company_name]" minlength="2" maxlength="30" class="form-control" type="text" id="UserCompanyName" required="required">                  
-                </div>
-
-                <div class="form-group col-sm-6">
-                    <label for="UserBusinessPhone" class="">Business Phone Number</label>
-                    <input name="business_phone" minlength="10" maxlength="15" class="form-control" type="text" id="UserBusinessPhone" required="required">                 
-                </div>
-
-                <div class="form-group col-sm-6">
-                    <label for="UserPhone" class="">Mobile Phone Number</label>
-                    <input name="phone" minlength="10" maxlength="15" class="form-control" type="text" id="UserPhone"> 
-                </div>
-
-                <div class="form-group col-sm-12">
-                    <label for="UserWebsite" class="">Website Address (e.g. http://www.yourwebsite.com)</label>
-                    <input name="data[User][website]" type="url" class="form-control" maxlength="100" id="UserWebsite"> 
-                </div>
-
-                <div class="form-group col-sm-12">
-                    <label for="UserAutocomplete" class="active">Address</label>
-                    <input name="autocomplete" onfocus="geolocate()" class="form-control" placeholder="Your Address" type="text" id="UserAutocomplete" autocomplete="off">                  
-                </div>
-
-                <div class="form-group col-sm-6">
-                    <label for="street_number" class="">Street Address</label>
-                    <input name="address" minlength="2" maxlength="30" required="required" id="street_number" class="form-control" type="text">             
-                </div>
-
-                <div class="form-group col-sm-6">
-                    <label for="route" class="">Street Address 1</label>
-                    <input name="route" minlength="" maxlength="50" required="required" id="route" class="form-control" type="text">                    
-                </div>
-
-                <div class="form-group col-sm-6">
-                    <label for="locality" class="">City</label>
-                    <input name="City" minlength="2" maxlength="30" size="30" required="required" id="locality" class="form-control" type="text">                   
-                </div>
-
-                <div class="form-group col-sm-6">
-                    <label for="administrative_area_level_1" class="">State</label>
-                    <input name="state" minlength="2" maxlength="30" required="required" id="administrative_area_level_1" class="form-control" type="text">                 
-                </div>
-
-                <div class="form-group col-sm-6">
-                    <label for="postal_code" class="">Zip Code</label>
-                    <input name="zip" minlength="5" maxlength="6" size="6" required="required" id="postal_code" class="form-control" type="text">                   
-                </div>
-
-                <div class="form-group col-sm-6">
-                    <label for="country" class="">Country</label>
-                    <input name="country" minlength="2" maxlength="30" required="required" id="country" class="form-control" type="text">                   
-                </div>
-
-
-
-
-                
-                <div class="form-group col-sm-6">
-                    <label>Business Name<span style="color:red;">*</span></label>
-                    <div class="input text required">
-                        <input name="eng_name" class="form-control" required="required" type="text" id="CenterEngName">
-                    </div>
-                </div> 
-
-                <div class="form-group col-sm-6">
-                    <label>Business Name<span style="color:red;">*</span></label>
-                    <div class="input text required">
-                        <input name="eng_name" class="form-control" required="required" type="text" id="CenterEngName">
-                    </div>
-                </div>                   
-
-
-
-
-
-                
-
-
-                <div class="form-group col-sm-6">
-                    <label>Business Model<span style="color:red;">*</span></label>
-                    <div class="">
-                        <div class="select2-container typeTemp_option col-sm-6" id="s2id_UserTypeTemp">
-                            <a href="javascript:void(0)" onclick="return false;" class="select2-choice" tabindex="-1">   
-                                <span>Please Select</span>
-                                <abbr class="select2-search-choice-close" style="display:none;"></abbr>   
-                                <div><b></b></div>
-                            </a>
-                            <input class="select2-focusser select2-offscreen" type="text" id="s2id_autogen3">
-                            <div class="select2-drop select2-with-searchbox" style="display:none">   
-                                <div class="select2-search">       
-                                    <input type="text" autocomplete="off" class="select2-input">   
-                                </div>   
-                                <ul class="select2-results">   </ul>
-                            </div>
-                        </div>
-                        </div></div>
-                        <div class="form-group col-sm-6">
-                        <select name="data[User][typeTemp]" class="typeTemp_option  select2-offscreen col-sm-6" required="required" validationmessage="Please select Business Model." id="UserTypeTemp" tabindex="-1">
-                            <option value="">Please Select</option>
-                            <option value="4">Individual</option>
-                            <option value="2">Franchise</option>
-                            <option value="-1">Business Under Franchise</option>
-                        </select>
-                    </div>                
-                 
-
-
-
-
-                                <div class="form-group selFrenchise" style="display:none;">
-                        <label>Franchise<span style="color:red;">*</span></label>
-                        <div class="input select required"><div class="select2-container parentcustom_option" id="s2id_UserParentId"><a href="javascript:void(0)" onclick="return false;" class="select2-choice" tabindex="-1">   <span>Please Select</span><abbr class="select2-search-choice-close" style="display:none;"></abbr>   <div><b></b></div></a><input class="select2-focusser select2-offscreen" type="text" id="s2id_autogen4"><div class="select2-drop select2-with-searchbox" style="display:none">   <div class="select2-search">       <input type="text" autocomplete="off" class="select2-input">   </div>   <ul class="select2-results">   </ul></div></div><select name="data[User][parent_id]" class="parentcustom_option select2-offscreen" validationmessage="Please select franchise." id="UserParentId" tabindex="-1">
-<option value="">Please Select</option>
-<option value="10">Shiv Center</option>
-</select></div>                    </div>
-                    <div class="form-group">  
-                        <label>Business Name<span style="color:red;">*</span></label>
-                                    
-                                    <div class="input text required">
-                                    <input name="data[Center][eng_name]" class="form-control" minlength="3" pattern="^[A-Za-z0-9' ]+$" data-pattern-msg="Please enter only alphabets and numbers and (')." required="required" data-minlength-msg="Minimum 3 characters are allowed." validationmessage="Business name is required." maxlength="50" data-maxlengthcustom-msg="Maximum 50 characters." maxlengthcustom="50" type="text" id="CenterEngName"></div>                    </div>
-                   <!-- <div class="form-group">  
-                        <label>Service Provided to*:</label>
-                                                <div class="input select required"><select name="data[Center][service_to]" class="custom_option" required="required" validationMessage="Please select service provided to." id="CenterServiceTo" required="required">
-<option value="">Please Select</option>
-<option value="K">Kids Only</option>
-<option value="M">Men Only</option>
-<option value="P">Pet</option>
-<option value="B">Unisex</option>
-<option value="W">Women Only</option>
-</select></div>                        
-                    </div>-->
-            <input type="hidden" name="data[Address][id]" id="AddressId">                    <div class="form-group">  
-                        <div class="row">
-                            <div class="col-sm-6 padding_rt_zero flag pos-rgt">
-                                <label>Country<span style="color:red;">*</span></label>
-                <div class="dynamiccountry">
-                                <div class="input select required"><div class="select2-container custom_optionCountry" id="s2id_AddressCountryId"><a href="javascript:void(0)" onclick="return false;" class="select2-choice" tabindex="-1">   <span>Please Select</span><abbr class="select2-search-choice-close" style="display:none;"></abbr>   <div><b></b></div></a><input class="select2-focusser select2-offscreen" type="text" id="s2id_autogen5"><div class="select2-drop select2-with-searchbox" style="display:none">   <div class="select2-search">       <input type="text" autocomplete="off" class="select2-input">   </div>   <ul class="select2-results">   </ul></div></div><select name="data[Address][country_id]" class="custom_optionCountry select2-offscreen" required="required" validationmessage="Please select country." id="AddressCountryId" tabindex="-1">
-<option value="">Please Select</option>
-<option value="252">United Arab Emirates</option>
-</select></div>             </div>
-                            </div>
-                            <div class="col-sm-6 pos-lft">
-                                <label>City<span style="color:red;">*</span></label>
-                                <div class="dynamicstate">
-                                    <div class="input select required"><div class="select2-container custom_option" id="s2id_AddressStateId"><a href="javascript:void(0)" onclick="return false;" class="select2-choice" tabindex="-1">   <span>Please Select</span><abbr class="select2-search-choice-close" style="display:none;"></abbr>   <div><b></b></div></a><input class="select2-focusser select2-offscreen" type="text" id="s2id_autogen1"><div class="select2-drop select2-with-searchbox" style="display:none">   <div class="select2-search">       <input type="text" autocomplete="off" class="select2-input">   </div>   <ul class="select2-results">   </ul></div></div><select name="data[Address][state_id]" class="custom_option select2-offscreen" required="required" validationmessage="Please select city." id="AddressStateId" tabindex="-1">
-<option value="">Please Select</option>
-</select></div>                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group location">  
-                        <label>Location / Area<span style="color:red;">*</span></label>
-                        <div class="dynamiccity">
-                            <div class="input select required"><div class="select2-container custom_option" id="s2id_AddressCityId"><a href="javascript:void(0)" onclick="return false;" class="select2-choice" tabindex="-1">   <span>Please Select</span><abbr class="select2-search-choice-close" style="display:none;"></abbr>   <div><b></b></div></a><input class="select2-focusser select2-offscreen" type="text" id="s2id_autogen2"><div class="select2-drop select2-with-searchbox" style="display:none">   <div class="select2-search">       <input type="text" autocomplete="off" class="select2-input">   </div>   <ul class="select2-results">   </ul></div></div><select name="data[Address][city_id]" class="custom_option select2-offscreen" required="required" validationmessage="Please select location/area." id="AddressCityId" tabindex="-1">
-<option value="">Please Select</option>
-</select></div>                        </div>
-                    </div>
-                    <div class="form-group">  
-                        <label>Address<span style="color:red;">*</span></label>
-                        <div class="input text"><input name="data[Address][address]" class="form-control" validationmessage="Street Address is required." required="required" maxlength="100" data-maxlengthcustom-msg="Maximum 100 characters." maxlengthcustom="99" type="text" id="AddressAddress" placeholder="Enter a location" autocomplete="off"></div>                    </div>
-                    <div class="form-group">  
-                        <label>PO Box<span style="color:red;">*</span></label>
-                        <div class="input text required"><input name="data[Address][po_box]" class="form-control number" minlength="3" data-minlength-msg="Minimum 3 characters are allowed." required="required" validationmessage="PO Box is required." maxlength="6" type="text" id="AddressPoBox"></div>                    </div>
-                    <div class="form-group">  
-                        <label>Business E-mail<span style="color:red;">*</span></label>
-                                    <input name="data[Center][email]" class="form-control" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" data-pattern-msg="Please enter a valid email address." required="required" validationmessage="Business email is required." data-email-msg="Please enter valid email address." maxlength="55" type="email" id="CenterEmail">                    </div>
-                    <div class="form-group">  
-                        <label>Business Phone<span style="color:red;">*</span></label>
-                        <div class="row">
-                            <div class="col-sm-3 col-xs-3 padding_rt_zero">
-                                <input type="text" value="+971" class="cPHcd form-control" maxlength="4" readonly="">
-                            </div>
-                            <div class="col-sm-9 col-xs-9">
-                                <input type="hidden" name="data[Contact][id]" id="ContactId">                                                <div class="input text"><input name="data[Contact][day_phone]" class="form-control number" minlength="5" required="required" data-minlength-msg="Minimum 5 characters are allowed." maxlength="12" validationmessage="Please enter business phone." type="text" id="ContactDayPhone"></div>                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">  
-                        <label>Business Mobile<span style="color:red;">*</span></label>
-                        <div class="row">
-                            <div class="col-sm-3 col-xs-3 padding_rt_zero">
-                                <input type="text" value="+971" class="cPHcd form-control" maxlength="4" readonly="">
-                            </div>
-                            <div class="col-sm-9 col-xs-9">
-                                <div class="input text"><input name="data[Contact][night_phone]" class="form-control number" minlength="5" required="required" data-minlength-msg="Minimum 5 characters are allowed." maxlength="12" validationmessage="Please enter business mobile." type="text" id="ContactNightPhone"></div>                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                                    <label>Your Current Business Website</label>
-                        <input name="data[Center][website_url]" pattern="(https?:\/\/(?:www\.|(?!www))[^\s\.]+\.[^\s]{2,}|www\.[^\s]+\.[^\s]{2,})" data-pattern-msg="Please enter a valid url." class="form-control" placeholder="http://www.xyz.com" maxlength="200" type="text" id="CenterWebsiteUrl">                    </div>
-                    <div class="form-group">
-                        <label>Personal BookMyCarSpa URL<span style="color:red;">*</span></label>
-                         <div class="row">
-                <div class="col-sm-6 pdng-top-7">
-             <em class="MoreInfoSieasta">www.bookmycarspa.com</em>
-                </div>
-                <div class="col-sm-12">
-                           <input name="data[Center][business_url]" class="form-control" pattern="^[A-Za-z'\-]+$" data-pattern-msg="Please enter only alphabets and (-)." required="required" validationmessage="Personal BookMyCarSpa URL is required." maxlength="200" type="text" id="CenterBusinessUrl">            </div>
-             </div>
-                                            </div>
-                    <div class="form-group pos-rel clearfix">  
-                        <input type="hidden" name="data[User][terms_n_condition]" id="UserTermsNCondition_" value="0"><input type="checkbox" name="data[User][terms_n_condition]" required="required" validationmessage="Terms and conditions are required." value="1" id="UserTermsNCondition"><label for="UserTermsNCondition" class="new-chk">I agree to&nbsp;<a href="/Policy/sieasta-refund-and-cancellation-policy" target="_blank">terms and conditions.</a></label>   
-                        <dfn class="text-danger k-invalid-msg" data-for="data[User][terms_n_condition]" role="alert" style="display: none;">Terms and Conditions are required.</dfn>
-                                            </div>
-                    <!--<input type="button" name="next" class="next black_btn action-button margin_rt20" value="Cancel" />-->
-                    <input class="pull-right  pos-lft action-button" type="submit" value="Next">                <div class="clearfix"></div>
-            </div>
+<!--<div id="custom-bootstrap-menu" class="navbar navbar-default " role="navigation">
+    <div class="container">
+        <div class="navbar-header"><a class="navbar-brand" href="#"><img alt="solarsitedesign" class="img-responsive" id="logoImg" src="./assets/img/logo.png" title="solarsitedesign"></a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+            </button>
         </div>
-    <!--<div class="col-sm-6 pos-lft">
-        <div class="steps-lft-container">
-        <div class="photo"><img src="../../assets/img/frontend/2.jpg" alt=""></div>
-        <div class="foot">
-             <h3>Take bookings 24/7</h3>
-             <p>We are your 24/7 online front desk who accepts the booking from your clients. Our Software manages time availability and scheduled booking.</p>
+        <div class="collapse navbar-collapse navbar-menubuilder">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/">Home</a>
+                </li>
+                <li><a href="/products">Products</a>
+                </li>
+                <li><a href="/about-us">About Us</a>
+                </li>
+                <li><a href="/contact">Contact Us</a>
+                </li>
+            </ul>
         </div>
-        </div>
-        <div class="steps-lft-container">
-            <div class="photo"><img src="../../assets/img/frontend/1.png" alt=""></div>
-        <div class="foot">
-            <h3>REMINDER TO YOUR CUSTOMERS</h3>
-            <p>Our BookmyCarSpa software allows you to send email and
-            SMS text notifications to your clients.                 
-                    </p>
-                    <p>Remind them to confirm their appointments, so you
-            won't have to pick up a phone &amp; minimize no show.
-            </p>
-        </div>
-        </div>
-        <div class="clearfix"></div>
-    </div>-->
-    
-    <div class="clearfix"></div>
-</form></div>
-
-<script>
-$('.number').keyup(function(){
-    var value = $(this).val();
-    if(isNaN(value)){
-    $(this).val('');
-    }
-    
-})
-    $(document).ready(function(){
-        //var geocoder;
-    var Country;
-    var State;
-    var City;
-    setTimeout(function(){callRequiredForm();},2000); 
-    
-    
-    
-    $('#customSelect').parent('.input.select.required').on('keypress, click',function(e){
-          var keyCode = e.keyCode || e.which; 
-            if (keyCode == 9) { 
-                 custom_error($('#customSelect')); 
-             } 
-     });
-
-    $(document).on('change','#customSelect ,#UserTypeTemp ,#CenterServiceTo ,#AddressCountryId ,#AddressStateId , #AddressCityId ,#UserParentId',function(e){
-    custom_error($(this)); 
-    });
-  
-    /************************VALIDATIONS ***************************************/
-  
-    
-    // if(prodValidator.validate() == false){
-       
-    //   
-    // }
-    $('#customSelect').multipleSelect({
-            width: '100%',
-        selectedText:'Please Select',
-            placeholder:'Please Select'
-        });
-        
-//  $(document).find(".parentcustom_option , .custom_option").select2().on("open",function(e){
-//  log("select2:open", e); 
-//       
-//        });
-        $(document).find('#CenterServiceTo').select2().on("close",function(){
-            $('#s2id_CenterServiceTo').removeClass('purple-bod');        
-        custom_error($('#CenterServiceTo'));  
-        }).on("open" , function(){
-             $('#s2id_CenterServiceTo').addClass('purple-bod');   
-        });
-        $(document).find('#AddressStateId').select2().on("close",function(){
-            $('#s2id_AddressStateId').removeClass('purple-bod');     
-            custom_error($('#AddressStateId'));  
-        }).on('open' , function(){
-          $('#s2id_AddressStateId').addClass('purple-bod');  
-        });
-        
-        $(document).find('#AddressCityId').select2().on("close",function(){
-        $('#s2id_AddressCityId').removeClass('purple-bod'); 
-            custom_error($('#AddressCityId'));
-        
-        }).on('open' , function(){
-            $('#s2id_AddressCityId').addClass('purple-bod');  
-        });
-        
-//        $(document).find('#UserParentId').select2().on("close",function(){
-//      $('#s2id_UserParentId').removeClass('purple-bod'); 
-//            custom_error($('#AddressCityId'));  
-//        }).on('open' , function(){
-//            $('#s2id_UserParentId').addClass('purple-bod');  
-//        });
-        
-        $(document).find(".typeTemp_option").select2().on("change", function(e) { 
-            $(document).find('#CenterEngName').val('');
-        if(e.val == -1 ){
-        $("#UserType").val(4);
-                $(document).find('.selFrenchise').show();
-        $(document).find('#UserParentId').select2('val', $('.selFrenchise option:eq(1)').val());
-        //$(document).find(".selFrenchise").select2("val", $('.selFrenchise option:eq(1)').val());
-        //$(document).find(".selFrenchise").val($(document).find(".selFrenchise option:first-child").val());
-        //$(document).find('#CenterEngName').attr('readonly' , 'readonly');
-                $(document).find('.parentcustom_option').attr('required','required').select2();
-        
-                
-            }else{
-        if(e.val !=''){
-                     $("#UserType").val($(this).find(":selected").val());
-             
-                }else{
-                    $(this).val(e.val);
-                }
-        //$(document).find('#CenterEngName').removeAttr('readonly');
-                $(document).find('.selFrenchise').hide();
-                $(document).find('.parentcustom_option').removeAttr('required').removeClass('k-invalid').select2("val", "");
-            }   
-        }).on("close",function(){
-            $('#s2id_UserTypeTemp').removeClass('purple-bod'); 
-            custom_error($('#UserTypeTemp'));  
-        }).on("open" , function(){
-           $('#s2id_UserTypeTemp').addClass('purple-bod'); 
-        });
-    
-    
-    $(document).find(".parentcustom_option").select2().on("change", function(e) {
-            $(document).find('#CenterEngName').val($(document).find('#UserParentId option[value='+e.val+']').html()).change();
-        //$(document).find('#CenterEngName').attr('readonly', 'readonly');
-        }).on("close",function(){
-            $('#s2id_UserParentId').removeClass('purple-bod'); 
-            custom_error($('#UserParentId'));  
-        }).on("open" , function(){
-           $('#s2id_UserParentId').addClass('purple-bod'); 
-        });
-    
-        
-        
-        function formatFlags(state){
-       
-        if (!state.id) return state.text; 
-        return "<img style='padding-right:10px;' class='pos-rgt flag' src='/img/flags/" + state.id.toLowerCase() + ".gif'/><span class='state-name' >" + state.text + "</span>";
-    }
-    
-        $(document).find(".custom_optionCountry").select2({
-        formatResult    : formatFlags,
-        formatSelection : formatFlags,
-        escapeMarkup: function(m) { return m; }
-                
-    }).on("change", function(e){
-           var getStateURL = "/Homes/getStates";
-                if(e.val){
-            getIsoCode(e.val);
-            $('#msform .dynamicstate').load(getStateURL+'/'+e.val,function(){
-                        var forDynState = $(document).find('#msform .dynamicstate');
-                        forDynState.find('label').remove();
-                        forDynState.find('select').select2().on("close",function(){
-                $('#s2id_AddressStateId').removeClass('purple-bod');     
-                    custom_error($('#AddressStateId'));  
-                }).on('open' , function(){
-                $('#s2id_AddressStateId').addClass('purple-bod');  
-                }).on("change",function(eal){
-                var getCityURL = "/Homes/getCities";
-                if(eal.val){
-                    $('#msform .dynamiccity').load(getCityURL+'/'+eal.val,function(){
-                    var forDynCity = $(document).find('#msform .dynamiccity');
-                    forDynCity.find('label').remove();
-                    forDynCity.find('select').select2().on("close",function(){
-                                                $('#s2id_AddressCityId').removeClass('purple-bod'); 
-                                                custom_error($('#AddressCityId'));
-                        close_city();
-                                             }).on('open' , function(){
-                                                $('#s2id_AddressCityId').addClass('purple-bod');  
-                                        });;
-                    });
-                   }
-                });
-                    });
-                    $.ajax({
-                url: "/Homes/getPhoneCode"+'/'+e.val,
-                success: function(res) {
-                $(document).find('.cPHcd').val(res);
-                }
-            });
-                }
-                var forDynCity = $(document).find('#msform .dynamiccity select').html('').select2();
-                
-        }).on("open",function(){
-        $('#s2id_AddressCountryId').addClass('purple-bod');
-        }).on("close", function(){
-            $('#s2id_AddressCountryId').removeClass('purple-bod'); 
-            custom_error($('#AddressCountryId'));  
-        });
-        
-        $(document).find("#AddressStateId").on("change",function(eal){
-            var getCityURL = "/Homes/getCities";
-            if($(this).find(":selected").val()){
-                $('#msform .dynamiccity').load(getCityURL+'/'+eal.val,function(){
-                    var forDynCity = $(document).find('#msform .dynamiccity');
-                    forDynCity.find('label').remove();
-                    forDynCity.find('select').select2();
-                });
-            }
-        });
-    
-    //$(document).find('#AddressCityId').on('change' , function(){
-    //    console.log('changesss');
-    //});
-    
-    
-    });
-    
-    function close_city(){
-     //$(document).find('#CenterEngName').attr('readonly', 'readonly');
-     var location  = $(document).find('#AddressCityId option:selected').text();
-     user_type = $(document).find('#UserTypeTemp').val();
-    // console.log(user_type);
-        /*if(user_type =='-1'){
-         prev_val =  $(document).find('#CenterEngName').val();  
-         $(document).find('#CenterEngName').val(prev_val +' '+location).change();  
-        }*/
-     
-    }
- function getIsoCode(id){
-     $.ajax({
-        url: "/Homes/getIsoCode"+'/'+id,
-        success: function(res) {
-            //disableGoogleAutocomplete();
-            initialize(res);
-        }
-            });
-}
-    
-var autocomplete;
-var autocompleteListener;
-function disableGoogleAutocomplete() {
-    if (autocomplete !== undefined) {
-            google.maps.event.removeListener(autocompleteListener);
-            google.maps.event.clearInstanceListeners(autocomplete);
-        google.maps.event.clearListeners(autocomplete, "focus");
-        google.maps.event.clearListeners(autocomplete, "blur");
-        google.maps.event.clearListeners(autocomplete, "keydown");
-            $(".pac-container").remove();
-
-            console.log('disable autocomplete to GOOGLE');
-     }
-}
-    
-</script>
+    </div>
+</div>-->
 
 
-<script type="text/javascript">
-var placeSearch, autocomplete;
-var componentForm = {
-  street_number: 'short_name',
-  route: 'long_name',
-  locality: 'long_name',
-  administrative_area_level_1: 'short_name',
-  country: 'long_name',
-  postal_code: 'short_name'
-};
 
-    //var iSoId = $(document).find("#AddressCountryId").val();
+<div class="header">
+        <section class="container">
+            <h1 id="logo" class="col-sm-5 col-md-5 col-xs-6">
+                <section class="row"><a href="/"><img src="./assets/img/logo.png" alt="bookcarspa" title="bookcarspa" class="img-responsive" id="logoImg"></a></section>
+            </h1>
+            <section class="top-menu col-sm-6 col-xs-6">
+                <section class="row">
+                    <ul>
+                        <li class="hidden-xs"><a href="/homes/index_new">Home</a></li>
+                        <li class="hidden-xs"><a href="/Business/signup">List Your Business</a></li>
+                        <li class="peach-btn"><a href="javascript:void(0)" class="userLoginModal mainLogin" data-href="/users/login">LOGIN</a></li>
+                        <li></li>
+                    </ul>
+                </section>
+            </section>
+        </section>
+    </div>
     
-    //getIsoCode(iSoId);
-
-$(function(){
-      initialize('are');
-   });
-
-function initialize(iso){
-    
-    autocomplete = new google.maps.places.Autocomplete(
-     /** @type {HTMLInputElement} */(document.getElementById('AddressAddress')),
-     {types:  ['geocode'],componentRestrictions: {country:iso} });
-     google.maps.event.addListener(autocomplete, 'place_changed', function() {
-    //fillInAddress();
-     });
-    // console.log(autocomplete);
-}
-
-function fillInAddress() {
-    // Get the postal_code from the autocomplete object.
-    var place = autocomplete.getPlace();
-    //console.log(place);
-    for (var i = 0; i < place.address_components.length; i++) {
-    var addressType = place.address_components[i].types[0];
-    if (componentForm[addressType] && addressType=='postal_code') {
-      var val = place.address_components[i][componentForm[addressType]];
-      document.getElementById("AddressPoBox").value = val;
-      //document.getElementById("AddressAddress").value = val;
-    }
-  }
-}
 
 
-//Autofill Country State and Location/Area
-/*if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
-} */
-//Get the latitude and the longitude;
-function successFunction(position) {
-    var lat1 = position.coords.latitude;
-    var lng1= position.coords.longitude;
-   
-    $.ajax({
-            url: "/Business/getLocation",
-            type: "POST",
-            data: {lat:lat1,lng:lng1},
-            success: function(res) {
-                var data    = jQuery.parseJSON(res);
-        if(data !=''){
-                    Country     = data[0].countries.id;
-            State       = data[0].states.id;
-            City        = data[0].cities.id;
-            IsoCode     = data[0].countries.iso_code;
+
+        <div class="container">
             
-            if ($("#AddressCountryId").val() === "") {
-                initialize(IsoCode);
-                $("#AddressCountryId option[value="+Country+"]").attr("selected","selected") ;
-                var test = $(document).find('#msform .dynamiccountry');
-                test.find('label').remove();
-                test.find('select').select2(
-                {
-                    formatResult    : functionMy,
-                    formatSelection : functionMy,
-                    escapeMarkup: function(m) { return m; }
-                 }        
-                );
-               //----
-            }
-            
-             if ($("#AddressStateId").val() === "") {
-                var getStateURL = "/Homes/getStates";
-            
-            $('#msform .dynamicstate').load(getStateURL+'/'+Country,function(){
-                var forDynState = $(document).find('#msform .dynamicstate');
-                 $("#AddressStateId option[value="+State+"]").attr("selected","selected") ;
-                forDynState.find('label').remove();
-                 forDynState.find('select').select2();
-            });
-             }
-             
-             if ($("#AddressCityId").val() === "") {
-                            var getCityURL = "/Homes/getCities";
-              $('#msform .dynamiccity').load(getCityURL+'/'+State,function(){
-                  var forDynCity = $(document).find('#msform .dynamiccity');
-                   $("#AddressCityId option[value="+City+"]").attr("selected","selected") ;
-                  forDynCity.find('label').remove();
-                  forDynCity.find('select').select2();
-              });
-             }
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="header">
+        <section class="container">
+            <h1 id="logo" class="col-sm-5 col-md-5 col-xs-6">
+                <section class="row"><a href="/"><img src="./assets/img/logo.png" alt="bookcarspa" title="bookcarspa" class="img-responsive" id="logoImg"></a></section>
+            </h1>
+            <section class="top-menu col-sm-6 col-xs-6">
+                <section class="row">
+                    <ul>
+                        <li class="hidden-xs"><a href="/homes/index_new">Home</a></li>
+                        <li class="hidden-xs"><a href="/Business/signup">List Your Business</a></li>
+                        <li class="peach-btn"><a href="javascript:void(0)" class="userLoginModal mainLogin" data-href="/users/login">LOGIN</a></li>
+                        <li></li>
+                    </ul>
+                </section>
+            </section>
+        </section>
+    </div>
+    </div>
+    
+
+            <!--<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center">
+          <div id="banner">
+             <h1>Bootstrap <strong>Registration Form</strong> for .net developers</h1>
+
+            <h5><strong>aspxtemplates.com</strong></h5>
+           
+           </div>
           
-        if($(document).find('.cPHcd').val() === ''){
-          $.ajax({
-                        url: "/Homes/getPhoneCode"+'/'+Country,
-                        success: function(res) {
-                            $(document).find('.cPHcd').val(res);
-                        }
-                    });
-        }
-        }else{
-               console.log('Detail not found');//----
-        }
-        }
-        });
+              
+            </div>-->
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="registrationform">
+                    <legend class="pagetitle">REGISTRATION FORM</legend>
+                    <form class="form-horizontal">
+                        <fieldset> 
+                            <legend>Are you </legend>
+                            <div class="form-group col-md-12">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="user_type" id="UserUserTypeOriginator" value="originator" checked="checked" required="required" validate="1" class="">
+                                            An Originator? - <span class="orange-text text-darken-3">Subscribe for Free</span>
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="user_type" id="UserUserTypeCompany" value="company" required="required" validate="1" class="">
+                                            A Fulfillment Company? <br><span class="orange-text text-darken-3">Start 10 day Trial Access of Solar Site Design Commercial Marketplace<br> then $79.00 Monthly Membership</span>
+                                    </label>                   
+                                </div>
+                            </div>
+                        </fieldset>
 
-   // codeLatLng(lat, lng)
-}
+                        <fieldset>
+                            <legend>Your Details</legend>
 
-function errorFunction(){
- console.log("Geocoder failed");
-}
+                            <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <label for="UserFirstname" class="control-label">First Name</label>
+                                <input name="firstname" minlength="2" maxlength="15" class="form-control"  type="text" id="UserFirstname" required="required">                  
+                            </div>
 
- // function initialize() {
- //geocoder = new google.maps.Geocoder();
+                            <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <label for="UserLastname" class="control-label">Last Name</label>
+                                <input name="lastname" minlength="2" maxlength="15" class="form-control" value="" type="text" id="UserLastname" required="required">                    
+                            </div>
 
- function functionMy(state){
-        if (!state.id) return state.text; 
-        return "<img style='padding-right:10px;' class='pos-rgt flag' src='/img/flags/" + state.id.toLowerCase() + ".gif'/><span class='state-name' >" + state.text + "</span>";
-    }
+                            <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <label for="UserJobTitle" class="control-label">Job Title</label>
+                                <input name="job_title" minlength="" maxlength="15" class="form-control " type="text" id="UserJobTitle">                 
+                            </div>
 
- // }
-// 
-  
- var prodValidator ;
-$(function(){
-        prodValidator = $("#msform").kendoValidator({
-        rules:{
-            minlength: function (input) {
-                return minLegthValidation(input);
-            },
-            maxlength: function (input) {
-                return maxLegthValidation(input);
-            },
-            pattern: function (input) {
-                return patternValidation(input);
-            },maxlengthcustom: function (input) {
-                return maxLegthCustomValidation(input);
-            },
-        },
-        errorTemplate: "<dfn class='text-danger'>#=message#</dfn>"}).data("kendoValidator");
-        
-    $(".action-button").on("click",function(e){
+                            <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <label for="UserEmail" class="control-label">Email Address</label>
+                                <input name="email" autocomplete="off" maxlength="40" class="form-control" value="" type="email" id="UserEmail" required="required">                    
+                            </div>
+
+                            <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <label for="UserNewpassword" class="control-label" >Password</label>
+                                <input name="newpassword" minlength="8" maxlength="25" class="form-control" value="" type="password" id="UserNewpassword" required="required">                  
+                            </div>
+
+                            <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <label for="UserConfirmpassword" class="control-label">Confirm Password</label>
+                                <input name="confirmpassword" minlength="8" maxlength="25" class="form-control" type="password" id="UserConfirmpassword" required="required">   
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Contact Details</legend>
+                            <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <label for="UserCompanyName" class="control-label">Company Name</label>
+                                <input name="company_name" minlength="2" maxlength="30" class="form-control" type="text" id="UserCompanyName" required="required">                  
+                            </div>
+
+                            <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <label for="UserBusinessPhone" class="control-label">Business Phone Number</label>
+                                <input name="business_phone" minlength="10" maxlength="15" class="form-control" type="text" id="UserBusinessPhone" required="required">                 
+                            </div>
+
+                            <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <label for="UserPhone" class="control-label">Mobile Phone Number</label>
+                                <input name="phone" minlength="10" maxlength="15" class="form-control" type="text" id="UserPhone">                  
+                            </div>
+
+                            <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <label for="UserWebsite" class="control-label">Website Address (e.g. http://www.yourwebsite.com)</label>
+                                <input name="website" type="url" class="form-control" maxlength="100" id="UserWebsite"> 
+                            </div>
+
+                            <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <label for="UserAutocomplete" class="control-label">Your Address</label>
+                                <input name="autocomplete" onfocus="geolocate()" class="form-control" placeholder="" type="text" id="UserAutocomplete" autocomplete="off">                  
+                            </div>
+
+                            <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <label for="street_number" class="control-label">Street Address</label>
+                                <input name="address" minlength="2" maxlength="30" required="required" id="street_number" class="form-control" type="text">             
+                            </div>
+
+                            <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <label for="route" class="control-label">Street Address 1</label>
+                                <input name="route" minlength="" maxlength="50" required="required" id="route" class="form-control" type="text">                    
+                            </div>
+
+                            <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <label for="locality" class="control-label">City</label>
+                                <input name="City" minlength="2" maxlength="30" size="30" required="required" id="locality" class="form-control" type="text">                   
+                            </div>
+
+                            <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <label for="administrative_area_level_1" class="control-label">State</label>
+                                <input name="state" minlength="2" maxlength="30" required="required" id="administrative_area_level_1" class="form-control" type="text">                 
+                            </div>
+
+                            <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <label for="postal_code" class="control-label">Zip Code</label>
+                                <input name="zip" minlength="5" maxlength="6" size="6" required="required" id="postal_code" class="form-control" type="text">                   
+                            </div>
+
+                            <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <label for="country" class="control-label">Country</label>
+                                <input name="data[User][country]" minlength="2" maxlength="30" required="required" id="country" class="form-control" type="text">                   
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Other Details</legend>
+                            <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <label for="UserSolarMgntSwId" class="control-label">Solar Management Software you Currently Use</label>
+                                <select name="solar_mgnt_sw_id" class="form-control" id="UserSolarMgntSwId">
+                                    <option value="1">None</option>
+                                    <option value="2">Clean Power Finance</option>
+                                    <option value="3">Solar Design Tool</option>
+                                    <option value="4">Valentin</option>
+                                    <option value="5">Solar Nexus</option>
+                                    <option value="6">SAM</option>
+                                    <option value="7">Solmetric PV Designer</option>
+                                    <option value="8">OnGrid Solar</option>
+                                </select>                                   
+                            </div>
+
+                            <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <label for="UserSsaToolId" class="control-label">Solar Shading Analysis Tool you Currently Use</label>
+                                <select name="ssa_tool_id" class="form-control" id="UserSsaToolId">
+                                    <option value="1">None</option>
+                                    <option value="2">Solar Pathfinder</option>
+                                    <option value="4">Solmetric iPV</option>
+                                    <option value="3">Solmetric SunEye</option>
+                                </select>          
+                            </div>
+
+                             <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <label for="UserComment" class="control-label">Comments</label>      
+                                <textarea name="comment" minlength="" maxlength="100" rows="2" class="form-control" id="UserComment"></textarea>        
+                            </div>
+
+<div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class=" col-lg-offset-10">
+                            <input class="btn btn-primary" type="submit" value="SUBMIT">        
+                    </div></div>
+
+
+
+                        </fieldset>
+
+                    
+
+
+                        
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+        <style>
+            .form-group{
+                margin-left: 0px;
+            }
+            #logoImg {
+                max-width: 32%;
+                max-height: 35%;
+            }
+
+            .header.smaller {
+                height: 22%;
+                background: #404040;
+                box-shadow: 0 1px 2px #ddd;
+                padding:15px;
+            }
+            .header {
+                height: 13%;
+                background: #404040;
+                box-shadow: 0 1px 2px #ddd;
+            }
+            .header { height: 13%; left: 0; overflow: hidden; padding: 0px; position: fixed; top: 0; -webkit-transition: height 0.3s; -moz-transition: height 0.3s; -ms-transition: height 0.3s; -o-transition: height 0.3s; transition: height 0.3s; width: 100%; z-index: 999; }
+            .pagetitle{
+                font-size: 20px;
+
+                text-align: center;
     
-    if(prodValidator.validate() == false){
-       if($("#customSelect").hasClass("k-invalid")){
-        $("#customSelect").prev("div").addClass("k-invalid");
-        }
-        if($("#UserTypeTemp").hasClass("k-invalid")){
-        e.preventDefault();
-        $("#s2id_UserTypeTemp").addClass("k-invalid");
-        } 
-      
-     }
-        
-    })
+    font-weight: lighter;
+    font-size: 30px;
+    display: block;
+    width: 22%;
+    padding: 0;
+    margin-bottom: 23px;
+    font-size: 21.5px;
+    line-height: inherit;
     
-    //initialize();
-    //$("#AddressAddress").geocomplete();
-  });
+    border: 0;
+    border-bottom: 2px solid #e5e5e5;
+            }
+            </style>
 
-$(document).on('keyup change','#CenterEngName',function(){
-    var theval = $(this).val();
-        theval = theval.replace(/\s+/g, '-').toLowerCase()
-           $('#CenterBusinessUrl').val(theval);
-       $('#bnsnUrl').html(theval);
-        });
-$('#CenterBusinessUrl').keyup(function(){
-    var theval = $(this).val();
-        theval = theval.replace(/\s+/g, '-').toLowerCase()
-        $('#bnsnUrl').html(theval);
-        });  
         
-   function custom_error(ref){
-       if(ref.val()){
-            ref.next('.text-danger.k-invalid-msg').css({
-                'display':'none'
-            });
-            ref.prev('div').removeClass('k-invalid');
-        }else{
-            if(ref.next('.text-danger.k-invalid-msg').length == 0) {
-             ref.after('<dfn class="text-danger k-invalid-msg" data-for="data[Address][address]" role="alert" style="display: inline;">'+ref.attr('validationmessage')+'</dfn>');  
-            }else{
-                 ref.next('.text-danger.k-invalid-msg').css({'display':'inline'});
-             }
-             ref.prev('div').addClass('k-invalid');
-         //console.log(ref.prev('div'));
-         //ref.prev('div').addClass('k-invalid'); 
-        }
-   }     
-        
-//        function log (name, evt) {
-//            if (!evt) {
-//            var args = "{}";
-//            } else {
-//            var args = JSON.stringify(evt.params, function (key, value) {
-//            if (value && value.nodeName) return "[DOM node]";
-//            if (value instanceof $.Event) return "[$.Event]";
-//            return value;
-//            });
-//            }
-//            var $e = $("<li>" + name + " -> " + args + "</li>");
-//            console.log($e);
-////            $eventLog.append($e);
-////            $e.animate({ opacity: 1 }, 10000, 'linear', function () {
-////            $e.animate({ opacity: 0 }, 2000, 'linear', function () {
-////            $e.remove();
-////            });
-////            });
-//        }
-    
-    
-        
-</script>
-</div>
-</div>
