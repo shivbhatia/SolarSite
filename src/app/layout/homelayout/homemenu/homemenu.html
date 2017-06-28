@@ -1,13 +1,18 @@
 <header class="">
     	<section class="container">
             <h1 id="logo" class="col-sm-5 col-md-5 col-xs-6">
-            	<section class="row"><a href="/"><img src="./assets/img/logo.png" alt="bookcarspa" title="bookcarspa" class="img-responsive" id="logoImg"></a></section>
+            	<section class="row"><a [routerLink]="['/']"><img src="./assets/img/logo.png" alt="bookcarspa" title="bookcarspa" class="img-responsive" id="logoImg"></a></section>
             </h1>
             <section class="top-menu col-sm-6 col-xs-6">
                 <section class="row">
                     <ul>
-                    	<li class="hidden-xs"><a href="/homes/index_new">Home</a></li>
-                      	<li class="hidden-xs"><a href="/Business/signup">List Your Business</a></li>
+                    	<li class="hidden-xs">
+                            <a [routerLink]="['/']">Home</a>
+                        <!--<a href="/homes/index_new">Home</a>--></li>
+                      	<li class="hidden-xs"><!--<a href="/Business/signup">List Your Business</a>-->
+                           <a [routerLink]="['/users/registration']">List Your Business</a>
+                            
+                        </li>
                         <li class="peach-btn"><a href="javascript:void(0)" class="userLoginModal mainLogin" data-href="/users/login">LOGIN</a></li>
                         <li></li>
                     </ul>
