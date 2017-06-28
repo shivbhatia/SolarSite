@@ -1,0 +1,49 @@
+.btn.pull-right.addeditImage {
+    margin-right: 6px;
+}
+.new_add_preview img{width:100%; height:auto;}
+/***************22 dec dec 2014**************/
+span.error{ color: #dd4b39; display: block;font-size: 14px;font-style: normal;font-weight: 300; margin: 3px 0 0;  }
+div.error{ color: #dd4b39; display: block;font-size: 14px;font-style: normal;font-weight: 300; margin: 3px 0 0;  }
+input.error{ border: 1px solid #dd4b39 !important;}
+
+
+
+/*********************12 jan 2015******************/
+@media(max-width:1024px){
+.vendor-setting { width: 90%; margin: 20px auto;}
+.vendor-setting .modal-header h4{padding: 0 20px 10px;}	
+.vendor-setting .v-setting-left{width:30%;}
+.vendor-setting .v-setting-right{width: 70%;}
+}
+@media(max-width:850px){
+.my_preview_btn .purple-btn{ font-size: 14px; width:100%;}
+.my_preview_btn div:first-child{margin-bottom:10px;}
+    
+.vendor-setting .v-setting-right .top-bar{height:auto; padding: 10px 20px;}
+.vendor-setting .v-setting-right .top-bar:after{ content:'.'; display:block; clear:both; visibility:hidden; font-size:0px; line-height:0px;}
+.vendor-setting .v-setting-right .top-bar .search{width:40%;} .vendor-setting .v-setting-right .top-bar .popular{width:50%;}
+.treatment > li{width:100%;}
+.vendor-setting .v-setting-right .top-bar .popular label{width:28%;}
+.vendor-setting .v-setting-right .top-bar .popular .option_wrapper{width:70%;}
+footer ul li button{text-align:left;}
+.cst_event img{width:100%; height:auto;}
+}
+
+@media(max-width:767px){
+	.vendor-setting .v-setting-left, .vendor-setting .v-setting-right{width:100%;}
+	.v-setting-left .blank button{background-color:#999;}
+	.v-setting-left .blank button.navbar-toggle .icon-bar{background-color:#fff;}
+}
+
+@media(max-width:767px){
+	.vendor-setting .v-setting-right .top-bar .search, .vendor-setting .v-setting-right .top-bar .popular,
+	.vendor-setting .v-setting-right .top-bar .popular label,
+	.vendor-setting .v-setting-right .top-bar .popular .option_wrapper{width:100%;}
+	.vendor-setting .v-setting-right .top-bar .popular{height:auto;}
+	.vendor-setting .v-setting-right h4.panel-title{line-height:20px;}
+	.vendor-setting .v-setting-right h4.panel-title:after{content:'.'; display:block; clear:both; visibility:hidden; font-size:0px; line-height:0px;}
+	.vendor-setting .v-setting-right h4.panel-title > a.collapsed,
+	.vendor-setting .v-setting-right h4.panel-title > a{padding:10px; font-size:11px;}
+	.purple-btn, .gray-btn{width:30%;}
+}

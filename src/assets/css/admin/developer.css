@@ -1,0 +1,81 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 15 Jan, 2015, 5:38:35 PM
+    Author     : sanjeevk
+*/
+
+.modal-dialog.sm-vendor-setting{
+    width: 600px;
+}
+
+
+/******** By Shibu -April 21 *********/
+
+.modal-dialog.sm-wizard-info{
+    width: 425px !important;
+}
+.modal-dialog.sm-wizard-info a{
+    width: 80%;
+}
+
+/*************End**********/
+
+textarea.k-invalid ,select.k-invalid , input.k-invalid
+{
+    border: 1px solid #ff0000;
+}
+.preview-box {
+    /*background: url("/img/preview-card-bg.jpg") no-repeat scroll 0 0 rgba(0, 0, 0, 0);margin: 0 auto;*/
+    border: 1px solid #d7d7d7;
+    color: #df0101;
+    height: 562px;
+    
+    padding: 30px 30px 30px 35%;
+    width: 940px;
+}
+/*********21 march 2015**************/
+.card-preview{width:996px;}
+.card-preview .modal-body{padding:25px 20px 0 20px;}
+.card-preview .modal-footer{padding:25px 20px 35px 20px;}
+.price-text{font-size:30px; text-align:right; text-transform:uppercase; font-weight:bold; margin:0; padding:0;}
+.preview-box .from-to{padding:0 0 25px 0; margin:0;}
+.preview-box .from-to li{list-style-type:none; padding:0 0 0px 0; text-transform:uppercase; font-size:16px;  color:#df0101;}
+.preview-box .from-to li label{font-weight:bolder; width:35%; float:left;}
+.preview-box .from-to li section{float:left; width:65%;}
+.preview-box .from-to li:after{content:'.'; clear:both; display:block; font-size:0; line-height:0; visibility:hidden;}
+.preview-box div{font-weight:bold; font-size:20px;}
+.preview-box div .title{padding:0 0 30px 0;}
+.preview-box div .body{padding:0 30px 45px 0;}
+.preview-box div .from span{display:block; width:100%;}
+.preview-box .address .heading{font-weight:bold; font-size:20px; margin:0; padding:0;}
+.preview-box .address{font-size:16px; color:#df0101; padding:40px 0 0 0;}
+.preview-box .address p span{width:100%; display:block; font-weight:normal;}
+.preview-box .address p span.first-line{font-weight:bold;}
+.ajax_indicator_gallery{ left: 40%; position: fixed; top: 52%;background: none repeat scroll 0 0 rgba(0, 0, 0, 0.5); }
+/*30 march 2015*/
+@media(max-width:620px) {
+	.modal-dialog.sm-vendor-setting{width:90%; margin:0 auto;}
+}
+@media(max-width:480px) {
+	.setting-wrapper .treat-box li{width:100%; margin-right:0;}
+}
+
+.alert_add_image{
+    margin-left: 10px
+}
+.weekPricing {
+    margin-top: 11px; 
+}
+.deal-show-box ul li section.heading-box h3 {
+    color: #000;
+    font-size: 15px !important;
+    font-weight: normal !important;  
+}
+.deal-show-box .heading-box > label {
+    font-size: 20px;
+    font-weight: bold;
+}

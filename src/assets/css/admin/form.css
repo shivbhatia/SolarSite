@@ -1,0 +1,27 @@
+.checkbox, .radio {
+	width: 16px;
+	height: 16px;
+	padding: 0 5px 0 0;
+	/*background: url(checkbox.png) no-repeat;*/
+	background: url(checkbox1.png) no-repeat;
+	display: block;
+	clear: left;
+	float: left;
+	margin:1px 5px 0 0;
+}
+.radio {
+	background: url(radio.png) no-repeat;
+}
+.select {
+	position: absolute;
+	width: 158px; /* With the padding included, the width is 190 pixels: the actual width of the image. */
+	height: 21px;
+	padding: 0 24px 0 8px;
+	color: #fff;
+	font: 12px/21px arial,sans-serif;
+	background: url(select.png) no-repeat;
+	overflow: hidden;
+}
+.treatment .checkbox{
+	background: url(checkbox1.png) no-repeat; width:18px;
+}

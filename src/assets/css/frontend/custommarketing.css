@@ -1,0 +1,69 @@
+@import url(../admin/bootstrap3.css);
+@import url(../Font-Awesome/css/font-awesome.css);
+
+body {
+	margin:0px;
+	padding:0px; 
+	font-family: 'Open Sans', sans-serif;
+	outline:none !important;
+} 
+
+.big-deal{width:48%; margin:0 20px 20px 0; border-radius:4px; -webkit-border-radius:4px; -webkit-box-shadow: 0 1px 3px 0 rgba(0,0,0,.1); box-shadow: 0 1px 3px 0 rgba(0,0,0,.1); border:1px solid #eeeeee; float:left;}
+.big-deal .photo-sec{width:100%; height:205px; border-radius:4px 4px 0px 0px; -webkit-border-radius:4px 4px 0px 0px; position:relative;}
+.big-deal .photo-sec img{height:100%; width:100%;}
+.featured{color:#fff; padding:3px 7px; width:auto; position:absolute; top:0px; left:0px; background:#909396; border-radius:4px 0px; -webkit-border-radius:4px 0px; font-size:12px; text-transform:uppercase;}
+.big-deal .detail-area{width:100%; padding:15px; border-radius:0px 0px 4px 4px; -webkit-border-radius:0px 0px 4px 4px;}
+.big-deal .detail-area .heading{color:#333; font-size:16px; padding:0 0 8px 0;}
+.big-deal .detail-area .heading .rating{float:right; margin:0; padding:0;}
+.big-deal .detail-area .heading .rating li{list-style-type:none; float:right; margin:0 0px 0 5px; color:#ffb702; font-size:13px;}
+.big-deal .detail-area .add{color:#666; font-size:14px; font-weight:600;}
+.big-deal .detail-area .add span{display:block; font-weight:normal;}
+.book-now{padding:2px 5px; width:100px; float:left; border-radius:3px; -webkit-border-radius:3px; background:#5b3671; color:#fff; border:none; margin:10px 0;text-decoration: none !important;}
+.book-now:hover, .reset:hover, .pagi-nation .pagination li a span:hover{background:#391152;}
+.big-deal .detail-area .dutation-time{float:right; margin:2px 0 0 0;}
+.big-deal .detail-area .dutation-time .sm-time{font-size:10.5px; color:#5b3671; text-align:right;}
+.big-deal .detail-area .dutation-time .big-price{color:#333333; text-align:right; font-weight:bold;}
+.big-deal .detail-area .dutation-time .big-price span{color:#666; text-decoration:line-through; font-weight:normal;}
+
+
+.vendor-setting{width:986px;}
+.vendor-setting .modal-header{background:#333333; color:#fff;}
+.vendor-setting .modal-header h2{color:#fff; font-size:20px; text-transform:uppercase; font-weight:bold;}
+.vendor-setting .modal-header h4{color:#fff; font-size:14px; text-transform:none; padding:0 200px 10px;}
+.vendor-setting .modal-body{padding:0;}
+
+/**********************deals page css*******************/
+.featured-deals-box.only-deals{padding:0 35px; border-top:none;}
+.featured-deals-box.only-deals .deal-box-outer .big-deal{width:30%; margin: 0 4% 20px 0;}
+.featured-deals-box.only-deals .deal-box-outer .big-deal:nth-child(3n){margin:0 0 20px 0;}
+.featured-deals-box.only-deals .deal-box-outer .big-deal .photo-sec{height:179px;/*30 Apr 2015*/ background: #d7d7d7;/*29 Apr 2015*/}
+.featured-deals-box.only-deals .deal-box-outer .big-deal .detail-area .heading .rating{float:right; width:35%;}
+.featured-deals-box.only-deals .deal-box-outer .big-deal .detail-area .heading .rating li{float:right;}
+.featured-deals-box.only-deals .deal-box-outer .big-deal .detail-area .dutation-time{padding:0;}
+
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Light'), local('OpenSans-Light'), url(http://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTegdm0LZdjqr5-oayXSOefg.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(http://fonts.gstatic.com/s/opensans/v13/cJZKeOuBrn4kERxqtaUH3VtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(http://fonts.gstatic.com/s/opensans/v13/MTP_ySUJH_bn48VBG8sNSugdm0LZdjqr5-oayXSOefg.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(http://fonts.gstatic.com/s/opensans/v13/k3k702ZOKiLJc3WVjuplzOgdm0LZdjqr5-oayXSOefg.woff2) format('woff2');
+}
+

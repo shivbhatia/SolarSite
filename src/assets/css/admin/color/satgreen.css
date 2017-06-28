@@ -1,0 +1,37 @@
+.theme-satgreen .navbar-default { background-color: #56af45; }
+.theme-satgreen .admin-outer .navbar-nav > li.active > a, .theme-satgreen .admin-outer .navbar-nav > li > a:hover, .theme-satgreen .admin-outer .navbar-nav li.active .dropdown-menu li.active a, .theme-satgreen .chzn-container .chzn-drop .chzn-results > li.highlighted, .theme-satgreen .admin-outer .navbar-nav.admin > li:hover > a, .theme-satgreen .admin-outer .navbar-nav.admin > li.active > a, .theme-satgreen .admin-outer .navbar-nav.admin > li:focus > a,
+.theme-satgreen .customer-sec .profile-sec button { background-color: #0f800f;/*3 Apr 2015*/ opacity:1; }
+.theme-satgreen .admin-outer .en_box .head-rgt-details > li { color: #b2eda6; }
+.theme-satgreen .navbar-nav > li > .dropdown-menu, .theme-satgreen .admin-outer .dropdown-menu .dropdown-submenu:hover .dropdown-menu { background: #7fda6d; }
+.theme-satgreen .dropdown-menu > li:focus > a, .theme-satgreen .dropdown-menu > li:hover > a, .theme-satgreen .setting-wrapper .cmn-magenta-btn, .theme-satgreen .setting-btn-col .magenta-btns, .theme-satgreen .vendor-deal-head .rt-text, .theme-satgreen .v-deal .v-deal-box .bottom .p3 button, .theme-satgreen .staff-head a, .theme-satgreen .current { background: #56af45 !important; color: #fff !important; }
+.theme-satgreen .dropdown-menu > li.active > a { background: #307922; color: #fff; }
+.theme-satgreen .v-deal .v-deal-box .bottom.dull .p3 button { background: #999; }
+.theme-satgreen .emp-detail-box .emp-other-info .emp-name-info .name-head p, .theme-satgreen .staff-content > p > a { color: #56af45; }
+.theme-satgreen .business-list.vendor-deal-sec .tab-content h2,
+.theme-satgreen [type="checkbox"]:not(:checked) + label.new-chk:after, 
+.theme-satgreen [type="checkbox"]:checked + label.new-chk:after,
+.theme-satgreen .customer-sec .profile-sec .description h1 { color: #56af45; }
+.theme-satgreen .admin-outer .navbar-nav > li.active > .dropdown-menu li.active > .dropdown-menu li a,
+.theme-satgreen .dropdown-menu{background:#7fda6d !important;}
+.theme-satgreen .admin-outer .navbar-nav > li.active > .dropdown-menu li.active > .dropdown-menu li.active a{background:#307922 !important; color:#fff;}
+.theme-satgreen .admin-outer .navbar-nav > li.active > .dropdown-menu li.active > .dropdown-menu li:hover a,
+.theme-satgreen .admin-outer .navbar-nav > li.active > .dropdown-menu li.active > .dropdown-menu li:focus a{background:#56af45 !important; color:#fff !important;}
+
+.theme-satgreen .purple-btn, .theme-satgreen::-ms-backdrop .purple-btn, .theme-satgreen .voucher-box:hover .infograpic-box,
+.theme-satgreen .customer-sec .profile-sec button:hover{background:#56af45;}
+.theme-satgreen .modal-dialog.login.marketing .voucher-box .infograpic-box .beauty{background: url("../../../img/admin/marketing-icons.png") no-repeat scroll -121px -1988px rgba(0, 0, 0, 0);}
+.theme-satgreen .modal-dialog.login.marketing .voucher-box .infograpic-box .inspiration{background: url("../../../img/admin/marketing-icons.png") no-repeat scroll 8px -1988px rgba(0, 0, 0, 0);}
+.theme-satgreen .voucher-box .infograpic-box{border:2px solid #56af45;}
+.theme-satgreen .voucher-box h2, .theme-satgreen .vendor-setting .v-setting-right h4.panel-title > a .add_seista_new,
+.theme-satgreen .vendor-service-content .panel-default > .panel-heading a:hover{color:#56af45;}
+.theme-satgreen .dataTables_filter label input:focus,  .theme-satgreen .form-control:focus, .theme-satgreen .select2-focused,
+.theme-satgreen .sell-service .form-group section .date input.datepicker:focus, .theme-satgreen #logout_time:focus,
+.theme-satgreen textarea#UserDetailBio, .theme-satgreen button.ms-choice:focus, .theme-satgreen .search input:focus,
+.theme-satgreen .treat-block .treat-head-col .search.purple-bod{border:1px solid #56af45 !important;}
+.theme-satgreen .ui-state-default,.theme-satgreen .ui-widget-content .ui-state-default, .theme-satgreen .ui-widget-header .ui-state-default{color:#56af45 !important;}
+.theme-satgreen .ui-datepicker .ui-datepicker-calendar td.ui-datepicker-current-day > a,
+.theme-satgreen .ui-datepicker .ui-datepicker-calendar td:hover > a{background:#56af45 !important; color:#fff !important;}
+.theme-satgreen .ui-state-default,.theme-satgreen .ui-widget-content .ui-state-default,.theme-satgreen .ui-widget-header .ui-state-default{color:#56af45 !important}
+.theme-satgreen .admin-outer .navbar-nav .open .dropdown-menu > li > a:hover, .theme-satgreen .purple-btn
+, .theme-satgreen .modal-dialog.login.marketing .voucher-box:hover .infograpic-box{background:#56af45 !important;}
+.theme-satgreen .purple-bod{border:1px solid #56af45 !important;}

@@ -1,0 +1,14 @@
+.for-scroll .mCustomScrollBox .mCSB_scrollTools { right: 0; }
+/*line 9167 in style*/
+.treat-head { min-height:53px;}
+/*line 8958 in style*/
+.tag-block-item ul li.active{ background:#d4d9dc; font-weight:bold;}
+ul.no-treat { list-style: none; margin: 0; padding: 0 !important; text-align: center; }
+ul.no-treat li{border-bottom: #CBCBCB solid 1px;color: #333333;display: block;font-size: 14px;padding:10px 0 10px 0 !important; width: 100% !important; background: #E6EAEC;
+}
+/*line 2320 in style*/
+.setting-wrapper .treat-box li {
+    margin-right: 15px;
+    padding-right: 0;
+    width: 31.1%;
+}

@@ -1,0 +1,156 @@
+/*form styles*/
+#msform {
+	/*width: 400px;*/
+	margin: 31px auto;
+	text-align: center;
+	position: relative;
+}
+#msform fieldset {
+	padding: 20px 0px;
+	
+	box-sizing: border-box;
+	width:86%;
+	margin: 0 6%;
+	
+	/*stacking fieldsets above each other
+	position: absolute;*/
+}
+/*Hide all except first fieldset*/
+#msform fieldset:not(:first-of-type) {
+	display: none;
+}
+/*inputs*/
+#msform input, #msform textarea {
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	width: 100%;
+	box-sizing: border-box;
+	color: #999;
+	font-size: 14px;
+	/*18 march 2015*/
+	box-shadow:none;
+}
+/*buttons*/
+#msform .action-button {
+	/*width: 100px;*/
+	width:46%;
+	background: #ff8273;
+	font-weight: 600;
+	color: #fff;
+	border: 0;
+	cursor: pointer;
+	padding: 10px 5px;
+	margin: 0 0px;
+	transition: all 0.5s ease-in-out 0s;
+   -moz-transition: all 0.5s ease-in-out 0s;
+   -webkit-transition: all 0.5s ease-in-out 0s;
+   text-transform:uppercase;
+   font-size:16px;
+   font-family: 'Open Sans', sans-serif; border-radius: 3px; -webkit-border-radius: 3px;
+}
+#msform .action-button:hover{
+	background:#ff8273;
+}
+/*headings*/
+.fs-title {
+	font-size: 20px;
+	text-transform: uppercase;
+	color: #333333;
+	margin-bottom: 25px;
+	margin-top:10px;
+	text-align:center;
+}
+.fs-subtitle {
+	font-weight: normal;
+	font-size: 13px;
+	color: #666;
+	margin-bottom: 20px;
+}
+/*progressbar*/
+#progressbar {
+	margin-bottom: 30px;
+	padding:0px;
+	overflow: hidden;
+	padding: 20px 0;
+	/*CSS counters to number the steps*/
+	counter-reset: step;
+}
+#progressbar li {
+	list-style-type: none;
+	color: #787878;
+	text-transform: uppercase;
+	font-size: 16px;
+	width: 26%;
+	float: left;
+	position: relative;
+}
+#progressbar li:first-child{margin:0 0 0 -2%;}
+#progressbar li:last-child{margin:0 -2% 0 0;}
+/*16 Apr 2015*/
+
+#progressbar li:before {
+	content: counter(step);
+	counter-increment: step;
+	width: 28px;
+	height: 28px;
+	display: block;
+	font-size: 10px;
+	/*color: #ebcafe;
+	background: #ebcafe;*/
+	color: #ff8273;
+	background: #ff8273;
+	border:4px solid #fff;
+	border-radius: 50%;
+	margin: 0 auto 10px auto;
+}
+/*progressbar connectors*/
+#progressbar li:after {
+	content: '';
+	width: 100%;
+	height: 2px;
+	background: #c8c8c8;
+	position: absolute;
+	left: -50%;
+	top: 13px;
+	z-index: -1; /*put it behind the numbers*/
+}
+#progressbar li:first-child:after {
+	/*connector not needed before the first step*/
+	content: none; 
+}
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progressbar li.active:before{
+	background: #ff8273;
+	 padding-top: 3px;
+	height:44px;
+	width:44px;
+	margin-top: -12px;
+	content:url("../../img/frontend/tick.png");
+}
+#progressbar li.active{
+	color:#ff8273;
+}
+
+/*************11dec 2014**************/
+.errorMsg input[type=text],
+.errorMsg input[type=email],
+.errorMsg input[type=password]{border:1px solid #dd4b39 !important;}
+
+/*******************12 dec 2014*****************/
+.MoreInfoSieasta a{color:#ff8273;}
+#msform .step3form .MoreInfoSieasta{color:#787878; padding:15px 0 65px 0; display:block; font-size:14px;}
+#msform .step3form input[type=text]{height:58px; line-height:58px; text-transform:uppercase; color:#333333; font-size:24px; text-align:center;}
+.step3form label{color:#787878;}
+.step3form .custom_well{padding:29px 70px 50px;}
+.step3form h2{margin-bottom:65px;}
+
+.step3-1 .form-group{margin-bottom:25px;}
+#msform  .step3form.step3-1 .MoreInfoSieasta{padding:15px 0 5px 0;}
+.step3-1 label{margin-bottom:15px;}
+.step3-1 h2{margin-bottom:45px;}
+.step3-1 .custom_well{padding:29px 70px 45px;}
+
+
+/******************15 dec 2014***************/
+#msform .thanks-btn{padding:15px 55px; width:auto; margin:0 0 30px 0;}

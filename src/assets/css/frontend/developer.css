@@ -1,0 +1,271 @@
+.alert {
+  padding: 8px 35px 8px 14px;
+  margin-bottom: 20px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  background-color: #fcf8e3;
+  border: 1px solid #fbeed5;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+}
+
+.alert,
+.alert h4 {
+  color: #c09853;
+}
+
+.alert h4 {
+  margin: 0;
+}
+
+.alert .close {
+  position: relative;
+  top: -2px;
+  right: -21px;
+  line-height: 20px;
+}
+
+.alert-success {
+  color: #468847;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+
+.alert-success h4 {
+  color: #468847;
+}
+
+.alert-danger,
+.alert-error {
+  color: #b94a48;
+  background-color: #f2dede;
+  border-color: #eed3d7;
+}
+
+.alert-danger h4,
+.alert-error h4 {
+  color: #b94a48;
+}
+
+.alert-info {
+  color: #3a87ad;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+
+.alert-info h4 {
+  color: #3a87ad;
+}
+
+.alert-block {
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.alert-block > p,
+.alert-block > ul {
+  margin-bottom: 0;
+}
+
+.alert-block p + p {
+  margin-top: 5px;
+}
+
+span.add_ress{
+    display: block;
+    height: 22px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 80%;
+}
+.login-form li a{
+    text-decoration: none !important;
+}
+.red{
+    color: red;
+}
+
+.pdng-top-7{
+  padding-top: 7px;  
+}
+
+#accountManagement .profile-form-box ul li section .year-b {
+    float: left;
+    width: 28%;
+}
+#accountManagement .profile-form-box ul li section .mm-b {
+    float: left;
+    padding-right: 15px;
+    width: 43%;
+}
+.showGiftImage{
+   width: 100%;
+}
+.cal-sec.spabreakCalendar {
+    float: left;
+    margin-top: 14px;
+}
+.spaBreakLabel label {
+    margin: 12px 0 10px;
+    padding: 0;
+}
+.ui-datepicker-calendar .ui-state-default.ui-state-active {
+    background: none repeat scroll 0 0 #5b3671;
+    color: #fff !important;
+}
+.spabreakCalendar .ui-datepicker-inline.ui-datepicker.ui-widget.ui-widget-content.ui-helper-clearfix.ui-corner-all{
+    margin-left: 5px;
+    width: 96%; 
+} 
+.spabreakCalendar .highLight a,.spabreakCalendar .highLight span {
+    background: none repeat scroll 0 0 #5b3671;
+    color:#fff !important;
+}
+.spabreakCalendar .disabledDays.highLight {
+    opacity:0.89 !important;
+}
+.startDateCheck , .saloonRoomCheck{
+    color: #a94442;
+    float: left;
+    padding: 2px 0;
+    width: 100%;
+}
+.fullPrice {
+    display: inline !important;
+    text-decoration: line-through;
+}
+.discount-type.spaPrice {
+    float: left !important;
+    font-size: 20px !important;
+    padding-bottom: 0 !important;
+    padding-left: 10px;
+    padding-right: 0 !important;
+    padding-top: 0 !important;
+    position: relative;
+    top: 6px;
+}
+.auto-search {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    border:0 !important;
+}
+ul.bxslider {
+    padding: 0;
+}
+ul.bxslider li{
+    list-style: none;
+}
+.pricing-list .spaBreakLi > .badge {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border-radius: 50%;
+    color: #5b3671;
+    font-size: 13px;
+    font-weight: normal;
+    text-align: right;
+}
+.spaBreakLi > .badge {
+    float: right;
+}
+
+.pricing-list .spaBreakLi {
+    color: #666;
+    font-size: 13px;
+}
+a.spaBreakLi{
+    color: #555;
+}
+.spaBreakLi {
+     background-color: #fff;
+    border: 1px solid #ddd;
+    display: block;
+    margin-bottom: 0;
+    padding: 14px 15px;
+    position: relative;
+}
+.spaBreakLi .save {
+    display: none;
+    float: left;
+}
+.requestBookingModal .login-form h2,.requestBookingModal .login-form p{
+    font-size: 19px;
+    margin:0;
+    padding:0;
+}
+.requestBookingModal .login-form > li{
+    padding: 0 0 10px;
+}
+.spabreakAppoint .duration{
+    float:left;
+}
+.spaAppQuantity {
+    margin-top: -9px;
+    padding: 0 0 9px;
+}
+.subnav-title> ul > li > a > span > .new-chk{white-space:normal}
+
+.viewVoucher .img-box {
+    float: left;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.viewVoucher .txt-box h2 {
+    font-size: 17px;
+    margin: 10px 0;
+}
+.viewVoucher .img-box > img {
+    width: 100%;
+}
+.viewVoucher .info-box {
+    padding-top: 21px;
+}
+h2.evoucherTitle {
+    color: #5b3671;
+    font-size: 26px;
+    text-align: center;
+}
+.backLink {
+     clear: both;
+    color: #5b3671;
+    float: left;
+    margin-bottom: 20px;
+    padding-left: 19px;
+    width: 100%;
+}
+.dealMiddlePanel .deal-box{
+    display: inline-block;
+    vertical-align: top;
+    width: 31%;
+    float:none;
+} 
+.bottom,.detail-area,.sec,.deal-box.sec{
+	  cursor:auto !important;
+     }
+.login-form li .action-button{background:#ff8273 !important; color:#fff; padding:15px 0; width:100%;border-radius:3px; -webkit-border-radius:3px; border:none; text-transform:uppercase; line-height:14px; font-size:14px; font-weight:600;}
+.login-form li .action-button:hover{background:#ea6e5f !important;}
+
+.review_section{
+  margin: 0px 0 20px 0;
+  padding: 0px;
+}
+.review_section div{
+  display: inline-block;
+  width: 100%;
+  margin:5px 0px;
+  border: 1px solid #ccc;
+  padding:15px;
+  border-radius: 4px;
+  background:#efefef;
+}
+.review_section div p{
+  margin: 0px;
+  line-height: normal;
+  font-size: 15px;
+  color: #333;
+}
+.review_section div p small{
+  font-size: 13px;
+  margin: 10px 0 0 0;
+  color: #8f8f8f;
+}

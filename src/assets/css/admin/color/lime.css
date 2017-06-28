@@ -1,0 +1,37 @@
+.theme-lime .navbar-default { background-color: #8cbf26; }
+.theme-lime .admin-outer .navbar-nav > li.active > a, .theme-lime .admin-outer .navbar-nav > li > a:hover, .theme-lime .admin-outer .navbar-nav li.active .dropdown-menu li.active a, .theme-lime .chzn-container .chzn-drop .chzn-results > li.highlighted, .theme-lime .admin-outer .navbar-nav.admin > li:hover > a, .theme-lime .admin-outer .navbar-nav.admin > li.active > a, .theme-lime .admin-outer .navbar-nav.admin > li:focus > a,
+.theme-lime .customer-sec .profile-sec button { background-color: #638e0d; }
+.theme-lime .admin-outer .en_box .head-rgt-details > li { color: #daff8f; }
+.theme-lime .navbar-nav > li > .dropdown-menu, .theme-lime .admin-outer .dropdown-menu .dropdown-submenu:hover .dropdown-menu { background: #bae467; }
+.theme-lime .dropdown-menu > li:focus > a, .theme-lime .dropdown-menu > li:hover > a, .theme-lime .setting-wrapper .cmn-magenta-btn, .theme-lime .setting-btn-col .magenta-btns, .theme-lime .vendor-deal-head .rt-text, .theme-lime .v-deal .v-deal-box .bottom .p3 button, .theme-lime .staff-head a, .theme-lime .current { background: #8cbf26 !important; color: #fff !important; }
+.theme-lime .dropdown-menu > li.active > a { background: #638e0d; color: #fff; }
+.theme-lime .v-deal .v-deal-box .bottom.dull .p3 button { background: #999; }
+.theme-lime .emp-detail-box .emp-other-info .emp-name-info .name-head p, .theme-lime .staff-content > p > a { color: #8cbf26; }
+.theme-lime .business-list.vendor-deal-sec .tab-content h2,
+.theme-lime [type="checkbox"]:not(:checked) + label.new-chk:after, 
+.theme-lime [type="checkbox"]:checked + label.new-chk:after ,
+.theme-lime .customer-sec .profile-sec .description h1{ color: #8cbf26; }
+.theme-lime .admin-outer .navbar-nav > li.active > .dropdown-menu li.active > .dropdown-menu li a,
+.theme-lime .dropdown-menu{background:#bae467 !important;}
+.theme-lime .admin-outer .navbar-nav > li.active > .dropdown-menu li.active > .dropdown-menu li.active a{background:#638e0d !important; color:#fff;}
+.theme-lime .admin-outer .navbar-nav > li.active > .dropdown-menu li.active > .dropdown-menu li:hover a,
+.theme-lime .admin-outer .navbar-nav > li.active > .dropdown-menu li.active > .dropdown-menu li:focus a{background:#8cbf26 !important;}
+.theme-lime .purple-bod,
+.theme-lime .dataTables_filter label input:focus, .theme-lime .dataTables_length label select:focus, .theme-lime .sell-service .form-group section .date input.datepicker:focus{border:1px solid #8cbf26 !important;}
+.theme-lime .purple-btn, .theme-lime::-ms-backdrop .purple-btn, .theme-lime .voucher-box:hover .infograpic-box,
+.theme-lime .customer-sec .profile-sec button:hover{background:#8cbf26;}
+.theme-lime .modal-dialog.login.marketing .voucher-box .infograpic-box .beauty{background: url("../../../img/admin/marketing-icons.png") no-repeat scroll -121px -740px rgba(0, 0, 0, 0);}
+.theme-lime .modal-dialog.login.marketing .voucher-box .infograpic-box .inspiration{background: url("../../../img/admin/marketing-icons.png") no-repeat scroll 8px -740px rgba(0, 0, 0, 0);}
+.theme-lime .voucher-box .infograpic-box{border:2px solid #8cbf26;}
+.theme-lime .voucher-box h2, .theme-lime .vendor-setting .v-setting-right h4.panel-title > a .add_seista_new,
+.theme-lime .vendor-service-content .panel-default > .panel-heading a:hover{color:#8cbf26;}
+.theme-lime .dataTables_filter label input:focus,  .theme-lime .form-control:focus, .theme-lime .select2-focused,
+.theme-lime .sell-service .form-group section .date input.datepicker:focus, .theme-lime #logout_time:focus,
+.theme-lime textarea#UserDetailBio, .theme-lime button.ms-choice:focus, .theme-lime .search input:focus,
+.theme-lime .treat-block .treat-head-col .search.purple-bod{border:1px solid #8cbf26 !important;}
+.theme-lime .ui-state-default,.theme-lime .ui-widget-content .ui-state-default, .theme-lime .ui-widget-header .ui-state-default{color:#8cbf26 !important;}
+.theme-lime .ui-datepicker .ui-datepicker-calendar td.ui-datepicker-current-day > a,
+.theme-lime .ui-datepicker .ui-datepicker-calendar td:hover > a{background:#8cbf26 !important; color:#fff !important;}
+.theme-lime .ui-state-default,.theme-lime .ui-widget-content .ui-state-default,.theme-lime .ui-widget-header .ui-state-default{color:#8cbf26 !important}
+.theme-lime .admin-outer .navbar-nav .open .dropdown-menu > li > a:hover, .theme-lime .purple-btn
+, .theme-lime .modal-dialog.login.marketing .voucher-box:hover .infograpic-box{background:#8cbf26 !important;}

@@ -2022,7 +2022,7 @@ box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.2); -webkit-box-shadow: 1px 2px 3px 0 
 .gift_sm_modal.login.modal-dialog{width:52%;}
 
 /*6 May 2015*/
-input{-webkit-appearance:none !important;}
+/*input{-webkit-appearance:none !important;}*/
 /*8 May 2015*/
 .view-all a span.view-all-wrap{max-width:100%; width:auto;}
 .view-all a:after{content:"\e080"; font-family:'Glyphicons Halflings'; color: #aaa; font-size:12px; }

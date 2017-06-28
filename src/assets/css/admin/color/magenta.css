@@ -1,0 +1,25 @@
+.theme-magenta .navbar-default { background-color: #5b3671; }
+.theme-magenta .admin-outer .navbar-nav > li.active > a, .theme-magenta .admin-outer .navbar-nav > li > a:hover, .theme-magenta .admin-outer .navbar-nav li.active .dropdown-menu li.active a, .theme-magenta .chzn-container .chzn-drop .chzn-results > li.highlighted, .theme-magenta .admin-outer .navbar-nav.admin > li:hover > a, .theme-magenta .admin-outer .navbar-nav.admin > li.active > a, .theme-magenta .admin-outer .navbar-nav.admin > li:focus > a { background-color: #452657; }
+.theme-magenta .admin-outer .navbar-nav li.active .dropdown-menu li.active a, .theme-magenta .chzn-container .chzn-drop .chzn-results > li.highlighted , .theme-magenta .admin-outer .navbar-nav li.active .dropdown-menu li.active .dropdown-menu li:hover a, .theme-magenta .admin-outer .navbar-nav li.active .dropdown-menu li.active .dropdown-menu li:focus a{ background-color: #5B3671; color: #FFF;}
+.theme-magenta .admin-outer .navbar-nav li.active .dropdown-menu li.dropdown-submenu:hover a.dropdown-toggle { font-weight: normal; }
+.theme-magenta .admin-outer .navbar-nav > li.active > .dropdown-menu li.active > .dropdown-menu li a,
+.theme-magenta .dropdown-menu{background:#ebcafe !important;}
+.theme-magenta .admin-outer .navbar-nav > li.active > .dropdown-menu li.active > .dropdown-menu li.active a{background:#452657 !important; color:#fff !important;}
+.theme-magenta .admin-outer .navbar-nav > li.active > .dropdown-menu li:hover > .dropdown-menu li:hover a{ color:#fff !important;}
+.theme-magenta .admin-outer .navbar-nav > li.open > .dropdown-menu li.active > a{ background:#452657 !important;}
+.theme-magenta .admin-outer .navbar-nav > li.active > .dropdown-menu li.active > .dropdown-menu li:hover a,
+.theme-magenta .admin-outer .navbar-nav > li.active > .dropdown-menu li.active > .dropdown-menu li:focus a
+, .theme-magenta .modal-dialog.login.marketing .voucher-box:hover .infograpic-box{background:#5b3671 !important;}
+.theme-magenta .dropdown-menu .dropdown-submenu .dropdown-menu .active > a, .theme-magenta .current{background:#5b3671 !important; color:#fff !important;}
+#lightGallery-outer.showThumbByDefault{background-color: rgba(0, 0, 0, 0.8) !important;}
+.theme-magenta .purple-bod, .theme-magenta .search input:focus,
+.theme-magenta .treat-block .treat-head-col .search.purple-bod{border:1px solid #5b3671 !important;}
+.theme-magenta .purple-btn, .theme-magenta::-ms-backdrop .purple-btn, .theme-magenta .voucher-box:hover .infograpic-box,
+.theme-magenta .customer-sec .profile-sec button:hover, .theme-magenta .purple-btn{background:#5b3671;}
+.theme-magenta .dataTables_filter label input:focus,  .theme-magenta .form-control:focus, .theme-magenta .select2-focused,
+.theme-magenta .sell-service .form-group section .date input.datepicker:focus, .theme-magenta #logout_time:focus,
+.theme-magenta textarea#UserDetailBio, .theme-magenta button.ms-choice:focus{border:1px solid #5b3671 !important;}
+.theme-magenta .admin-outer .navbar-nav li.active .dropdown-menu li.active .dropdown-menu li a{color:#333 !important;}
+.theme-magenta .admin-outer .navbar-nav li.active .dropdown-menu li.active .dropdown-menu li:hover a,
+.theme-magenta .admin-outer .navbar-nav li.active .dropdown-menu li.active .dropdown-menu li:focus a,{color:#fff !important;}
+.theme-magenta .purple-bod{border:1px solid #5b3671 !important; }

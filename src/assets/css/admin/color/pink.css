@@ -1,0 +1,37 @@
+.theme-pink .navbar-default { background-color: #e671b8; }
+.theme-pink .admin-outer .navbar-nav > li.active > a, .theme-pink .admin-outer .navbar-nav > li > a:hover, .theme-pink .admin-outer .navbar-nav li.active .dropdown-menu li.active a, .theme-pink .chzn-container .chzn-drop .chzn-results > li.highlighted, .theme-pink .admin-outer .navbar-nav.admin > li:hover > a, .theme-pink .admin-outer .navbar-nav.admin > li.active > a, .theme-pink .admin-outer .navbar-nav.admin > li:focus > a,
+.theme-pink .customer-sec .profile-sec button { background-color: #b9478c; }
+.theme-pink .admin-outer .en_box .head-rgt-details > li { color: #891f5f; }
+.theme-pink .navbar-nav > li > .dropdown-menu, .theme-pink .admin-outer .dropdown-menu .dropdown-submenu:hover .dropdown-menu { background: #f7c0e1; }
+.theme-pink .dropdown-menu > li:focus > a, .theme-pink .dropdown-menu > li:hover > a, .theme-pink .setting-wrapper .cmn-magenta-btn, .theme-pink .setting-btn-col .magenta-btns, .theme-pink .vendor-deal-head .rt-text, .theme-pink .v-deal .v-deal-box .bottom .p3 button, .theme-pink .staff-head a { background: #e671b8; color: #fff; }
+.theme-pink .dropdown-menu > li.active > a, .theme-pink .current { background: #b9478c !important; color: #fff !important; }
+.theme-pink .v-deal .v-deal-box .bottom.dull .p3 button { background: #999; }
+.theme-pink .emp-detail-box .emp-other-info .emp-name-info .name-head p, .theme-pink .staff-content > p > a { color: #e671b8; }
+.theme-pink .business-list.vendor-deal-sec .tab-content h2,
+.theme-pink [type="checkbox"]:not(:checked) + label.new-chk:after, 
+.theme-pink [type="checkbox"]:checked + label.new-chk:after,
+.theme-pink .customer-sec .profile-sec .description h1 { color: #e671b8; }
+.theme-pink .admin-outer .navbar-nav > li.active > .dropdown-menu li.active > .dropdown-menu li a,
+.theme-pink .dropdown-menu{background:#f7c0e1 !important;}
+.theme-pink .admin-outer .navbar-nav > li.active > .dropdown-menu li.active > .dropdown-menu li.active a{background:#b9478c !important; color:#fff;}
+.theme-pink .admin-outer .navbar-nav > li.active > .dropdown-menu li.active > .dropdown-menu li:hover a,
+.theme-pink .admin-outer .navbar-nav > li.active > .dropdown-menu li.active > .dropdown-menu li:focus a{background:#e671b8 !important;}
+
+.theme-pink .purple-btn, .theme-pink::-ms-backdrop .purple-btn, .theme-pink .voucher-box:hover .infograpic-box,
+.theme-pink .customer-sec .profile-sec button:hover{background:#e671b8; color:#333;}
+.theme-pink .modal-dialog.login.marketing .voucher-box .infograpic-box .beauty{background: url("../../../img/admin/marketing-icons.png") no-repeat scroll -121px -1166px rgba(0, 0, 0, 0);}
+.theme-pink .modal-dialog.login.marketing .voucher-box .infograpic-box .inspiration{background: url("../../../img/admin/marketing-icons.png") no-repeat scroll 8px -1166px rgba(0, 0, 0, 0);}
+.theme-pink .voucher-box .infograpic-box{border:2px solid #e671b8;}
+.theme-pink .voucher-box h2, .theme-pink .vendor-setting .v-setting-right h4.panel-title > a .add_seista_new,
+.theme-pink .vendor-service-content .panel-default > .panel-heading a:hover{color:#e671b8;}
+.theme-pink .dataTables_filter label input:focus,  .theme-pink .form-control:focus, .theme-pink .select2-focused,
+.theme-pink .sell-service .form-group section .date input.datepicker:focus, .theme-pink #logout_time:focus,
+.theme-pink textarea#UserDetailBio, .theme-pink button.ms-choice:focus, .theme-pink .search input:focus,
+.theme-pink .treat-block .treat-head-col .search.purple-bod{border:1px solid #e671b8 !important;}
+.theme-pink .ui-state-default,.theme-pink .ui-widget-content .ui-state-default, .theme-pink .ui-widget-header .ui-state-default{color:#e671b8 !important;}
+.theme-pink .ui-datepicker .ui-datepicker-calendar td.ui-datepicker-current-day > a,
+.theme-pink .ui-datepicker .ui-datepicker-calendar td:hover > a{background:#e671b8 !important; color:#fff !important;}
+.theme-pink .ui-state-default,.theme-pink .ui-widget-content .ui-state-default,.theme-pink .ui-widget-header .ui-state-default{color:#e671b8 !important}
+.theme-pink .admin-outer .navbar-nav .open .dropdown-menu > li > a:hover, .theme-pink .purple-btn
+, .theme-pink .modal-dialog.login.marketing .voucher-box:hover .infograpic-box{background:#e671b8 !important;}
+.theme-pink .purple-bod{border:1px solid #e671b8 !important;}

@@ -18,6 +18,7 @@ import {OwlCarousel} from 'ng2-owl-carousel';
 @Component({
   selector: 'homepage',
   templateUrl: "./home.html",
+  styleUrls:['./css/bootstrap.css'],
   
 })
 

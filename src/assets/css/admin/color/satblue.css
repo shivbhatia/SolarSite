@@ -1,0 +1,37 @@
+.theme-satblue .navbar-default { background-color: #2c5e7b; }
+.theme-satblue .admin-outer .navbar-nav > li.active > a, .theme-satblue .admin-outer .navbar-nav > li > a:hover, .theme-satblue .admin-outer .navbar-nav li.active .dropdown-menu li.active a, .theme-satblue .chzn-container .chzn-drop .chzn-results > li.highlighted, .theme-satblue .admin-outer .navbar-nav.admin > li:hover > a, .theme-satblue .admin-outer .navbar-nav.admin > li.active > a, .theme-satblue .admin-outer .navbar-nav.admin > li:focus > a,
+.theme-satblue .customer-sec .profile-sec button { background-color: #1d4156; }
+.theme-satblue .admin-outer .en_box .head-rgt-details > li { color: #89b3cc; }
+.theme-satblue .navbar-nav > li > .dropdown-menu, .theme-satblue .admin-outer .dropdown-menu .dropdown-submenu:hover .dropdown-menu { background: #7db7d8; }
+.theme-satblue .dropdown-menu > li:focus > a, .theme-satblue .dropdown-menu > li:hover > a, .theme-satblue .setting-wrapper .cmn-magenta-btn, .theme-satblue .setting-btn-col .magenta-btns, .theme-satblue .vendor-deal-head .rt-text, .theme-satblue .v-deal .v-deal-box .bottom .p3 button, .theme-satblue .staff-head a { background: #2c5e7b; color: #fff; }
+.theme-satblue .dropdown-menu > li.active > a { background: #1d4156; color: #fff; }
+.theme-satblue .v-deal .v-deal-box .bottom.dull .p3 button { background: #999; }
+.theme-satblue .emp-detail-box .emp-other-info .emp-name-info .name-head p, .theme-satblue .staff-content > p > a { color: #2c5e7b; }
+.theme-satblue .business-list.vendor-deal-sec .tab-content h2,
+.theme-satblue [type="checkbox"]:not(:checked) + label.new-chk:after, 
+.theme-satblue [type="checkbox"]:checked + label.new-chk:after ,
+.theme-satblue .customer-sec .profile-sec .description h1{ color: #2c5e7b; }
+.theme-satblue .admin-outer .navbar-nav > li.active > .dropdown-menu li.active > .dropdown-menu li a,
+.theme-satblue .dropdown-menu{background:#7db7d8 !important;}
+.theme-satblue .admin-outer .navbar-nav > li.active > .dropdown-menu li.active > .dropdown-menu li.active a, .theme-satblue .current{background:#1d4156 !important; color:#fff !important;}
+.theme-satblue .admin-outer .navbar-nav > li.active > .dropdown-menu li.active > .dropdown-menu li:hover a,
+.theme-satblue .admin-outer .navbar-nav > li.active > .dropdown-menu li.active > .dropdown-menu li:focus a{background:#2c5e7b !important; color:#fff !important;}
+
+.theme-satblue .purple-btn, .theme-satblue::-ms-backdrop .purple-btn, .theme-satblue .voucher-box:hover .infograpic-box,
+.theme-satblue .customer-sec .profile-sec button:hover{background:#2c5e7b;}
+.theme-satblue .modal-dialog.login.marketing .voucher-box .infograpic-box .beauty{background: url("../../../img/admin/marketing-icons.png") no-repeat scroll -121px -1852px rgba(0, 0, 0, 0);}
+.theme-satblue .modal-dialog.login.marketing .voucher-box .infograpic-box .inspiration{background: url("../../../img/admin/marketing-icons.png") no-repeat scroll 8px -1852px rgba(0, 0, 0, 0);}
+.theme-satblue .voucher-box .infograpic-box{border:2px solid #2c5e7b;}
+.theme-satblue .voucher-box h2, .theme-satblue .vendor-setting .v-setting-right h4.panel-title > a .add_seista_new,
+.theme-satblue .vendor-service-content .panel-default > .panel-heading a:hover{color:#2c5e7b;}
+.theme-satblue .dataTables_filter label input:focus,  .theme-satblue .form-control:focus, .theme-satblue .select2-focused,
+.theme-satblue .sell-service .form-group section .date input.datepicker:focus, .theme-satblue #logout_time:focus,
+.theme-satblue textarea#UserDetailBio, .theme-satblue button.ms-choice:focus, .theme-satblue .search input:focus,
+.theme-satblue .treat-block .treat-head-col .search.purple-bod{border:1px solid #2c5e7b !important;}
+.theme-satblue .ui-state-default,.theme-satblue .ui-widget-content .ui-state-default, .theme-satblue .ui-widget-header .ui-state-default{color:#2c5e7b !important;}
+.theme-satblue .ui-datepicker .ui-datepicker-calendar td.ui-datepicker-current-day > a,
+.theme-satblue .ui-datepicker .ui-datepicker-calendar td:hover > a{background:#2c5e7b !important; color:#fff !important;}
+.theme-satblue .ui-state-default,.theme-satblue .ui-widget-content .ui-state-default,.theme-satblue .ui-widget-header .ui-state-default{color:#2c5e7b !important}
+.theme-satblue .admin-outer .navbar-nav .open .dropdown-menu > li > a:hover, .theme-satblue .purple-btn
+, .theme-satblue .modal-dialog.login.marketing .voucher-box:hover .infograpic-box{background:#2c5e7b !important;}
+.theme-satblue .purple-bod{border:1px solid #2c5e7b !important;}

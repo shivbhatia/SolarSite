@@ -1,0 +1,39 @@
+.theme-green .navbar-default { background-color: #339933; }
+.theme-green .admin-outer .navbar-nav > li.active > a, .theme-green .admin-outer .navbar-nav > li > a:hover, .theme-green .admin-outer .navbar-nav li.active .dropdown-menu li.active a, .theme-green .chzn-container .chzn-drop .chzn-results > li.highlighted, .theme-green .admin-outer .navbar-nav.admin > li:hover > a, .theme-green .admin-outer .navbar-nav.admin > li.active > a, .theme-green .admin-outer .navbar-nav.admin > li:focus > a,
+.theme-green .customer-sec .profile-sec button { background-color: #007500; }
+.theme-green .admin-outer .en_box .head-rgt-details > li { color: #a4e9a4; }
+.theme-green .navbar-nav > li > .dropdown-menu, .theme-green .admin-outer .dropdown-menu .dropdown-submenu:hover .dropdown-menu { background: #72c272; }
+.theme-green .dropdown-menu > li:focus > a, .theme-green .dropdown-menu > li:hover > a, .theme-green .setting-wrapper .cmn-magenta-btn, .theme-green .setting-btn-col .magenta-btns, .theme-green .vendor-deal-head .rt-text, .theme-green .v-deal .v-deal-box .bottom .p3 button, .theme-green .staff-head a, .theme-green .current { background: #339933 !important; color: #fff !important; }
+.theme-green .dropdown-menu > li.active > a { background: #007500; color: #fff; }
+.theme-green .v-deal .v-deal-box .bottom.dull .p3 button { background: #999; }
+.theme-green .emp-detail-box .emp-other-info .emp-name-info .name-head p, .theme-green .staff-content > p > a { color: #339933; }
+.theme-green .business-list.vendor-deal-sec .tab-content h2,
+.theme-green [type="checkbox"]:not(:checked) + label.new-chk:after, 
+.theme-green [type="checkbox"]:checked + label.new-chk:after,
+.theme-green .customer-sec .profile-sec .description h1{ color: #339933; }
+.theme-green .admin-outer .navbar-nav > li.active > .dropdown-menu li.active > .dropdown-menu li a,
+.theme-green .dropdown-menu{background:#72c272 !important;}
+.theme-green .admin-outer .navbar-nav > li.active > .dropdown-menu li.active > .dropdown-menu li.active a{background:#007500 !important; color:#fff;}
+.theme-green .admin-outer .navbar-nav > li.active > .dropdown-menu li.active > .dropdown-menu li:hover a,
+.theme-green .admin-outer .navbar-nav > li.active > .dropdown-menu li.active > .dropdown-menu li:focus a{background:#339933 !important;}
+.theme-green .tag-rt li a:hover, .theme-green .category-item .category-icons > div a:hover, .theme-green .category-icons > div a:hover, .theme-green .vendor-service-content .panel-default > .panel-heading a.del:hover,  .theme-green .vendor-service-content .panel-default > .panel-heading a.add:hover, .theme-green .v-deal .v-deal-box .bottom .p3 a:hover{color:#007500;}
+.theme-green .customer-sec .profile-sec button:hover{background:#007500;}
+.theme-purple .v-deal .v-deal-box .bottom .p3 a:hover, .theme-purple .vendor-service-content .panel-default > .panel-heading a:hover{color:#c20073;}
+.theme-green .purple-bod{border:1px solid #339933 !important;}
+.theme-green .purple-btn, .theme-green::-ms-backdrop .purple-btn, .theme-green .voucher-box:hover .infograpic-box,
+.theme-green .customer-sec .profile-sec button:hover{background:#339933;}
+.theme-green .modal-dialog.login.marketing .voucher-box .infograpic-box .beauty{background: url("../../../img/admin/marketing-icons.png") no-repeat scroll -121px -501px rgba(0, 0, 0, 0);}
+.theme-green .modal-dialog.login.marketing .voucher-box .infograpic-box .inspiration{background: url("../../../img/admin/marketing-icons.png") no-repeat scroll 8px -501px rgba(0, 0, 0, 0);}
+.theme-green .voucher-box .infograpic-box{border:2px solid #339933;}
+.theme-green .voucher-box h2, .theme-green .vendor-setting .v-setting-right h4.panel-title > a .add_seista_new,
+.theme-green .vendor-service-content .panel-default > .panel-heading a:hover{color:#339933;}
+.theme-green .dataTables_filter label input:focus,  .theme-green .form-control:focus, .theme-green .select2-focused,
+.theme-green .sell-service .form-group section .date input.datepicker:focus, .theme-green #logout_time:focus,
+.theme-green textarea#UserDetailBio, .theme-green button.ms-choice:focus, .theme-green .search input:focus,
+.theme-green .treat-block .treat-head-col .search.purple-bod{border:1px solid #339933 !important;}
+.theme-green .ui-state-default,.theme-green .ui-widget-content .ui-state-default, .theme-green .ui-widget-header .ui-state-default{color:#339933 !important;}
+.theme-green .ui-datepicker .ui-datepicker-calendar td.ui-datepicker-current-day > a,
+.theme-green .ui-datepicker .ui-datepicker-calendar td:hover > a{background:#339933 !important; color:#fff !important;}
+.theme-green .ui-state-default,.theme-green .ui-widget-content .ui-state-default,.theme-green .ui-widget-header .ui-state-default{color:#339933 !important}
+.theme-green .admin-outer .navbar-nav .open .dropdown-menu > li > a:hover, .theme-green .purple-btn
+, .theme-green .modal-dialog.login.marketing .voucher-box:hover .infograpic-box{background:#339933 !important;}

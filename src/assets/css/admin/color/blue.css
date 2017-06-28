@@ -1,0 +1,43 @@
+.theme-blue .navbar-default { background-color: #368ee0; }
+.theme-blue .admin-outer .navbar-nav > li.active > a, .theme-blue .admin-outer .navbar-nav > li > a:hover, .theme-blue .admin-outer .navbar-nav li.active .dropdown-menu li.active a, .theme-blue .chzn-container .chzn-drop .chzn-results > li.highlighted, .theme-blue .admin-outer .navbar-nav.admin > li:hover > a, .theme-blue .admin-outer .navbar-nav.admin > li.active > a, .theme-blue .admin-outer .navbar-nav.admin > li:focus > a,
+.theme-blue .customer-sec .profile-sec button { background-color: #1862a7; }
+.theme-blue .admin-outer .en_box .head-rgt-details > li { color: #8bc7ff; }
+.theme-blue .navbar-nav > li > .dropdown-menu, .theme-blue .admin-outer .dropdown-menu .dropdown-submenu:hover .dropdown-menu { background: #84c0f9; }
+.theme-blue .dropdown-menu > li:focus > a, .theme-blue .dropdown-menu > li:hover > a, .theme-blue .setting-wrapper .cmn-magenta-btn, .theme-blue .setting-btn-col .magenta-btns, .theme-blue .vendor-deal-head .rt-text, .theme-blue .v-deal .v-deal-box .bottom .p3 button, .theme-blue .staff-head a { background: #368ee0; color: #fff; }
+.theme-blue .dropdown-menu > li.active > a, .theme-blue .current{ background: #1862a7 !important; color: #fff !important; }
+.theme-blue .v-deal .v-deal-box .bottom.dull .p3 button { background: #999; }
+.theme-blue .emp-detail-box .emp-other-info .emp-name-info .name-head p, .theme-blue .staff-content > p > a { color: #368ee0; }
+.theme-blue .business-list.vendor-deal-sec .tab-content h2,
+.theme-blue [type="checkbox"]:not(:checked) + label.new-chk:after, 
+.theme-blue [type="checkbox"]:checked + label.new-chk:after,
+.theme-blue .customer-sec .profile-sec .description h1{ color: #368ee0; }
+.theme-blue .admin-outer .navbar-nav > li.active > .dropdown-menu li.active > .dropdown-menu li a,
+.theme-blue .dropdown-menu{background:#84c0f9 !important;}
+.theme-blue .admin-outer .navbar-nav > li.active > .dropdown-menu li.active > .dropdown-menu li.active a{background:#1862a7 !important; color:#fff;}
+.theme-blue .admin-outer .navbar-nav > li.active > .dropdown-menu li.active > .dropdown-menu li:hover a,
+.theme-blue .admin-outer .navbar-nav > li.active > .dropdown-menu li.active > .dropdown-menu li:focus a{background:#368ee0 !important;}
+.theme-blue .purple-bod{border:1px solid #368ee0 !important;}
+.theme-blue .purple-btn, .theme-blue::-ms-backdrop .purple-btn, .theme-blue .voucher-box:hover .infograpic-box,
+.theme-blue .customer-sec .profile-sec button:hover{background:#368ee0;}
+.theme-blue .modal-dialog.login.marketing .voucher-box .infograpic-box .beauty{background: url("../../../img/admin/marketing-icons.png") no-repeat scroll -121px -2120px rgba(0, 0, 0, 0);}
+.theme-blue .modal-dialog.login.marketing .voucher-box .infograpic-box .inspiration{background: url("../../../img/admin/marketing-icons.png") no-repeat scroll 8px -2120px rgba(0, 0, 0, 0);}
+
+.theme-blue .modal-dialog.login.marketing .voucher-box:hover .infograpic-box .beauty{background: url("../../../img/admin/marketing-icons.png") no-repeat scroll -121px -118px rgba(0, 0, 0, 0);}
+.theme-blue .modal-dialog.login.marketing .voucher-box:hover .infograpic-box .inspiration{background: url("../../../img/admin/marketing-icons.png") no-repeat scroll 8px -119px  rgba(0, 0, 0, 0);}
+.theme-blue .voucher-box .infograpic-box{border:2px solid #368ee0;}
+.theme-blue .voucher-box h2, .theme-blue .vendor-setting .v-setting-right h4.panel-title > a .add_seista_new,
+.theme-blue .vendor-service-content .panel-default > .panel-heading a:hover{color:#368ee0;}
+.theme-blue .dataTables_filter label input:focus,  .theme-blue .form-control:focus, .theme-blue .select2-focused,
+.theme-blue .sell-service .form-group section .date input.datepicker:focus, .theme-blue #logout_time:focus,
+.theme-blue textarea#UserDetailBio, .theme-blue button.ms-choice:focus, .theme-blue .search input:focus,
+.theme-blue .treat-block .treat-head-col .search.purple-bod{border:1px solid #368ee0 !important;}
+.theme-blue .ui-state-default,.theme-blue .ui-widget-content .ui-state-default, .theme-blue .ui-widget-header .ui-state-default{color:#368ee0 !important;}
+.theme-blue .ui-datepicker .ui-datepicker-calendar td.ui-datepicker-current-day > a,
+.theme-blue .ui-datepicker .ui-datepicker-calendar td:hover > a{background:#368ee0 !important; color:#fff !important;}
+.theme-blue .ui-state-default,.theme-blue .ui-widget-content .ui-state-default,.theme-blue .ui-widget-header .ui-state-default{color:#368ee0 !important}
+.theme-blue .admin-outer .navbar-nav .open .dropdown-menu > li > a:hover, .theme-blue .purple-btn
+, .theme-blue .modal-dialog.login.marketing .voucher-box:hover .infograpic-box{background:#368ee0 !important;}
+
+.theme-blue .head-color{color: #368ee0;}
+
+.theme-blue .modal-dialog.login.marketing .voucher-box:hover .infograpic-box

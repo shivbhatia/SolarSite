@@ -1,0 +1,38 @@
+.theme-teal .navbar-default { background-color: #00aba9; }
+.theme-teal .admin-outer .navbar-nav > li.active > a, .theme-teal .admin-outer .navbar-nav > li > a:hover, .theme-teal .admin-outer .navbar-nav li.active .dropdown-menu li.active a, .theme-teal .chzn-container .chzn-drop .chzn-results > li.highlighted, .theme-teal .admin-outer .navbar-nav.admin > li:hover > a, .theme-teal .admin-outer .navbar-nav.admin > li.active > a, .theme-teal .admin-outer .navbar-nav.admin > li:focus > a,
+.theme-teal .customer-sec .profile-sec button { background-color: #008785; }
+.theme-teal .admin-outer .en_box .head-rgt-details > li { color: #7ffffd; }
+.theme-teal .navbar-nav > li > .dropdown-menu, .theme-teal .admin-outer .dropdown-menu .dropdown-submenu:hover .dropdown-menu { background: #5adfdd; }
+.theme-teal .dropdown-menu > li:focus > a, .theme-teal .dropdown-menu > li:hover > a, .theme-teal .setting-wrapper .cmn-magenta-btn, .theme-teal .setting-btn-col .magenta-btns, .theme-teal .vendor-deal-head .rt-text, .theme-teal .v-deal .v-deal-box .bottom .p3 button, .theme-teal .staff-head a, .theme-teal .current { background: #00aba9 !important; color: #fff !important; }
+.theme-teal .dropdown-menu > li.active > a { background: #008785; color: #fff; }
+.theme-teal .v-deal .v-deal-box .bottom.dull .p3 button { background: #999; }
+.theme-teal .emp-detail-box .emp-other-info .emp-name-info .name-head p, .theme-teal .staff-content > p > a { color: #00aba9; }
+.theme-teal .business-list.vendor-deal-sec .tab-content h2,
+.theme-teal [type="checkbox"]:not(:checked) + label.new-chk:after, 
+.theme-teal [type="checkbox"]:checked + label.new-chk:after ,
+.theme-teal .customer-sec .profile-sec .description h1{ color: #00aba9; }
+.theme-teal .admin-outer .navbar-nav > li.active > .dropdown-menu li.active > .dropdown-menu li a,
+.theme-teal .dropdown-menu{background:#5adfdd !important;}
+.theme-teal .admin-outer .navbar-nav > li.active > .dropdown-menu li.active > .dropdown-menu li.active a{background:#008785 !important; color:#fff;}
+.theme-teal .admin-outer .navbar-nav > li.active > .dropdown-menu li.active > .dropdown-menu li:hover a,
+.theme-teal .admin-outer .navbar-nav > li.active > .dropdown-menu li.active > .dropdown-menu li:focus a{background:#00aba9 !important;}
+.theme-teal .customer-sec .profile-sec button:hover{background:#008785; opacity:.7}
+
+.theme-teal .purple-btn, .theme-teal::-ms-backdrop .purple-btn, .theme-teal .voucher-box:hover .infograpic-box,
+.theme-teal .customer-sec .profile-sec button:hover{background:#00aba9;}
+.theme-teal .modal-dialog.login.marketing .voucher-box .infograpic-box .beauty{background: url("../../../img/admin/marketing-icons.png") no-repeat scroll -121px -879px rgba(0, 0, 0, 0);}
+.theme-teal .modal-dialog.login.marketing .voucher-box .infograpic-box .inspiration{background: url("../../../img/admin/marketing-icons.png") no-repeat scroll 8px -879px rgba(0, 0, 0, 0);}
+.theme-teal .voucher-box .infograpic-box{border:2px solid #00aba9;}
+.theme-teal .voucher-box h2, .theme-teal .vendor-setting .v-setting-right h4.panel-title > a .add_seista_new,
+.theme-teal .vendor-service-content .panel-default > .panel-heading a:hover{color:#00aba9;}
+.theme-teal .dataTables_filter label input:focus,  .theme-teal .form-control:focus, .theme-teal .select2-focused,
+.theme-teal .sell-service .form-group section .date input.datepicker:focus, .theme-teal #logout_time:focus,
+.theme-teal textarea#UserDetailBio, .theme-teal button.ms-choice:focus, .theme-teal .search input:focus,
+.theme-teal .treat-block .treat-head-col .search.purple-bod{border:1px solid #00aba9 !important;}
+.theme-teal .ui-state-default,.theme-teal .ui-widget-content .ui-state-default, .theme-teal .ui-widget-header .ui-state-default{color:#00aba9 !important;}
+.theme-teal .ui-datepicker .ui-datepicker-calendar td.ui-datepicker-current-day > a,
+.theme-teal .ui-datepicker .ui-datepicker-calendar td:hover > a{background:#00aba9 !important; color:#fff !important;}
+.theme-teal .ui-state-default,.theme-teal .ui-widget-content .ui-state-default,.theme-teal .ui-widget-header .ui-state-default{color:#00aba9 !important}
+.theme-teal .admin-outer .navbar-nav .open .dropdown-menu > li > a:hover, .theme-teal .purple-btn
+, .theme-teal .modal-dialog.login.marketing .voucher-box:hover .infograpic-box{background:#00aba9 !important;}
+.theme-teal .purple-bod{border:1px solid #00aba9 !important;}

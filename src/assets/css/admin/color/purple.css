@@ -1,0 +1,41 @@
+.theme-purple .navbar-default { background-color: #ff0097; }
+.theme-purple .admin-outer .navbar-nav > li.active > a, .theme-purple .admin-outer .navbar-nav > li > a:hover, .theme-purple .admin-outer .navbar-nav li.active .dropdown-menu li.active a, .theme-purple .chzn-container .chzn-drop .chzn-results > li.highlighted, .theme-purple .admin-outer .navbar-nav.admin > li:hover > a, .theme-purple .admin-outer .navbar-nav.admin > li.active > a, .theme-purple .admin-outer .navbar-nav.admin > li:focus > a,
+.theme-purple .customer-sec .profile-sec button { background-color: #c20073;}
+.theme-purple .admin-outer .navbar-nav > li.active > a:hover, .theme-purple .admin-outer .navbar-nav > li > a:hover, .theme-purple .admin-outer .navbar-nav li.active .dropdown-menu li.active a:hover, .theme-purple .chzn-container .chzn-drop .chzn-results > li.highlighted:hover, .theme-purple .admin-outer .navbar-nav.admin > li:hover > a:hover, .theme-purple .admin-outer .navbar-nav.admin > li.active > a:hover, .theme-purple .admin-outer .navbar-nav.admin > li:focus > a:hover,
+.theme-purple .customer-sec .profile-sec button:hover { background-color: #c20073; opacity:1}
+.theme-purple .admin-outer .en_box .head-rgt-details > li { color: #ffccea; }
+.theme-purple .navbar-nav > li > .dropdown-menu, .theme-purple .admin-outer .dropdown-menu .dropdown-submenu:hover .dropdown-menu { background: #ff9fd8; }
+.theme-purple .dropdown-menu > li:focus > a, .theme-purple .dropdown-menu > li:hover > a, .theme-purple .setting-wrapper .cmn-magenta-btn, .theme-purple .setting-btn-col .magenta-btns, .theme-purple .vendor-deal-head .rt-text, .theme-purple .v-deal .v-deal-box .bottom .p3 button, .theme-purple .staff-head a, .theme-purple .current { background: #ff0097 !important; color: #fff !important; }
+.theme-purple .dropdown-menu > li.active > a { background: #c20073; color: #fff; }
+.theme-purple .v-deal .v-deal-box .bottom.dull .p3 button { background: #999; }
+.theme-purple .emp-detail-box .emp-other-info .emp-name-info .name-head p, .theme-purple .staff-content > p > a { color: #ff0097; }
+.theme-purple .business-list.vendor-deal-sec .tab-content h2,
+.theme-purple [type="checkbox"]:not(:checked) + label.new-chk:after, 
+.theme-purple [type="checkbox"]:checked + label.new-chk:after,
+.theme-purple .customer-sec .profile-sec .description h1 { color: #ff0097; }
+.theme-purple .admin-outer .navbar-nav > li.active > .dropdown-menu li.active > .dropdown-menu li a,
+.theme-purple .dropdown-menu{background:#ff9fd8 !important;}
+.theme-purple .admin-outer .navbar-nav > li.active > .dropdown-menu li.active > .dropdown-menu li.active a{background:#c20073 !important; color:#fff;}
+.theme-purple .admin-outer .navbar-nav > li.active > .dropdown-menu li.active > .dropdown-menu li:hover a,
+.theme-purple .admin-outer .navbar-nav > li.active > .dropdown-menu li.active > .dropdown-menu li:focus a{background:#ff0097 !important;}
+.theme-purple .v-deal .v-deal-box .bottom .p3 a:hover, .theme-purple .vendor-service-content .panel-default > .panel-heading a:hover{color:#c20073;}
+
+.theme-purple .purple-btn, .theme-purple::-ms-backdrop .purple-btn, .theme-purple .voucher-box:hover .infograpic-box,
+.theme-purple .customer-sec .profile-sec button:hover{background:#ff0097;}
+.theme-purple .modal-dialog.login.marketing .voucher-box .infograpic-box .beauty{background: url("../../../img/admin/marketing-icons.png") no-repeat scroll -121px -1028px rgba(0, 0, 0, 0);}
+.theme-purple .modal-dialog.login.marketing .voucher-box .infograpic-box .inspiration{background: url("../../../img/admin/marketing-icons.png") no-repeat scroll 8px -1028px rgba(0, 0, 0, 0);}
+.theme-purple .voucher-box .infograpic-box{border:2px solid #ff0097;}
+.theme-purple .voucher-box h2, .theme-purple .vendor-setting .v-setting-right h4.panel-title > a .add_seista_new,
+.theme-purple .vendor-service-content .panel-default > .panel-heading a:hover{color:#ff0097;}
+.theme-purple .dataTables_filter label input:focus,  .theme-purple .form-control:focus, .theme-purple .select2-focused,
+.theme-purple .sell-service .form-group section .date input.datepicker:focus, .theme-purple #logout_time:focus,
+.theme-purple textarea#UserDetailBio, .theme-purple button.ms-choice:focus, .theme-purple .search input:focus,
+.theme-purple .treat-block .treat-head-col .search.purple-bod{border:1px solid #ff0097 !important;}
+.theme-purple .ui-state-default,.theme-purple .ui-widget-content .ui-state-default, .theme-purple .ui-widget-header .ui-state-default{color:#ff0097 !important;}
+.theme-purple .ui-datepicker .ui-datepicker-calendar td.ui-datepicker-current-day > a,
+.theme-purple .ui-datepicker .ui-datepicker-calendar td:hover > a{background:#ff0097 !important; color:#fff !important;}
+.theme-purple .ui-state-default,.theme-purple .ui-widget-content .ui-state-default,.theme-purple .ui-widget-header .ui-state-default{color:#ff0097 !important}
+.theme-purple .admin-outer .navbar-nav .open .dropdown-menu > li > a:hover, .theme-purple .purple-btn
+, .theme-purple .modal-dialog.login.marketing .voucher-box:hover .infograpic-box{background:#ff0097 !important;}
+.theme-purple .purple-bod{border:1px solid #ff0097 !important;}
+.theme-purple .head-color{color: #ff0097;}

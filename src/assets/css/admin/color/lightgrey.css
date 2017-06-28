@@ -1,0 +1,36 @@
+.theme-lightgrey .navbar-default { background-color: #666666; }
+.theme-lightgrey .admin-outer .navbar-nav > li.active > a, .theme-lightgrey .admin-outer .navbar-nav > li > a:hover, .theme-lightgrey .admin-outer .navbar-nav li.active .dropdown-menu li.active a, .theme-lightgrey .chzn-container .chzn-drop .chzn-results > li.highlighted, .theme-lightgrey .admin-outer .navbar-nav.admin > li:hover > a, .theme-lightgrey .admin-outer .navbar-nav.admin > li.active > a, .theme-lightgrey .admin-outer .navbar-nav.admin > li:focus > a,
+.theme-lightgrey .customer-sec .profile-sec button { background-color: #484848; }
+.theme-lightgrey .admin-outer .en_box .head-rgt-details > li { color: #c0c0c0; }
+.theme-lightgrey .navbar-nav > li > .dropdown-menu, .theme-lightgrey .admin-outer .dropdown-menu .dropdown-submenu:hover .dropdown-menu { background: #bdbdbd; }
+.theme-lightgrey .dropdown-menu > li:focus > a, .theme-lightgrey .dropdown-menu > li:hover > a, .theme-lightgrey .setting-wrapper .cmn-magenta-btn, .theme-lightgrey .setting-btn-col .magenta-btns, .theme-lightgrey .vendor-deal-head .rt-text, .theme-lightgrey .v-deal .v-deal-box .bottom .p3 button, .theme-lightgrey .staff-head a { background: #666666; color: #fff; }
+.theme-lightgrey .dropdown-menu > li.active > a, .theme-lightgrey .current { background: #484848 !important; color: #fff !important; }
+.theme-lightgrey .v-deal .v-deal-box .bottom.dull .p3 button { background: #999; }
+.theme-lightgrey .emp-detail-box .emp-other-info .emp-name-info .name-head p, .theme-lightgrey .staff-content > p > a { color: #666666; }
+.theme-lightgrey .business-list.vendor-deal-sec .tab-content h2,
+.theme-lightgrey [type="checkbox"]:not(:checked) + label.new-chk:after, 
+.theme-lightgrey [type="checkbox"]:checked + label.new-chk:after,
+.theme-lightgrey .customer-sec .profile-sec .description h1 { color: #666; }
+.theme-lightgrey .admin-outer .navbar-nav > li.active > .dropdown-menu li.active > .dropdown-menu li a,
+.theme-lightgrey .dropdown-menu{background:#bdbdbd !important;}
+.theme-lightgrey .admin-outer .navbar-nav > li.active > .dropdown-menu li.active > .dropdown-menu li.active a{background:#484848 !important; color:#fff;}
+.theme-lightgrey .admin-outer .navbar-nav > li.active > .dropdown-menu li.active > .dropdown-menu li:hover a,
+.theme-lightgrey .admin-outer .navbar-nav > li.active > .dropdown-menu li.active > .dropdown-menu li:focus a{background:#666666 !important; color:#fff !important;}
+.theme-lightgrey .purple-bod{border:1px solid #666666 !important;}
+.theme-lightgrey .purple-btn, .theme-lightgrey::-ms-backdrop .purple-btn, .theme-lightgrey .voucher-box:hover .infograpic-box,
+.theme-lightgrey .customer-sec .profile-sec button:hover{background:#666666;}
+.theme-lightgrey .modal-dialog.login.marketing .voucher-box .infograpic-box .beauty{background: url("../../../img/admin/marketing-icons.png") no-repeat scroll -121px -1721px rgba(0, 0, 0, 0);}
+.theme-lightgrey .modal-dialog.login.marketing .voucher-box .infograpic-box .inspiration{background: url("../../../img/admin/marketing-icons.png") no-repeat scroll 8px -1721px rgba(0, 0, 0, 0);}
+.theme-lightgrey .voucher-box .infograpic-box{border:2px solid #666666;}
+.theme-lightgrey .voucher-box h2, .theme-lightgrey .vendor-setting .v-setting-right h4.panel-title > a .add_seista_new,
+.theme-lightgrey .vendor-service-content .panel-default > .panel-heading a:hover{color:#666666;}
+.theme-lightgrey .dataTables_filter label input:focus, .theme-lightgrey .form-control:focus, .theme-lightgrey .select2-focused, 
+.theme-lightgrey .sell-service .form-group section .date input.datepicker:focus, .theme-lightgrey #logout_time:focus,
+.theme-lightgrey textarea#UserDetailBio, .theme-lightgrey button.ms-choice:focus, .theme-lightgrey .search input:focus,
+.theme-lightgrey .treat-block .treat-head-col .search.purple-bod{border:1px solid #666666 !important;}
+.theme-lightgrey .ui-state-default,.theme-lightgrey .ui-widget-content .ui-state-default, .theme-lightgrey .ui-widget-header .ui-state-default{color:#666666 !important;}
+.theme-lightgrey .ui-datepicker .ui-datepicker-calendar td.ui-datepicker-current-day > a,
+.theme-lightgrey .ui-datepicker .ui-datepicker-calendar td:hover > a{background:#666666 !important; color:#fff !important;}
+.theme-lightgrey .ui-state-default,.theme-lightgrey .ui-widget-content .ui-state-default,.theme-lightgrey .ui-widget-header .ui-state-default{color:#666666 !important}
+.theme-lightgrey .admin-outer .navbar-nav .open .dropdown-menu > li > a:hover, .theme-lightgrey .purple-btn
+, .theme-lightgrey .modal-dialog.login.marketing .voucher-box:hover .infograpic-box{background:#666666 !important;}
