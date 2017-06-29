@@ -57,8 +57,8 @@
                 <section class="row">
                     <ul>
                         <li class="hidden-xs"><a [routerLink]="['/']">Home</a></li>
-                        <li class="hidden-xs"><a [routerLink]="['/users/registration']">List Your Business</a></li>
-                        <li class="peach-btn"><a href="javascript:void(0)" class="userLoginModal mainLogin" data-href="/users/login">LOGIN</a></li>
+                        <li class="hidden-xs"><a [routerLink]="['/users/registration']">Register</a></li>
+                        <li class="peach-btn"><a href="javascript:void(0)" class="userLoginModal mainLogin" data-href="/users/login">Sign In</a></li>
                         <li></li>
                     </ul>
                 </section>
@@ -81,7 +81,7 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="registrationform">
                     <legend class="pagetitle">REGISTRATION FORM</legend>
-                    <form class="form-horizontal">
+                    <form  name="form" class="form-horizontal" (ngSubmit)="register()" #signupForm="ngForm" novalidate>
                         <fieldset> 
                             <legend>Are you </legend>
                             <div class="form-group col-md-12">
@@ -102,184 +102,271 @@
 
                         <fieldset>
                             <legend>Your Details</legend>
+                                <div class="row">  
+                                    <div class=" form-group  col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                        <label for="UserFirstname" class="control-label">First Name</label>
+                                        <input type="text" name="firstname" [(ngModel)]="model.firstname" #firstname="ngModel" placeholder="" required  [minlength]="2" [maxlength]="20" pattern ="^[a-zA-z]*$"  id="UserFirstname" class="form-control" > 
+                                        <div *ngIf="firstname.errors && firstname.touched" class="">
+                                            <span class="error" *ngIf="firstname.errors?.required">First Name is mandatory.</span>
+                                            <span class="error" *ngIf="firstname.errors?.minlength">Min 2 characters required.</span>
+                                            <span class="error" *ngIf="firstname.errors?.maxlength">Max 20 characters allowed.</span>
+                                            <span class="error" *ngIf="firstname.errors?.pattern">Enter Only Alphabets.</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                        <label for="UserLastname" class="control-label">Last Name</label>
+                                        <input type="text" name="lastname" [(ngModel)]="model.lastname" #lastname="ngModel" placeholder="" required [minlength]="4" [maxlength]="20" pattern ="^[a-zA-z]*$" id="UserLastname" class="form-control">  
+                                        <div *ngIf="lastname.errors && lastname.touched">   
+                                            <span class="error" *ngIf="lastname.errors?.required">Last Name is mandatory.</span>
+                                            <span class="error" *ngIf="lastname.errors?.minlength">Min 2 characters required.</span>
+                                            <span class="error" *ngIf="lastname.errors?.maxlength">Max 20 characters allowed.</span>
+                                            <span class="error" *ngIf="lastname.errors?.pattern">Enter Only Alphabets.</span>
+                                        </div>
+                                    </div>
+                                </div>
 
-                            <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                <label for="UserFirstname" class="control-label">First Name</label>
-                                <input name="firstname" minlength="2" maxlength="15" class="form-control"  type="text" id="UserFirstname" required="required">                  
-                            </div>
+                                <div class="row">  
+                                    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                        <label for="UserJobTitle" class="control-label">Job Title</label>
+                                        <input type="text" name="job_title" [(ngModel)]="model.job_title" #job_title="ngModel" placeholder="" required [maxlength]="15" pattern ="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$"id="UserJobTitle" class="form-control">
+                                        <div *ngIf="job_title.errors && job_title.touched">   
+                                            <span class="error" *ngIf="job_title.errors?.maxlength">Max 15 characters allowed.</span>
+                                        </div>                 
+                                    </div>
+                                    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                        <label for="UserEmail" class="control-label">Email Address</label>
+                                        <input type="email" name="email" [(ngModel)]="model.email" #email="ngModel" placeholder="" autocomplete="off" required [maxlength]="40" pattern ="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" class="form-control"   id="UserEmail" > 
+                                        <div *ngIf="email.errors && email.touched">   
+                                            <span class="error" *ngIf="email.errors?.required">Email is mandatory.</span>
+                                            <span class="error" *ngIf="email.errors?.pattern">Enter valid email pattern.</span>
+                                        </div>                          
+                                    </div>
+                                </div>
 
-                            <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                <label for="UserLastname" class="control-label">Last Name</label>
-                                <input name="lastname" minlength="2" maxlength="15" class="form-control" value="" type="text" id="UserLastname" required="required">                    
-                            </div>
+                                <div class="row"> 
+                                    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                        <label for="UserNewpassword" class="control-label" >Password</label>
+                                        <input type="password" name="newpassword" [(ngModel)]="model.newpassword" #newpassword="ngModel" placeholder="" required [minlength]="8" [maxlength]="25"  class="form-control" id="UserNewpassword" >                  
+                                        <div *ngIf="newpassword.errors && newpassword.touched">   
+                                            <span class="error" *ngIf="newpassword.errors?.required">Password is mandatory.</span>
+                                            <span class="error" *ngIf="newpassword.errors?.minlength">Min 8 characters required.</span>
+                                            <span class="error" *ngIf="newpassword.errors?.maxlength">Max 25 characters required.</span>
+                                        </div> 
+                                    </div>
+                                    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                        <label for="UserConfirmpassword" class="control-label">Confirm Password</label>
+                                        <input type="password" name="confirmpassword" [(ngModel)]="model.confirmpassword" #confirmpassword="ngModel" placeholder="" required [minlength]="8" [maxlength]="25" class="form-control"  id="UserConfirmpassword" > 
+                                        <div *ngIf="confirmpassword.errors && confirmpassword.touched">   
+                                            <span class="error" *ngIf="confirmpassword.errors?.required">Confirm Password is mandatory.</span>
+                                            <span class="error" *ngIf="confirmpassword.errors?.minlength">Min 8 characters required.</span>
+                                            <span class="error" *ngIf="confirmpassword.errors?.maxlength">Max 25 characters required.</span>
+                                        </div>   
+                                    </div>
+                                </div>
+                            </fieldset>
 
-                            <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                <label for="UserJobTitle" class="control-label">Job Title</label>
-                                <input name="job_title" minlength="" maxlength="15" class="form-control " type="text" id="UserJobTitle">                 
-                            </div>
+                            <fieldset>
+                                <legend>Contact Details</legend>
+                                <div class="row">
+                                    <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <label for="UserCompanyName" class="control-label">Company Name</label>
+                                        <input type="text" name="company_name" [(ngModel)]="model.company_name" #company_name="ngModel" placeholder="" required  class="form-control"  id="UserCompanyName">
+                                        <div *ngIf="company_name.errors && company_name.touched">   
+                                            <span class="error" *ngIf="company_name.errors?.required">Company Name is mandatory.</span>
+                                        </div>   
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                        <label for="UserBusinessPhone" class="control-label">Business Phone Number</label>
+                                        <input type="text" name="business_phone" [(ngModel)]="model.business_phone" #business_phone="ngModel"  placeholder="" required [minlength]="10" [maxlength]="15" class="form-control"  id="UserBusinessPhone"> 
+                                        <div *ngIf="business_phone.errors && business_phone.touched">   
+                                            <span class="error" *ngIf="business_phone.errors?.required">Business Phone Number is mandatory.</span>
+                                            <span class="error" *ngIf="business_phone.errors?.minlength">Min 10 characters required.</span>
+                                            <span class="error" *ngIf="business_phone.errors?.maxlength">Max 15 characters required.</span>
+                                        </div>                 
+                                    </div>
+                                    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                        <label for="UserPhone" class="control-label">Mobile Phone Number</label>
+                                        <input type="text" name="phone" [(ngModel)]="model.phone" #phone="ngModel" [minlength]="10" [maxlength]="15" class="form-control"  id="UserPhone">
+                                        <div *ngIf="phone.errors && phone.touched">   
+                                            <span class="error" *ngIf="phone.errors?.minlength">Min 10 characters required.</span>
+                                            <span class="error" *ngIf="phone.errors?.maxlength">Max 15 characters required.</span>
+                                        </div>                  
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <label for="UserWebsite" class="control-label">Website Address (e.g. http://www.yourwebsite.com)</label>
+                                        <input type="url" name="website"  [(ngModel)]="model.website" #website="ngModel"  [maxlength]="100" class="form-control" id="UserWebsite">
+                                        <div *ngIf="website.errors && website.touched">   
+                                            <span class="error" *ngIf="website.errors?.maxlength">Max 100 characters required.</span>
+                                        </div>   
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <label for="UserAutocomplete" class="control-label">Your Address</label>
+                                        <input name="autocomplete" onfocus="geolocate()" class="form-control" placeholder="" type="text" id="UserAutocomplete" autocomplete="off">                  
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                        <label for="street_number" class="control-label">Street Address</label>
+                                        <input type="text" name="Address" [(ngModel)]="model.address" #address="ngModel"  [minlength]="2" [maxlength]="30" required id="street_number" class="form-control" >  
+                                        <div *ngIf="address.errors && address.touched">   
+                                            <span class="error" *ngIf="address.errors?.required">Street Address is mandatory.</span>
+                                            <span class="error" *ngIf="address.errors?.minlength">Min 2 characters required.</span>
+                                            <span class="error" *ngIf="address.errors?.maxlength">Max 30 characters required.</span>
+                                        </div>              
+                                    </div>
+                                    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                        <label for="route" class="control-label">Street Address 1</label>
+                                        <input type="text" name="route" [(ngModel)]="model.route" #route="ngModel"  [minlength]="2" [maxlength]="50" required id="route" class="form-control" >
+                                        <div *ngIf="route.errors && route.touched">   
+                                            <span class="error" *ngIf="route.errors?.required">Street Address 1 is mandatory.</span>
+                                            <span class="error" *ngIf="route.errors?.minlength">Min 2 characters required.</span>
+                                            <span class="error" *ngIf="route.errors?.maxlength">Max 50 characters required.</span>
+                                        </div>                      
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                        <label for="locality" class="control-label">City</label>
+                                        <input type="text" name="City" [(ngModel)]="model.City" #City="ngModel" [minlength]="2" [maxlength]="30"  required id="locality" class="form-control">
+                                        <div *ngIf="City.errors && City.touched">   
+                                            <span class="error" *ngIf="City.errors?.required">City is mandatory.</span>
+                                            <span class="error" *ngIf="City.errors?.minlength">Min 2 characters required.</span>
+                                            <span class="error" *ngIf="City.errors?.maxlength">Max 30 characters required.</span>
+                                        </div>                    
+                                    </div>
+                                    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                        <label for="administrative_area_level_1" class="control-label">State</label>
+                                        <input type="text" name="state" [(ngModel)]="model.state" #state="ngModel" [minlength]="2" [maxlength]="30" required id="administrative_area_level_1" class="form-control">
+                                        <div *ngIf="state.errors && state.touched">   
+                                            <span class="error" *ngIf="state.errors?.required">State is mandatory.</span>
+                                            <span class="error" *ngIf="state.errors?.minlength">Min 2 characters required.</span>
+                                            <span class="error" *ngIf="state.errors?.maxlength">Max 30 characters required.</span>
+                                        </div>                 
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                        <label for="postal_code" class="control-label">Zip Code</label>
+                                        <input type="text" name="zip" [(ngModel)]="model.zip" #zip="ngModel" [minlength]="5" [maxlength]="6" required id="postal_code" class="form-control">
+                                        <div *ngIf="zip.errors && zip.touched">   
+                                            <span class="error" *ngIf="zip.errors?.required">zip is mandatory.</span>
+                                            <span class="error" *ngIf="zip.errors?.minlength">Min 5 characters required.</span>
+                                            <span class="error" *ngIf="zip.errors?.maxlength">Max 6 characters required.</span>
+                                        </div>                    
+                                    </div>
+                                    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                        <label for="country" class="control-label">Country</label>
+                                        <input type="text" name="country" [(ngModel)]="model.country" #country="ngModel" [minlength]="2" [maxlength]="30" required id="country" class="form-control" >
+                                        <div *ngIf="country.errors && country.touched">   
+                                            <span class="error" *ngIf="country.errors?.required">country is mandatory.</span>
+                                            <span class="error" *ngIf="country.errors?.minlength">Min 2 characters required.</span>
+                                            <span class="error" *ngIf="country.errors?.maxlength">Max 30 characters required.</span>
+                                        </div>                   
+                                    </div>
+                                </div>
+                            </fieldset>
 
-                            <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                <label for="UserEmail" class="control-label">Email Address</label>
-                                <input name="email" autocomplete="off" maxlength="40" class="form-control" value="" type="email" id="UserEmail" required="required">                    
-                            </div>
-
-                            <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                <label for="UserNewpassword" class="control-label" >Password</label>
-                                <input name="newpassword" minlength="8" maxlength="25" class="form-control" value="" type="password" id="UserNewpassword" required="required">                  
-                            </div>
-
-                            <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                <label for="UserConfirmpassword" class="control-label">Confirm Password</label>
-                                <input name="confirmpassword" minlength="8" maxlength="25" class="form-control" type="password" id="UserConfirmpassword" required="required">   
-                            </div>
-                        </fieldset>
-
-                        <fieldset>
-                            <legend>Contact Details</legend>
-                            <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <label for="UserCompanyName" class="control-label">Company Name</label>
-                                <input name="company_name" minlength="2" maxlength="30" class="form-control" type="text" id="UserCompanyName" required="required">                  
-                            </div>
-
-                            <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                <label for="UserBusinessPhone" class="control-label">Business Phone Number</label>
-                                <input name="business_phone" minlength="10" maxlength="15" class="form-control" type="text" id="UserBusinessPhone" required="required">                 
-                            </div>
-
-                            <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                <label for="UserPhone" class="control-label">Mobile Phone Number</label>
-                                <input name="phone" minlength="10" maxlength="15" class="form-control" type="text" id="UserPhone">                  
-                            </div>
-
-                            <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <label for="UserWebsite" class="control-label">Website Address (e.g. http://www.yourwebsite.com)</label>
-                                <input name="website" type="url" class="form-control" maxlength="100" id="UserWebsite"> 
-                            </div>
-
-                            <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <label for="UserAutocomplete" class="control-label">Your Address</label>
-                                <input name="autocomplete" onfocus="geolocate()" class="form-control" placeholder="" type="text" id="UserAutocomplete" autocomplete="off">                  
-                            </div>
-
-                            <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                <label for="street_number" class="control-label">Street Address</label>
-                                <input name="address" minlength="2" maxlength="30" required="required" id="street_number" class="form-control" type="text">             
-                            </div>
-
-                            <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                <label for="route" class="control-label">Street Address 1</label>
-                                <input name="route" minlength="" maxlength="50" required="required" id="route" class="form-control" type="text">                    
-                            </div>
-
-                            <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                <label for="locality" class="control-label">City</label>
-                                <input name="City" minlength="2" maxlength="30" size="30" required="required" id="locality" class="form-control" type="text">                   
-                            </div>
-
-                            <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                <label for="administrative_area_level_1" class="control-label">State</label>
-                                <input name="state" minlength="2" maxlength="30" required="required" id="administrative_area_level_1" class="form-control" type="text">                 
-                            </div>
-
-                            <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                <label for="postal_code" class="control-label">Zip Code</label>
-                                <input name="zip" minlength="5" maxlength="6" size="6" required="required" id="postal_code" class="form-control" type="text">                   
-                            </div>
-
-                            <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                <label for="country" class="control-label">Country</label>
-                                <input name="data[User][country]" minlength="2" maxlength="30" required="required" id="country" class="form-control" type="text">                   
-                            </div>
-                        </fieldset>
-
-                        <fieldset>
-                            <legend>Other Details</legend>
-                            <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                <label for="UserSolarMgntSwId" class="control-label">Solar Management Software you Currently Use</label>
-                                <select name="solar_mgnt_sw_id" class="form-control" id="UserSolarMgntSwId">
-                                    <option value="1">None</option>
-                                    <option value="2">Clean Power Finance</option>
-                                    <option value="3">Solar Design Tool</option>
-                                    <option value="4">Valentin</option>
-                                    <option value="5">Solar Nexus</option>
-                                    <option value="6">SAM</option>
-                                    <option value="7">Solmetric PV Designer</option>
-                                    <option value="8">OnGrid Solar</option>
-                                </select>                                   
-                            </div>
-
-                            <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                <label for="UserSsaToolId" class="control-label">Solar Shading Analysis Tool you Currently Use</label>
-                                <select name="ssa_tool_id" class="form-control" id="UserSsaToolId">
-                                    <option value="1">None</option>
-                                    <option value="2">Solar Pathfinder</option>
-                                    <option value="4">Solmetric iPV</option>
-                                    <option value="3">Solmetric SunEye</option>
-                                </select>          
-                            </div>
-
-                             <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <label for="UserComment" class="control-label">Comments</label>      
-                                <textarea name="comment" minlength="" maxlength="100" rows="2" class="form-control" id="UserComment"></textarea>        
-                            </div>
-
-<div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <div class=" col-lg-offset-10">
-                            <input class="btn btn-primary" type="submit" value="SUBMIT">        
-                    </div></div>
-
-
-
-                        </fieldset>
-
-                    
-
-
-                        
-                    </form>
+                            <fieldset>
+                                <legend>Other Details</legend>
+                                <div class="row">
+                                    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                        <label for="UserSolarMgntSwId" class="control-label">Solar Management Software you Currently Use</label>
+                                        <select name="solar_mgnt_sw_id" class="form-control" id="UserSolarMgntSwId">
+                                            <option value="1">None</option>
+                                            <option value="2">Clean Power Finance</option>
+                                            <option value="3">Solar Design Tool</option>
+                                            <option value="4">Valentin</option>
+                                            <option value="5">Solar Nexus</option>
+                                            <option value="6">SAM</option>
+                                            <option value="7">Solmetric PV Designer</option>
+                                            <option value="8">OnGrid Solar</option>
+                                        </select>                                   
+                                    </div>
+                                    <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                        <label for="UserSsaToolId" class="control-label">Solar Shading Analysis Tool you Currently Use</label>
+                                        <select name="ssa_tool_id" class="form-control" id="UserSsaToolId">
+                                            <option value="1">None</option>
+                                            <option value="2">Solar Pathfinder</option>
+                                            <option value="4">Solmetric iPV</option>
+                                            <option value="3">Solmetric SunEye</option>
+                                        </select>          
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <label for="UserComment" class="control-label">Comments</label>      
+                                        <textarea name="comment" [(ngModel)]="model.comment" #comment="ngModel"  [maxlength]="100" rows="2" class="form-control" id="UserComment"></textarea>
+                                        <div *ngIf="comment.errors && comment.touched">   
+                                           <span class="error" *ngIf="comment.errors?.maxlength">Max 100 characters required.</span>
+                                        </div>        
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class=" col-lg-offset-10">
+                                            <input class="btn btn-primary" type="submit" value="SUBMIT" [disabled]="! signupForm.valid"> 
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
                 </div>
             </div>
-
-
-        </div>
-        <style>
-            .form-group{
-                margin-left: 0px;
-            }
-            #logoImg {
-                max-width: 32%;
-                max-height: 35%;
-            }
-
-            .header.smaller {
-                height: 22%;
-                background: #404040;
-                box-shadow: 0 1px 2px #ddd;
-                padding:15px;
-            }
-            .header {
-                height: 13%;
-                background: #404040;
-                box-shadow: 0 1px 2px #ddd;
-            }
-            .header { height: 13%; left: 0; overflow: hidden; padding: 0px; position: fixed; top: 0; -webkit-transition: height 0.3s; -moz-transition: height 0.3s; -ms-transition: height 0.3s; -o-transition: height 0.3s; transition: height 0.3s; width: 100%; z-index: 999; }
-            .pagetitle{
-                font-size: 20px;
-
-                text-align: center;
-    
-    font-weight: lighter;
-    font-size: 30px;
-    display: block;
-    width: 22%;
-    padding: 0;
-    margin-bottom: 23px;
-    font-size: 21.5px;
-    line-height: inherit;
-    
-    border: 0;
-    border-bottom: 2px solid #e5e5e5;
-            }
+            <style>
+                .form-group{
+                    margin-left: 0px;
+                }
+                #logoImg {
+                    max-width: 32%;
+                    max-height: 35%;
+                }
+                .header.smaller {
+                    height: 22%;
+                    background: #404040;
+                    box-shadow: 0 1px 2px #ddd;
+                    padding:15px;
+                }
+                .header {
+                    height: 13%;
+                    background: #404040;
+                    box-shadow: 0 1px 2px #ddd;
+                }
+                .header { 
+                    height: 13%; 
+                    left: 0; 
+                    overflow: hidden; 
+                    padding: 0px; 
+                    position: fixed; 
+                    top: 0; 
+                    -webkit-transition: height 0.3s; 
+                    -moz-transition: height 0.3s; 
+                    -ms-transition: height 0.3s; 
+                    -o-transition: height 0.3s; 
+                    transition: height 0.3s; 
+                    width: 100%; 
+                    z-index: 999; 
+                }
+                .pagetitle{
+                    font-size: 20px;
+                    text-align: center;
+                    font-weight: lighter;
+                    font-size: 30px;
+                    display: block;
+                    width: 22%;
+                    padding: 0;
+                    margin-bottom: 23px;
+                    font-size: 21.5px;
+                    line-height: inherit;
+                    border: 0;
+                    border-bottom: 2px solid #e5e5e5;
+                }
             </style>
 
         

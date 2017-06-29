@@ -10,6 +10,7 @@ import { NgForm } from '@angular/forms';
 })
 
 export class RegisterComponent{
+	model: any = {};
 	constructor(private router: Router) { 
 	}
 

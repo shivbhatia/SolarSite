@@ -1,7 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { OwlModule } from 'ng2-owl-carousel';
 import { Select2Module } from 'ng2-select2';
+
+import { CustomFormsModule } from 'ng2-validation'
 
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -22,6 +25,8 @@ import { REGISTERNEW_DECLARATIONS } from "./registernew/index";
     BrowserModule,
     OwlModule,
     Select2Module,
+    CustomFormsModule,
+    FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],
