@@ -17,7 +17,10 @@ import { HOME_DECLARATIONS } from "./home/index";
 import { REGISTER_DECLARATIONS } from "./register/index";
 import { REGISTERNEW_DECLARATIONS } from "./registernew/index";
 import { REGISTERFORM_DECLARATIONS } from "./registerform/index";
+import { LOGIN_DECLARATIONS } from "./login/index";
 import { UserService } from "./services/user.service";
+
+
 
 import {GooglePlaceModule} from 'ng2-google-place-autocomplete';
 
@@ -29,6 +32,7 @@ import {GooglePlaceModule} from 'ng2-google-place-autocomplete';
     ...REGISTER_DECLARATIONS,
     ...REGISTERNEW_DECLARATIONS,
     ...REGISTERFORM_DECLARATIONS,
+    ...LOGIN_DECLARATIONS,
   ],
   imports: [
     BrowserModule,

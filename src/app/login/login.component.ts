@@ -7,17 +7,16 @@ import { UserService } from '../services/user.service';
 import { User } from '../models/user.model';
 
 @Component({
-  selector: 'register',
-  templateUrl: "./register.html",
+  selector: 'login',
+  templateUrl: "./login.html",
   styleUrls:['../../assets/cssnew/bootstrap.min.css'],
   
 })
 
-export class RegisterComponent{
+export class LoginComponent{
 	model: any = {};
 	result : any;
 	message:string;
-  loading: boolean; 
 
 	private toasterService: ToasterService;
 	
@@ -36,8 +35,6 @@ export class RegisterComponent{
     
    register() {
         console.log("register");
-         this.loading = true;
-        
         this.userService.create(<User>this.model).subscribe(result => {
         	console.log(result);
           this.result = result;
@@ -48,7 +45,7 @@ export class RegisterComponent{
               this.message="Success";
                //this.errorMsg = 'Failed to login';
 
- 			this.loading = false;
+ 			
             this.toasterService.pop('success', 'Args Title', 'Args Body');
 
               this.router.navigate(['/users/registration']);
