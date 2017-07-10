@@ -1,0 +1,172 @@
+<div class="container">
+    <div class="col-lg-6 col-md-6 col-sm-6 text-center">
+        <div id="banner">
+            <a [routerLink]="['/']"><img src="../../assets/img/logo.png"/></a>
+            <h1>Join our <strong>Commercial Marketplace</strong> Today!</h1>
+            <!--<h5><strong>solarsitedesign.com</strong></h5>-->
+            <button type="submit" class="btn btn-warning" style="background-color: #ED5223">
+                <strong>Already Solarmarketplace Member?</strong>
+            </button>
+        </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6">
+        <div class="registrationform">
+             <form  name="form" class="form-horizontal" (ngSubmit)="checkout()" #checkoutForm="ngForm" novalidate>
+                <fieldset>
+                    <legend>Subscription Checkout <i class="fa fa-pencil pull-right"></i></legend>
+                    <div class="form-group">
+                        <label class="col-lg-1 control-label" ></label>
+                        <div class="col-lg-11">
+                        <span style="color:#ED5223;">Start 10 day Trial Access of Solar Site Design Commercial Marketplace then $79.00 Monthly Membership</span> 
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="first_name" class="col-lg-3 control-label">Name on Card</label>
+                        <div class="col-lg-9">
+                            <input type="text" name="ccnameoncard" [(ngModel)]="model.ccnameoncard" #ccnameoncard="ngModel" required  [minlength]="2" [maxlength]="20" pattern ="^[a-zA-z]*$" class="form-control" id="first_name" placeholder="Enter First Name">
+                            <div *ngIf="ccnameoncard.errors && ccnameoncard.touched" class="">
+                                <span class="error" *ngIf="ccnameoncard.errors?.required"> Name is mandatory.</span>
+                                <span class="error" *ngIf="ccnameoncard.errors?.minlength">Min 2 characters required.</span>
+                                <span class="error" *ngIf="ccnameoncard.errors?.maxlength">Max 20 characters allowed.</span>
+                                <span class="error" *ngIf="ccnameoncard.errors?.pattern">Enter Only Alphabets.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="card_number" class="col-lg-3 control-label">Card Number</label>
+                        <div class="col-lg-9">
+                            <input type="text" name="ccnumber" [(ngModel)]="model.ccnumber" #ccnumber="ngModel" required [minlength]="2" [maxlength]="16" pattern ="^[a-zA-z]*$" class="form-control" id="card_number" placeholder="Enter Credit card number" creditCard>
+                            <div *ngIf="ccnumber.errors && ccnumber.touched">   
+                                <span class="error" *ngIf="ccnumber.errors?.required">Last Name is mandatory.</span>
+                                <span class="error" *ngIf="ccnumber.errors?.minlength">Min 2 characters required.</span>
+                                <span class="error" *ngIf="ccnumber.errors?.maxlength">Max 16 characters allowed.</span>
+                                <span *ngIf="ccnumber.errors?.creditCard">error message</span>
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="monthYear" class="col-lg-3 control-label">MM/YY</label>
+                        <div class="col-lg-9">
+                            <input type="text" name="ccexp" [(ngModel)]="model.ccexp" #ccexp="ngModel" required [maxlength]="15" class="form-control" id="monthYear" placeholder="Enter Expiry month and year">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="ccv" class="col-lg-3 control-label">CCV</label>
+                        <div class="col-lg-9">
+                            <input type="text" name="cccvc" [(ngModel)]="model.cccvc" #cccvc="ngModel" autocomplete="off" required [maxlength]="40" pattern ="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" class="form-control" id="ccv" placeholder="Enter CCV number">
+                            <div *ngIf="cccvc.errors && cccvc.touched">   
+                                <span class="error" *ngIf="cccvc.errors?.required">Email is mandatory.</span>
+                                <span class="error" *ngIf="cccvc.errors?.pattern">Enter valid email pattern.</span>
+                            </div>  
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="UserNewpassword" class="col-lg-3 control-label">
+                            Credit Card Address</label>
+                        <div class="col-lg-9">
+                            <input type="password" name="autocomplete" [(ngModel)]="model.autocomplete" #autocomplete="ngModel" required [minlength]="8" [maxlength]="25" class="form-control" id="UserNewpassword" placeholder="Enter credit card address" >
+                            <div *ngIf="autocomplete.errors && autocomplete.touched">   
+                                <span class="error" *ngIf="autocomplete.errors?.required">Password is mandatory.</span>
+                                <span class="error" *ngIf="autocomplete.errors?.minlength">Min 8 characters required.</span>
+                                <span class="error" *ngIf="autocomplete.errors?.maxlength">Max 25 characters required.</span>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="UserConfirmpassword" class="col-lg-3 control-label">
+                            Street Address</label>
+                        <div class="col-lg-9">
+                            <input type="password" name="address" [(ngModel)]="model.address" #address="ngModel" required [minlength]="8" [maxlength]="25"  class="form-control" id="UserConfirmpassword" placeholder="Enter street address">
+                            <div *ngIf="address.errors && address.touched">   
+                                <span class="error" *ngIf="address.errors?.required">Confirm Password is mandatory.</span>
+                                <span class="error" *ngIf="address.errors?.minlength">Min 8 characters required.</span>
+                                <span class="error" *ngIf="address.errors?.maxlength">Max 25 characters required.</span>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="UserConfirmpassword" class="col-lg-3 control-label">
+                            Extended Address</label>
+                        <div class="col-lg-9">
+                            <input type="password" name="address1" [(ngModel)]="model.address1" #address1="ngModel" required [minlength]="8" [maxlength]="25"  class="form-control" id="UserConfirmpassword" placeholder="Enter street address1">
+                            <div *ngIf="address1.errors && address1.touched">   
+                                <span class="error" *ngIf="address1.errors?.required">Confirm Password is mandatory.</span>
+                                <span class="error" *ngIf="address1.errors?.minlength">Min 8 characters required.</span>
+                                <span class="error" *ngIf="address1.errors?.maxlength">Max 25 characters required.</span>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="UserConfirmpassword" class="col-lg-3 control-label">
+                            City</label>
+                        <div class="col-lg-9">
+                            <input type="text" name="city" [(ngModel)]="model.city" #city="ngModel" required [minlength]="8" [maxlength]="25"  class="form-control" id="UserConfirmpassword" placeholder="Enter city">
+                            <div *ngIf="city.errors && city.touched">   
+                                <span class="error" *ngIf="city.errors?.required">Confirm Password is mandatory.</span>
+                                <span class="error" *ngIf="city.errors?.minlength">Min 8 characters required.</span>
+                                <span class="error" *ngIf="city.errors?.maxlength">Max 25 characters required.</span>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="UserConfirmpassword" class="col-lg-3 control-label">
+                            State</label>
+                        <div class="col-lg-9">
+                            <input type="password" name="state" [(ngModel)]="model.state" #state="ngModel" required [minlength]="8" [maxlength]="25"  class="form-control" id="UserConfirmpassword" placeholder="Enter State">
+                            <div *ngIf="state.errors && state.touched">   
+                                <span class="error" *ngIf="state.errors?.required">Confirm Password is mandatory.</span>
+                                <span class="error" *ngIf="state.errors?.minlength">Min 8 characters required.</span>
+                                <span class="error" *ngIf="state.errors?.maxlength">Max 25 characters required.</span>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="UserConfirmpassword" class="col-lg-3 control-label">
+                            Zip</label>
+                        <div class="col-lg-9">
+                            <input type="text" name="zip" [(ngModel)]="model.zip" #zip="ngModel" required [minlength]="8" [maxlength]="25"  class="form-control" id="UserConfirmpassword" placeholder="Enter zip code">
+                            <div *ngIf="zip.errors && zip.touched">   
+                                <span class="error" *ngIf="zip.errors?.required">Confirm Password is mandatory.</span>
+                                <span class="error" *ngIf="zip.errors?.minlength">Min 8 characters required.</span>
+                                <span class="error" *ngIf="zip.errors?.maxlength">Max 25 characters required.</span>
+                               
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="UserConfirmpassword" class="col-lg-3 control-label">
+                            Country</label>
+                        <div class="col-lg-9">
+                            <input type="password" name="country" [(ngModel)]="model.country" #country="ngModel" required [minlength]="8" [maxlength]="25"  class="form-control" id="UserConfirmpassword" placeholder="Enter Country">
+                            <div *ngIf="country.errors && country.touched">   
+                                <span class="error" *ngIf="country.errors?.required">Confirm Password is mandatory.</span>
+                                <span class="error" *ngIf="country.errors?.minlength">Min 8 characters required.</span>
+                                <span class="error" *ngIf="country.errors?.maxlength">Max 25 characters required.</span>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-10 col-lg-offset-1">
+                            <!--<button type="reset" class="btn btn-warning">Cancel</button>-->
+                            <button type="submit" class="btn btn-primary" [disabled]="! checkoutForm.valid">Submit</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+         </div>
+    </div>
+</div>
+<style>
+.container{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+</style>
+        
