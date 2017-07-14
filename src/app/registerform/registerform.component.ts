@@ -42,7 +42,7 @@ export class RegisterformComponent{
 
             if (result.success == true) {
               //alert("User added");
-              alert(result.type); 
+              //alert(result.type); 
               this.message="Success";
               $('#mydiv').hide();
               if(result.type=='company'){ 
