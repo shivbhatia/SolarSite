@@ -19,13 +19,13 @@
                         <div class="col-lg-9">
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+                                    <input type="radio" name="user_type" id="UserUserTypeOriginator" value="originator" [(ngModel)]="model.user_type" #user_type="ngModel" checked>
                                     An Originator? - Subscribe for Free
                                 </label>
                             </div>
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                                    <input type="radio" name="user_type" id="UserUserTypeCompany" value="company" [(ngModel)]="model.user_type" #user_type="ngModel">
                                     A Fulfillment Company? <br/>Start 10 day Trial Access of Solar Site Design Commercial Marketplace then $79.00 Monthly Membership
                                 </label>
                             </div>

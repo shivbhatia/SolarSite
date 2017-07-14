@@ -18,6 +18,7 @@ import { User } from '../models/user.model';
 export class RegisterformComponent{
   model: any = {};
 	result : any;
+  token : any;
 	message:string;
   private toasterService: ToasterService;
   isLoading: boolean = false;
@@ -40,11 +41,18 @@ export class RegisterformComponent{
             //alert(typeof result);
 
             if (result.success == true) {
-              //alert("User added"); 
+              //alert("User added");
+              alert(result.type); 
               this.message="Success";
               $('#mydiv').hide();
-              this.toasterService.pop('success', 'Successfully Registered', '');
-              this.router.navigate(['/users/login']);
+              if(result.type=='company'){ 
+                  this.toasterService.pop('success', 'Please make payment', '');
+                  localStorage.setItem('token', result.token);
+                  this.router.navigate(['/users/checkout']);
+                }else{
+                  this.toasterService.pop('success', 'Successfully Registered', '');
+                  this.router.navigate(['/users/login']);
+              }
             } else {
               alert("Not added");
             }
