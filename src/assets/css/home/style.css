@@ -72,7 +72,7 @@ header .business-btn { float: right; margin: 30px 0px 0px 0px; }
   font-weight: bold;
 }
 /*header*/
-.banner { background-image: url("/assets/img/Home-User/banner.jpg"); background-size: cover; background-repeat: no-repeat; height: 650px; position: relative; z-index: 0; }
+.banner { /*background-image: url("/assets/img/Home-User/banner.jpg");*/ background-size: cover; background-repeat: no-repeat; height: 650px; position: relative; z-index: 0; }
 .left-content { float: left; margin: 190px 0px 0px 0px; width: auto; }
 .left-content h2 { font-family: 'gotham_htfbold'; font-size: 50px; color: #fff; margin-bottom: 20px; }
 .left-content p { color: #fff; font-size: 20px; font-family: 'gotham_htflight'; margin-bottom: 20px; }

@@ -1345,7 +1345,7 @@ mark,
     color: #bbbbbb
 }
 .text-primary {
-    color: #2196f3
+    color: #ED5022
 }
 a.text-primary:hover,
 a.text-primary:focus {
@@ -1381,7 +1381,7 @@ a.text-danger:focus {
 }
 .bg-primary {
     color: #fff;
-    background-color: #2196f3
+    background-color: #ED5022
 }
 a.bg-primary:hover,
 a.bg-primary:focus {
@@ -3551,7 +3551,7 @@ fieldset[disabled] .btn-danger.active {
     background-color: #ffffff
 }
 .btn-link {
-    color: #2196f3;
+    color: #ED5022;
     font-weight: normal;
     border-radius: 0
 }
@@ -3722,7 +3722,7 @@ tbody.collapse.in {
     color: #ffffff;
     text-decoration: none;
     outline: 0;
-    background-color: #2196f3
+    background-color: #ED5022
 }
 .dropdown-menu>.disabled>a,
 .dropdown-menu>.disabled>a:hover,
@@ -4151,7 +4151,7 @@ select[multiple].input-group-sm>.input-group-btn>.btn {
 .nav .open>a:hover,
 .nav .open>a:focus {
     background-color: #eeeeee;
-    border-color: #2196f3
+    border-color: #ED5022
 }
 .nav .nav-divider {
     height: 1px;
@@ -4244,7 +4244,7 @@ select[multiple].input-group-sm>.input-group-btn>.btn {
 .nav-pills>li.active>a:hover,
 .nav-pills>li.active>a:focus {
     color: #ffffff;
-    background-color: #2196f3
+    background-color: #ED5022
 }
 .nav-stacked>li {
     float: none
@@ -4736,7 +4736,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
     color: #cccccc
 }
 .navbar-inverse {
-    background-color: #2196f3;
+    background-color: #ED5022;
     border-color: transparent
 }
 .navbar-inverse .navbar-brand {
@@ -4871,7 +4871,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
     padding: 6px 16px;
     line-height: 1.846;
     text-decoration: none;
-    color: #2196f3;
+    color: #ED5022;
     background-color: #ffffff;
     border: 1px solid #dddddd;
     margin-left: -1px
@@ -4904,8 +4904,8 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .pagination>.active>span:focus {
     z-index: 2;
     color: #ffffff;
-    background-color: #2196f3;
-    border-color: #2196f3;
+    background-color: #ED5022;
+    border-color: #ED5022;
     cursor: default
 }
 .pagination>.disabled>span,
@@ -5022,7 +5022,7 @@ a.label:focus {
     background-color: #a2a2a2
 }
 .label-primary {
-    background-color: #2196f3
+    background-color: #ED5022
 }
 .label-primary[href]:hover,
 .label-primary[href]:focus {
@@ -5090,7 +5090,7 @@ a.badge:focus {
 }
 .list-group-item.active>.badge,
 .nav-pills>.active>a>.badge {
-    color: #2196f3;
+    color: #ED5022;
     background-color: #ffffff
 }
 .list-group-item>.badge {
@@ -5163,7 +5163,7 @@ a.badge:focus {
 a.thumbnail:hover,
 a.thumbnail:focus,
 a.thumbnail.active {
-    border-color: #2196f3
+    border-color: #ED5022
 }
 .thumbnail .caption {
     padding: 9px;
@@ -5285,7 +5285,7 @@ a.thumbnail.active {
     line-height: 23px;
     color: #ffffff;
     text-align: center;
-    background-color: #2196f3;
+    background-color: #ED5022;
     -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
     box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
     -webkit-transition: width 0.6s ease;
@@ -5449,8 +5449,8 @@ button.list-group-item {
 .list-group-item.active:focus {
     z-index: 2;
     color: #ffffff;
-    background-color: #2196f3;
-    border-color: #2196f3
+    background-color: #ED5022;
+    border-color: #ED5022
 }
 .list-group-item.active .list-group-item-heading,
 .list-group-item.active:hover .list-group-item-heading,
@@ -5846,22 +5846,22 @@ button.list-group-item-danger.active:focus {
     border-bottom-color: #dddddd
 }
 .panel-primary {
-    border-color: #2196f3
+    border-color: #ED5022
 }
 .panel-primary>.panel-heading {
     color: #ffffff;
-    background-color: #2196f3;
-    border-color: #2196f3
+    background-color: #ED5022;
+    border-color: #ED5022
 }
 .panel-primary>.panel-heading+.panel-collapse>.panel-body {
-    border-top-color: #2196f3
+    border-top-color: #ED5022
 }
 .panel-primary>.panel-heading .badge {
-    color: #2196f3;
+    color: #ED5022;
     background-color: #ffffff
 }
 .panel-primary>.panel-footer+.panel-collapse>.panel-body {
-    border-bottom-color: #2196f3
+    border-bottom-color: #ED5022
 }
 .panel-success {
     border-color: #d6e9c6
@@ -6949,9 +6949,9 @@ button.close {
 }
 .btn-primary:active {
     background-color: #0d87e9;
-    background-image: -webkit-radial-gradient(circle, #0d87e9 10%, #2196f3 11%);
-    background-image: -o-radial-gradient(circle, #0d87e9 10%, #2196f3 11%);
-    background-image: radial-gradient(circle, #0d87e9 10%, #2196f3 11%);
+    background-image: -webkit-radial-gradient(circle, #0d87e9 10%, #ED5022 11%);
+    background-image: -o-radial-gradient(circle, #0d87e9 10%, #ED5022 11%);
+    background-image: radial-gradient(circle, #0d87e9 10%, #ED5022 11%);
     background-repeat: no-repeat;
     -webkit-background-size: 1000% 1000%;
     background-size: 1000%;
@@ -7058,7 +7058,7 @@ button.close {
 }
 .btn-link:hover,
 .btn-link:focus {
-    color: #2196f3;
+    color: #ED5022;
     text-decoration: none
 }
 .btn-default.disabled {
@@ -7383,8 +7383,8 @@ input[type="checkbox"]:checked:before,
 input[type="checkbox"]:checked:after,
 .checkbox input[type="checkbox"]:checked:after,
 .checkbox-inline input[type="checkbox"]:checked:after {
-    background-color: #2196f3;
-    border-color: #2196f3
+    background-color: #ED5022;
+    border-color: #ED5022
 }
 input[type="checkbox"]:disabled:after,
 .checkbox input[type="checkbox"]:disabled:after,
@@ -7433,21 +7433,21 @@ input[type="checkbox"]:disabled:checked:after,
 .nav-tabs>li>a:hover,
 .nav-tabs>li>a:focus:hover {
     background-color: transparent;
-    -webkit-box-shadow: inset 0 -2px 0 #2196f3;
-    box-shadow: inset 0 -2px 0 #2196f3;
-    color: #2196f3
+    -webkit-box-shadow: inset 0 -2px 0 #ED5022;
+    box-shadow: inset 0 -2px 0 #ED5022;
+    color: #ED5022
 }
 .nav-tabs>li.active>a,
 .nav-tabs>li.active>a:focus {
     border: none;
-    -webkit-box-shadow: inset 0 -2px 0 #2196f3;
-    box-shadow: inset 0 -2px 0 #2196f3;
-    color: #2196f3
+    -webkit-box-shadow: inset 0 -2px 0 #ED5022;
+    box-shadow: inset 0 -2px 0 #ED5022;
+    color: #ED5022
 }
 .nav-tabs>li.active>a:hover,
 .nav-tabs>li.active>a:focus:hover {
     border: none;
-    color: #2196f3
+    color: #ED5022
 }
 .nav-tabs>li.disabled>a {
     -webkit-box-shadow: inset 0 -1px 0 #ddd;

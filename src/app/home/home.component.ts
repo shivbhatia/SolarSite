@@ -31,6 +31,7 @@ export class HomeComponent implements OnInit {
   public message = '';
   //data: Object = {};
 	constructor(private router: Router) {
+    window.scrollTo(0, 0)
     //this.navbar.emit({navbar:"false"});
     //this.nav=false;
    }

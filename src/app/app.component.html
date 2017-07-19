@@ -38,7 +38,7 @@
 <!--<registerheader></registerheader>-->
 <div *ngIf="loading == true" class="loader">Loading..</div>
 <router-outlet></router-outlet>
-<homefooter></homefooter>
+<homefooter *ngIf="isHomePage()"></homefooter>
 
 
 

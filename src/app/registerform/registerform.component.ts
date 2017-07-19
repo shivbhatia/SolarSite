@@ -1,4 +1,4 @@
-import { Component,ViewEncapsulation } from '@angular/core';
+import { Component,ViewEncapsulation,OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 
@@ -15,7 +15,7 @@ import { User } from '../models/user.model';
   //encapsulation: ViewEncapsulation.None,
   
 })
-export class RegisterformComponent{
+export class RegisterformComponent implements OnInit{
   model: any = {};
 	result : any;
   token : any;
@@ -25,16 +25,24 @@ export class RegisterformComponent{
   
   constructor(private router: Router,private userService: UserService, toasterService: ToasterService) { 
     this.toasterService = toasterService;
+    
+/***** START CODE TO SET FOCUS ON TOP AFTER CLICK ON NAVIGATION LINK *****/
+        
+        window.scrollTo(0, 0)
+
+/***** END CODE TO SET FOCUS ON TOP AFTER CLICK ON NAVIGATION LINK *****/
 
   }
 
 
   ngOnInit(){
+     
   }
 
    register() {
         console.log("register");
          $('#mydiv').show();
+
           this.userService.create(<User>this.model).subscribe(result => {
           //console.log(result);
           this.result = result;

@@ -19,6 +19,7 @@ import { REGISTERNEW_DECLARATIONS } from "./registernew/index";
 import { REGISTERFORM_DECLARATIONS } from "./registerform/index";
 import { CHECKOUT_DECLARATIONS } from "./checkout/index";
 import { LOGIN_DECLARATIONS } from "./login/index";
+import { DASHBOARD_DECLARATIONS } from "./dashboard/index";
 import { UserService } from "./services/user.service";
 
 
@@ -34,6 +35,7 @@ import {GooglePlaceModule} from 'ng2-google-place-autocomplete';
     ...REGISTERNEW_DECLARATIONS,
     ...REGISTERFORM_DECLARATIONS,
     ...LOGIN_DECLARATIONS,
+    ...DASHBOARD_DECLARATIONS,
     ...CHECKOUT_DECLARATIONS,
   ],
   imports: [

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+	<head>
+  		<meta charset="utf-8">
+		<title>Solarsite</title>
+		<base href="/">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" type="image/x-icon" href="favicon.ico">
+		<link rel="stylesheet" type="text/css" href="https://npmcdn.com/angular2-toaster@3.0.1/toaster.css" />
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700,900,500italic,700italic' rel='stylesheet' type='text/css'>
+    	<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    	<script src="./assets/js/home/bootstrap.min.js"></script> 
+        <script  type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBXmez0sxIsSJlo99zh4APGgjieSlQ8TJ0"></script>
+
+        <!-- ----- new template ----- -->
+        <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css' />
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300,800' rel='stylesheet' type='text/css' />
+
+        <!--<link href="./assets/css/home/style.css" rel=stylesheet>
+        <link href="./assets/cssnew/bootstrap.min.css" rel=stylesheet>-->
+
+        
+
+<!-- ===== DASHBOARD PAGES CSS ===== -->
+
+<!--    <link href="./assets//css/dashboard/bootstrap.min.css" rel=stylesheet>
+    <link href="./assets//css/dashboard/sb-admin.css" rel=stylesheet>
+    <link href="./assets//css/dashboard/font-awesome.css" rel=stylesheet>-->
+
+
+
+
+
+        
+
+
+
+
+
+        <script>
+        	function init(){
+        		window.addEventListener('scroll',function(e){var distanceY=window.pageYOffset||document.documentElement.scrollTop,shrinkOn=0,header=document.querySelector("header");if(distanceY>shrinkOn){classie.add(header,"smaller");  document.getElementById("logoImg").src= "./assets/img/SLogoTr.png";}else{if(classie.has(header,"smaller")){classie.remove(header,"smaller");  document.getElementById("logoImg").src= "./assets/img/logo.png";}}});
+        		}
+        		window.onload=init();
+        </script>
+        <style>
+			.loader-container {
+    			background: rgba(0, 0, 0, 0.5);
+    			height: 100%;
+    			position: fixed;
+    			width: 100%;
+    			z-index: 1;
+			}
+			.loader-container .inner-loader {
+	    		left: 50%;
+	    		margin-left: -16px;
+	    		margin-top: -16px;
+	    		position: absolute;
+	    		top: 50%;
+			}
+		</style>
+		<style>
+			#logoImg{
+				max-width: 45%;
+				max-height: 45%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="modal fade bs-example-modal-sm" id="mySmallModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true"></div>
+		<div class="modal fade"  id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+		<app-root></app-root>
+
+
+
+
+
+        <script src="./assets/js/home/header-small.js"></script>
+        
+
+  
+</body>
+</html>
