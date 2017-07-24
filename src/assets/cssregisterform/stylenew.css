@@ -1,6 +1,6 @@
 
 body{
-    background: url(../img/44.jpg) no-repeat scroll center center;
+    background: url(../../assets/img/Home-User/banner.jpg) no-repeat scroll center center;
 }
 
 #custom-bootstrap-menu.navbar-default .navbar-brand
@@ -175,3 +175,4 @@ input[type="text"]:-moz-placeholder, textarea:-moz-placeholder, textarea.form-co
 }
 input[type="text"]:-ms-input-placeholder, textarea:-ms-input-placeholder, textarea.form-control:-ms-input-placeholder { color: #999999; }
 input[type="text"]::-webkit-input-placeholder, textarea::-webkit-input-placeholder, textarea.form-control::-webkit-input-placeholder { color: #999999; }
+

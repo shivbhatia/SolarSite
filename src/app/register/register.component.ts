@@ -1,66 +1,73 @@
-import { Component } from '@angular/core';
+import { Component,ViewEncapsulation,OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
-
 import {ToasterModule, ToasterService} from 'angular2-toaster';
 import { UserService } from '../services/user.service';
 import { User } from '../models/user.model';
 
 @Component({
-  selector: 'register',
-  templateUrl: "./register.html",
-  styleUrls:['../../assets/cssnew/bootstrap.min.css'],
-  
+	selector:'register',
+	templateUrl:'./register.html',
+	styleUrls:['../../assets/cssregisterform/bootstrap.min.css',
+				'../../assets/cssregisterform/font-awesome.css',
+				'../../assets/cssregisterform/stylenew.css'
+				],
+	 
 })
 
-export class RegisterComponent{
+export class registerComponent implements OnInit {
 	model: any = {};
 	result : any;
+  token : any;
 	message:string;
-  loading: boolean; 
+  private toasterService: ToasterService;
+  isLoading: boolean = false;
+  
+  constructor(private router: Router,private userService: UserService, toasterService: ToasterService) { 
+  	document.body.style.backgroundImage = "url('../../assets/img/Home-User/banner.jpg')";
+    this.toasterService = toasterService;
+    
+/***** START CODE TO SET FOCUS ON TOP AFTER CLICK ON NAVIGATION LINK *****/
+        
+        window.scrollTo(0, 0)
 
-	private toasterService: ToasterService;
-	
-	constructor(private router: Router,private userService: UserService, toasterService: ToasterService) { 
-		this.toasterService = toasterService;
-	}
+/***** END CODE TO SET FOCUS ON TOP AFTER CLICK ON NAVIGATION LINK *****/
+
+  }
 
 
   ngOnInit(){
+     
   }
 
-   public options = {types: ['address'],componentRestrictions: { country: 'US' }}
-    getAddress(place:Object) {       
-           console.log("Address", place);
-    }
-    
    register() {
         console.log("register");
-         this.loading = true;
-        
-        this.userService.create(<User>this.model).subscribe(result => {
-        	console.log(result);
+         $('#mydiv').show();
+
+          this.userService.create(<User>this.model).subscribe(result => {
+          //console.log(result);
           this.result = result;
-            alert(typeof result);
+            //alert(typeof result);
 
             if (result.success == true) {
-              alert("User added"); 
+              //alert("User added");
+              //alert(result.type); 
               this.message="Success";
-               //this.errorMsg = 'Failed to login';
-
- 			this.loading = false;
-            this.toasterService.pop('success', 'Args Title', 'Args Body');
-
-              this.router.navigate(['/users/registration']);
+              $('#mydiv').hide();
+              if(result.type=='company'){ 
+                  this.toasterService.pop('success', 'Please make payment', '');
+                  localStorage.setItem('token', result.token);
+                  this.router.navigate(['/users/checkout']);
+                }else{
+                  this.toasterService.pop('success', 'Successfully Registered', '');
+                  this.router.navigate(['/users/login']);
+              }
             } else {
               alert("Not added");
             }
           });
+          
     }
-
-
-
+  
 
 }
-	
-

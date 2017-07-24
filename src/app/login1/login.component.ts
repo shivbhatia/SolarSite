@@ -13,7 +13,7 @@ import { User } from '../models/user.model';
   
 })
 
-export class loginComponent{
+export class LoginComponent{
 	model: any = {};
 	result : any;
 	message:string;
@@ -25,7 +25,6 @@ export class loginComponent{
     //  this.router.navigate(['/users/dashboard']);
    // }
 		this.toasterService = toasterService;
-    document.body.style.backgroundImage = "url('../../assets/img/Home-User/banner.jpg')";
 	}
 
 

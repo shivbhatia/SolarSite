@@ -11,7 +11,7 @@ import { User } from '../models/user.model';
 @Component({
   selector: 'registerform',
   templateUrl: "./registerform.html",
-  styleUrls:['../../assets/cssregisterform/bootstrap.min.css','../../assets/cssregisterform/font-awesome.css','../../assets/cssregisterform/style.css'],
+  styleUrls:['../../assets/cssregisterform/bootstrap.min.css','../../assets/cssregisterform/font-awesome.css','../../assets/cssregisterform/stylenew.css'],
   //encapsulation: ViewEncapsulation.None,
   
 })

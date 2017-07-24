@@ -12,7 +12,7 @@ html {
 body {
   margin: 0;
   letter-spacing: 0px !important;
-  background:none !important;
+  /*background:none !important;*/
 }
 article,
 aside,
@@ -1099,7 +1099,7 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #337ab7;
+  color: #fff;
   text-decoration: none;
 }
 a:hover,

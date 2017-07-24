@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-	selector:'home',
-	templateUrl:'./home.html',
+	selector:'users',
+	templateUrl:'./users.html',
 	//styleUrls:['../../assets/css/home/style.css','../../assets/cssnew/bootstrap.min.css'],
 })
 
-export class homeComponent implements OnInit {
+export class usersComponent implements OnInit {
 	ngOnInit() {
 
 	}

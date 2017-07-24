@@ -16,7 +16,7 @@ import { User } from '../models/user.model';
   
 })
 
-export class checkoutComponent{
+export class CheckoutComponent{
   model: any = {};
 	result : any;
   token : any;
@@ -39,7 +39,6 @@ plans_array: any[];
   
   constructor(private router: Router,private userService: UserService, toasterService: ToasterService) { 
     this.toasterService = toasterService;
-    document.body.style.backgroundImage = "url('../../assets/img/Home-User/banner.jpg')";
 
 
    
