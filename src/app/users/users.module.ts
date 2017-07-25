@@ -13,6 +13,7 @@ import { OwlModule } from 'ng2-owl-carousel';
 
 import { usersComponent } from './users.component';
 import { dashboardheaderComponent } from './dashboardheader/dashboardheader.component';
+import { usersfooterComponent } from './usersfooter/usersfooter.component';
 import { dashboardComponent } from './dashboard/dashboard.component';
 import { marketplaceComponent } from './marketplace/marketplace.component';
 //import { CFInvestmentModule } from './cf_investment/cf_investment.module';
@@ -63,6 +64,7 @@ declare var require: any;
 	declarations:[
 		usersComponent,
 		dashboardheaderComponent,
+		usersfooterComponent,
 		dashboardComponent,
 		marketplaceComponent,
 		

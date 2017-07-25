@@ -13,6 +13,7 @@ import {DataTableModule,SharedModule} from 'primeng/primeng';
 @Component({
   //selector: 'marketplace',
   templateUrl: "./marketplace.html",
+  
   //styleUrls:['../../assets/cssregisterform/bootstrap.min.css','../../assets/cssregisterform/font-awesome.css','../../assets/cssregisterform/stylenew.css'],
   //encapsulation: ViewEncapsulation.None,
   
@@ -36,10 +37,11 @@ export class marketplaceComponent implements OnInit{
     //alert("register");
 
    // this.token=localStorage.getItem('token');
-
+$('#mydiv').show();
     this.solarService.get(<Solar>this.model).subscribe(result => {
           this.result = result;
             console.log(result);
+            $('#mydiv').hide();
             if (result.success == true) {
               alert("User added"); 
               this.message="Success";

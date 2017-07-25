@@ -1,3 +1,4 @@
+
 <div id="page-wrapper">
 	<div class="container-fluid">
     	<!-- Page Heading -->
@@ -11,17 +12,21 @@
         </div>
     </div>
 
-    <div class="ui-widget-header" style="padding:4px 10px;border-bottom: 0 none">
-    <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
-    <input #gb type="text" pInputText size="50" placeholder="Global Filter">
-</div>
+    <div class="ui-widget-header" style="padding:14px 10px;border-bottom: 0 none;height: 67px">
+    	<i class="fa fa-search" style="margin:11px 4px 0 0;float: right;"></i>
+    	<input #gb type="text" pInputText size="50" placeholder="Global Filter" style="float:right;height: 34px;margin-right: 5px;">
+	</div>
 
-    <p-dataTable [value]="result" [rows]="25" [paginator]="true" [globalFilter]="gb" [responsive]="true" [pageLinks]="5" [rowsPerPageOptions]="[25,50,75,100,125,150,175,200,225,250,275,300]">
-    <p-header>Commercial Marketplace Projects</p-header>
-    <p-column field="MarketplaceProject.project_name" [sortable]="true" [style]="{width: '300px','text-align':'center'}" header="Name" [filter]="true" filterPlaceholder="Search"></p-column>
+    <p-dataTable [value]="result" [rows]="25" [paginator]="true" [globalFilter]="gb" [responsive]="true" [pageLinks]="5" [rowsPerPageOptions]="[25,50,75,100,125,150,175,200,225,250,275,300]" >
+    <!--<p-header>Commercial Marketplace Projects</p-header>-->
+    <p-column field="MarketplaceProject.project_name" [sortable]="true" [style]="{width: '300px','text-align':'center','height':'68px'}" header="Name" [filter]="true" filterPlaceholder="Search"></p-column>
     <p-column field="MarketplaceProject.project_size" [sortable]="true" [style]="{'text-align':'center'}" header="Project Size" [filter]="true" filterPlaceholder="Search"></p-column>
     <p-column field="MarketplaceProject.stage" [sortable]="true" [style]="{'text-align':'center'}" header="Project Stage" [filter]="true" filterPlaceholder="Search"></p-column>
     <p-column field="MarketplaceProject.city" [sortable]="true" [style]="{'text-align':'center'}" header="City" [filter]="true" filterPlaceholder="Search"></p-column>
     <p-column field="MarketplaceProject.state" [sortable]="true" [style]="{'text-align':'center'}" header="State" [filter]="true" filterPlaceholder="Search"></p-column>
 </p-dataTable>
 </div>
+
+<style>
+
+</style>

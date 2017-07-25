@@ -1,0 +1,106 @@
+/***** START PRIME NG DATATABLE CSS *****/
+
+.ui-datatable th.ui-state-active{
+    background: #ED5223;
+}
+.ui-paginator .ui-paginator-page.ui-state-active{
+	background:#ED5223;
+	border-color:#ED5223; 
+}
+
+.ui-datatable .ui-paginator-bottom{
+	height: 55px;
+	padding-top:13px;
+}
+.ui-paginator{
+	text-align: right;
+}
+.ui-paginator 
+.ui-paginator-page, 
+.ui-paginator .ui-paginator-pages, 
+.ui-paginator .ui-paginator-next, 
+.ui-paginator .ui-paginator-last, 
+.ui-paginator .ui-paginator-first, 
+.ui-paginator .ui-paginator-prev, 
+.ui-paginator .ui-paginator-current{
+	display: inline-block;
+    padding: 0.345em .875em;
+    zoom: 1;
+    margin-left: .063em;
+    margin-right: .063em;
+    text-decoration: none;
+}
+.ui-paginator .ui-paginator-current, 
+.ui-paginator .ui-paginator-rpp-options{
+	height: 30px;
+}
+
+/***** END PRIME NG CSS *****/
+
+/***** START FOOTER CSS *****/
+
+footer.page-footer {
+    padding-top: 0px;
+}
+footer.page-footer {
+    margin-top: 20px;
+    padding-top: 20px;
+    background-color: #222222;
+    height:59px;
+}
+footer {
+    padding-left: 240px;
+}
+
+footer.page-footer .footer-copyright {
+    overflow: hidden;
+    height: 19px;
+    line-height: 24px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.light, footer.page-footer .footer-copyright {
+    font-weight: 300;
+}
+
+.page-footer .container {
+    padding: 0 15px;
+}
+
+.container {
+    padding: 0 0.5rem;
+    margin: 0 auto;
+    max-width: 100% !important;
+    width: 98%;
+}
+.grey-text.text-lighten-4 {
+    color: #f5f5f5 !important;
+}
+
+/***** END FOOTER CSS *****/
+
+/***** START LOADER CSS *****/
+
+#mydiv {  
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:1000;
+    background-color:grey;
+    opacity: .5;
+    display: none;
+ }
+
+.ajax-loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -32px; /* -1 * image width / 2 */
+    margin-top: -32px;  /* -1 * image height / 2 */
+    display: block;     
+}
+/***** END LOADER CSS *****/
+
+

@@ -37,13 +37,15 @@ export class loginComponent{
    login() {
         this.userService.login(<User>this.model).subscribe(result => {
         	this.result = result;
-            if (result.success == true) {
+            if (result.success == true) { console.log(result);
               //alert("User added"); 
               //alert(result.token);
               this.message="Success";
                //this.errorMsg = 'Failed to login';
 
  			      localStorage.setItem('token', result.token);
+            localStorage.setItem('firstname', result.firstname);
+            localStorage.setItem('lastname', result.lastname);
             this.toasterService.pop('success', 'Congratulations!!!', 'You have successfully logged in!!!');
 
               this.router.navigate(['/users/dashboard']);

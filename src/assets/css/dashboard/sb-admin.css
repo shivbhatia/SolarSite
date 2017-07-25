@@ -115,7 +115,7 @@ ul.alert-dropdown {
 @media(min-width:768px) {
     .side-nav {
         position: fixed;
-        top: 73px;
+        top: 59px;
         left: 225px;
         width: 225px;
         margin-left: -225px;
@@ -135,7 +135,8 @@ ul.alert-dropdown {
     .side-nav li a:hover,
     .side-nav li a:focus {
         outline: none;
-        background-color: #000 !important;
+        /*background-color: #000 !important;*/
+        background-color: #ED5223 !important;
     }
 }
 
