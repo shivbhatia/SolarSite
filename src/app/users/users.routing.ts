@@ -7,6 +7,7 @@ import { ModuleWithProviders } from '@angular/core';
 
 import { marketplaceComponent } from './marketplace/marketplace.component';
 import { dashboardComponent } from './dashboard/dashboard.component';
+import { mydashboardComponent } from './mydashboard/mydashboard.component';
 //import { UsersComponent } from './users/users.component';
 //import { AddUserComponent } from './users/add-user/adduser.component';
 //import { ProfileComponent } from './profile/profile.component';
@@ -36,6 +37,7 @@ const routes: Routes = [
    
     { path: 'marketplace', component: marketplaceComponent },
     { path: 'dashboard', component: dashboardComponent },
+    { path: 'mydashboard', component: mydashboardComponent },
     //{ path: 'profile', component: ProfileComponent },
     //{ path: 'cash-flow-investment', component: cashFlowInvestmentComponent },
     //{ path: 'users/adduser', component: AddUserComponent },

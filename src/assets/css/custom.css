@@ -101,6 +101,53 @@ footer.page-footer .footer-copyright {
     margin-top: -32px;  /* -1 * image height / 2 */
     display: block;     
 }
+
+.loader-container {
+	background: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+.loader-container .inner-loader {
+	left: 50%;
+	margin-left: -16px;
+	margin-top: -16px;
+	position: absolute;
+	top: 50%;
+}
+
+#logoImg{
+	max-width: 45%;
+	max-height: 45%;
+}
+            
 /***** END LOADER CSS *****/
 
-
+.panel-primary > .panel-heading{
+    background-color: #EF7C38;
+    border-color: #EF7C38;
+}
+.panel-primary{
+    border-color: #EF7C38;
+}
+.panel-link{
+    background-color: #EF7C38; 
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+    padding-top: 2px;
+}
+.view-link a{
+    color:#EF7C38;
+}
+.list-inline{
+    margin-left: 4px;
+}
+.panel-primary > .panel-heading{
+    font-weight: bold;
+}
+.well{
+    height:88px;
+}

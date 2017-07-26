@@ -16,6 +16,7 @@ import { dashboardheaderComponent } from './dashboardheader/dashboardheader.comp
 import { usersfooterComponent } from './usersfooter/usersfooter.component';
 import { dashboardComponent } from './dashboard/dashboard.component';
 import { marketplaceComponent } from './marketplace/marketplace.component';
+import { mydashboardComponent } from './mydashboard/mydashboard.component';
 //import { CFInvestmentModule } from './cf_investment/cf_investment.module';
 //import { MainHeaderComponent } from './main-header/main-header.component';
 //import { MainSideComponent } from './main-side/main-side.component';
@@ -67,6 +68,7 @@ declare var require: any;
 		usersfooterComponent,
 		dashboardComponent,
 		marketplaceComponent,
+		mydashboardComponent,
 		
 		//homemenuComponent,
 		//homebannerComponent,

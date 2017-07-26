@@ -6,22 +6,21 @@ import {ToasterModule, ToasterService} from 'angular2-toaster';
 import { SolarService } from '../../services/solar.service';
 import { Solar } from '../../models/solar.model';
 
-import {DataTableModule,SharedModule} from 'primeng/primeng';
 
 
 
 @Component({
   //selector: 'marketplace',
-  templateUrl: "./marketplace.html",
+  templateUrl: "./mydashboard.html",
   
   //styleUrls:['../../assets/cssregisterform/bootstrap.min.css','../../assets/cssregisterform/font-awesome.css','../../assets/cssregisterform/stylenew.css'],
   //encapsulation: ViewEncapsulation.None,
   
 })
 
-export class marketplaceComponent implements OnInit{
+export class mydashboardComponent implements OnInit{
   model: any = {};
-	result : any;
+	results : any;
   token : any;
   public message = '';
   private toasterService: ToasterService;
@@ -34,15 +33,13 @@ export class marketplaceComponent implements OnInit{
 
 
   ngOnInit(){
-    //alert("register");
-
-   // this.token=localStorage.getItem('token');
     $('#mydiv').show();
-    this.solarService.getMydashboardData(<Solar>this.model).subscribe(result => {
-          this.result = result;
-            console.log(result);
+    this.solarService.getMydashboardData(<Solar>this.model).subscribe(results => {
+          this.results = results;
+            console.log(results);
+            
             $('#mydiv').hide();
-            if (result.success == true) {
+            if (results.success == true) {
               alert("User added"); 
               this.message="Success";
                //this.errorMsg = 'Failed to login';
