@@ -38,7 +38,7 @@ export class marketplaceComponent implements OnInit{
 
    // this.token=localStorage.getItem('token');
     $('#mydiv').show();
-    this.solarService.getMydashboardData(<Solar>this.model).subscribe(result => {
+    this.solarService.get(<Solar>this.model).subscribe(result => {
           this.result = result;
             console.log(result);
             $('#mydiv').hide();

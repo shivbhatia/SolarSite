@@ -10,6 +10,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { Ng2SmartTableModule,LocalDataSource } from 'ng2-smart-table';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { Ng2FilterPipeModule } from 'ng2-filter-pipe';
+import { NguiMapModule} from '@ngui/map';
 
 import { CustomFormsModule } from 'ng2-validation'
 
@@ -65,7 +66,10 @@ import {GooglePlaceModule} from 'ng2-google-place-autocomplete';
     Ng2SmartTableModule,
     NgxPaginationModule,
     Ng2FilterPipeModule,
-    
+    NguiMapModule.forRoot({
+      apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyCbMGRUwcqKjlYX4h4-P6t-xcDryRYLmCM' +
+      '&libraries=visualization,places,drawing',
+    }),
 
     BrowserAnimationsModule,
     Select2Module,

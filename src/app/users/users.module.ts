@@ -17,6 +17,12 @@ import { usersfooterComponent } from './usersfooter/usersfooter.component';
 import { dashboardComponent } from './dashboard/dashboard.component';
 import { marketplaceComponent } from './marketplace/marketplace.component';
 import { mydashboardComponent } from './mydashboard/mydashboard.component';
+
+import { NguiMapModule} from '@ngui/map';
+
+
+
+
 //import { CFInvestmentModule } from './cf_investment/cf_investment.module';
 //import { MainHeaderComponent } from './main-header/main-header.component';
 //import { MainSideComponent } from './main-side/main-side.component';
@@ -49,6 +55,9 @@ import {DataTableModule} from 'primeng/primeng';
 
 import { routing } from './users.routing';
 declare var require: any;
+
+//https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBXmez0sxIsSJlo99zh4APGgjieSlQ8TJ0
+
 @NgModule({
 	imports:[
 		FormsModule,
@@ -57,6 +66,10 @@ declare var require: any;
 		CommonModule,
 		routing,
 		OwlModule,
+		NguiMapModule.forRoot({
+      apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyCbMGRUwcqKjlYX4h4-P6t-xcDryRYLmCM' +
+      '&libraries=visualization,places,drawing',
+    }),
 		//Ng2SmartTableModule,
 		//NgxPaginationModule,
 		//ToastModule.forRoot(),
