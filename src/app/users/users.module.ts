@@ -17,6 +17,7 @@ import { usersfooterComponent } from './usersfooter/usersfooter.component';
 import { dashboardComponent } from './dashboard/dashboard.component';
 import { marketplaceComponent } from './marketplace/marketplace.component';
 import { mydashboardComponent } from './mydashboard/mydashboard.component';
+import { quickinspectionComponent } from './quickinspection/quickinspection.component';
 
 import { NguiMapModule} from '@ngui/map';
 
@@ -82,6 +83,7 @@ declare var require: any;
 		dashboardComponent,
 		marketplaceComponent,
 		mydashboardComponent,
+		quickinspectionComponent,
 		
 		//homemenuComponent,
 		//homebannerComponent,

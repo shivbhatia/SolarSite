@@ -66,11 +66,8 @@ this.markers=this.results;
             }
           });
 
-var locations;
-
-
-
- locations = [
+    var locations;
+    locations = [
       ['Bondi Beach', -33.890542, 151.274856, 4],
       ['Coogee Beach', -33.923036, 151.259052, 5],
       ['Cronulla Beach', -34.028249, 151.157507, 3],
