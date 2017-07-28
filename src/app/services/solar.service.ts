@@ -30,7 +30,7 @@ export class SolarService {
     const options = new RequestOptions({ headers: headers })
 
     //return this.http.get('http://192.155.246.146:8145/users/solarDashboard_angular', solar,options ).map(res => <any> res);
-  return this.http.get('http://192.155.246.146:8145/marketplaces/myDashboard_angular',options).map(res => <any> res["_body"]);
+  return this.http.get('http://192.155.246.146:8145/marketplaces/myDashboard_angular',options).map(res => <any> JSON.parse(res["_body"]));
 
   }
 
