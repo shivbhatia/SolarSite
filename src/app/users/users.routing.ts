@@ -9,6 +9,7 @@ import { marketplaceComponent } from './marketplace/marketplace.component';
 import { dashboardComponent } from './dashboard/dashboard.component';
 import { mydashboardComponent } from './mydashboard/mydashboard.component';
 import { quickinspectionComponent } from './quickinspection/quickinspection.component';
+import { addsitevisitComponent } from './addsitevisit/addsitevisit.component';
 //import { UsersComponent } from './users/users.component';
 //import { AddUserComponent } from './users/add-user/adduser.component';
 //import { ProfileComponent } from './profile/profile.component';
@@ -40,6 +41,7 @@ const routes: Routes = [
     { path: 'dashboard', component: dashboardComponent },
     { path: 'mydashboard', component: mydashboardComponent },
     { path: 'quick_inspection', component: quickinspectionComponent },
+    { path: 'addsitevisit', component: addsitevisitComponent },
     //{ path: 'profile', component: ProfileComponent },
     //{ path: 'cash-flow-investment', component: cashFlowInvestmentComponent },
     //{ path: 'users/adduser', component: AddUserComponent },

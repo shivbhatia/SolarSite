@@ -35,9 +35,18 @@ import { UsersModule } from './users/users.module';
 
 
 import {DataTableModule} from 'primeng/primeng';
+//import {DatePickerModule} from 'ng2-datepicker-bootstrap';
+//import { NKDatetimeModule } from 'ng2-datetime/ng2-datetime';
 
+import { Ng2DatetimePickerModule } from 'ng2-datetime-picker';
+
+//import { TooltipModule } from 'angular2-tooltips';
 
 import {GooglePlaceModule} from 'ng2-google-place-autocomplete';
+
+import {TooltipModule} from "ng2-tooltip";
+
+import { Ng2UploaderModule } from 'ng2-uploader';
 
 
 @NgModule({
@@ -66,6 +75,12 @@ import {GooglePlaceModule} from 'ng2-google-place-autocomplete';
     Ng2SmartTableModule,
     NgxPaginationModule,
     Ng2FilterPipeModule,
+    Ng2DatetimePickerModule,
+    Ng2UploaderModule,
+    //NKDatetimeModule,
+    //DatePickerModule,
+    //TooltipModule,
+    TooltipModule,
     NguiMapModule.forRoot({
       apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyCbMGRUwcqKjlYX4h4-P6t-xcDryRYLmCM' +
       '&libraries=visualization,places,drawing',

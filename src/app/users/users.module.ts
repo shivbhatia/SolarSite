@@ -4,6 +4,9 @@ import { CommonModule } from '@angular/common';
 
 import { CustomFormsModule } from 'ng2-validation'
 import { OwlModule } from 'ng2-owl-carousel';
+import {GooglePlaceModule} from 'ng2-google-place-autocomplete';
+//import { TooltipModule } from 'angular2-tooltips';
+
 //import { ChartModule } from 'angular2-highcharts';
 
 //import { Ng2SmartTableModule } from 'ng2-smart-table';
@@ -18,10 +21,13 @@ import { dashboardComponent } from './dashboard/dashboard.component';
 import { marketplaceComponent } from './marketplace/marketplace.component';
 import { mydashboardComponent } from './mydashboard/mydashboard.component';
 import { quickinspectionComponent } from './quickinspection/quickinspection.component';
+import { addsitevisitComponent } from './addsitevisit/addsitevisit.component';
 
 import { NguiMapModule} from '@ngui/map';
 
+//import { NKDatetimeModule } from 'ng2-datetime/ng2-datetime';
 
+import { Ng2DatetimePickerModule } from 'ng2-datetime-picker';
 
 
 //import { CFInvestmentModule } from './cf_investment/cf_investment.module';
@@ -53,6 +59,9 @@ import { NguiMapModule} from '@ngui/map';
 //import { UserService,AdminService,CommonService } from './../services/index';
 
 import {DataTableModule} from 'primeng/primeng';
+import {TooltipModule} from "ng2-tooltip";
+//import {DatePickerModule} from 'ng2-datepicker-bootstrap';
+import { Ng2UploaderModule } from 'ng2-uploader';
 
 import { routing } from './users.routing';
 declare var require: any;
@@ -67,6 +76,12 @@ declare var require: any;
 		CommonModule,
 		routing,
 		OwlModule,
+		GooglePlaceModule,
+		//NKDatetimeModule,
+		Ng2DatetimePickerModule,
+		Ng2UploaderModule,
+		//DatePickerModule,
+		//TooltipModule,
 		NguiMapModule.forRoot({
       apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyCbMGRUwcqKjlYX4h4-P6t-xcDryRYLmCM' +
       '&libraries=visualization,places,drawing',
@@ -74,7 +89,8 @@ declare var require: any;
 		//Ng2SmartTableModule,
 		//NgxPaginationModule,
 		//ToastModule.forRoot(),
-		DataTableModule
+		DataTableModule,
+		TooltipModule
 	],
 	declarations:[
 		usersComponent,
@@ -84,6 +100,7 @@ declare var require: any;
 		marketplaceComponent,
 		mydashboardComponent,
 		quickinspectionComponent,
+		addsitevisitComponent,
 		
 		//homemenuComponent,
 		//homebannerComponent,
