@@ -517,5 +517,8 @@ label {
 .ng2-datetime-picker .days .day.selected{
   background-color: #EF7C38 !important;
 }
+p.error{
+  margin:0;
+}
 
 

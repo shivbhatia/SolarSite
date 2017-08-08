@@ -146,10 +146,10 @@ support@solarsitedesign.com</span>
                         <label>Zip Code</label>
                         <input type="text" name="zip" [(ngModel)]="model.zip" #zip="ngModel" required  [minlength]="5" [maxlength]="5"  class="form-control" id="Zip" placeholder="Enter zip code" number>
                         <div *ngIf="zip.errors && zip.touched" class="">
-                            <span class="error" *ngIf="zip.errors?.required">Zip Code is mandatory.</span>
-                            <span class="error" *ngIf="zip.errors?.minlength">Min 5 characters required.</span>
-                            <span class="error" *ngIf="zip.errors?.maxlength">Max 5 characters allowed.</span>
-                            <span class="error" *ngIf="zip.errors?.number">Enter only numbers.</span>
+                            <p class="error" *ngIf="zip.errors?.required">Zip Code is mandatory.</p>
+                            <p class="error" *ngIf="zip.errors?.minlength">Min 5 characters required.</p>
+                            <p class="error" *ngIf="zip.errors?.maxlength">Max 5 characters allowed.</p>
+                            <p class="error" *ngIf="zip.errors?.number">Enter only numbers.</p>
                         </div>
                     </div>
                 </div>
@@ -228,7 +228,9 @@ support@solarsitedesign.com</span>
                         <input type="file" name="img[]" class="file">
                         <div class="row">
                             <div class="col-lg-9">
-                                <input type="text" class="form-control input-lg" disabled placeholder="Upload Image">
+                                <input type="text" class="form-control input-lg" name="fileNames" [(ngModel)]="UtilityfileInputNames" disabled placeholder="Upload Image">
+
+
                             </div>
                             <div class="col-lg-3">
                                 <tooltip-content #utilityTooltip [animation]="true" placement="top">
@@ -324,7 +326,10 @@ support@solarsitedesign.com</span>
                         <input type="file" name="img[]" class="file">
                         <div class="row">
                             <div class="col-lg-9">
-                                <input type="text" class="form-control input-lg" disabled placeholder="Upload one or more files">
+ 
+
+
+                                <input type="text" class="form-control input-lg" name="fileNames" [(ngModel)]="ElectricalfileInputNames" disabled placeholder="Upload one or more files">
                             </div>
                             <div class="col-lg-3">
                                 <tooltip-content #electricalTooltip [animation]="true" placement="top">
@@ -426,7 +431,7 @@ support@solarsitedesign.com</span>
                         <input type="file" name="img[]" class="file">
                         <div class="row">
                             <div class="col-lg-9">
-                                <input type="text" class="form-control input-lg" name="fileNames" [(ngModel)]="fileNames" disabled placeholder="Upload Structural Data Images">
+                                <input type="text" class="form-control input-lg" name="fileNames" [(ngModel)]="StructuralfileInputNames" disabled placeholder="Upload Structural Data Images">
                             </div>
                             <div class="col-lg-3">
                                 <tooltip-content #myTooltip [animation]="true" placement="top">

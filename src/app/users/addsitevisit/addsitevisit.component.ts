@@ -37,6 +37,9 @@ export class addsitevisitComponent implements OnInit{
     ElectricalfilesToUpload: Array<File>;
     UtilityfilesToUpload: Array<File>;
     filesUpload: Array<File>;
+    StructuralfileInputNames: string;
+    ElectricalfileInputNames: string;
+    UtilityfileInputNames: string;
 	
 	constructor(private router: Router,private solarService: SolarService, toasterService: ToasterService,private http:Http) { 
 		this.toasterService = toasterService;
@@ -192,14 +195,29 @@ export class addsitevisitComponent implements OnInit{
  
 	StructuralfileChangeEvent(StructuralfileInput: any){
 		this.StructuralfilesToUpload = <Array<File>> StructuralfileInput.target.files;
+        let fileNamesNew = [];
+        for (let i=0; i<this.StructuralfilesToUpload.length; i++) {
+            fileNamesNew.push(this.StructuralfilesToUpload[i].name);
+        }
+        this.StructuralfileInputNames = fileNamesNew.join();
     }
 
     ElectricalfileChangeEvent(ElectricalfileInput: any){
         this.ElectricalfilesToUpload = <Array<File>> ElectricalfileInput.target.files;
+        let ElectrialfileNamesNew = [];
+        for (let i=0; i<this.ElectricalfilesToUpload.length; i++) {
+            ElectrialfileNamesNew.push(this.ElectricalfilesToUpload[i].name);
+        }
+        this.ElectricalfileInputNames = ElectrialfileNamesNew.join();
     }
 
     UtilityfileChangeEvent(UtilityfileInput: any){
         this.UtilityfilesToUpload = <Array<File>> UtilityfileInput.target.files;
+        let UtilityfileNamesNew = [];
+        for (let i=0; i<this.UtilityfilesToUpload.length; i++) {
+            UtilityfileNamesNew.push(this.UtilityfilesToUpload[i].name);
+        }
+        this.UtilityfileInputNames = UtilityfileNamesNew.join();
     }
  
     makeFileRequest(url: string, postData: any, Structuralfiles: Array<File>, Electricalfiles: Array<File>, Utilityfiles: Array<File>) {
