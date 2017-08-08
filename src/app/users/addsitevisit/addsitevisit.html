@@ -32,29 +32,30 @@ support@solarsitedesign.com</span>
                 <div class="col-lg-12">
                     <div class="form-group">
                         <label>What is your relationship to the client?</label>
-                        <input type="text" name="relationship" [(ngModel)]="model.relationship" #relationship="ngModel" required  [minlength]="3" [maxlength]="30"  class="form-control" id="Relationship" placeholder="Enter relationship with client">
+                        <input type="text" name="relationship" [(ngModel)]="model.relationship" #relationship="ngModel" required  [minlength]="3" [maxlength]="30"  pattern ="^[a-zA-z]*$" class="form-control" id="Relationship" placeholder="Enter relationship with client">
                         <div *ngIf="relationship.errors && relationship.touched" class="">
-                            <span class="error" *ngIf="relationship.errors?.required">Relationship with client is mandatory.</span>
+                            <span class="error" *ngIf="relationship.errors?.required">Business relationship with client is mandatory.</span>
                             <span class="error" *ngIf="relationship.errors?.minlength">Min 3 characters required.</span>
                             <span class="error" *ngIf="relationship.errors?.maxlength">Max 30 characters allowed.</span>
+                            <span class="error" *ngIf="relationship.errors?.pattern">Enter Only Alphabets.</span>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-12">
                     <div class="form-group">
                         <label>Project Name</label>
-                        <input type="text" name="project_name" [(ngModel)]="model.project_name" #project_name="ngModel" required  [minlength]="3" [maxlength]="30"  class="form-control" id="ProjectName" placeholder="Enter a name for this project">
+                        <input type="text" name="project_name" [(ngModel)]="model.project_name" #project_name="ngModel" required  [minlength]="10" [maxlength]="50"  class="form-control" id="ProjectName" placeholder="Enter a name for this project">
                         <div *ngIf="project_name.errors && project_name.touched" class="">
                             <span class="error" *ngIf="project_name.errors?.required">Project Name is mandatory.</span>
-                            <span class="error" *ngIf="project_name.errors?.minlength">Min 3 characters required.</span>
-                            <span class="error" *ngIf="project_name.errors?.maxlength">Max 30 characters allowed.</span>
+                            <span class="error" *ngIf="project_name.errors?.minlength">Min 10 characters required.</span>
+                            <span class="error" *ngIf="project_name.errors?.maxlength">Max 50 characters allowed.</span>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-12">
                     <div class="form-group">
                         <label>On-Site Contact Name</label>
-                        <input type="text" name="projectContact" [(ngModel)]="model.projectContact" #projectContact="ngModel" required  [minlength]="3" [maxlength]="30"  class="form-control" id="projectContact" placeholder="Enter first and last name of on-site contact">
+                        <input type="text" name="projectContact" [(ngModel)]="model.projectContact" #projectContact="ngModel" required  [minlength]="2" [maxlength]="20"  class="form-control" id="projectContact" placeholder="Enter first and last name of on-site contact">
                         <div *ngIf="projectContact.errors && projectContact.touched" class="">
                             <span class="error" *ngIf="projectContact.errors?.required">On-Site Contact Name is mandatory.</span>
                             <span class="error" *ngIf="projectContact.errors?.minlength">Min 2 characters required.</span>
@@ -67,22 +68,23 @@ support@solarsitedesign.com</span>
                 <div class="col-lg-12">
                     <div class="form-group">
                         <label>On-Site Contact Email</label>
-                        <input type="text" name="contactEmail" [(ngModel)]="model.contactEmail" #contactEmail="ngModel" required  [minlength]="3" [maxlength]="30"  class="form-control" id="contactEmail" placeholder="Enter on-site contact email">
+                        <input type="text" name="contactEmail" [(ngModel)]="model.contactEmail" #contactEmail="ngModel" required  [maxlength]="255" pattern ="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$"  class="form-control" id="contactEmail" placeholder="Enter on-site contact email">
                         <div *ngIf="contactEmail.errors && contactEmail.touched" class="">
                             <span class="error" *ngIf="contactEmail.errors?.required">On-Site contact email is mandatory.</span>
-                            <span class="error" *ngIf="contactEmail.errors?.minlength">Min 2 characters required.</span>
-                            <span class="error" *ngIf="contactEmail.errors?.maxlength">Max 20 characters allowed.</span>
+                            <span class="error" *ngIf="contactEmail.errors?.maxlength">Max 255 characters allowed.</span>
+                             <span class="error" *ngIf="contactEmail.errors?.pattern">Enter valid email pattern.</span>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-12">
                     <div class="form-group">
                         <label>On-Site Contact Phone Number</label>
-                        <input type="text" name="contactPhone" [(ngModel)]="model.contactPhone" #contactPhone="ngModel" required  [minlength]="3" [maxlength]="30"  class="form-control" id="contactPhone" placeholder="Enter on-site contact phone number">
+                        <input type="text" name="contactPhone" [(ngModel)]="model.contactPhone" #contactPhone="ngModel" required  [minlength]="10" [maxlength]="15" number class="form-control" id="contactPhone" placeholder="Enter on-site contact phone number">
                         <div *ngIf="contactPhone.errors && contactPhone.touched" class="">
                             <span class="error" *ngIf="contactPhone.errors?.required">On-site contact phone number is mandatory.</span>
-                            <span class="error" *ngIf="contactPhone.errors?.minlength">Min 2 characters required.</span>
-                            <span class="error" *ngIf="contactPhone.errors?.maxlength">Max 20 characters allowed.</span>
+                            <span class="error" *ngIf="contactPhone.errors?.minlength">Min 10 characters required.</span>
+                            <span class="error" *ngIf="contactPhone.errors?.maxlength">Max 15 characters allowed.</span>
+                            <span class="error" *ngIf="contactPhone.errors?.number">Enter only number.</span>
                         </div>
                     </div>
                 </div>
@@ -96,7 +98,7 @@ support@solarsitedesign.com</span>
                                 [(ngModel)] = "model.autocomplete" 
                                 [options]='options'  
                                         (setAddress) = "getAddress($event)"
-                                        (city)= 'model.City=$event'
+                                        (city)= 'model.city=$event'
                                         (street)= 'model.address=$event'
                                         (state)='model.state=$event'
                                         (postal_code)='model.zip=$event'
@@ -142,11 +144,12 @@ support@solarsitedesign.com</span>
                 <div class="col-lg-12">
                     <div class="form-group">
                         <label>Zip Code</label>
-                        <input type="text" name="zip" [(ngModel)]="model.zip" #zip="ngModel" required  [minlength]="5" [maxlength]="5"  class="form-control" id="Zip" placeholder="Enter zip code">
+                        <input type="text" name="zip" [(ngModel)]="model.zip" #zip="ngModel" required  [minlength]="5" [maxlength]="5"  class="form-control" id="Zip" placeholder="Enter zip code" number>
                         <div *ngIf="zip.errors && zip.touched" class="">
                             <span class="error" *ngIf="zip.errors?.required">Zip Code is mandatory.</span>
                             <span class="error" *ngIf="zip.errors?.minlength">Min 5 characters required.</span>
                             <span class="error" *ngIf="zip.errors?.maxlength">Max 5 characters allowed.</span>
+                            <span class="error" *ngIf="zip.errors?.number">Enter only numbers.</span>
                         </div>
                     </div>
                 </div>
@@ -231,7 +234,18 @@ support@solarsitedesign.com</span>
                                 <tooltip-content #utilityTooltip [animation]="true" placement="top">
                                     <p>Please upload your client's utility bills from the last 12 months.Please upload photos of the exterior of the builiding.Please upload photos of the utility transformer outdoors.Please upload your signed Letter of Engagment. </p>
                                 </tooltip-content>
-                                <button class="browse btn btn-primary input-lg" type="button" [tooltip]="utilityTooltip" ><i class="glyphicon glyphicon-search"></i> Upload Utility Bills</button>
+
+
+
+                                <input #utilityInput type="file" style="display: none;" (change)="UtilityfileChangeEvent($event)" accept="image/*" multiple />
+
+                                <button (click)="utilityInput.click();" class="browse btn btn-primary input-lg" type="button"  [tooltip]=utilityTooltip ><i class="glyphicon glyphicon-search"></i> Upload Utility Bills</button>
+
+
+                               
+
+
+                               
                             </div>
                         </div>
                     </div>
@@ -326,12 +340,11 @@ support@solarsitedesign.com</span>
                                     Main breaker in subpanel. </p>
                                 </tooltip-content>
                                 
-                                <input #electricalInput type="file" style="display: none;" (change)="onFileSelect($event)" accept="image/*" multiple />
+                                <input #electricalInput type="file" style="display: none;" (change)="ElectricalfileChangeEvent($event)" accept="image/*" multiple />
 
                                 <button (click)="electricalInput.click();" class="browse btn btn-primary input-lg" type="button"  [tooltip]=electricalTooltip ><i class="glyphicon glyphicon-search"></i> Upload Electrical Data Images</button>
 
-
-
+                                
 
 
                             </div>
@@ -349,15 +362,15 @@ support@solarsitedesign.com</span>
                     <div class="form-group">
                         <label>Structure Type</label>
                          <div class="checkbox checkbox-primary checkbox-inline">
-                        <input type="checkbox" id="inlineCheckbox1" value="option1">
+                        <input type="checkbox" id="inlineCheckbox1" name="pitched_roof" [(ngModel)]="model.pitched_roof" #pitched_roof="ngModel" value="1">
                         <label for="inlineCheckbox1"> Pitched Roof </label>
                     </div>
                     <div class="checkbox checkbox-primary checkbox-inline">
-                        <input type="checkbox" id="inlineCheckbox2" value="option1" checked="">
+                        <input type="checkbox" id="inlineCheckbox2" name="flat_roof" [(ngModel)]="model.flat_roof" #flat_roof="ngModel" value="1" checked="">
                         <label for="inlineCheckbox2"> Flat Roof </label>
                     </div>
                     <div class="checkbox checkbox-primary checkbox-inline">
-                        <input type="checkbox" id="inlineCheckbox3" value="option1">
+                        <input type="checkbox" id="inlineCheckbox3" name="ground_mount_system" [(ngModel)]="model.ground_mount_system" #ground_mount_system="ngModel" value="1">
                         <label for="inlineCheckbox3"> Land for Ground Mount </label>
                     </div>
                     </div>
@@ -419,14 +432,11 @@ support@solarsitedesign.com</span>
                                 <tooltip-content #myTooltip [animation]="true" placement="top">
                                     <span style="text-align: justify;width:120px;">Please upload photos of the roof structure and support.Photos should be looking up from the bottom to see the rafters,purlins,trusses and the spacing between them.<br/>If you have access to the roof,upload photos of the roof type (close up). Also upload photos of the array location, any obstacles, shading objects, and any pre-existing damage to roof or signs of water ponding. </span>
                                 </tooltip-content>
-                                <input #fileInput type="file" style="display: none;" (change)="onFileSelect($event)" accept="image/*" multiple />
+                                <input #fileInput type="file" style="display: none;" (change)="StructuralfileChangeEvent($event)" accept="image/*" multiple />
                                 <button (click)="fileInput.click();" class="browse btn btn-primary input-lg" type="button"  [tooltip]="myTooltip" ><i class="glyphicon glyphicon-search"></i> Upload Structural Data Images</button>
-<!--<input type="file"
-       ngFileSelect
-       [options]="options1"
-       (onUpload)="handleUpload($event)"
-       (beforeUpload)="beforeUpload($event)" >-->
-
+								
+								
+								
                             </div>
                         </div>
                     </div>
@@ -437,7 +447,7 @@ support@solarsitedesign.com</span>
                 
                     <div class="form-group">
                         <div class="col-lg-12 ">
-                             <button type="submit" class="btn btn-primary  pull-right" [disabled]="! addsitevisitForm.valid">RECEIVE YOUR WORKING MODEL</button>
+                             <button type="submit" class="btn btn-primary  pull-right" >RECEIVE YOUR WORKING MODEL</button>
                         </div>
                     
                 </div>

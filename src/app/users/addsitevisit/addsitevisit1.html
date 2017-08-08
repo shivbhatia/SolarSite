@@ -1,0 +1,454 @@
+
+
+
+<div id="page-wrapper">
+	<div class="container-fluid">
+    	<!-- Page Heading -->
+        <div class="row">
+        	<div class="col-lg-12">
+            	<h2 class="page-header">Add Site Visit</h2>
+                <ol class="breadcrumb">
+                	<li class="active"><i class="fa fa-dashboard"></i> Dashboard</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <form  name="form" class="" (ngSubmit)="AddSiteVisit()" #addsitevisitForm="ngForm" novalidate>
+
+            <div class="row">
+                <div class="col-lg-12">
+                <span style="color:#9e9e9e;font-style: italic; font-size: 15px;"><span style="font-size: 20px;">T</span>o receive a preliminary working model for your client's potential solar project. Please fill out as many fields as possible. Required fields are necessary,as they are needed in order for our team to begin modeling.<br/><span style="font-size: 20px;">S</span>olar Site design works exclusively with trusted,contracted originator channels. If you are intrested in becoming part of one of our originator channels or are intrested in building your own origination channel. Please send us an email at: <br/>
+support@solarsitedesign.com</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                <span style="font-size: 20px; color:#EF7C38;border-bottom:2px solid #EF7C38;">PROJECT DATA:</span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label>What is your relationship to the client?</label>
+                        <input type="text" name="relationship" [(ngModel)]="model.relationship" #relationship="ngModel" required  [minlength]="3" [maxlength]="30"  class="form-control" id="Relationship" placeholder="Enter relationship with client">
+                        <div *ngIf="relationship.errors && relationship.touched" class="">
+                            <span class="error" *ngIf="relationship.errors?.required">Relationship with client is mandatory.</span>
+                            <span class="error" *ngIf="relationship.errors?.minlength">Min 3 characters required.</span>
+                            <span class="error" *ngIf="relationship.errors?.maxlength">Max 30 characters allowed.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label>Project Name</label>
+                        <input type="text" name="project_name" [(ngModel)]="model.project_name" #project_name="ngModel" required  [minlength]="3" [maxlength]="30"  class="form-control" id="ProjectName" placeholder="Enter a name for this project">
+                        <div *ngIf="project_name.errors && project_name.touched" class="">
+                            <span class="error" *ngIf="project_name.errors?.required">Project Name is mandatory.</span>
+                            <span class="error" *ngIf="project_name.errors?.minlength">Min 3 characters required.</span>
+                            <span class="error" *ngIf="project_name.errors?.maxlength">Max 30 characters allowed.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label>On-Site Contact Name</label>
+                        <input type="text" name="projectContact" [(ngModel)]="model.projectContact" #projectContact="ngModel" required  [minlength]="3" [maxlength]="30"  class="form-control" id="projectContact" placeholder="Enter first and last name of on-site contact">
+                        <div *ngIf="projectContact.errors && projectContact.touched" class="">
+                            <span class="error" *ngIf="projectContact.errors?.required">On-Site Contact Name is mandatory.</span>
+                            <span class="error" *ngIf="projectContact.errors?.minlength">Min 2 characters required.</span>
+                            <span class="error" *ngIf="projectContact.errors?.maxlength">Max 20 characters allowed.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label>On-Site Contact Email</label>
+                        <input type="text" name="contactEmail" [(ngModel)]="model.contactEmail" #contactEmail="ngModel" required  [minlength]="3" [maxlength]="30"  class="form-control" id="contactEmail" placeholder="Enter on-site contact email">
+                        <div *ngIf="contactEmail.errors && contactEmail.touched" class="">
+                            <span class="error" *ngIf="contactEmail.errors?.required">On-Site contact email is mandatory.</span>
+                            <span class="error" *ngIf="contactEmail.errors?.minlength">Min 2 characters required.</span>
+                            <span class="error" *ngIf="contactEmail.errors?.maxlength">Max 20 characters allowed.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label>On-Site Contact Phone Number</label>
+                        <input type="text" name="contactPhone" [(ngModel)]="model.contactPhone" #contactPhone="ngModel" required  [minlength]="3" [maxlength]="30"  class="form-control" id="contactPhone" placeholder="Enter on-site contact phone number">
+                        <div *ngIf="contactPhone.errors && contactPhone.touched" class="">
+                            <span class="error" *ngIf="contactPhone.errors?.required">On-site contact phone number is mandatory.</span>
+                            <span class="error" *ngIf="contactPhone.errors?.minlength">Min 2 characters required.</span>
+                            <span class="error" *ngIf="contactPhone.errors?.maxlength">Max 20 characters allowed.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label>Enter Project Address</label>
+                        <!--<input type="text" name="autocomplete" [(ngModel)]="model.autocomplete" #autocomplete="ngModel" required  class="form-control" id="autocomplete" placeholder="Enter project address">-->
+                        <input type="text" name="autocomplete" required  class="form-control" #autocomplete="ngModel" id="SiteAutocomplete" placeholder="Enter project address" 
+                                [(ngModel)] = "model.autocomplete" 
+                                [options]='options'  
+                                        (setAddress) = "getAddress($event)"
+                                        (city)= 'model.City=$event'
+                                        (street)= 'model.address=$event'
+                                        (state)='model.state=$event'
+                                        (postal_code)='model.zip=$event'
+                                        (country)= 'model.country=$event'  ng2-google-place-autocomplete>
+                        <div *ngIf="autocomplete.errors && autocomplete.touched" class="">
+                            <span class="error" *ngIf="autocomplete.errors?.required">Project Address is mandatory.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label>Street Address</label>
+                        <input type="text" name="address" [(ngModel)]="model.address" #address="ngModel" required    class="form-control" id="Address" placeholder="Enter street address">
+                        <div *ngIf="address.errors && address.touched" class="">
+                            <span class="error" *ngIf="address.errors?.required">Street address is mandatory.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label>City</label>
+                        <input type="text" name="city" [(ngModel)]="model.city" #city="ngModel" required    class="form-control" id="City" placeholder="Enter city">
+                        <div *ngIf="city.errors && city.touched" class="">
+                            <span class="error" *ngIf="city.errors?.required">City is mandatory.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label>State</label>
+                        <input type="text" name="state" [(ngModel)]="model.state" #state="ngModel" required  class="form-control" id="State" placeholder="Enter state">
+                        <div *ngIf="state.errors && state.touched" class="">
+                            <span class="error" *ngIf="state.errors?.required">State is mandatory.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label>Zip Code</label>
+                        <input type="text" name="zip" [(ngModel)]="model.zip" #zip="ngModel" required  [minlength]="5" [maxlength]="5"  class="form-control" id="Zip" placeholder="Enter zip code">
+                        <div *ngIf="zip.errors && zip.touched" class="">
+                            <span class="error" *ngIf="zip.errors?.required">Zip Code is mandatory.</span>
+                            <span class="error" *ngIf="zip.errors?.minlength">Min 5 characters required.</span>
+                            <span class="error" *ngIf="zip.errors?.maxlength">Max 5 characters allowed.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label>Country</label>
+                        <input type="text" name="country" [(ngModel)]="model.country" #country="ngModel" required    class="form-control" id="Country" placeholder="Enter country">
+                        <div *ngIf="country.errors && country.touched" class="">
+                            <span class="error" *ngIf="country.errors?.required">Country is mandatory.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label>Date of Site Visit</label>
+                        <input type="text" name="survey_date" [(ngModel)]="model.survey_date" #survey_date="ngModel" required   class="form-control" id="SurveyDate" placeholder="Enter the date of your visit to the site" ng2-datetime-picker
+      date-only="true">
+                        <div *ngIf="survey_date.errors && survey_date.touched" class="" >
+                            <span class="error" *ngIf="survey_date.errors?.required">Date of site visit is mandatory.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label>Estimated installation date</label>
+                        <input type="text" name="installation_date" [(ngModel)]="model.installation_date" #installation_date="ngModel" required    class="form-control" id="InstallationDate" placeholder="Enter the desired date for installation" ng2-datetime-picker date-only="true" >
+                        <div *ngIf="installation_date.errors && installation_date.touched" class="" >
+                            <span class="error" *ngIf="installation_date.errors?.required">Installation Date is mandatory.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label>Electric Utility Provider</label>
+                        <input type="text" name="electric_utility_provider" [(ngModel)]="model.electric_utility_provider" #electric_utility_provider="ngModel" required    class="form-control" id="SiteElectricUtilityProvider" placeholder="Enter the utility provider">
+                        <div *ngIf="electric_utility_provider.errors && electric_utility_provider.touched" class="">
+                            <span class="error" *ngIf="electric_utility_provider.errors?.required">Electric utility provider is mandatory.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label>Estimated monthly utility bill payment</label>
+                        <input type="text" name="utility_bill_cost" [(ngModel)]="model.utility_bill_cost" #utility_bill_cost="ngModel" required    class="form-control" id="SiteUtilityBillCost" placeholder="Enter the client's monthly utility bill payment">
+                        <div *ngIf="utility_bill_cost.errors && utility_bill_cost.touched" class="">
+                            <span class="error" *ngIf="utility_bill_cost.errors?.required">Estimated monthly utility bill payment is mandatory.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label>Own or Rent</label>
+                        <input type="text" name="home_type" [(ngModel)]="model.home_type" #home_type="ngModel" required    class="form-control" id="SiteHomeType" placeholder="Enter RENT if business property is rented.Enter OWN if property is owned by the business owner">
+                        <div *ngIf="home_type.errors && home_type.touched" class="">
+                            <span class="error" *ngIf="home_type.errors?.required">Enter RENT if business property is rented.Enter OWN if property is owned by the business owner.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label>Project Data Documents & Additional Comments</label>
+                        <input type="text" name="projectData_comment" [(ngModel)]="model.projectData_comment" #projectData_comment="ngModel" required    class="form-control" id="SiteProjectDataComment" placeholder="Please write any additional,relevant comments for our design team here.">
+                        <div *ngIf="projectData_comment.errors && projectData_comment.touched" class="">
+                            <span class="error" *ngIf="projectData_comment.errors?.required">Please write any additional,relevant comments for our design team here.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <input type="file" name="img[]" class="file">
+                        <div class="row">
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control input-lg" disabled placeholder="Upload Image">
+                            </div>
+                            <div class="col-lg-3">
+                                <tooltip-content #utilityTooltip [animation]="true" placement="top">
+                                    <p>Please upload your client's utility bills from the last 12 months.Please upload photos of the exterior of the builiding.Please upload photos of the utility transformer outdoors.Please upload your signed Letter of Engagment. </p>
+                                </tooltip-content>
+
+
+
+                                <input #utilityInput type="file" style="display: none;" (change)="onUtilityFileSelect($event)" accept="image/*" multiple />
+
+                                <button (click)="utilityInput.click();" class="browse btn btn-primary input-lg" type="button"  [tooltip]=utilityTooltip ><i class="glyphicon glyphicon-search"></i> Upload Utility Bills</button>
+
+
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+            <div class="row">
+                <div class="col-lg-12">
+                    <span style="font-size: 20px; color:#EF7C38;border-bottom:2px solid #EF7C38;">ELECTRICAL DATA:</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label>Building Voltage(Select One)</label>
+                        <select class="form-control" name="building_voltage" [(ngModel)]="model.building_voltage" #building_voltage="ngModel">
+                            <option>Please Select</option>
+                            <option [value]="0">480/277 (3-phase)</option>
+                            <option [value]="1">208/120 (3-phase)</option>
+                            <option [value]="2">240/120</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label>Is there breaker space available?</label>
+                        <select class="form-control" name="breker_space" [(ngModel)]="model.breaker_space" #breaker_space="ngModel">
+                            <option>Please Select</option>
+                            <option [value]="1">Yes</option>
+                            <option [value]="0">No</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+
+                    <div class="form-group">
+                        <label>Distribution Panel Location</label>
+                        <div class="radio radio-info radio-inline col-lg-3">
+                        <input type="radio" id="inlineRadio1" value="option1" name="radioInline" checked="">
+                        <label for="inlineRadio1"> Inline One </label>
+                    </div>
+                        <div class="radio radio-info radio-inline col-lg-3">
+                        <input type="radio" id="inlineRadio2" value="option1" name="radioInline">
+                        <label for="inlineRadio2"> Inline Two </label>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label>Electric Data Documents & Additional Comments</label>
+                        <input type="text" name="installData_comment" [(ngModel)]="model.installData_comment" #installData_comment="ngModel" required    class="form-control" id="SiteInstallDataComment" placeholder="Please write any additional, relevant comments for our design team here.">
+                        <div *ngIf="installData_comment.errors && installData_comment.touched" class="">
+                            <span class="error" *ngIf="installData_comment.errors?.required">Please write any additional,relevant comments for our design team here.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label>Panel Rating</label>
+                        <input type="text" name="panel_rating" [(ngModel)]="model.panel_rating" #panel_rating="ngModel" required    class="form-control" id="PanelRating" placeholder="Enter panel rating">
+                        <div *ngIf="panel_rating.errors && panel_rating.touched" class="">
+                            <span class="error" *ngIf="panel_rating.errors?.required">Enter panel rating.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label>Panel Manufacturer</label>
+                        <input type="text" name="panel_manufacturer" [(ngModel)]="model.panel_manufacturer" #panel_manufacturer="ngModel" required    class="form-control" id="PanelManufacturer" placeholder="Enter the panel manufacturer">
+                        <div *ngIf="panel_manufacturer.errors && panel_manufacturer.touched" class="">
+                            <span class="error" *ngIf="panel_manufacturer.errors?.required">Enter the panel manufacturer.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <input type="file" name="img[]" class="file">
+                        <div class="row">
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control input-lg" disabled placeholder="Upload one or more files">
+                            </div>
+                            <div class="col-lg-3">
+                                <tooltip-content #electricalTooltip [animation]="true" placement="top">
+                                    <p>Please upload the following photos for our design team:<br/>
+                                    Electrical equipment and spare spaces in the electrical room.<br/>
+                                    Photo of the wall and floor areas showing clearances in the electrical rooom<br/> 
+                                    Metered panel/switchgear(wide image to show general area)<br/>
+                                    Metered panel/switchgear(closeup to show nameplate label,brand and ratings) <br/>
+                                    Meter,<br/>
+                                    Main breaker,<br/>
+                                    Main distribution panel(wide image to show general area).<br/>
+                                    Main distribution panel(close up to show panel label,brand and ratings).<br/>
+                                    Main breaker in subpanel. </p>
+                                </tooltip-content>
+                                
+                                <input #electricalInput type="file" style="display: none;" (change)="onElectricalFileSelect($event)" accept="image/*" multiple />
+
+                                <button (click)="electricalInput.click();" class="browse btn btn-primary input-lg" type="button"  [tooltip]=electricalTooltip ><i class="glyphicon glyphicon-search"></i> Upload Electrical Data Images</button>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <span style="font-size: 20px; color:#EF7C38;border-bottom:2px solid #EF7C38;">STRUCTURAL DATA:</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label>Structure Type</label>
+                         <div class="checkbox checkbox-primary checkbox-inline">
+                        <input type="checkbox" id="inlineCheckbox1" value="option1">
+                        <label for="inlineCheckbox1"> Pitched Roof </label>
+                    </div>
+                    <div class="checkbox checkbox-primary checkbox-inline">
+                        <input type="checkbox" id="inlineCheckbox2" value="option1" checked="">
+                        <label for="inlineCheckbox2"> Flat Roof </label>
+                    </div>
+                    <div class="checkbox checkbox-primary checkbox-inline">
+                        <input type="checkbox" id="inlineCheckbox3" value="option1">
+                        <label for="inlineCheckbox3"> Land for Ground Mount </label>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label>Roof Surface(Select One)</label>
+                        <select class="form-control">
+                             <option>Please Select</option>
+                            <option>Single ply asphalt</option>
+                            <option>TPO</option>
+                            <option>PVC</option>
+                            <option>Trapezoidal</option>
+                            <option>Standing seam metal</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label>Roof Structure(Select One)</label>
+                        <select class="form-control">
+                            <option>Please Select</option>
+                            <option>Metal trusses</option>
+                            <option>Wood-framed trusses</option>
+                            <option>Concrete trusses</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label>Roof Age</label>
+                        <input type="text" name="roof_age" [(ngModel)]="model.roof_age" #roof_age="ngModel" required    class="form-control" id="RoofAge" placeholder="Enter age of the roof">
+                        <div *ngIf="roof_age.errors && roof_age.touched" class="">
+                            <span class="error" *ngIf="roof_age.errors?.required">Enter age of the roof.</span>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col-lg-12">
+                    <div class="form-group">
+                        <label>Structural Data Documents & Additional Comments</label>
+                        <input type="text" name="designInfo_comment" [(ngModel)]="model.designInfo_comment" #designInfo_comment="ngModel" required    class="form-control" id="SiteDesignInfoComment" placeholder="Please write any additional, relevant comments for our structure data here.">
+                        <div *ngIf="designInfo_comment.errors && designInfo_comment.touched" class="">
+                            <span class="error" *ngIf="designInfo_comment.errors?.required">Write any additional, relevant comments for our structure data is mandatory.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <input type="file" name="img[]" class="file">
+                        <div class="row">
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control input-lg" name="fileNames" [(ngModel)]="fileNames" disabled placeholder="Upload Structural Data Images">
+                            </div>
+                            <div class="col-lg-3">
+                                <tooltip-content #myTooltip [animation]="true" placement="top">
+                                    <span style="text-align: justify;width:120px;">Please upload photos of the roof structure and support.Photos should be looking up from the bottom to see the rafters,purlins,trusses and the spacing between them.<br/>If you have access to the roof,upload photos of the roof type (close up). Also upload photos of the array location, any obstacles, shading objects, and any pre-existing damage to roof or signs of water ponding. </span>
+                                </tooltip-content>
+                                <input #fileInput type="file" style="display: none;" (change)="onStructuralFileSelect($event)" accept="image/*" multiple />
+                                <button (click)="fileInput.click();" class="browse btn btn-primary input-lg" type="button"  [tooltip]="myTooltip" ><i class="glyphicon glyphicon-search"></i> Upload Structural Data Images</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                
+                    <div class="form-group">
+                        <div class="col-lg-12 ">
+                             <button type="submit" class="btn btn-primary  pull-right" >RECEIVE YOUR WORKING MODEL</button>
+                        </div>
+                    
+                </div>
+            </div>
+        </form>
+       
+    </div>
+</div>
+
+
+
+
+
+

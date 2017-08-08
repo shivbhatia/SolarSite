@@ -46,5 +46,17 @@ export class SolarService {
       return data;
     });
   }
+  
+  addsitevisit(formData) {
+    let headers = new Headers();
+    /** No need to include Content-Type in Angular 4 */
+    headers.append('Content-Type', 'multipart/form-data');
+    headers.append('Accept', 'application/json');
+    let options = new RequestOptions({ headers: headers, method: "post" });
+    //let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    //let options = new RequestOptions({ headers: headers, method: "post"});
+    //console.log(solar);
+    return this.http.post('http://192.155.246.146:8145/users/add_inspection_angular', formData).map(res => <any> res["_body"]);
+  }
 
 }
