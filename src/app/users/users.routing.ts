@@ -10,6 +10,10 @@ import { dashboardComponent } from './dashboard/dashboard.component';
 import { mydashboardComponent } from './mydashboard/mydashboard.component';
 import { quickinspectionComponent } from './quickinspection/quickinspection.component';
 import { addsitevisitComponent } from './addsitevisit/addsitevisit.component';
+import { sitevisitlistingComponent } from './sitevisitlisting/sitevisitlisting.component';
+import { inspectionreportComponent } from './inspectionreport/inspectionreport.component';
+
+
 //import { UsersComponent } from './users/users.component';
 //import { AddUserComponent } from './users/add-user/adduser.component';
 //import { ProfileComponent } from './profile/profile.component';
@@ -42,6 +46,8 @@ const routes: Routes = [
     { path: 'mydashboard', component: mydashboardComponent },
     { path: 'quick_inspection', component: quickinspectionComponent },
     { path: 'addsitevisit', component: addsitevisitComponent },
+    { path: 'sitevisitlisting', component: sitevisitlistingComponent },
+    { path: 'inspectionreport', component: inspectionreportComponent },
     //{ path: 'profile', component: ProfileComponent },
     //{ path: 'cash-flow-investment', component: cashFlowInvestmentComponent },
     //{ path: 'users/adduser', component: AddUserComponent },

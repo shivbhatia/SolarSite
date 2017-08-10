@@ -1,5 +1,5 @@
 import { Component,ViewEncapsulation,OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, Params, Data } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import {ToasterModule, ToasterService} from 'angular2-toaster';
 import { SolarService } from '../../services/solar.service';
@@ -40,11 +40,13 @@ export class addsitevisitComponent implements OnInit{
     StructuralfileInputNames: string;
     ElectricalfileInputNames: string;
     UtilityfileInputNames: string;
+    siteId:any;
 	
-	constructor(private router: Router,private solarService: SolarService, toasterService: ToasterService,private http:Http) { 
+	constructor(private router: Router,private activatedRoute: ActivatedRoute,private solarService: SolarService, toasterService: ToasterService,private http:Http) { 
 		this.toasterService = toasterService;
 		this.StructuralfilesToUpload = [];
         this.ElectricalfilesToUpload = [];
+        
 	}
 
 	public options = {types: ['address'],componentRestrictions: { country: 'US' }}
@@ -53,6 +55,51 @@ export class addsitevisitComponent implements OnInit{
     }
 	
 	ngOnInit(){
+		this.siteId = this.activatedRoute.snapshot.queryParams["id"];
+		alert(this.siteId);
+		if(this.siteId!=undefined){  
+			//console.log(this.siteId);
+			$('#mydiv').show();
+			this.solarService.editSiteVisit(<Solar>this.siteId).subscribe(result => {
+            	this.result = result;
+            	$('#mydiv').hide();
+            	console.log(result);
+            	
+            	this.model.relationship=result.Site.relationship;
+            	this.model.project_name=result.Site.project_name;
+            	this.model.projectContact=result.Site.projectContact;
+            	this.model.contactEmail=result.Site.contactEmail;
+            	this.model.contactPhone=result.Site.contactPhone;
+            	this.model.address=result.Site.address;
+            	this.model.city=result.Site.city;
+            	this.model.state=result.Site.state;
+            	this.model.zip=result.Site.zip;
+            	this.model.country=result.Site.country;
+            	this.model.survey_date=result.Site.survey_date;
+            	this.model.installation_date=result.Site.installation_date;
+            	this.model.electric_utility_provider=result.Site.electric_utility_provider;
+            	this.model.utility_bill_cost=result.Site.utility_bill_cost;
+            	this.model.home_type=result.Site.home_type;
+            	this.model.projectData_comment=result.Site.projectData_comment;
+            	this.model.building_voltage=result.Site.building_voltage;
+            	this.model.breaker_space=result.Site.breaker_space;
+            	this.model.installData_comment=result.Site.installData_comment;
+            	this.model.panel_rating=result.Site.panel_rating;
+            	this.model.panel_manufacturer=result.Site.panel_manufacturer;
+            	this.model.roof_age=result.Site.roof_age;
+            	this.model.designInfo_comment=result.Site.designInfo_comment;
+
+
+            	if (result.success == true) {
+                	alert("User added"); 
+                	this.message="Success";
+            	} else {
+                	//alert("Not added");
+            	}
+        	});
+		}else{ console.log("thththththt");
+			
+		}
 	}
 	
 	onFileSelect(event: EventTarget) {

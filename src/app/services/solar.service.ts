@@ -58,5 +58,42 @@ export class SolarService {
     //console.log(solar);
     return this.http.post('http://192.155.246.146:8145/users/add_inspection_angular', formData).map(res => <any> res["_body"]);
   }
+  
+  getSiteVisit(solar: Solar) { //alert("test");
+    const headers = new Headers({ 'Content-Type': 'application/json', 'Authorization': localStorage.getItem('token') });
+    const options = new RequestOptions({ headers: headers })
+
+    //return this.http.get('http://192.155.246.146:8145/users/solarDashboard_angular', solar,options ).map(res => <any> res);
+    return this.http.get('http://192.155.246.146:8145/users/inspection_angular',options).map(res => <any> JSON.parse(res['_body']));
+
+  }
+
+   editSiteVisit(SiteId: Solar) { //alert(SiteId);
+    const headers = new Headers({ 'Content-Type': 'application/json', 'Authorization': localStorage.getItem('token'), 'SiteId': SiteId });
+    const options = new RequestOptions({ headers: headers })
+
+    //return this.http.get('http://192.155.246.146:8145/users/solarDashboard_angular', solar,options ).map(res => <any> res);
+    return this.http.get('http://192.155.246.146:8145/users/edit_inspection_angular',options).map(res => <any> JSON.parse(res['_body']));
+
+  }
+
+  deleteInspection(SiteId: Solar) { //alert(SiteId);
+    const headers = new Headers({ 'Content-Type': 'application/json', 'Authorization': localStorage.getItem('token'), 'SiteId': SiteId });
+    const options = new RequestOptions({ headers: headers })
+
+    //return this.http.get('http://192.155.246.146:8145/users/solarDashboard_angular', solar,options ).map(res => <any> res);
+    return this.http.get('http://192.155.246.146:8145/users/delete_inspection_angular',options).map(res => <any> JSON.parse(res['_body']));
+
+  }
+  getInspectionReport(solar: Solar) { //alert("test");
+    const headers = new Headers({ 'Content-Type': 'application/json', 'Authorization': localStorage.getItem('token') });
+    const options = new RequestOptions({ headers: headers })
+
+    //return this.http.get('http://192.155.246.146:8145/users/solarDashboard_angular', solar,options ).map(res => <any> res);
+    return this.http.get('http://192.155.246.146:8145/users/inspection_report_angular',options).map(res => <any> JSON.parse(res['_body']));
+
+  }
+
+
 
 }

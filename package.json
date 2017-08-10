@@ -35,6 +35,8 @@
     "express": "^4.15.3",
     "font-awesome": "^4.7.0",
     "has-cors": "^1.1.0",
+    "import": "0.0.6",
+    "ng2-bootstrap-modal": "^1.0.1",
     "ng2-cc-library": "^1.0.1",
     "ng2-datepicker-bootstrap": "^1.0.0",
     "ng2-datetime": "^1.4.0",

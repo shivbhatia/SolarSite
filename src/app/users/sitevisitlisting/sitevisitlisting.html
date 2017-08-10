@@ -1,0 +1,34 @@
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <!-- Page Heading -->
+        <div class="row">
+        	<div class="col-lg-12">
+            	<h2 class="page-header">Manage Inspections</h2>
+                <ol class="breadcrumb">
+                	<li class="active"><i class="fa fa-dashboard"></i> Dashboard</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="ui-widget-header" style="padding:14px 10px;border-bottom: 0 none;height: 67px">
+        <i class="fa fa-search" style="margin:11px 4px 0 0;float: right;"></i>
+    	<input #gb type="text" pInputText size="50" placeholder="Global Filter" style="float:right;height: 34px;margin-right: 5px;">
+	</div>
+    <p-dataTable [value]="result" [rows]=recordsPerPage [paginator]="true" [globalFilter]="gb" [responsive]="true" [pageLinks]=pageLinks [rowsPerPageOptions]="rowsPerPageOptions" >
+        <p-column field="Site.project_name" [sortable]="true" [style]="{width: '200px','text-align':'center','height':'68px'}" header="Project Name" [filter]="true" filterPlaceholder="Search"></p-column>
+        <p-column field="User.email" [sortable]="true" [style]="{width: '200px','text-align':'center','height':'68px'}" header=" Username /email" [filter]="true" filterPlaceholder="Search"></p-column>
+        <p-column field="Site.city" [sortable]="true" [style]="{width: '150px','text-align':'center','height':'68px'}" header=" City" [filter]="true" filterPlaceholder="Search"></p-column>
+        <p-column field="Site.survey_date" [sortable]="true" [style]="{width: '150px','text-align':'center','height':'68px'}" header="Date of Site Survey" [filter]="true" filterPlaceholder="Search"></p-column>
+        <p-column field="Site.created" [sortable]="true" [style]="{width: '150px','text-align':'center','height':'68px'}" header="Date Uploaded" [filter]="true" filterPlaceholder="Search"></p-column>
+        <p-column field="" [sortable]="true" [style]="{width: '200px','text-align':'center','height':'68px'}" header="Action"  >
+            <ng-template let-car="rowData" let-i="rowIndex" pTemplate="body">
+                <button type="button" pButton icon="fa-pencil-square-o" (click)="edit_inspection(result[i].Site.uid)"></button>
+                <!-- <button type="button" pButton (click)="delete_inspection(result[i].Site.uid)"><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i></button>-->
+                <button type="text" (click)="delete_inspection(result[i].Site.uid)" pButton icon="fa-trash-o" ></button>
+            </ng-template>
+        </p-column>
+    </p-dataTable>
+</div>
+<p-confirmDialog header="Confirmation"
+                 icon="fa fa-question-circle" width="400">
+</p-confirmDialog>

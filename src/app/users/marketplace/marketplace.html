@@ -4,7 +4,7 @@
     	<!-- Page Heading -->
         <div class="row">
         	<div class="col-lg-12">
-            	<h2 class="page-header">Commercial Marketplace Dashboard - Updated Daily</h2>
+            	<h2 class="page-header">Commercial Marketplace Dashboard - Updated Daily {{pageLinks}}</h2>
                 <ol class="breadcrumb">
                 	<li class="active"><i class="fa fa-dashboard"></i> Dashboard</li>
                 </ol>
@@ -17,7 +17,7 @@
     	<input #gb type="text" pInputText size="50" placeholder="Global Filter" style="float:right;height: 34px;margin-right: 5px;">
 	</div>
 
-    <p-dataTable [value]="result" [rows]="25" [paginator]="true" [globalFilter]="gb" [responsive]="true" [pageLinks]="5" [rowsPerPageOptions]="[25,50,75,100,125,150,175,200,225,250,275,300]" >
+    <p-dataTable [value]="result" [rows]=recordsPerPage [paginator]="true" [globalFilter]="gb" [responsive]="true" [pageLinks]=pageLinks [rowsPerPageOptions]="rowsPerPageOptions" >
     <!--<p-header>Commercial Marketplace Projects</p-header>-->
     <p-column field="MarketplaceProject.project_name" [sortable]="true" [style]="{width: '300px','text-align':'center','height':'68px'}" header="Name" [filter]="true" filterPlaceholder="Search"></p-column>
     <p-column field="MarketplaceProject.project_size" [sortable]="true" [style]="{'text-align':'center'}" header="Project Size" [filter]="true" filterPlaceholder="Search"></p-column>

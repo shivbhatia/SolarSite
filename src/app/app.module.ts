@@ -34,7 +34,7 @@ import { checkoutComponent } from './checkout/checkout.component';
 import { UsersModule } from './users/users.module';
 
 
-import {DataTableModule} from 'primeng/primeng';
+import {DataTableModule,ConfirmDialogModule, ConfirmationService, SharedModule} from 'primeng/primeng';
 //import {DatePickerModule} from 'ng2-datepicker-bootstrap';
 //import { NKDatetimeModule } from 'ng2-datetime/ng2-datetime';
 
@@ -94,9 +94,11 @@ import { Ng2UploaderModule } from 'ng2-uploader';
     HomeModule,
     UsersModule,
     DataTableModule,
+    ConfirmDialogModule,
+    SharedModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [UserService,SolarService],
+  providers: [UserService,SolarService,ConfirmationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

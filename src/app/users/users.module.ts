@@ -22,6 +22,9 @@ import { marketplaceComponent } from './marketplace/marketplace.component';
 import { mydashboardComponent } from './mydashboard/mydashboard.component';
 import { quickinspectionComponent } from './quickinspection/quickinspection.component';
 import { addsitevisitComponent } from './addsitevisit/addsitevisit.component';
+import { sitevisitlistingComponent } from './sitevisitlisting/sitevisitlisting.component';
+import { inspectionreportComponent } from './inspectionreport/inspectionreport.component';
+
 
 import { NguiMapModule} from '@ngui/map';
 
@@ -58,7 +61,7 @@ import { Ng2DatetimePickerModule } from 'ng2-datetime-picker';
 
 //import { UserService,AdminService,CommonService } from './../services/index';
 
-import {DataTableModule} from 'primeng/primeng';
+import {DataTableModule,ConfirmDialogModule, ConfirmationService, SharedModule} from 'primeng/primeng';
 import {TooltipModule} from "ng2-tooltip";
 //import {DatePickerModule} from 'ng2-datepicker-bootstrap';
 import { Ng2UploaderModule } from 'ng2-uploader';
@@ -80,6 +83,7 @@ declare var require: any;
 		//NKDatetimeModule,
 		Ng2DatetimePickerModule,
 		Ng2UploaderModule,
+		
 		//DatePickerModule,
 		//TooltipModule,
 		NguiMapModule.forRoot({
@@ -90,6 +94,8 @@ declare var require: any;
 		//NgxPaginationModule,
 		//ToastModule.forRoot(),
 		DataTableModule,
+		ConfirmDialogModule,
+    SharedModule,
 		TooltipModule
 	],
 	declarations:[
@@ -101,6 +107,8 @@ declare var require: any;
 		mydashboardComponent,
 		quickinspectionComponent,
 		addsitevisitComponent,
+		sitevisitlistingComponent,
+		inspectionreportComponent,
 		
 		//homemenuComponent,
 		//homebannerComponent,
@@ -117,7 +125,7 @@ declare var require: any;
 		//cashFlowInvestmentComponent,
 		//AddUserComponent
 	],
-	providers:[
+	providers:[ ConfirmationService
 		//ActiveRouteGuard,
 		//DeactiveRouteGuard,
 		//UserService,

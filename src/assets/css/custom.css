@@ -151,3 +151,16 @@ footer.page-footer .footer-copyright {
 .well{
     height:88px;
 }
+
+.ui-widget-header .ui-button, .ui-widget-content .ui-button, .ui-widget.ui-button, .ui-button {
+    background: #EF7C38 none repeat scroll 0 0;
+    border: 1px solid #EF7C38;
+    color: #ffffff;
+    transition: background-color 0.2s ease 0s;
+}
+.ui-widget-header .ui-button:enabled:hover, .ui-widget-header .ui-button:focus, .ui-widget-content .ui-button:enabled:hover, .ui-widget-content .ui-button:focus, .ui-widget.ui-button:enabled:hover, .ui-widget.ui-button:focus, .ui-button:enabled:hover, .ui-button:focus {
+    background: #EF7C38 none repeat scroll 0 0;
+    border: 1px solid #EF7C38;
+    color: #ffffff;
+    outline: 0 none;
+}
