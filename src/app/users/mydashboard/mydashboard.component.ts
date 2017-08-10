@@ -43,6 +43,11 @@ export class mydashboardComponent implements OnInit{
 
   constructor(private router: Router,private solarService: SolarService, toasterService: ToasterService) { 
     this.toasterService = toasterService;
+    /***** START CODE TO SET FOCUS ON TOP AFTER CLICK ON NAVIGATION LINK *****/
+        
+        window.scrollTo(0, 0)
+
+/***** END CODE TO SET FOCUS ON TOP AFTER CLICK ON NAVIGATION LINK *****/
 
 
 

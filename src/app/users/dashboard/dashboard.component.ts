@@ -11,7 +11,13 @@ export class dashboardComponent implements OnInit{
 	map:any;
     markers :any;
 	
-	constructor(private router: Router) { }
+	constructor(private router: Router) { 
+		/***** START CODE TO SET FOCUS ON TOP AFTER CLICK ON NAVIGATION LINK *****/
+        
+        window.scrollTo(0, 0)
+
+		/***** END CODE TO SET FOCUS ON TOP AFTER CLICK ON NAVIGATION LINK *****/
+	}
 	
 	ngOnInit(){
 		/**** START CODE FOR GOOGLE MAP *****/

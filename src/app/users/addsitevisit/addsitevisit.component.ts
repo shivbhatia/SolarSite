@@ -46,6 +46,11 @@ export class addsitevisitComponent implements OnInit{
 		this.toasterService = toasterService;
 		this.StructuralfilesToUpload = [];
         this.ElectricalfilesToUpload = [];
+        /***** START CODE TO SET FOCUS ON TOP AFTER CLICK ON NAVIGATION LINK *****/
+        
+        window.scrollTo(0, 0)
+
+/***** END CODE TO SET FOCUS ON TOP AFTER CLICK ON NAVIGATION LINK *****/
         
 	}
 
@@ -56,7 +61,6 @@ export class addsitevisitComponent implements OnInit{
 	
 	ngOnInit(){
 		this.siteId = this.activatedRoute.snapshot.queryParams["id"];
-		alert(this.siteId);
 		if(this.siteId!=undefined){  
 			//console.log(this.siteId);
 			$('#mydiv').show();
