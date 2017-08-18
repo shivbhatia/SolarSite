@@ -19,8 +19,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { appRoutes } from "./app.routes";
 //import { HOME_DECLARATIONS } from "./home/index";
 //import { REGISTER_DECLARATIONS } from "./register/index";
-import { REGISTERNEW_DECLARATIONS } from "./registernew/index";
-import { REGISTERFORM_DECLARATIONS } from "./registerform/index";
+//import { REGISTERNEW_DECLARATIONS } from "./registernew/index";
+//import { REGISTERFORM_DECLARATIONS } from "./registerform/index";
 //import { CHECKOUT_DECLARATIONS } from "./checkout/index";
 //import { LOGIN_DECLARATIONS } from "./login/index";
 //import { DASHBOARD_DECLARATIONS } from "./dashboard/index";
@@ -57,8 +57,8 @@ import { Ng2UploaderModule } from 'ng2-uploader';
     checkoutComponent,
     //...HOME_DECLARATIONS,
     //...REGISTER_DECLARATIONS,
-    ...REGISTERNEW_DECLARATIONS,
-    ...REGISTERFORM_DECLARATIONS,
+   // ...REGISTERNEW_DECLARATIONS,
+   // ...REGISTERFORM_DECLARATIONS,
    // ...LOGIN_DECLARATIONS,
     //...DASHBOARD_DECLARATIONS,
     //...CHECKOUT_DECLARATIONS,
