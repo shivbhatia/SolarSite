@@ -24,6 +24,9 @@ import { quickinspectionComponent } from './quickinspection/quickinspection.comp
 import { addsitevisitComponent } from './addsitevisit/addsitevisit.component';
 import { sitevisitlistingComponent } from './sitevisitlisting/sitevisitlisting.component';
 import { inspectionreportComponent } from './inspectionreport/inspectionreport.component';
+import { mytrackedprojectsComponent } from './mytrackedprojects/mytrackedprojects.component';
+import { mysolarprojectsComponent } from './mysolarprojects/mysolarprojects.component';
+
 
 
 import { NguiMapModule} from '@ngui/map';
@@ -109,6 +112,8 @@ declare var require: any;
 		addsitevisitComponent,
 		sitevisitlistingComponent,
 		inspectionreportComponent,
+		mytrackedprojectsComponent,
+		mysolarprojectsComponent,
 		
 		//homemenuComponent,
 		//homebannerComponent,

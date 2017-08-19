@@ -28,16 +28,27 @@ export class SolarService {
         return this.http.get(AppSettings.API_ENDPOINT+'trackProjects', options).map(res => <any> JSON.parse(res["_body"]));
     }
 
+    getMydashboardData(solar: Solar) { 
+        const headers = new Headers({ 'Content-Type': 'application/json', 'Authorization': localStorage.getItem('token') });
+        const options = new RequestOptions({ headers: headers })
+        return this.http.get(AppSettings.API_ENDPOINT+'myDashboard',options).map(res => <any> JSON.parse(res["_body"]));
+    }
+
+    getTrackedProjects(solar: Solar) {
+        const headers = new Headers({ 'Content-Type': 'application/json', 'Authorization': localStorage.getItem('token') });
+        const options = new RequestOptions({ headers: headers })
+        return this.http.get(AppSettings.API_ENDPOINT+'myTrackedProjects',options).map(res => <any> JSON.parse(res['_body']));
+    }
+
+    getmySolarProjects(solar: Solar) {
+        const headers = new Headers({ 'Content-Type': 'application/json', 'Authorization': localStorage.getItem('token') });
+        const options = new RequestOptions({ headers: headers })
+        return this.http.get(AppSettings.API_ENDPOINT+'mySolarProjects',options).map(res => <any> JSON.parse(res['_body']));
+    }
+
+    
 
 
-   getMydashboardData(solar: Solar) { 
-    const headers = new Headers({ 'Content-Type': 'application/json', 'Authorization': localStorage.getItem('token') });
-    const options = new RequestOptions({ headers: headers })
-
-    //return this.http.get('http://192.155.246.146:8145/users/solarDashboard_angular', solar,options ).map(res => <any> res);
-  return this.http.get('http://192.155.246.146:8145/marketplaces/myDashboard_angular',options).map(res => <any> JSON.parse(res["_body"]));
-
-  }
 
   getList(solar: Solar){
     let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });

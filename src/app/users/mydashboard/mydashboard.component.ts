@@ -59,7 +59,7 @@ export class mydashboardComponent implements OnInit{
     this.solarService.getMydashboardData(<Solar>this.model).subscribe(results => {
           this.results = results;
             console.log(results.MarketplaceProject);
-this.markers=this.results;
+            this.markers=this.results;
             $('#mydiv').hide();
             if (results.success == true) {
               alert("User added"); 

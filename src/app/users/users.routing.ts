@@ -12,6 +12,9 @@ import { quickinspectionComponent } from './quickinspection/quickinspection.comp
 import { addsitevisitComponent } from './addsitevisit/addsitevisit.component';
 import { sitevisitlistingComponent } from './sitevisitlisting/sitevisitlisting.component';
 import { inspectionreportComponent } from './inspectionreport/inspectionreport.component';
+import { mytrackedprojectsComponent } from './mytrackedprojects/mytrackedprojects.component';
+import { mysolarprojectsComponent } from './mysolarprojects/mysolarprojects.component';
+
 
 
 //import { UsersComponent } from './users/users.component';
@@ -48,6 +51,8 @@ const routes: Routes = [
     { path: 'addsitevisit', component: addsitevisitComponent },
     { path: 'sitevisitlisting', component: sitevisitlistingComponent },
     { path: 'inspectionreport', component: inspectionreportComponent },
+    { path: 'mytrackedprojects', component: mytrackedprojectsComponent },
+    { path: 'mysolarprojects', component: mysolarprojectsComponent },
     //{ path: 'profile', component: ProfileComponent },
     //{ path: 'cash-flow-investment', component: cashFlowInvestmentComponent },
     //{ path: 'users/adduser', component: AddUserComponent },

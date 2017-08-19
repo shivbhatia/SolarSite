@@ -4,7 +4,7 @@
     	<!-- Page Heading -->
         <div class="row">
         	<div class="col-lg-12">
-            	<h2 class="page-header">Commercial Marketplace Dashboard - Updated Daily {{pageLinks}}</h2>
+            	<h2 class="page-header">Commercial Marketplace Dashboard - Updated Daily</h2>
                 <ol class="breadcrumb">
                 	<li class="active"><i class="fa fa-dashboard"></i> Dashboard</li>
                 </ol>
@@ -13,10 +13,9 @@
     </div>
     <div id="map_wrapper">
         <div id="map_canvas" class="mapping"></div>
-        <div id="legend"><h3>Project Stage</h3></div>
+        <div id="legend1"><h3>Project Stage</h3></div>
     </div>
-    <div id="map" class="mapping"></div>
-
+    
     <div class="ui-widget-header" style="padding:14px 10px;border-bottom: 0 none;height: 67px">
     	<i class="fa fa-search" style="margin:11px 4px 0 0;float: right;"></i>
     	<input #gb type="text" pInputText size="50" placeholder="Global Filter" style="float:right;height: 34px;margin-right: 5px;">
@@ -74,22 +73,23 @@
         position: relative;
     }
     /*#map_canvas {background: transparent url(/img/loading-new.gif) no-repeat center center;}*/
-    #legend { 
+    #legend1 { 
         position: absolute;
         right: 0;
         z-index: 0;
-        bottom  : 127px;
+        bottom  : 210px;
         font-family: Arial, sans-serif;
         background: #fff;
         padding: 10px;
-        margin: 10px;       
-        display:none;
+        margin: 10px;  
+        display: none;     
+        
         
     }
-    #legend h3 {
+    #legend1 h3 {
         margin-top: 0;
     }
-    #legend img {
+    #legend1 img {
         vertical-align: middle;
         margin:2px;
     }
