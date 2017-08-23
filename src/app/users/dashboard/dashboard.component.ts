@@ -8,7 +8,7 @@ declare var google: any;
 })
 
 export class dashboardComponent implements OnInit{
-	map:any;
+	map:any;  
     markers :any;
 	
 	constructor(private router: Router) { 
