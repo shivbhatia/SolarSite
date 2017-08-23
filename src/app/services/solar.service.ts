@@ -46,6 +46,18 @@ export class SolarService {
         return this.http.get(AppSettings.API_ENDPOINT+'mySolarProjects',options).map(res => <any> JSON.parse(res['_body']));
     }
 
+    getMarkets(solar: Solar) { 
+        const headers = new Headers({ 'Content-Type': 'application/json', 'Authorization': localStorage.getItem('token') });
+        const options = new RequestOptions({ headers: headers })
+        return this.http.get(AppSettings.API_ENDPOINT+'my_market',options).map(res => <any> JSON.parse(res['_body']));
+    }
+
+    deleteMarket(SiteId: Solar) { 
+        const headers = new Headers({ 'Content-Type': 'application/json', 'Authorization': localStorage.getItem('token'), 'MarketId': SiteId });
+        const options = new RequestOptions({ headers: headers })
+        return this.http.get(AppSettings.API_ENDPOINT+'delete_market',options).map(res => <any> JSON.parse(res['_body']));
+    }
+
     
 
 

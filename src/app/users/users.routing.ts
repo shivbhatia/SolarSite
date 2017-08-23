@@ -10,7 +10,10 @@ import { dashboardComponent } from './dashboard/dashboard.component';
 import { mydashboardComponent } from './mydashboard/mydashboard.component';
 import { quickinspectionComponent } from './quickinspection/quickinspection.component';
 import { addsitevisitComponent } from './addsitevisit/addsitevisit.component';
+import { addmarketComponent } from './addmarket/addmarket.component';
 import { sitevisitlistingComponent } from './sitevisitlisting/sitevisitlisting.component';
+import { marketlistingComponent } from './marketlisting/marketlisting.component';
+
 import { inspectionreportComponent } from './inspectionreport/inspectionreport.component';
 import { mytrackedprojectsComponent } from './mytrackedprojects/mytrackedprojects.component';
 import { mysolarprojectsComponent } from './mysolarprojects/mysolarprojects.component';
@@ -49,7 +52,9 @@ const routes: Routes = [
     { path: 'mydashboard', component: mydashboardComponent },
     { path: 'quick_inspection', component: quickinspectionComponent },
     { path: 'addsitevisit', component: addsitevisitComponent },
+    { path: 'addmarket', component: addmarketComponent },
     { path: 'sitevisitlisting', component: sitevisitlistingComponent },
+    { path: 'marketlisting', component: marketlistingComponent },
     { path: 'inspectionreport', component: inspectionreportComponent },
     { path: 'mytrackedprojects', component: mytrackedprojectsComponent },
     { path: 'mysolarprojects', component: mysolarprojectsComponent },

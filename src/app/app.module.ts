@@ -5,10 +5,10 @@ import { OwlModule } from 'ng2-owl-carousel';
 import { Select2Module } from 'ng2-select2';
 import { HttpModule } from '@angular/http';
 
-import {ToasterModule, ToasterService} from 'angular2-toaster';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { ToasterModule, ToasterService} from 'angular2-toaster';
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { Ng2SmartTableModule,LocalDataSource } from 'ng2-smart-table';
-import {NgxPaginationModule} from 'ngx-pagination';
+import { NgxPaginationModule} from 'ngx-pagination';
 import { Ng2FilterPipeModule } from 'ng2-filter-pipe';
 import { NguiMapModule} from '@ngui/map';
 
@@ -35,7 +35,7 @@ import { checkoutComponent } from './checkout/checkout.component';
 import { UsersModule } from './users/users.module';
 
 
-import {DataTableModule,ConfirmDialogModule, ConfirmationService, SharedModule} from 'primeng/primeng';
+import { DataTableModule,ConfirmDialogModule, ConfirmationService, SharedModule} from 'primeng/primeng';
 //import {DatePickerModule} from 'ng2-datepicker-bootstrap';
 //import { NKDatetimeModule } from 'ng2-datetime/ng2-datetime';
 
@@ -43,7 +43,7 @@ import { Ng2DatetimePickerModule } from 'ng2-datetime-picker';
 
 //import { TooltipModule } from 'angular2-tooltips';
 
-import {GooglePlaceModule} from 'ng2-google-place-autocomplete';
+import { GooglePlaceModule } from 'ng2-google-place-autocomplete';
 
 import {TooltipModule} from "ng2-tooltip";
 

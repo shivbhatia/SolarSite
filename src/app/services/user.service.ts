@@ -16,6 +16,12 @@ export class UserService {
         return this.http.post('http://192.155.246.146:8145/users/registration_angular', user).map(res => <any> JSON.parse(res["_body"]));
     }
 
+    addMarket(user: User) {
+        let headers = new Headers({ 'Content-Type': 'application/json', 'Authorization': localStorage.getItem('token')});
+        let options = new RequestOptions({ headers: headers, method: "post"});
+        return this.http.post(AppSettings.API_ENDPOINT+'addMarket', user,options).map(res => <any> JSON.parse(res["_body"]));
+    }
+
     checkout(user: User) { 
         const headers = new Headers({ 'Content-Type': 'application/json', 'Authorization': localStorage.getItem('token') });
         const options = new RequestOptions({ headers: headers })
