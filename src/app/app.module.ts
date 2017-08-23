@@ -30,6 +30,7 @@ import { SolarService } from "./services/solar.service";
 import { HomeModule } from './home/home.module';
 import { registerComponent } from './register/register.component';
 import { loginComponent } from './login/login.component';
+import { forgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { checkoutComponent } from './checkout/checkout.component';
 import { UsersModule } from './users/users.module';
 
@@ -54,6 +55,7 @@ import { Ng2UploaderModule } from 'ng2-uploader';
     AppComponent,
     registerComponent,
     loginComponent,
+    forgotpasswordComponent,
     checkoutComponent,
     //...HOME_DECLARATIONS,
     //...REGISTER_DECLARATIONS,

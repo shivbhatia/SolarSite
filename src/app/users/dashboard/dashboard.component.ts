@@ -14,9 +14,10 @@ export class dashboardComponent implements OnInit{
 	constructor(private router: Router) { 
 		/***** START CODE TO SET FOCUS ON TOP AFTER CLICK ON NAVIGATION LINK *****/
         
-        window.scrollTo(0, 0)
+        window.scrollTo(0, 0);
 
 		/***** END CODE TO SET FOCUS ON TOP AFTER CLICK ON NAVIGATION LINK *****/
+		$("body").css('background-image', 'none');
 	}
 	
 	ngOnInit(){

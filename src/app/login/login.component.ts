@@ -50,7 +50,7 @@ export class loginComponent{
 
               this.router.navigate(['/users/dashboard']);
             } else {
-              alert("Not added");
+              this.toasterService.pop('error', 'Failure!!!', 'you have entered wrong data!!!');
             }
           });
     }
