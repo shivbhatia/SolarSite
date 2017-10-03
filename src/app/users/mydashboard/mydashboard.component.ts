@@ -58,16 +58,18 @@ export class mydashboardComponent implements OnInit{
     $('#mydiv').show();
     this.solarService.getMydashboardData(<Solar>this.model).subscribe(results => {
           this.results = results;
-            console.log(results.MarketplaceProject);
+          //alert("testing");
+         //alert(this.results.User.block_token_address);
+            //console.log(this.results.User);
             this.markers=this.results;
             $('#mydiv').hide();
-            if (results.success == true) {
-              alert("User added"); 
+            if (this.results.success == "true") {
+             // alert("User added"); 
               this.message="Success";
                //this.errorMsg = 'Failed to login';
              // this.router.navigate(['/login']);
             } else {
-              //alert("Not added");
+              alert("Not added");
             }
           });
 

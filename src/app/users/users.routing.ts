@@ -11,6 +11,7 @@ import { mydashboardComponent } from './mydashboard/mydashboard.component';
 import { quickinspectionComponent } from './quickinspection/quickinspection.component';
 import { addsitevisitComponent } from './addsitevisit/addsitevisit.component';
 import { addmarketComponent } from './addmarket/addmarket.component';
+import { editprofileComponent } from './editprofile/editprofile.component';
 import { sitevisitlistingComponent } from './sitevisitlisting/sitevisitlisting.component';
 import { marketlistingComponent } from './marketlisting/marketlisting.component';
 
@@ -58,13 +59,12 @@ const routes: Routes = [
     { path: 'inspectionreport', component: inspectionreportComponent },
     { path: 'mytrackedprojects', component: mytrackedprojectsComponent },
     { path: 'mysolarprojects', component: mysolarprojectsComponent },
+    { path: 'editprofile', component: editprofileComponent },
     //{ path: 'profile', component: ProfileComponent },
     //{ path: 'cash-flow-investment', component: cashFlowInvestmentComponent },
     //{ path: 'users/adduser', component: AddUserComponent },
 
-    
-    
-    
+     
     ]
     
     }

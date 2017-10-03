@@ -41,29 +41,19 @@ export class addmarketComponent implements OnInit{
 	}
 	
     AddMarket() {
-        alert("register");
         $('#mydiv').show();
         this.userService.addMarket(<User>this.model).subscribe(result => {
-          this.result = result;
-          if (result.success == true) {
-              //alert("User added");
-              //alert(result.type); 
-              //this.message="Success";
-              $('#mydiv').hide();
-              //if(result.type=='company'){ 
-                  this.toasterService.pop('success', 'Market Added Successfully', '');
-                  //localStorage.setItem('token', result.token);
-                 // this.router.navigate(['/users/checkout']);
-               // }else{
-                //  this.toasterService.pop('success', 'Successfully Registered', '');
-               //   this.router.navigate(['/users/login']);
-              //}
+            this.result = result;
+            if (result.success == true) {
+                $('#mydiv').hide();
+                this.toasterService.pop('success', 'Market Added Successfully', '');
+                this.router.navigate(['/users/marketlisting']);
             } else {
-               this.toasterService.pop('error', 'Market could not be added', '');
+                $('#mydiv').hide();
+                this.toasterService.pop('error', 'Market could not be added '+result.message, '');
             }
-          });
-		
-    }
+        });
+	}
  }
 	
 

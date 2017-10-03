@@ -4,7 +4,7 @@
     	<!-- Page Heading -->
         <div class="row">
         	<div class="col-lg-12">
-            	<h2 class="page-header">Commercial Marketplace Dashboard - Updated Daily</h2>
+            	<h2 class="page-header">Commercial Marketplace Dashboard - Updated Daily <span style="font-size: 15px;">Total records:{{this.totalRecords}}</span></h2>
                 <ol class="breadcrumb">
                 	<li class="active"><i class="fa fa-dashboard"></i> Dashboard</li>
                 </ol>
@@ -21,7 +21,7 @@
     	<input #gb type="text" pInputText size="50" placeholder="Global Filter" style="float:right;height: 34px;margin-right: 5px;">
 	</div>
 
-    <p-dataTable [value]="result" [rows]=recordsPerPage [paginator]="true" [globalFilter]="gb" [responsive]="true" [pageLinks]=pageLinks [rowsPerPageOptions]="rowsPerPageOptions" >
+    <p-dataTable [value]="result" [rows]=recordsPerPage [paginator]="true" [globalFilter]="gb" [responsive]="true" [pageLinks]=pageLinks [rowsPerPageOptions]="rowsPerPageOptions" [totalRecords]="totalRecordsCount">
 
 
      
@@ -57,7 +57,9 @@
         <p-column field="MarketplaceProject.stage" [sortable]="true" [style]="{'text-align':'center'}" header="Project Stage" [filter]="true" filterPlaceholder="Search"></p-column>
         <p-column field="MarketplaceProject.city" [sortable]="true" [style]="{'text-align':'center'}" header="City" [filter]="true" filterPlaceholder="Search"></p-column>
         <p-column field="MarketplaceProject.state" [sortable]="true" [style]="{'text-align':'center'}" header="State" [filter]="true" filterPlaceholder="Search"></p-column>
+
     </p-dataTable>
+
 </div>
 
 <style>

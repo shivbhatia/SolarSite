@@ -23,6 +23,7 @@ import { mydashboardComponent } from './mydashboard/mydashboard.component';
 import { quickinspectionComponent } from './quickinspection/quickinspection.component';
 import { addsitevisitComponent } from './addsitevisit/addsitevisit.component';
 import { addmarketComponent } from './addmarket/addmarket.component';
+import { editprofileComponent } from './editprofile/editprofile.component';
 import { sitevisitlistingComponent } from './sitevisitlisting/sitevisitlisting.component';
 import { marketlistingComponent } from './marketlisting/marketlisting.component';
 
@@ -119,6 +120,7 @@ declare var require: any;
 		mytrackedprojectsComponent,
 		mysolarprojectsComponent,
 		marketlistingComponent,
+		editprofileComponent,
 		
 		//homemenuComponent,
 		//homebannerComponent,

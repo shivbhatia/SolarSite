@@ -21,6 +21,7 @@ export class mytrackedprojectsComponent implements OnInit{
     rowsPerPageOptions: number[] = [];
     perPage:number=0;  
     recordsPerPage:number=10;
+    totalRecords:number;
 
     
     constructor(private router: Router,private solarService: SolarService, toasterService: ToasterService, private confirmationService: ConfirmationService) { 
@@ -31,6 +32,7 @@ export class mytrackedprojectsComponent implements OnInit{
         $('#mydiv').show();
         this.solarService.getTrackedProjects(<Solar>this.model).subscribe(result => {
             this.result = result;
+            this.totalRecords=this.result.length;
             this.pageLinks=Math.ceil(result.length/this.recordsPerPage);
             for (let i=1; i<=this.pageLinks; i++) {
                 this.perPage=this.perPage+this.recordsPerPage;
