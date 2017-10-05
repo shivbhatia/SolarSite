@@ -1,6 +1,9 @@
 import { Component,OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 declare var google: any;
+import { SolarService } from '../../services/solar.service';
+import { Solar } from '../../models/solar.model';
+import {ToasterModule, ToasterService} from 'angular2-toaster';
 
 @Component({
   selector: 'dashboard',
@@ -10,10 +13,14 @@ declare var google: any;
 export class dashboardComponent implements OnInit{
 	map:any;  
     markers :any;
+    model: any = {};
+    public message = '';
+	results : any;
+	private toasterService: ToasterService;
 	
-	constructor(private router: Router) { 
+	constructor(private router: Router,private solarService: SolarService, toasterService: ToasterService) { 
 		/***** START CODE TO SET FOCUS ON TOP AFTER CLICK ON NAVIGATION LINK *****/
-        
+        this.toasterService = toasterService;
         window.scrollTo(0, 0);
 
 		/***** END CODE TO SET FOCUS ON TOP AFTER CLICK ON NAVIGATION LINK *****/
@@ -21,6 +28,22 @@ export class dashboardComponent implements OnInit{
 	}
 	
 	ngOnInit(){
+		$('#mydiv').show();
+		this.solarService.originatorDashboard(<Solar>this.model).subscribe(results => {
+        	this.results = results;
+          	this.markers=this.results;
+            $('#mydiv').hide();
+            if (this.results.success == "true") {
+            	this.message="Success";
+            } else {
+            	alert("Not added");
+            }
+        });
+
+
+
+
+
 		/**** START CODE FOR GOOGLE MAP *****/
 		var myLatLng = {lat: 42.8997702, lng: -78.7890054};
 		var map = new google.maps.Map(document.getElementById('map'), {

@@ -12,7 +12,9 @@ import { NgxPaginationModule} from 'ngx-pagination';
 import { Ng2FilterPipeModule } from 'ng2-filter-pipe';
 import { NguiMapModule} from '@ngui/map';
 
-import { CustomFormsModule } from 'ng2-validation'
+import { CustomFormsModule } from 'ng2-validation';
+
+import { Ng2CompleterModule } from "ng2-completer";
 
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -79,6 +81,7 @@ import { Ng2UploaderModule } from 'ng2-uploader';
     Ng2FilterPipeModule,
     Ng2DatetimePickerModule,
     Ng2UploaderModule,
+    Ng2CompleterModule,
     //NKDatetimeModule,
     //DatePickerModule,
     //TooltipModule,

@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { CustomFormsModule } from 'ng2-validation'
 import { OwlModule } from 'ng2-owl-carousel';
 import {GooglePlaceModule} from 'ng2-google-place-autocomplete';
+import { Ng2CompleterModule } from "ng2-completer";
 //import { TooltipModule } from 'angular2-tooltips';
 
 //import { ChartModule } from 'angular2-highcharts';
@@ -30,7 +31,7 @@ import { marketlistingComponent } from './marketlisting/marketlisting.component'
 import { inspectionreportComponent } from './inspectionreport/inspectionreport.component';
 import { mytrackedprojectsComponent } from './mytrackedprojects/mytrackedprojects.component';
 import { mysolarprojectsComponent } from './mysolarprojects/mysolarprojects.component';
-
+import { transfertokensComponent } from './transfertokens/transfertokens.component';
 
 
 import { NguiMapModule} from '@ngui/map';
@@ -87,6 +88,7 @@ declare var require: any;
 		routing,
 		OwlModule,
 		GooglePlaceModule,
+		Ng2CompleterModule,
 		//NKDatetimeModule,
 		Ng2DatetimePickerModule,
 		Ng2UploaderModule,
@@ -121,6 +123,7 @@ declare var require: any;
 		mysolarprojectsComponent,
 		marketlistingComponent,
 		editprofileComponent,
+		transfertokensComponent,
 		
 		//homemenuComponent,
 		//homebannerComponent,

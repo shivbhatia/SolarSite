@@ -34,6 +34,12 @@ export class SolarService {
         return this.http.get(AppSettings.API_ENDPOINT+'myDashboard',options).map(res => <any> JSON.parse(res["_body"]));
     }
 
+    originatorDashboard(solar: Solar) { 
+        const headers = new Headers({ 'Content-Type': 'application/json', 'Authorization': localStorage.getItem('token') });
+        const options = new RequestOptions({ headers: headers })
+        return this.http.get(AppSettings.API_ENDPOINT+'originatorDashboard',options).map(res => <any> JSON.parse(res["_body"]));
+    }
+
     getTrackedProjects(solar: Solar) {
         const headers = new Headers({ 'Content-Type': 'application/json', 'Authorization': localStorage.getItem('token') });
         const options = new RequestOptions({ headers: headers })
@@ -58,7 +64,24 @@ export class SolarService {
         return this.http.get(AppSettings.API_ENDPOINT+'delete_market',options).map(res => <any> JSON.parse(res['_body']));
     }
 
-    
+    getEmailAddress(email_id) {//alert(email_id); 
+        const headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': localStorage.getItem('token'), 'email_id': email_id });
+        const options = new RequestOptions({ headers: headers, method: "post"});
+        return this.http.get(AppSettings.API_ENDPOINT+'getAdressBlock', options).map(res => <any> JSON.parse(res["_body"]));
+    }
+
+     getEmailIds(solar: Solar) { 
+        const headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': localStorage.getItem('token') });
+        const options = new RequestOptions({ headers: headers, method: "post"});
+        return this.http.get(AppSettings.API_ENDPOINT+'getEmailIds', options).map(res => <any> JSON.parse(res["_body"]));
+    }
+
+    transferTokens(solar: Solar) {
+        let headers = new Headers({ 'Content-Type': 'application/json', 'Authorization': localStorage.getItem('token')});
+        let options = new RequestOptions({ headers: headers, method: "post"});
+        return this.http.post(AppSettings.API_ENDPOINT+'transferTokens', solar,options).map(res => <any> JSON.parse(res["_body"]));
+    }
+
 
 
 

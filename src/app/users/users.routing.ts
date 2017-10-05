@@ -18,6 +18,7 @@ import { marketlistingComponent } from './marketlisting/marketlisting.component'
 import { inspectionreportComponent } from './inspectionreport/inspectionreport.component';
 import { mytrackedprojectsComponent } from './mytrackedprojects/mytrackedprojects.component';
 import { mysolarprojectsComponent } from './mysolarprojects/mysolarprojects.component';
+import { transfertokensComponent } from './transfertokens/transfertokens.component';
 
 
 
@@ -60,6 +61,7 @@ const routes: Routes = [
     { path: 'mytrackedprojects', component: mytrackedprojectsComponent },
     { path: 'mysolarprojects', component: mysolarprojectsComponent },
     { path: 'editprofile', component: editprofileComponent },
+    { path: 'transfertokens', component: transfertokensComponent },
     //{ path: 'profile', component: ProfileComponent },
     //{ path: 'cash-flow-investment', component: cashFlowInvestmentComponent },
     //{ path: 'users/adduser', component: AddUserComponent },
