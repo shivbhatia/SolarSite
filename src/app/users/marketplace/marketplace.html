@@ -42,12 +42,12 @@
 
 
 
-        <p-column field="frost" header="Track" [style]="{'width':'6em','text-align':'center'}">
+        <p-column field="frost" header="Track"   [style]="{'width':'6em','text-align':'center'}">
             <ng-template let-row="rowData" let-i="rowIndex" let-col pTemplate="body">
                 
 
                 <div class="checkbox checkbox-primary checkbox-inline">
-                    <input id="inlineCheckbox{{i}}" name="pitched_roof" type="checkbox" [checked]="result[i].MarketplaceProject.trackChecked"   class="" (change)="trackProject($event,result[i].MarketplaceProject.id)">
+                    <input id="inlineCheckbox{{i}}" name="pitched_roof" type="checkbox"  [checked]="result[i].MarketplaceProject.trackChecked"   class="" (change)="trackProject($event,result[i].MarketplaceProject.id)">
                     <label for="inlineCheckbox{{i}}"> </label>
                 </div>
             </ng-template>

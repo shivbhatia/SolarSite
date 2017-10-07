@@ -47,6 +47,7 @@
                     </div>
                 </div>
                 <input type="hidden" name="privateKey" [(ngModel)]="model.privateKey" #privateKey="ngModel"   class="form-control" id="privateKey">
+                <input type="hidden" name="to_user_id" [(ngModel)]="model.to_user_id" #to_user_id="ngModel"   class="form-control" id="ToUserId">
             </div>
             <div class="row">
                 <div class="form-group">
@@ -65,7 +66,9 @@
         width:1015px ;
     }
 
-
+    :host /deep/ .completer-input:focus {
+        border: none;
+    }
     
 </style>
 

@@ -32,6 +32,8 @@ import { inspectionreportComponent } from './inspectionreport/inspectionreport.c
 import { mytrackedprojectsComponent } from './mytrackedprojects/mytrackedprojects.component';
 import { mysolarprojectsComponent } from './mysolarprojects/mysolarprojects.component';
 import { transfertokensComponent } from './transfertokens/transfertokens.component';
+import { tokenlistingComponent } from './tokenlisting/tokenlisting.component';
+
 
 
 import { NguiMapModule} from '@ngui/map';
@@ -124,6 +126,7 @@ declare var require: any;
 		marketlistingComponent,
 		editprofileComponent,
 		transfertokensComponent,
+		tokenlistingComponent,
 		
 		//homemenuComponent,
 		//homebannerComponent,

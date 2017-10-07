@@ -32,12 +32,17 @@ export class addmarketComponent implements OnInit{
     }
 
 	public options = {types: ['(cities)'],componentRestrictions: { country: 'US' }}
-        getAddress(place:Object) {   
-        console.log("Address", place);
+        getAddress(place:Object) {  
+        console.log("Address", place["address_components"][0]["long_name"]);
+        $("#City").focus();
+        $("#City").focusout();
+        //$("#Country").click();
+        this.model.city = place["address_components"][0]["long_name"];
+
     }
 	
 	ngOnInit(){
-		
+		console.log("testt");
 	}
 	
     AddMarket() {

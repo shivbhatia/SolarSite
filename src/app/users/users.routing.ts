@@ -19,6 +19,8 @@ import { inspectionreportComponent } from './inspectionreport/inspectionreport.c
 import { mytrackedprojectsComponent } from './mytrackedprojects/mytrackedprojects.component';
 import { mysolarprojectsComponent } from './mysolarprojects/mysolarprojects.component';
 import { transfertokensComponent } from './transfertokens/transfertokens.component';
+import { tokenlistingComponent } from './tokenlisting/tokenlisting.component';
+
 
 
 
@@ -62,6 +64,7 @@ const routes: Routes = [
     { path: 'mysolarprojects', component: mysolarprojectsComponent },
     { path: 'editprofile', component: editprofileComponent },
     { path: 'transfertokens', component: transfertokensComponent },
+    { path: 'tokenlisting', component: tokenlistingComponent },
     //{ path: 'profile', component: ProfileComponent },
     //{ path: 'cash-flow-investment', component: cashFlowInvestmentComponent },
     //{ path: 'users/adduser', component: AddUserComponent },

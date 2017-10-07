@@ -50,7 +50,8 @@ export class transfertokensComponent implements OnInit{
             $('#mydiv').hide();
             if (this.results.success == "true") {
                 this.model.from_address = results.Addressdata.address;
-                this.model.privateKey=results.Userdata.User.block_token_private_key
+                this.model.privateKey=results.Userdata.User.block_token_private_key;
+                //this.model.to_user_id=results.Userdata.User.id;
                 this.message="Success";
             } else {
                 alert("Not added");
@@ -65,6 +66,7 @@ export class transfertokensComponent implements OnInit{
             $('#mydiv').hide(); 
             if (this.results.success == "true") {  
                 this.model.to_address=this.addData.Userdata[0].User.block_token_address;
+                this.model.to_user_id=this.addData.Userdata[0].User.id;
                 //this.model.privateKey=this.addData.Userdata[0].User.block_token_private_key;
                 this.message="Success";
             } else {
@@ -78,6 +80,7 @@ export class transfertokensComponent implements OnInit{
         $('#mydiv').show();
         this.solarService.transferTokens(<Solar>this.model).subscribe(results => {
             this.results = results;
+            console.log(this.results);
             if (this.results.success == "true") {
                 $('#mydiv').hide();
                 this.toasterService.pop('success', 'Token Transfered Successfully', '');

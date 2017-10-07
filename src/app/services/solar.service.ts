@@ -79,7 +79,13 @@ export class SolarService {
     transferTokens(solar: Solar) {
         let headers = new Headers({ 'Content-Type': 'application/json', 'Authorization': localStorage.getItem('token')});
         let options = new RequestOptions({ headers: headers, method: "post"});
-        return this.http.post(AppSettings.API_ENDPOINT+'transferTokens', solar,options).map(res => <any> JSON.parse(res["_body"]));
+        return this.http.post(AppSettings.API_ENDPOINT+'transferTokens', solar,options).map(res => <any> res["_body"]);
+    }
+
+    getTokenTransactions(solar: Solar) { 
+        const headers = new Headers({ 'Content-Type': 'application/json', 'Authorization': localStorage.getItem('token') });
+        const options = new RequestOptions({ headers: headers })
+        return this.http.get(AppSettings.API_ENDPOINT+'gettokentransactions',options).map(res => <any> JSON.parse(res['_body']));
     }
 
 
