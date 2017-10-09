@@ -81,13 +81,13 @@ export class transfertokensComponent implements OnInit{
         this.solarService.transferTokens(<Solar>this.model).subscribe(results => {
             this.results = results;
             console.log(this.results);
-            if (this.results.success == "true") {
+            if (this.results.success == "true") { 
                 $('#mydiv').hide();
-                this.toasterService.pop('success', 'Token Transfered Successfully', '');
+                this.toasterService.pop('success', this.results.message, '');
                 //this.router.navigate(['/users/marketlisting']);
             } else {
                 $('#mydiv').hide();
-                this.toasterService.pop('error', 'Market could not be added '+results.message, '');
+                this.toasterService.pop('error', this.results.message, '');
             }
         });
     }

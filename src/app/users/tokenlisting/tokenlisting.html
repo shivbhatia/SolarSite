@@ -15,10 +15,12 @@
     	<input #gb type="text" pInputText size="50" placeholder="Global Filter" style="float:right;height: 34px;margin-right: 5px;">
 	</div>
     <p-dataTable [value]="result" [rows]=recordsPerPage [paginator]="true" [globalFilter]="gb" [responsive]="true" [pageLinks]=pageLinks [rowsPerPageOptions]="rowsPerPageOptions" >
-        <p-column field="TransactionDetail.from_address" [sortable]="true" [style]="{width: '300px','text-align':'center','height':'68px'}" header="From Address" [filter]="true" filterPlaceholder="Search"></p-column>
+        <p-column field="TransactionDetail.FromEmail" [sortable]="true" [style]="{width: '200px','text-align':'center','height':'68px'}" header="From Email" [filter]="true" filterPlaceholder="Search"></p-column>
+        <p-column field="TransactionDetail.ToEmail" [sortable]="true" [style]="{width: '200px','text-align':'center','height':'68px'}" header="To Email" [filter]="true" filterPlaceholder="Search"></p-column>
+        <p-column field="TransactionDetail.from_address" [sortable]="true" [style]="{width: '350px','text-align':'center','height':'68px'}" header="From Address" [filter]="true" filterPlaceholder="Search"></p-column>
         
-        <p-column field="TransactionDetail.to_address" [sortable]="true" [style]="{width:'300px','text-align':'center','height':'68px'}" header=" To Address" [filter]="true" filterPlaceholder="Search"></p-column>
-        <p-column field="TransactionDetail.email" [sortable]="true" [style]="{width: '200px','text-align':'center','height':'68px'}" header="Email" [filter]="true" filterPlaceholder="Search"></p-column>
+        <p-column field="TransactionDetail.to_address" [sortable]="true" [style]="{width:'350px','text-align':'center','height':'68px'}" header=" To Address" [filter]="true" filterPlaceholder="Search"></p-column>
+        
         <p-column field="TransactionDetail.type" [sortable]="true" [style]="{width: '80px','text-align':'center','height':'68px'}" header="Type" [filter]="true" filterPlaceholder="Search"></p-column>
         <p-column field="TransactionDetail.amount" [sortable]="true" [style]="{width: '100px','text-align':'center','height':'68px'}" header="Amount" [filter]="true" filterPlaceholder="Search"></p-column>
 
