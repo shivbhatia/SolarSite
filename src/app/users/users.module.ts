@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 
 import { CustomFormsModule } from 'ng2-validation'
 import { OwlModule } from 'ng2-owl-carousel';
-import {GooglePlaceModule} from 'ng2-google-place-autocomplete';
+import { GooglePlaceModule } from 'ng2-google-place-autocomplete';
 import { Ng2CompleterModule } from "ng2-completer";
 //import { TooltipModule } from 'angular2-tooltips';
 
@@ -17,6 +17,7 @@ import { Ng2CompleterModule } from "ng2-completer";
 
 import { usersComponent } from './users.component';
 import { dashboardheaderComponent } from './dashboardheader/dashboardheader.component';
+import { breadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { usersfooterComponent } from './usersfooter/usersfooter.component';
 import { dashboardComponent } from './dashboard/dashboard.component';
 import { marketplaceComponent } from './marketplace/marketplace.component';
@@ -27,7 +28,6 @@ import { addmarketComponent } from './addmarket/addmarket.component';
 import { editprofileComponent } from './editprofile/editprofile.component';
 import { sitevisitlistingComponent } from './sitevisitlisting/sitevisitlisting.component';
 import { marketlistingComponent } from './marketlisting/marketlisting.component';
-
 import { inspectionreportComponent } from './inspectionreport/inspectionreport.component';
 import { mytrackedprojectsComponent } from './mytrackedprojects/mytrackedprojects.component';
 import { mysolarprojectsComponent } from './mysolarprojects/mysolarprojects.component';
@@ -127,6 +127,7 @@ declare var require: any;
 		editprofileComponent,
 		transfertokensComponent,
 		tokenlistingComponent,
+		breadcrumbComponent,
 		
 		//homemenuComponent,
 		//homebannerComponent,

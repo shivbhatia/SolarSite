@@ -30,7 +30,8 @@ export class marketplaceComponent implements OnInit{
     icon:string;
     checked:any;
     windowContent:any;
-    totalRecords:number;
+    public totalRecords:number;
+    public sum: number;
 
     constructor(private router: Router,private solarService: SolarService, toasterService: ToasterService) { 
         this.toasterService = toasterService;
@@ -41,6 +42,8 @@ export class marketplaceComponent implements OnInit{
         this.solarService.getSolarProjects(<Solar>this.model).subscribe(result => {  
             this.result = result.data;
             this.totalRecords=this.result.length;   
+            this.sum = 20;
+            
             //console.log(this.result);
             this.markers=result.markers;
             this.marks=result.marknew;
@@ -202,6 +205,11 @@ export class marketplaceComponent implements OnInit{
             $('#mydiv').hide();   
         });
     
+    }
+
+   sumValue() {
+    alert(this.sum);
+        return 2000;
     }
     
 }

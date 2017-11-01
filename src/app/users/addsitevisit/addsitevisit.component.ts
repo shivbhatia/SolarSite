@@ -1,11 +1,11 @@
 import { Component,ViewEncapsulation,OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params, Data } from '@angular/router';
 import { NgForm } from '@angular/forms';
-import {ToasterModule, ToasterService} from 'angular2-toaster';
+import { ToasterModule, ToasterService } from 'angular2-toaster';
 import { SolarService } from '../../services/solar.service';
 import { Solar } from '../../models/solar.model';
-import {DataTableModule,SharedModule} from 'primeng/primeng';
-import {TooltipModule} from "ng2-tooltip";
+import { DataTableModule,SharedModule } from 'primeng/primeng';
+import { TooltipModule } from "ng2-tooltip";
 import { FileUploader } from 'ng2-file-upload';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
@@ -57,6 +57,87 @@ export class addsitevisitComponent implements OnInit{
 	public options = {types: ['address'],componentRestrictions: { country: 'US' }}
 	getAddress(place:Object) {       
 		console.log("Address", place);
+        //console.log(place["address_components"][0]["types"][0])
+
+        if(place["address_components"][0]){
+            if(place["address_components"][0]["long_name"]!='' && place["address_components"][0]["types"][0]=='route'){
+                $("#Address").val(place["address_components"][0]["long_name"]);
+                $("#Address").prop('disabled', true);
+            }
+        }
+
+        if(place["address_components"][1]){
+            if(place["address_components"][1]["long_name"]!='' && (place["address_components"][1]["types"][0]=='locality' || place["address_components"][1]["types"][1]=='sublocality')){
+                $("#City").val(place["address_components"][1]["long_name"]);
+                $("#City").prop('disabled', true);
+            }
+        }
+
+        if(place["address_components"][2]){
+            if(place["address_components"][2]["long_name"]!='' && (place["address_components"][2]["types"][0]=='locality' || place["address_components"][2]["types"][1]=='sublocality')){
+                $("#City").val(place["address_components"][2]["long_name"]);
+                $("#City").prop('disabled', true); 
+            }
+            if(place["address_components"][2]["types"][0]=='administrative_area_level_1'){
+                $("#State").val(place["address_components"][2]["long_name"]);
+                $("#State").prop('disabled', true);
+            }
+        }
+
+        if(place["address_components"][3]){
+            if(place["address_components"][3]["types"][0]=='administrative_area_level_1'){
+                $("#State").val(place["address_components"][3]["long_name"]);
+                $("#State").prop('disabled', true);
+            } 
+            
+            if(place["address_components"][3]["long_name"]!='' && place["address_components"][3]["types"][0]=='country'){
+                $("#Country").val(place["address_components"][3]["long_name"]);
+                $("#Country").prop('disabled', true);
+            }else{
+                $("#Country").val('');
+                $("#Country").prop('disabled', false);
+            } 
+        }
+
+        if(place["address_components"][4]){ 
+            if(place["address_components"][4]["long_name"]!='' && place["address_components"][4]["types"][0]=='administrative_area_level_1'){
+                $("#State").val(place["address_components"][4]["long_name"]);
+                $("#State").prop('disabled', true);
+            }
+            if(place["address_components"][4]["types"][0]=='administrative_area_level_1'){
+                $("#State").val(place["address_components"][4]["long_name"]);
+                $("#State").prop('disabled', true);
+            } 
+            if(place["address_components"][4]["long_name"]!='' && place["address_components"][4]["types"][0]=='country'){ 
+                $("#Country").val(place["address_components"][4]["long_name"]);
+                $("#Country").prop('disabled', true);
+
+            }else{
+                $("#Country").val('');
+                $("#Country").prop('disabled', false);
+            }
+        }
+
+        if(place["address_components"][5]){
+            if(place["address_components"][5]["long_name"]!='' && place["address_components"][5]["types"][0]=='country'){
+                $("#Country").val(place["address_components"][5]["long_name"]);
+                $("#Country").prop('disabled', true);
+            }
+            if(place["address_components"][5]["long_name"]!='' && place["address_components"][5]["types"][0]=='postal_code'){
+                $("#Zip").val(place["address_components"][5]["long_name"]);
+                $("#Zip").prop('disabled', true);
+            }
+        }
+
+        if(place["address_components"][6]){
+            if(place["address_components"][6]["long_name"]!='' && place["address_components"][6]["types"][0]=='postal_code'){
+                $("#Zip").val(place["address_components"][6]["long_name"]);
+                $("#Zip").prop('disabled', true);
+            }else{
+                $("#Zip").val('');
+                $("#Zip").prop('disabled', false);
+            }
+        }
     }
 	
 	ngOnInit(){
@@ -231,9 +312,11 @@ export class addsitevisitComponent implements OnInit{
 		console.log("testing");
 		//console.log(this.filesUpload);
        // this.filesUpload=this.StructuralfilesToUpload.concat(this.StructuralfilesToUpload);
+      //alert();
        window.scrollTo(0, 0);    
        $('#mydiv').show();
-        this.makeFileRequest("http://192.155.246.146:8145/users/add_inspection_angular", this.model, this.StructuralfilesToUpload,  this.ElectricalfilesToUpload, this.UtilityfilesToUpload).then((result) => {
+        //this.makeFileRequest("http://192.155.246.146:8145/users/add_inspection_angular", this.model, this.StructuralfilesToUpload,  this.ElectricalfilesToUpload, this.UtilityfilesToUpload).then((result) => {
+            this.makeFileRequest("https://www.solarsitedesign.com/webservicesangular/add_inspection", this.model, this.StructuralfilesToUpload,  this.ElectricalfilesToUpload, this.UtilityfilesToUpload).then((result) => {
             console.log(result);
             $('#mydiv').hide();
             this.toasterService.pop('success', 'Successfully Added', '');
@@ -244,7 +327,7 @@ export class addsitevisitComponent implements OnInit{
 
     }
  
-	StructuralfileChangeEvent(StructuralfileInput: any){
+	StructuralfileChangeEvent(StructuralfileInput: any){ alert("str");
 		this.StructuralfilesToUpload = <Array<File>> StructuralfileInput.target.files;
         let fileNamesNew = [];
         for (let i=0; i<this.StructuralfilesToUpload.length; i++) {
@@ -253,7 +336,7 @@ export class addsitevisitComponent implements OnInit{
         this.StructuralfileInputNames = fileNamesNew.join();
     }
 
-    ElectricalfileChangeEvent(ElectricalfileInput: any){
+    ElectricalfileChangeEvent(ElectricalfileInput: any){ alert("elt");
         this.ElectricalfilesToUpload = <Array<File>> ElectricalfileInput.target.files;
         let ElectrialfileNamesNew = [];
         for (let i=0; i<this.ElectricalfilesToUpload.length; i++) {
@@ -262,7 +345,7 @@ export class addsitevisitComponent implements OnInit{
         this.ElectricalfileInputNames = ElectrialfileNamesNew.join();
     }
 
-    UtilityfileChangeEvent(UtilityfileInput: any){
+    UtilityfileChangeEvent(UtilityfileInput: any){ alert("uti");
         this.UtilityfilesToUpload = <Array<File>> UtilityfileInput.target.files;
         let UtilityfileNamesNew = [];
         for (let i=0; i<this.UtilityfilesToUpload.length; i++) {
@@ -272,17 +355,19 @@ export class addsitevisitComponent implements OnInit{
     }
  
     makeFileRequest(url: string, postData: any, Structuralfiles: Array<File>, Electricalfiles: Array<File>, Utilityfiles: Array<File>) {
-		console.log("tetetete");
+		alert("tetetete");
 		console.log(postData);
         return new Promise((resolve, reject) => {
             var formData: any = new FormData();
             var xhr = new XMLHttpRequest();
             
-            if(Structuralfiles.length>0){
-                for(var i = 0; i < Structuralfiles.length; i++) {
+            if(Structuralfiles.length>0){ 
+                for(var i = 0; i < Structuralfiles.length; i++) { alert(Structuralfiles[i]);
                     formData.append("StructuralUploads[]", Structuralfiles[i], Structuralfiles[i].name);
                 }
             }
+            console.log('formDataStr '+formData);
+
             if(Electricalfiles.length>0){
                 for(var i = 0; i < Electricalfiles.length; i++) {
                     formData.append("ElectricUploads[]", Electricalfiles[i], Electricalfiles[i].name);
@@ -313,6 +398,7 @@ export class addsitevisitComponent implements OnInit{
                     }
                 }
             }
+            console.log(formData);
             xhr.open("POST", url, true);
             xhr.send(formData);
         });

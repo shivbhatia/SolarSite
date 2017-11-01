@@ -1,33 +1,19 @@
-<div id="page-wrapper">
 
-	<div class="container-fluid">
-    	<!-- Page Heading -->
-        <div class="row">
-        	<div class="col-lg-12">
-            	<h2 class="page-header">Commercial Marketplace Dashboard - My Projects</h2>
-                <ol class="breadcrumb">
-                	<li class="active"><i class="fa fa-dashboard"></i> Dashboard</li>
-                </ol>
-            </div>
-        </div>
-    </div>
+    
 	<div class="container">
 		<div class="row">
-
-            
-
-			
-			<div class="col-lg-6">
-    			<div class="panel panel-primary">
-                	<div class="panel-heading">My C&I Solar Projects</div>
-                    <div class="panel-body">
-						<div *ngFor="let MarketProject of results.MarketplaceProject">
-							<div class="well shadow-z-1">
-            					<div class="media">
-                					<div class="media-body">
-                    					<div class="col-lg-9 padding-left-0">
-                        					<h5 class="media-heading view-link"><a href="#">{{MarketProject.MarketplaceProject.project_name}}</a></h5> 
-                    					</div>
+            <!-- Start C&I solar projects panel -->
+            <div class="col-lg-6">
+    		    <div class="panel panel-primary">
+                    <div class="panel-heading">My C&I Solar Projects</div>
+                    <div class="panel-body"> 
+					   <div *ngFor="let MarketProject of this.marketplace">
+                            <div class="well shadow-z-1">
+            				    <div class="media">
+                				    <div class="media-body">
+                    				    <div class="col-lg-9 padding-left-0">
+                        				    <h5 class="media-heading view-link"><a href="#">{{MarketProject.MarketplaceProject.project_name}}</a></h5> 
+                    				    </div>
                     					<div class="col-lg-3 text-center panel-link">{{MarketProject.MarketplaceProject.project_size}} W </div>
 										<div class="col-lg-12 padding-left-0">
 											<ul class="list-inline list-unstyled">
@@ -44,12 +30,14 @@
                     </div>
             	</div>
 			</div>
+            <!-- Start C&I solar projects panel -->
 
-			<div class="col-lg-6">
-    			<div class="panel panel-primary">
-                	<div class="panel-heading">Tracked Project Listing</div>
+            <!-- Start Track Project projects panel -->
+            <div class="col-lg-6">
+    		    <div class="panel panel-primary">
+                    <div class="panel-heading">Tracked Project Listing</div>
                     <div class="panel-body"> 
-						<div *ngFor="let TrackProject of results.TrackedProject">
+						<div *ngFor="let TrackProject of this.trackproject">
                     		<div class="well shadow-z-1">
             					<div class="media">
                 					<div class="media-body">
@@ -72,12 +60,14 @@
                     </div>
 				</div>
 			</div>
+            <!-- End Track Project projects panel -->
 
-			<div class="col-lg-6">
+            <!-- Start Market listing panel -->
+            <div class="col-lg-6">
     			<div class="panel panel-primary">
                 	<div class="panel-heading">My Markets</div>
                     <div class="panel-body"> 
-						<div *ngFor="let Market of results.Markets">
+						<div *ngFor="let Market of this.markets">
                     		<div class="well shadow-z-1">
             					<div class="media">
                 					<div class="media-body">
@@ -101,13 +91,14 @@
                     </div>
 				</div>
 			</div>
+            <!-- End Market listing panel -->
 
-			<div class="col-lg-6">
+            <!-- Start My Market Map -->
+            <div class="col-lg-6">
     			<div class="panel panel-primary">
                 	<div class="panel-heading">My Market Map</div>
                     <div class="panel-body">
-						
-							<div class="well shadow-z-1" style="height: 518px;">
+						<div class="well shadow-z-1" style="height: 518px;">
             					<div class="media">
                 					<div class="media-body">
                     					<div class="col-lg-9 padding-left-0">
@@ -120,9 +111,7 @@
                 	<div class="panel-footer panel-footer-button text-right view-link"><a href="#"></a></div>
             	</div>
 			</div>
-
-
-		</div>
+        </div>
 	</div>
-</div>
+
 

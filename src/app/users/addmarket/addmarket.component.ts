@@ -23,26 +23,30 @@ export class addmarketComponent implements OnInit{
 	
     constructor(private router: Router,private activatedRoute: ActivatedRoute,private userService: UserService, toasterService: ToasterService,private http:Http) { 
 	   this.toasterService = toasterService;
-		
-        /***** START CODE TO SET FOCUS ON TOP AFTER CLICK ON NAVIGATION LINK *****/
-        
+	   /***** START CODE TO SET FOCUS ON TOP AFTER CLICK ON NAVIGATION LINK *****/
         window.scrollTo(0, 0)
-
-        /***** END CODE TO SET FOCUS ON TOP AFTER CLICK ON NAVIGATION LINK *****/
+      /***** END CODE TO SET FOCUS ON TOP AFTER CLICK ON NAVIGATION LINK *****/
     }
 
 	public options = {types: ['(cities)'],componentRestrictions: { country: 'US' }}
-        getAddress(place:Object) {  
-        console.log("Address", place["address_components"][0]["long_name"]);
-        $("#City").focus();
-        $("#City").focusout();
-        //$("#Country").click();
-        this.model.city = place["address_components"][0]["long_name"];
-
+    
+    getAddress(place:Object) {   
+        if(place["address_components"][0]["long_name"]!=''){
+            $("#City").val(place["address_components"][0]["long_name"]);
+            $("#City").prop('disabled', true);
+        }
+        if(place["address_components"][2]["long_name"]!=''){
+            $("#State").val(place["address_components"][2]["long_name"]);
+            $("#State").prop('disabled', true);
+        }
+        if(place["address_components"][3]["long_name"]!=''){
+            $("#Country").val(place["address_components"][3]["long_name"]);
+            $("#Country").prop('disabled', true);
+        }
     }
 	
 	ngOnInit(){
-		console.log("testt");
+		
 	}
 	
     AddMarket() {

@@ -164,3 +164,10 @@ footer.page-footer .footer-copyright {
     color: #ffffff;
     outline: 0 none;
 }
+.ng2-datetime-picker .days {
+    width: 240px !important;
+}
+/*.weekend{
+    background-color: transparent !important ;
+    color: #333 !important;
+}*/

@@ -1,18 +1,7 @@
 
 
 
-<div id="page-wrapper">
-	<div class="container-fluid">
-    	<!-- Page Heading -->
-        <div class="row">
-        	<div class="col-lg-12">
-            	<h2 class="page-header">Add Site Visit</h2>
-                <ol class="breadcrumb">
-                	<li class="active"><i class="fa fa-dashboard"></i> Dashboard</li>
-                </ol>
-            </div>
-        </div>
-    </div>
+
     <div class="container">
         <form  name="form" class="" (ngSubmit)="AddSiteVisit()" #addsitevisitForm="ngForm" novalidate>
 
@@ -68,10 +57,10 @@ support@solarsitedesign.com</span>
                 <div class="col-lg-12">
                     <div class="form-group">
                         <label>On-Site Contact Email</label>
-                        <input type="text" name="contactEmail" [(ngModel)]="model.contactEmail" #contactEmail="ngModel" required  [maxlength]="255" pattern ="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$"  class="form-control" id="contactEmail" placeholder="Enter on-site contact email">
+                        <input type="text" name="contactEmail" [(ngModel)]="model.contactEmail" #contactEmail="ngModel" required  [maxlength]="100" pattern ="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$"  class="form-control" id="contactEmail" placeholder="Enter on-site contact email">
                         <div *ngIf="contactEmail.errors && contactEmail.touched" class="">
                             <span class="error" *ngIf="contactEmail.errors?.required">On-Site contact email is mandatory.</span>
-                            <span class="error" *ngIf="contactEmail.errors?.maxlength">Max 255 characters allowed.</span>
+                            <span class="error" *ngIf="contactEmail.errors?.maxlength">Max 100 characters allowed.</span>
                              <span class="error" *ngIf="contactEmail.errors?.pattern">Enter valid email pattern.</span>
                         </div>
                     </div>
@@ -84,7 +73,7 @@ support@solarsitedesign.com</span>
                             <span class="error" *ngIf="contactPhone.errors?.required">On-site contact phone number is mandatory.</span>
                             <span class="error" *ngIf="contactPhone.errors?.minlength">Min 10 characters required.</span>
                             <span class="error" *ngIf="contactPhone.errors?.maxlength">Max 15 characters allowed.</span>
-                            <span class="error" *ngIf="contactPhone.errors?.number">Enter only number.</span>
+                            <span class="error" *ngIf="contactPhone.errors?.number">Enter numbers only.</span>
                         </div>
                     </div>
                 </div>
@@ -168,7 +157,7 @@ support@solarsitedesign.com</span>
                     <div class="form-group">
                         <label>Date of Site Visit</label>
                         <input type="text" name="survey_date" [(ngModel)]="model.survey_date" #survey_date="ngModel" required   class="form-control" id="SurveyDate" placeholder="Enter the date of your visit to the site" ng2-datetime-picker
-      date-only="true">
+      date-only="true" max-date="Date">
                         <div *ngIf="survey_date.errors && survey_date.touched" class="" >
                             <span class="error" *ngIf="survey_date.errors?.required">Date of site visit is mandatory.</span>
                         </div>
@@ -197,9 +186,13 @@ support@solarsitedesign.com</span>
                 <div class="col-lg-12">
                     <div class="form-group">
                         <label>Estimated monthly utility bill payment</label>
-                        <input type="text" name="utility_bill_cost" [(ngModel)]="model.utility_bill_cost" #utility_bill_cost="ngModel" required    class="form-control" id="SiteUtilityBillCost" placeholder="Enter the client's monthly utility bill payment">
+                        <input type="text" name="utility_bill_cost" [(ngModel)]="model.utility_bill_cost" #utility_bill_cost="ngModel" required  [maxlength]="5" [minlength]="1"  number class="form-control" id="SiteUtilityBillCost" placeholder="Enter the client's monthly utility bill payment">
                         <div *ngIf="utility_bill_cost.errors && utility_bill_cost.touched" class="">
                             <span class="error" *ngIf="utility_bill_cost.errors?.required">Estimated monthly utility bill payment is mandatory.</span>
+                            <span class="error" *ngIf="utility_bill_cost.errors?.maxlength">Max 100 characters allowed.</span>
+                            <span class="error" *ngIf="utility_bill_cost.errors?.minlength">Min 1 characters allowed.</span>
+                            <p class="error" *ngIf="utility_bill_cost.errors?.number">Enter only numbers.</p>
+
                         </div>
                     </div>
                 </div>
@@ -228,7 +221,7 @@ support@solarsitedesign.com</span>
                         <input type="file" name="img[]" class="file">
                         <div class="row">
                             <div class="col-lg-9">
-                                <input type="text" class="form-control input-lg" name="fileNames" [(ngModel)]="UtilityfileInputNames" disabled placeholder="Upload Image">
+                                <input type="text" class="form-control input-lg" name="fileNamesNew" [(ngModel)]="UtilityfileInputNames" disabled placeholder="Upload Image">
 
 
                             </div>
@@ -329,7 +322,7 @@ support@solarsitedesign.com</span>
  
 
 
-                                <input type="text" class="form-control input-lg" name="fileNames" [(ngModel)]="ElectricalfileInputNames" disabled placeholder="Upload one or more files">
+                                <input type="text" class="form-control input-lg" name="ElectrialfileNamesNew" [(ngModel)]="ElectricalfileInputNames" disabled placeholder="Upload one or more files">
                             </div>
                             <div class="col-lg-3">
                                 <tooltip-content #electricalTooltip [animation]="true" placement="top">
@@ -431,7 +424,7 @@ support@solarsitedesign.com</span>
                         <input type="file" name="img[]" class="file">
                         <div class="row">
                             <div class="col-lg-9">
-                                <input type="text" class="form-control input-lg" name="fileNames" [(ngModel)]="StructuralfileInputNames" disabled placeholder="Upload Structural Data Images">
+                                <input type="text" class="form-control input-lg" name="StructuralfileInputNames" [(ngModel)]="StructuralfileInputNames" disabled placeholder="Upload Structural Data Images">
                             </div>
                             <div class="col-lg-3">
                                 <tooltip-content #myTooltip [animation]="true" placement="top">
@@ -460,7 +453,6 @@ support@solarsitedesign.com</span>
         </form>
        
     </div>
-</div>
 
 
 
