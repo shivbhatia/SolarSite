@@ -31,6 +31,7 @@ export class sitevisitlistingComponent implements OnInit{
         $('#mydiv').show();
         this.solarService.getSiteVisit(<Solar>this.model).subscribe(result => {
             this.result = result;
+            //alert(this.result);
             this.pageLinks=Math.ceil(result.length/this.recordsPerPage);
             for (let i=1; i<=this.pageLinks; i++) {
                 this.perPage=this.perPage+this.recordsPerPage;

@@ -317,17 +317,17 @@ export class addsitevisitComponent implements OnInit{
        $('#mydiv').show();
         //this.makeFileRequest("http://192.155.246.146:8145/users/add_inspection_angular", this.model, this.StructuralfilesToUpload,  this.ElectricalfilesToUpload, this.UtilityfilesToUpload).then((result) => {
             this.makeFileRequest("https://www.solarsitedesign.com/webservicesangular/add_inspection", this.model, this.StructuralfilesToUpload,  this.ElectricalfilesToUpload, this.UtilityfilesToUpload).then((result) => {
-            console.log(result);
+            //console.log(result);
             $('#mydiv').hide();
             this.toasterService.pop('success', 'Successfully Added', '');
-                  this.router.navigate(['/users/addsitevisit']);
+                  this.router.navigate(['/users/sitevisitlisting']);
         }, (error) => {
             console.error(error);
         });
 
     }
  
-	StructuralfileChangeEvent(StructuralfileInput: any){ alert("str");
+	StructuralfileChangeEvent(StructuralfileInput: any){ 
 		this.StructuralfilesToUpload = <Array<File>> StructuralfileInput.target.files;
         let fileNamesNew = [];
         for (let i=0; i<this.StructuralfilesToUpload.length; i++) {
@@ -336,7 +336,7 @@ export class addsitevisitComponent implements OnInit{
         this.StructuralfileInputNames = fileNamesNew.join();
     }
 
-    ElectricalfileChangeEvent(ElectricalfileInput: any){ alert("elt");
+    ElectricalfileChangeEvent(ElectricalfileInput: any){ 
         this.ElectricalfilesToUpload = <Array<File>> ElectricalfileInput.target.files;
         let ElectrialfileNamesNew = [];
         for (let i=0; i<this.ElectricalfilesToUpload.length; i++) {
@@ -345,7 +345,7 @@ export class addsitevisitComponent implements OnInit{
         this.ElectricalfileInputNames = ElectrialfileNamesNew.join();
     }
 
-    UtilityfileChangeEvent(UtilityfileInput: any){ alert("uti");
+    UtilityfileChangeEvent(UtilityfileInput: any){ 
         this.UtilityfilesToUpload = <Array<File>> UtilityfileInput.target.files;
         let UtilityfileNamesNew = [];
         for (let i=0; i<this.UtilityfilesToUpload.length; i++) {
@@ -355,14 +355,14 @@ export class addsitevisitComponent implements OnInit{
     }
  
     makeFileRequest(url: string, postData: any, Structuralfiles: Array<File>, Electricalfiles: Array<File>, Utilityfiles: Array<File>) {
-		alert("tetetete");
+		
 		console.log(postData);
         return new Promise((resolve, reject) => {
             var formData: any = new FormData();
             var xhr = new XMLHttpRequest();
             
             if(Structuralfiles.length>0){ 
-                for(var i = 0; i < Structuralfiles.length; i++) { alert(Structuralfiles[i]);
+                for(var i = 0; i < Structuralfiles.length; i++) { 
                     formData.append("StructuralUploads[]", Structuralfiles[i], Structuralfiles[i].name);
                 }
             }
