@@ -71,6 +71,11 @@ export class sitevisitlistingComponent implements OnInit{
         
     }
 
+    download_file(id:any,projectName:any) { 
+        alert(id);
+        window.open("https://www.solarsitedesign.com/file.pdf", "_blank")
+    }
+
 }
 	
 

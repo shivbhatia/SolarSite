@@ -16,6 +16,13 @@
                 <button type="text" (click)="delete_inspection(result[i].Siteangular.uid)" pButton icon="fa-trash-o" ></button>
             </ng-template>
         </p-column>
+        <p-column field="" [sortable]="true" [style]="{width: '200px','text-align':'center','height':'68px'}" header="Structured Files"  >
+       
+            <ng-template let-car="rowData" let-i="rowIndex" pTemplate="body">
+
+                <span *ngFor="let item of result[i].Siteangular.str"><a href="http://www.solarsitedesign.com/img/box1/{{result[i].Siteangular.project_name}}/StructuralFiles/{{item}}" download >{{item}} </a><br/></span>
+            </ng-template>
+        </p-column>  
     </p-dataTable>
 
 <p-confirmDialog header="Confirmation"

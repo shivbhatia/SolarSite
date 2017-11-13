@@ -399,7 +399,8 @@ export class addsitevisitComponent implements OnInit{
                 }
             }
             console.log(formData);
-            xhr.open("POST", url, true);
+            xhr.open("POST", url,true);
+            xhr.setRequestHeader("Authorization", localStorage.getItem('token'));
             xhr.send(formData);
         });
     }
