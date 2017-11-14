@@ -95,7 +95,7 @@ export class sitevisitlistingComponent implements OnInit{
 
 saveFile(id:any,projectName:any,fileName:any) { 
     const headers = new Headers();
-    headers.append('Accept', 'application/octet-stream');
+    headers.append('Accept', 'image/png');
    // headers.append('Accept', 'Content-Length');
     let options = new RequestOptions({ headers: headers });
 
@@ -105,12 +105,12 @@ saveFile(id:any,projectName:any,fileName:any) {
       .then(response => this.saveToFileSystem(response));
   }
  
-  private saveToFileSystem(response) { console.log(response);
-    const contentDispositionHeader: string = response.headers.get('Content-Length'); 
+  private saveToFileSystem(response) { console.log(response._body);
+    const contentDispositionHeader: string = response.headers.get('Content-Disposition'); 
     alert(contentDispositionHeader);
     const parts: string[] = contentDispositionHeader.split(';');
-    const filename = parts[1].split('=')[1];
-    const blob = new Blob([response._body], { type: 'text/plain' });
+    const filename = parts[1].split('=')[1]; alert(filename);
+    const blob = new Blob([response._body], { type: 'image/png' });
     saveAs(blob, filename);
   }
 
