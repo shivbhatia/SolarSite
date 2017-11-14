@@ -20,7 +20,12 @@
        
             <ng-template let-car="rowData" let-i="rowIndex" pTemplate="body">
 
-                <span *ngFor="let item of result[i].Siteangular.str"><a href="http://www.solarsitedesign.com/img/box1/{{result[i].Siteangular.project_name}}/StructuralFiles/{{item}}" download >{{item}} </a><br/></span>
+                <span *ngFor="let item of result[i].Siteangular.str">
+                    <!--<a href="http://www.solarsitedesign.com/img/box1/{{result[i].Siteangular.project_name}}/StructuralFiles/{{item}}" download>{{item}} </a>-->
+                    <span (click)="saveFile(result[i].Siteangular.uid,result[i].Siteangular.project_name,item)">{{item}}</span>
+                    <br/>
+                    </span>
+                
             </ng-template>
         </p-column>  
     </p-dataTable>

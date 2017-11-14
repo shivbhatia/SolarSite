@@ -1,10 +1,13 @@
 import { Component,ViewEncapsulation,OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
+import {Observable} from 'rxjs/Rx';
+import {Http, Response, Headers,RequestOptions,ResponseContentType} from '@angular/http';
 import {DataTableModule,SharedModule,ConfirmDialogModule,ConfirmationService} from 'primeng/primeng';
 import {ToasterModule, ToasterService} from 'angular2-toaster';
 import { SolarService } from '../../services/solar.service';
 import { Solar } from '../../models/solar.model';
+import { saveAs } from 'file-saver/FileSaver';
 
 @Component({
   templateUrl: "./sitevisitlisting.html",
@@ -21,9 +24,10 @@ export class sitevisitlistingComponent implements OnInit{
     rowsPerPageOptions: number[] = [];
     perPage:number=0;  
     recordsPerPage:number=10;
+    applicationsUrl:any;
 
     
-    constructor(private router: Router,private solarService: SolarService, toasterService: ToasterService, private confirmationService: ConfirmationService) { 
+    constructor(private router: Router,private solarService: SolarService, toasterService: ToasterService, private confirmationService: ConfirmationService, private http: Http) { 
         this.toasterService = toasterService;
     }
     
@@ -71,10 +75,49 @@ export class sitevisitlistingComponent implements OnInit{
         
     }
 
-    download_file(id:any,projectName:any) { 
-        alert(id);
-        window.open("https://www.solarsitedesign.com/file.pdf", "_blank")
-    }
+    download_file(id:any,projectName:any,fileName:any): Observable<File> {  alert(id);
+        this.applicationsUrl = 'http://www.solarsitedesign.com/img/box1/'+ projectName +'/StructuralFiles/' +fileName; alert(this.applicationsUrl);
+        let headers = new Headers({ 'Content-Type': 'application/json', 'MyApp-Application' : 'AppName', 'Accept': 'application/png' });
+        let options = new RequestOptions({ headers: headers, responseType: ResponseContentType.Blob });
+        return this.http.post(this.applicationsUrl, '', options)
+            .map(this.extractContent)
+            .catch(this.handleError);
+        }
+
+        private extractContent(res: Response) { alert("test");
+            let blob: Blob = res.blob();
+            window['saveAs'](blob, "1.png");
+        }
+        private handleError(error: any): Promise<any> { alert("new");
+    console.error('An error occurred', error); // for demo purposes only
+    return Promise.reject(error.message || error);
+ }
+
+saveFile(id:any,projectName:any,fileName:any) {
+    const headers = new Headers();
+    headers.append('Accept', 'application/octet-stream');
+   // headers.append('Accept', 'Content-Length');
+    let options = new RequestOptions({ headers: headers });
+
+    this.applicationsUrl = 'https://www.solarsitedesign.com/webservicesangular/download';
+    this.http.get(this.applicationsUrl, { headers: headers })
+      .toPromise()
+      .then(response => this.saveToFileSystem(response));
+  }
+ 
+  private saveToFileSystem(response) { console.log(response);
+    const contentDispositionHeader: string = response.headers.get('Content-Length'); 
+    alert(contentDispositionHeader);
+    const parts: string[] = contentDispositionHeader.split(';');
+    const filename = parts[1].split('=')[1];
+    const blob = new Blob([response._body], { type: 'text/plain' });
+    saveAs(blob, filename);
+  }
+
+
+       // alert(projectName);
+        //window.open("https://www.solarsitedesign.com/file.pdf", "_blank")
+    
 
 }
 	
