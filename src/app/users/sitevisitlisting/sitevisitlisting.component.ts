@@ -93,7 +93,7 @@ export class sitevisitlistingComponent implements OnInit{
     return Promise.reject(error.message || error);
  }
 
-saveFile(id:any,projectName:any,fileName:any) {
+saveFile(id:any,projectName:any,fileName:any) { 
     const headers = new Headers();
     headers.append('Accept', 'application/octet-stream');
    // headers.append('Accept', 'Content-Length');
