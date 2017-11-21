@@ -1,6 +1,5 @@
-
-    <div class="ui-widget-header" style="padding:14px 10px;border-bottom: 0 none;height: 67px">
-        <i class="fa fa-search" style="margin:11px 4px 0 0;float: right;"></i>
+<div class="ui-widget-header" style="padding:14px 10px;border-bottom: 0 none;height: 67px">
+    <i class="fa fa-search" style="margin:11px 4px 0 0;float: right;"></i>
     	<input #gb type="text" pInputText size="50" placeholder="Global Filter" style="float:right;height: 34px;margin-right: 5px;">
 	</div>
     <p-dataTable [value]="result" [rows]=recordsPerPage [paginator]="true" [globalFilter]="gb" [responsive]="true" [pageLinks]=pageLinks [rowsPerPageOptions]="rowsPerPageOptions" >
@@ -17,19 +16,28 @@
             </ng-template>
         </p-column>
         <p-column field="" [sortable]="true" [style]="{width: '200px','text-align':'center','height':'68px'}" header="Structured Files"  >
-       
             <ng-template let-car="rowData" let-i="rowIndex" pTemplate="body">
-
                 <span *ngFor="let item of result[i].Siteangular.str">
-                    <!--<a href="http://www.solarsitedesign.com/img/box1/{{result[i].Siteangular.project_name}}/StructuralFiles/{{item}}" download>{{item}} </a>-->
-                    <span (click)="saveFile(result[i].Siteangular.uid,result[i].Siteangular.project_name,item)">{{item}}</span>
+                    <span (click)="saveFileNew(result[i].Siteangular.uid,result[i].Siteangular.project_name,item,'StructuralFiles')" style="color: blue;cursor: pointer;">{{item}}</span>
                     <br/>
-                    </span>
-                
+                </span>
             </ng-template>
-        </p-column>  
+        </p-column> 
+        <p-column field="" [sortable]="true" [style]="{width: '200px','text-align':'center','height':'68px'}" header="Electrical Files"  >
+            <ng-template let-car="rowData" let-i="rowIndex" pTemplate="body">
+                <span *ngFor="let item of result[i].Siteangular.elt">
+                    <span (click)="saveFileNew(result[i].Siteangular.uid,result[i].Siteangular.project_name,item,'ElectricFiles')" style="color: blue;cursor: pointer;">{{item}}</span>
+                    <br/>
+                </span>
+            </ng-template>
+        </p-column> 
+        <p-column field="" [sortable]="true" [style]="{width: '200px','text-align':'center','height':'68px'}" header="Utility Files"  >
+            <ng-template let-car="rowData" let-i="rowIndex" pTemplate="body">
+                <span *ngFor="let item of result[i].Siteangular.uti">
+                    <span (click)="saveFileNew(result[i].Siteangular.uid,result[i].Siteangular.project_name,item,'UtilityFiles')" style="color: blue;cursor: pointer;">{{item}}</span>
+                    <br/>
+                </span>
+            </ng-template>
+        </p-column> 
     </p-dataTable>
-
-<p-confirmDialog header="Confirmation"
-                 icon="fa fa-question-circle" width="400">
-</p-confirmDialog>
+    <p-confirmDialog header="Confirmation" icon="fa fa-question-circle" width="400"></p-confirmDialog>

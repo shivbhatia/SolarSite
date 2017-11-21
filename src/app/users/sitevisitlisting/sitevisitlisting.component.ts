@@ -35,6 +35,7 @@ export class sitevisitlistingComponent implements OnInit{
         $('#mydiv').show();
         this.solarService.getSiteVisit(<Solar>this.model).subscribe(result => {
             this.result = result;
+            console.log(this.result);
             //alert(this.result);
             this.pageLinks=Math.ceil(result.length/this.recordsPerPage);
             for (let i=1; i<=this.pageLinks; i++) {
@@ -75,50 +76,51 @@ export class sitevisitlistingComponent implements OnInit{
         
     }
 
-    download_file(id:any,projectName:any,fileName:any): Observable<File> {  alert(id);
+    /*download_file(id:any,projectName:any,fileName:any): Observable<File> {  
         this.applicationsUrl = 'http://www.solarsitedesign.com/img/box1/'+ projectName +'/StructuralFiles/' +fileName; alert(this.applicationsUrl);
         let headers = new Headers({ 'Content-Type': 'application/json', 'MyApp-Application' : 'AppName', 'Accept': 'application/png' });
         let options = new RequestOptions({ headers: headers, responseType: ResponseContentType.Blob });
         return this.http.post(this.applicationsUrl, '', options)
             .map(this.extractContent)
             .catch(this.handleError);
-        }
+    }*/
 
-        private extractContent(res: Response) { alert("test");
-            let blob: Blob = res.blob();
-            window['saveAs'](blob, "1.png");
-        }
-        private handleError(error: any): Promise<any> { alert("new");
-    console.error('An error occurred', error); // for demo purposes only
-    return Promise.reject(error.message || error);
- }
+    /*private extractContent(res: Response) { 
+        let blob: Blob = res.blob();
+        window['saveAs'](blob, "1.png");
+    }*/
+        
+    /*private handleError(error: any): Promise<any> {
+        console.error('An error occurred', error); // for demo purposes only
+        return Promise.reject(error.message || error);
+    }*/
 
-saveFile(id:any,projectName:any,fileName:any) { 
-    const headers = new Headers();
-    headers.append('Accept', 'image/png');
-   // headers.append('Accept', 'Content-Length');
-    let options = new RequestOptions({ headers: headers });
+    saveFileNew(id:any,projectName:any,fileName:any,fileType:any) {  
+        window.open("https://www.solarsitedesign.com/webservicesangular/download?id="+id+"&project_name="+projectName+"&file_name="+fileName+"&file_type="+fileType, "_blank");
+    }
 
-    this.applicationsUrl = 'https://www.solarsitedesign.com/webservicesangular/download';
-    this.http.get(this.applicationsUrl, { headers: headers })
-      .toPromise()
-      .then(response => this.saveToFileSystem(response));
-  }
+    /*saveFile(id:any,projectName:any,fileName:any) {   
+        window.open("https://www.solarsitedesign.com/webservicesangular/download", "_blank");
+        const headers = new Headers();
+        headers.append('Accept', 'image/png');
+        let options = new RequestOptions({ headers: headers , responseType: ResponseContentType.Blob});
+        this.applicationsUrl = 'https://www.solarsitedesign.com/webservicesangular/download';   
+        this.http.get(this.applicationsUrl, { headers: headers })
+        .toPromise()
+        .then(response => this.saveToFileSystem(response));
+    }*/
  
-  private saveToFileSystem(response) { console.log(response._body);
-    const contentDispositionHeader: string = response.headers.get('Content-Disposition'); 
-    alert(contentDispositionHeader);
-    const parts: string[] = contentDispositionHeader.split(';');
-    const filename = parts[1].split('=')[1]; alert(filename);
-    const blob = new Blob([response._body], { type: 'image/png' });
-    saveAs(blob, filename);
-  }
+    /*private saveToFileSystem(response) { 
+        const contentDispositionHeader: string = response.headers.get('Content-Disposition'); 
+        alert(contentDispositionHeader);
+        const parts: string[] = contentDispositionHeader.split(';');
+        const filename = parts[1].split('=')[1]; alert(filename);
+        const blob = new Blob([response._body], { type: 'image/png' });
+        saveAs(blob, filename);
+    }*/
 
 
-       // alert(projectName);
-        //window.open("https://www.solarsitedesign.com/file.pdf", "_blank")
-    
-
+       
 }
 	
 
