@@ -33,12 +33,14 @@ proId:any;
 proProjectName:any;
 proFileType:any;
 proFileName:any;
+videoSource:any;
     
     constructor(private router: Router,private solarService: SolarService, toasterService: ToasterService, private confirmationService: ConfirmationService, private http: Http , private popup:Popup) { 
         this.toasterService = toasterService;
     }
     
     ngOnInit(){
+        this.videoSource='https://solarsitedesign.app.box.com/embed/s/sstwudpcclefxemujcn5eyvvixqewf0h';
         $('#mydiv').show();
         this.solarService.getSiteVisit(<Solar>this.model).subscribe(result => {
             this.result = result;
