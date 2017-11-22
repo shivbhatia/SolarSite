@@ -3,7 +3,7 @@
     	<input #gb type="text" pInputText size="50" placeholder="Global Filter" style="float:right;height: 34px;margin-right: 5px;">
 	</div>
     <p-dataTable [value]="result" [rows]=recordsPerPage [paginator]="true" [globalFilter]="gb" [responsive]="true" [pageLinks]=pageLinks [rowsPerPageOptions]="rowsPerPageOptions" >
-        <p-column field="Siteangular.project_name" [sortable]="true" [style]="{width: '200px','text-align':'center','height':'68px'}" header="Project Name" [filter]="true" filterPlaceholder="Search"></p-column>
+        <p-column field="Siteangular.project_name" [sortable]="true" [style]="{width: '300px','text-align':'center','height':'68px'}" header="Project Name" [filter]="true" filterPlaceholder="Search"></p-column>
         <p-column field="User.email" [sortable]="true" [style]="{width: '200px','text-align':'center','height':'68px'}" header=" Username /email" [filter]="true" filterPlaceholder="Search"></p-column>
         <!--<p-column field="Siteangular.city" [sortable]="true" [style]="{width: '150px','text-align':'center','height':'68px'}" header=" City" [filter]="true" filterPlaceholder="Search"></p-column>-->
         <p-column field="Siteangular.survey_date" [sortable]="true" [style]="{width: '150px','text-align':'center','height':'68px'}" header="Date of Site Survey" [filter]="true" filterPlaceholder="Search"></p-column>
@@ -52,5 +52,5 @@
 </popup>-->
 
 <popup  (confirmClick)="saveFileNew(proId,proProjectName,proFileName,proFileType)" style="margin-left: 10px;">
-                    <img src="{{imgSrc}}" width="550">
+                    <img src="{{imgSrc}}" width="494">
                 </popup>
