@@ -34,6 +34,8 @@ import { mysolarprojectsComponent } from './mysolarprojects/mysolarprojects.comp
 import { transfertokensComponent } from './transfertokens/transfertokens.component';
 import { tokenlistingComponent } from './tokenlisting/tokenlisting.component';
 
+import {PopupModule} from 'ng2-opd-popup';
+
 
 
 import { NguiMapModule} from '@ngui/map';
@@ -94,6 +96,8 @@ declare var require: any;
 		//NKDatetimeModule,
 		Ng2DatetimePickerModule,
 		Ng2UploaderModule,
+
+		PopupModule.forRoot(),
 		
 		//DatePickerModule,
 		//TooltipModule,

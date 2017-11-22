@@ -21,12 +21,12 @@ support@solarsitedesign.com</span>
                 <div class="col-lg-12">
                     <div class="form-group">
                         <label>What is your relationship to the client?</label>
-                        <input type="text" name="relationship" [(ngModel)]="model.relationship" #relationship="ngModel" required  [minlength]="3" [maxlength]="30"  pattern ="^[a-zA-z]*$" class="form-control" id="Relationship" placeholder="Enter relationship with client">
+                        <input type="text" name="relationship" [(ngModel)]="model.relationship" #relationship="ngModel" required  [minlength]="3" [maxlength]="30"   class="form-control" id="Relationship" placeholder="Enter relationship with client">
                         <div *ngIf="relationship.errors && relationship.touched" class="">
                             <span class="error" *ngIf="relationship.errors?.required">Business relationship with client is mandatory.</span>
                             <span class="error" *ngIf="relationship.errors?.minlength">Min 3 characters required.</span>
                             <span class="error" *ngIf="relationship.errors?.maxlength">Max 30 characters allowed.</span>
-                            <span class="error" *ngIf="relationship.errors?.pattern">Enter Only Alphabets.</span>
+                            
                         </div>
                     </div>
                 </div>
@@ -68,13 +68,12 @@ support@solarsitedesign.com</span>
                 <div class="col-lg-12">
                     <div class="form-group">
                         <label>On-Site Contact Phone Number</label>
-                        <input type="text" name="contactPhone" [(ngModel)]="model.contactPhone" #contactPhone="ngModel" required  [minlength]="10" [maxlength]="15" number class="form-control" id="contactPhone" placeholder="Enter on-site contact phone number">
+                        <input type="text" name="contactPhone" [(ngModel)]="model.contactPhone" #contactPhone="ngModel" required  [minlength]="8" [maxlength]="150" number class="form-control" id="contactPhone" placeholder="Enter on-site contact phone ">
                         <div *ngIf="contactPhone.errors && contactPhone.touched" class="">
                             <span class="error" *ngIf="contactPhone.errors?.required">On-site contact phone number is mandatory.</span>
                             <span class="error" *ngIf="contactPhone.errors?.minlength">Min 10 characters required.</span>
-                            <span class="error" *ngIf="contactPhone.errors?.maxlength">Max 15 characters allowed.</span>
-                            <span class="error" *ngIf="contactPhone.errors?.number">Enter numbers only.</span>
-                        </div>
+                            <span class="error" *ngIf="contactPhone.errors?.maxlength">Max 150 characters allowed.</span>
+                            </div>
                     </div>
                 </div>
             </div>

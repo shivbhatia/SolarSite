@@ -1,4 +1,4 @@
-import { Component,ViewEncapsulation,OnInit } from '@angular/core';
+import { Component,ViewEncapsulation,OnInit,ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import {Observable} from 'rxjs/Rx';
@@ -9,11 +9,14 @@ import { SolarService } from '../../services/solar.service';
 import { Solar } from '../../models/solar.model';
 import { saveAs } from 'file-saver/FileSaver';
 
+import {Popup} from 'ng2-opd-popup';
+
 @Component({
   templateUrl: "./sitevisitlisting.html",
 })
 
 export class sitevisitlistingComponent implements OnInit{
+    
     model: any = {};
 	result : any;
     token : any;
@@ -25,9 +28,13 @@ export class sitevisitlistingComponent implements OnInit{
     perPage:number=0;  
     recordsPerPage:number=10;
     applicationsUrl:any;
-
+imgSrc:any;
+proId:any;
+proProjectName:any;
+proFileType:any;
+proFileName:any;
     
-    constructor(private router: Router,private solarService: SolarService, toasterService: ToasterService, private confirmationService: ConfirmationService, private http: Http) { 
+    constructor(private router: Router,private solarService: SolarService, toasterService: ToasterService, private confirmationService: ConfirmationService, private http: Http , private popup:Popup) { 
         this.toasterService = toasterService;
     }
     
@@ -94,11 +101,35 @@ export class sitevisitlistingComponent implements OnInit{
         console.error('An error occurred', error); // for demo purposes only
         return Promise.reject(error.message || error);
     }*/
-
-    saveFileNew(id:any,projectName:any,fileName:any,fileType:any) {  
+ 
+    saveFileNew(id:any,projectName:any,fileName:any,fileType:any) {   
         window.open("https://www.solarsitedesign.com/webservicesangular/download?id="+id+"&project_name="+projectName+"&file_name="+fileName+"&file_type="+fileType, "_blank");
     }
 
+    popUp(id:any,projectName:any,fileName:any,fileType:any) {   
+        this.popup.options = {
+            header: "Popup",
+            color: "#5cb85c", // red, blue.... 
+            widthProsentage: 40, // The with of the popou measured by browser width 
+            animationDuration: 1, // in seconds, 0 = no animation 
+            showButtons: true, // You can hide this in case you want to use custom buttons 
+            confirmBtnContent: "Download", // The text on your confirm button 
+            cancleBtnContent: "Cancel", // the text on your cancel button 
+            confirmBtnClass: "btn btn-default", // your class for styling the confirm button 
+            cancleBtnClass: "btn btn-default", // you class for styling the cancel button 
+            animation: "fadeInDown" // 'fadeInLeft', 'fadeInRight', 'fadeInUp', 'bounceIn','bounceInDown' 
+        };
+
+        this.imgSrc="https://www.solarsitedesign.com/img/box1/"+projectName+"/"+fileType+"/"+fileName;
+        this.proId=id;
+        this.proProjectName=projectName;
+        this.proFileType=fileType;
+        this.proFileName=fileName;
+
+        this.popup.show(this.popup.options);
+    }
+
+   
     /*saveFile(id:any,projectName:any,fileName:any) {   
         window.open("https://www.solarsitedesign.com/webservicesangular/download", "_blank");
         const headers = new Headers();

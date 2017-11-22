@@ -5,10 +5,10 @@
     <p-dataTable [value]="result" [rows]=recordsPerPage [paginator]="true" [globalFilter]="gb" [responsive]="true" [pageLinks]=pageLinks [rowsPerPageOptions]="rowsPerPageOptions" >
         <p-column field="Siteangular.project_name" [sortable]="true" [style]="{width: '200px','text-align':'center','height':'68px'}" header="Project Name" [filter]="true" filterPlaceholder="Search"></p-column>
         <p-column field="User.email" [sortable]="true" [style]="{width: '200px','text-align':'center','height':'68px'}" header=" Username /email" [filter]="true" filterPlaceholder="Search"></p-column>
-        <p-column field="Siteangular.city" [sortable]="true" [style]="{width: '150px','text-align':'center','height':'68px'}" header=" City" [filter]="true" filterPlaceholder="Search"></p-column>
+        <!--<p-column field="Siteangular.city" [sortable]="true" [style]="{width: '150px','text-align':'center','height':'68px'}" header=" City" [filter]="true" filterPlaceholder="Search"></p-column>-->
         <p-column field="Siteangular.survey_date" [sortable]="true" [style]="{width: '150px','text-align':'center','height':'68px'}" header="Date of Site Survey" [filter]="true" filterPlaceholder="Search"></p-column>
-        <p-column field="Siteangular.created" [sortable]="true" [style]="{width: '150px','text-align':'center','height':'68px'}" header="Date Uploaded" [filter]="true" filterPlaceholder="Search"></p-column>
-        <p-column field="" [sortable]="true" [style]="{width: '200px','text-align':'center','height':'68px'}" header="Action"  >
+        <!--<p-column field="Siteangular.created" [sortable]="true" [style]="{width: '150px','text-align':'center','height':'68px'}" header="Date Uploaded" [filter]="true" filterPlaceholder="Search"></p-column>-->
+        <p-column field="" [sortable]="true" [style]="{width: '100px','text-align':'center','height':'68px'}" header="Action"  >
             <ng-template let-car="rowData" let-i="rowIndex" pTemplate="body">
                 <button type="button" pButton icon="fa-pencil-square-o" (click)="edit_inspection(result[i].Site.uid)"></button>
                 <!-- <button type="button" pButton (click)="delete_inspection(result[i].Site.uid)"><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i></button>-->
@@ -18,7 +18,7 @@
         <p-column field="" [sortable]="true" [style]="{width: '200px','text-align':'center','height':'68px'}" header="Structured Files"  >
             <ng-template let-car="rowData" let-i="rowIndex" pTemplate="body">
                 <span *ngFor="let item of result[i].Siteangular.str">
-                    <span (click)="saveFileNew(result[i].Siteangular.uid,result[i].Siteangular.project_name,item,'StructuralFiles')" style="color: blue;cursor: pointer;">{{item}}</span>
+                    <span (click)="popUp(result[i].Siteangular.uid,result[i].Siteangular.project_name,item,'StructuralFiles')" style="color: blue;cursor: pointer;">{{item}}</span>
                     <br/>
                 </span>
             </ng-template>
@@ -26,7 +26,7 @@
         <p-column field="" [sortable]="true" [style]="{width: '200px','text-align':'center','height':'68px'}" header="Electrical Files"  >
             <ng-template let-car="rowData" let-i="rowIndex" pTemplate="body">
                 <span *ngFor="let item of result[i].Siteangular.elt">
-                    <span (click)="saveFileNew(result[i].Siteangular.uid,result[i].Siteangular.project_name,item,'ElectricFiles')" style="color: blue;cursor: pointer;">{{item}}</span>
+                    <span (click)="popUp(result[i].Siteangular.uid,result[i].Siteangular.project_name,item,'ElectricFiles')" style="color: blue;cursor: pointer;">{{item}}</span>
                     <br/>
                 </span>
             </ng-template>
@@ -34,10 +34,23 @@
         <p-column field="" [sortable]="true" [style]="{width: '200px','text-align':'center','height':'68px'}" header="Utility Files"  >
             <ng-template let-car="rowData" let-i="rowIndex" pTemplate="body">
                 <span *ngFor="let item of result[i].Siteangular.uti">
-                    <span (click)="saveFileNew(result[i].Siteangular.uid,result[i].Siteangular.project_name,item,'UtilityFiles')" style="color: blue;cursor: pointer;">{{item}}</span>
+                    <span (click)="popUp(result[i].Siteangular.uid,result[i].Siteangular.project_name,item,'UtilityFiles')" style="color: blue;cursor: pointer;">{{item}}</span>
                     <br/>
                 </span>
+
+                
+
+
+
             </ng-template>
         </p-column> 
     </p-dataTable>
     <p-confirmDialog header="Confirmation" icon="fa fa-question-circle" width="400"></p-confirmDialog>
+
+    <!--<popup (confirmClick)="YourConfirmEvent()">
+    <img src="https://www.solarsitedesign.com/img/box1/11.21.2017%20Test%20Project%20JL/StructuralFiles/9.15.2017%20vincit3.png" width="550">
+</popup>-->
+
+<popup  (confirmClick)="saveFileNew(proId,proProjectName,proFileName,proFileType)" style="margin-left: 10px;">
+                    <img src="{{imgSrc}}" width="550">
+                </popup>
