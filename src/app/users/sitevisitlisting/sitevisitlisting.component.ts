@@ -9,6 +9,8 @@ import { SolarService } from '../../services/solar.service';
 import { Solar } from '../../models/solar.model';
 import { saveAs } from 'file-saver/FileSaver';
 
+import {BrowserModule, DomSanitizer,SafeResourceUrl} from '@angular/platform-browser'
+
 import {Popup} from 'ng2-opd-popup';
 
 @Component({
@@ -34,9 +36,14 @@ proProjectName:any;
 proFileType:any;
 proFileName:any;
 videoSource:any;
+shared_link:any;
+str:any;
+popupResult:any;
+Ifreme:any;
     
-    constructor(private router: Router,private solarService: SolarService, toasterService: ToasterService, private confirmationService: ConfirmationService, private http: Http , private popup:Popup) { 
+    constructor(private router: Router,private solarService: SolarService, toasterService: ToasterService, private confirmationService: ConfirmationService, private http: Http , private popup:Popup, private sanitizer: DomSanitizer) { 
         this.toasterService = toasterService;
+        this.sanitizer=sanitizer;
     }
     
     ngOnInit(){
@@ -46,17 +53,17 @@ videoSource:any;
             this.result = result;
             console.log(this.result);
             //alert(this.result);
-            this.pageLinks=Math.ceil(result.length/this.recordsPerPage);
+            this.pageLinks=Math.ceil(this.result.length/this.recordsPerPage);
             for (let i=1; i<=this.pageLinks; i++) {
                 this.perPage=this.perPage+this.recordsPerPage;
                 this.rowsPerPageOptions.push(this.perPage);
             }
             $('#mydiv').hide();
-            if (result!='') { 
-                this.message="Success";
-            } else {
+            //if (result!='') { 
+                //this.message="Success";
+            //} else {
                 //alert("Not added");
-            }
+            //}
         });
     }
 
@@ -108,27 +115,42 @@ videoSource:any;
         window.open("https://www.solarsitedesign.com/webservicesangular/download?id="+id+"&project_name="+projectName+"&file_name="+fileName+"&file_type="+fileType, "_blank");
     }
 
-    popUp(id:any,projectName:any,fileName:any,fileType:any) {   
-        this.popup.options = {
-            header: "Popup",
-            color: "#5cb85c", // red, blue.... 
-            widthProsentage: 40, // The with of the popou measured by browser width 
-            animationDuration: 1, // in seconds, 0 = no animation 
-            showButtons: true, // You can hide this in case you want to use custom buttons 
-            confirmBtnContent: "Download", // The text on your confirm button 
-            cancleBtnContent: "Cancel", // the text on your cancel button 
-            confirmBtnClass: "btn btn-default", // your class for styling the confirm button 
-            cancleBtnClass: "btn btn-default", // you class for styling the cancel button 
-            animation: "fadeInDown" // 'fadeInLeft', 'fadeInRight', 'fadeInUp', 'bounceIn','bounceInDown' 
+    popUp(id:any,projectName:any,fileName:any,fileType:any,folderId:any) {  
+        $('#mydiv').show();
+        //this.model.fileName=fileName;
+        //this.model.folderId=folderId;
+
+        this.model = {
+            fileName: fileName,
+            folderId: folderId
         };
 
-        this.imgSrc="https://www.solarsitedesign.com/img/box1/"+projectName+"/"+fileType+"/"+fileName;
-        this.proId=id;
-        this.proProjectName=projectName;
-        this.proFileType=fileType;
-        this.proFileName=fileName;
 
-        this.popup.show(this.popup.options);
+        console.log(this.model);
+        this.solarService.getSharedLink(<Solar>this.model).subscribe(popupResult => {
+            this.popupResult = popupResult; 
+            this.shared_link=this.popupResult.expiring_embed_link.url; 
+            this.Ifreme=this.sanitizer.bypassSecurityTrustResourceUrl(this.shared_link);
+            this.popup.options = {
+                header: "Popup",
+                color: "#5cb85c", // red, blue.... 
+                widthProsentage: 40, // The with of the popou measured by browser width 
+                animationDuration: 1, // in seconds, 0 = no animation 
+                showButtons: true, // You can hide this in case you want to use custom buttons 
+                confirmBtnContent: "Download", // The text on your confirm button 
+                cancleBtnContent: "Cancel", // the text on your cancel button 
+                confirmBtnClass: "btn btn-default", // your class for styling the confirm button 
+                cancleBtnClass: "btn btn-default", // you class for styling the cancel button 
+                animation: "fadeInDown" // 'fadeInLeft', 'fadeInRight', 'fadeInUp', 'bounceIn','bounceInDown' 
+            };
+            this.imgSrc="https://www.solarsitedesign.com/img/box1/"+projectName+"/"+fileType+"/"+fileName;
+            this.proId=id;
+            this.proProjectName=projectName;
+            this.proFileType=fileType;
+            this.proFileName=fileName;
+            this.popup.show(this.popup.options); 
+            $('#mydiv').hide();
+        });
     }
 
    

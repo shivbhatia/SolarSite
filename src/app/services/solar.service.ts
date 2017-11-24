@@ -88,7 +88,11 @@ export class SolarService {
         return this.http.get(AppSettings.API_ENDPOINT+'gettokentransactions',options).map(res => <any> JSON.parse(res['_body']));
     }
 
-
+    getSharedLink(solar: Solar) {  console.log("testing:", solar["fileName"]);
+        const headers = new Headers({ 'Content-Type': 'application/json', 'Authorization': localStorage.getItem('token'), 'fileName':solar["fileName"],'folderId': solar["folderId"]});
+        const options = new RequestOptions({ headers: headers })
+        return this.http.get('https://www.solarsitedesign.com/webservicesangular/get_shared_link',options).map(res => <any> JSON.parse(res['_body']));
+    }
 
 
   getList(solar: Solar){

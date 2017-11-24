@@ -18,7 +18,7 @@
         <p-column field="" [sortable]="true" [style]="{width: '200px','text-align':'center','height':'68px'}" header="Structured Files"  >
             <ng-template let-car="rowData" let-i="rowIndex" pTemplate="body">
                 <span *ngFor="let item of result[i].Siteangular.str">
-                    <span (click)="popUp(result[i].Siteangular.uid,result[i].Siteangular.project_name,item,'StructuralFiles')" style="color: blue;cursor: pointer;">{{item}}</span>
+                    <span (click)="popUp(result[i].Siteangular.uid,result[i].Siteangular.project_name,item,'StructuralFiles',result[i].Siteangular.box_folder_id)" style="color: blue;cursor: pointer;">{{item}}</span>
                     <br/>
                 </span>
             </ng-template>
@@ -26,7 +26,7 @@
         <p-column field="" [sortable]="true" [style]="{width: '200px','text-align':'center','height':'68px'}" header="Electrical Files"  >
             <ng-template let-car="rowData" let-i="rowIndex" pTemplate="body">
                 <span *ngFor="let item of result[i].Siteangular.elt">
-                    <span (click)="popUp(result[i].Siteangular.uid,result[i].Siteangular.project_name,item,'ElectricFiles')" style="color: blue;cursor: pointer;">{{item}}</span>
+                    <span (click)="popUp(result[i].Siteangular.uid,result[i].Siteangular.project_name,item,'ElectricFiles',result[i].Siteangular.box_folder_id)" style="color: blue;cursor: pointer;">{{item}}</span>
                     <br/>
                 </span>
             </ng-template>
@@ -34,7 +34,7 @@
         <p-column field="" [sortable]="true" [style]="{width: '200px','text-align':'center','height':'68px'}" header="Utility Files"  >
             <ng-template let-car="rowData" let-i="rowIndex" pTemplate="body">
                 <span *ngFor="let item of result[i].Siteangular.uti">
-                    <span (click)="popUp(result[i].Siteangular.uid,result[i].Siteangular.project_name,item,'UtilityFiles')" style="color: blue;cursor: pointer;">{{item}}</span>
+                    <span (click)="popUp(result[i].Siteangular.uid,result[i].Siteangular.project_name,item,'UtilityFiles',result[i].Siteangular.box_folder_id)" style="color: blue;cursor: pointer;">{{item}}</span>
                     <br/>
                 </span>
 
@@ -52,12 +52,44 @@
 </popup>-->
 
 <popup  (confirmClick)="saveFileNew(proId,proProjectName,proFileName,proFileType)" style="margin-left: 10px;">
-                    <img src="{{imgSrc}}" width="494">
-                </popup>
-  <iframe src="https://solarsitedesign.app.box.com/embed/s/sstwudpcclefxemujcn5eyvvixqewf0h" width="500" height="400" frameborder="0" allowfullscreen webkitallowfullscreen msallowfullscreen></iframe> 
-<div class="video">
+    <!--<img src="{{imgSrc}}" width="494">-->
+
+<!--<iframe src="https://solarsitedesign.box.com/embed/s/sstwudpcclefxemujcn5eyvvixqewf0h" width="500" height="400" frameborder="0" allowfullscreen webkitallowfullscreen msallowfullscreen></iframe> -->
+<iframe [src]="Ifreme"  width="500" height="400" frameborder="0" allowfullscreen webkitallowfullscreen msallowfullscreen></iframe>
+
+
+
+
+</popup>
+
+
+
+
+
+
+
+  
+
+
+
+
+<!--<div class="video">
     <video controls (click)="toggleVideo()" #videoPlayer>
         <source src="{{videoSource}}" type="video/mp4" />
         Browser not supported
     </video>
-</div>
+</div>-->
+
+  <!--<iframe src="http://solarsitedesign.box.com/s/sstwudpcclefxemujcn5eyvvixqewf0h" width="500" height="400" frameborder="0" allowfullscreen ></iframe> -->
+
+      <!--<iframe src="http://solarsitedesign.app.box.com/embed/s/5ytwu43muktgu8ubfqyu4l0dg0pi9mgc" width="100%"  height="400" frameborder="0" allowfullscreen webkitallowfullscreen msallowfullscreen></iframe> -->
+
+     <!--<video width="320" height="240" controls>
+  <source src="http://solarsitedesign.box.com/s/sstwudpcclefxemujcn5eyvvixqewf0h" type="video/mp4">
+  
+Your browser does not support the video tag.
+</video>-->
+
+<!--<video class="responsive-video" id="trailer">
+   <source src="http://solarsitedesign.box.com/s/sstwudpcclefxemujcn5eyvvixqewf0h" type="video/mp4">
+ </video>-->
