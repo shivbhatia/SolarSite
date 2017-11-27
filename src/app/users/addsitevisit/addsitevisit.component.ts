@@ -387,8 +387,8 @@ export class addsitevisitComponent implements OnInit{
 					}
 				}
 			}
-            const headers = new Headers({ 'Content-Type': 'application/json', 'Authorization': localStorage.getItem('token') });
-            const options = new RequestOptions({ headers: headers })
+            //const headers = new Headers({ 'Content-Type': 'application/json', 'Authorization': localStorage.getItem('token') });
+            //const options = new RequestOptions({ headers: headers })
 			xhr.onreadystatechange = function () {
                 if (xhr.readyState == 4) {
                     if (xhr.status == 200) {
@@ -401,6 +401,7 @@ export class addsitevisitComponent implements OnInit{
             console.log(formData);
             xhr.open("POST", url,true);
             xhr.setRequestHeader("Authorization", localStorage.getItem('token'));
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
             xhr.send(formData);
         });
     }

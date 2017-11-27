@@ -40,6 +40,8 @@ shared_link:any;
 str:any;
 popupResult:any;
 Ifreme:any;
+profolderId:any;
+downloadResult:any;
     
     constructor(private router: Router,private solarService: SolarService, toasterService: ToasterService, private confirmationService: ConfirmationService, private http: Http , private popup:Popup, private sanitizer: DomSanitizer) { 
         this.toasterService = toasterService;
@@ -111,9 +113,27 @@ Ifreme:any;
         return Promise.reject(error.message || error);
     }*/
  
-    saveFileNew(id:any,projectName:any,fileName:any,fileType:any) {   
-        window.open("https://www.solarsitedesign.com/webservicesangular/download?id="+id+"&project_name="+projectName+"&file_name="+fileName+"&file_type="+fileType, "_blank");
+    saveFileNew(id:any,projectName:any,fileName:any,fileType:any,folderId:any) {    
+        //window.open("https://www.solarsitedesign.com/webservicesangular/download?id="+id+"&project_name="+projectName+"&file_name="+fileName+"&file_type="+fileType, "_blank");
+        $('#mydiv').show();
+        this.model = {
+            fileName: fileName,
+            folderId: folderId
+        };
+
+        this.solarService.getDownloadFile(<Solar>this.model).subscribe(downloadResult => {
+            this.downloadResult = downloadResult; 
+            window.open(downloadResult, "_blank");
+            $('#mydiv').hide();
+            this.toasterService.pop('success', 'File Successfully Downloaded', '');
+            this.router.navigate(['/users/sitevisitlisting']);
+            this.popup.hide();
+
+        });
     }
+
+
+
 
     popUp(id:any,projectName:any,fileName:any,fileType:any,folderId:any) {  
         $('#mydiv').show();
@@ -126,7 +146,8 @@ Ifreme:any;
         };
 
 
-        console.log(this.model);
+        
+         $('#mydiv').show();
         this.solarService.getSharedLink(<Solar>this.model).subscribe(popupResult => {
             this.popupResult = popupResult; 
             this.shared_link=this.popupResult.expiring_embed_link.url; 
@@ -143,11 +164,11 @@ Ifreme:any;
                 cancleBtnClass: "btn btn-default", // you class for styling the cancel button 
                 animation: "fadeInDown" // 'fadeInLeft', 'fadeInRight', 'fadeInUp', 'bounceIn','bounceInDown' 
             };
-            this.imgSrc="https://www.solarsitedesign.com/img/box1/"+projectName+"/"+fileType+"/"+fileName;
             this.proId=id;
             this.proProjectName=projectName;
             this.proFileType=fileType;
             this.proFileName=fileName;
+            this.profolderId=folderId;
             this.popup.show(this.popup.options); 
             $('#mydiv').hide();
         });
