@@ -346,7 +346,7 @@ export class addsitevisitComponent implements OnInit{
             //console.log(result);
             $('#mydiv').hide();
             this.toasterService.pop('success', 'Successfully Added', '');
-                  this.router.navigate(['/users/sitevisitlisting']);
+                  this.router.navigate(['/users/sitevisitlisting']);  
         }, (error) => {
             console.error(error);
         });
