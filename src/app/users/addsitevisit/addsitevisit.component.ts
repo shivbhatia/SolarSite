@@ -9,6 +9,8 @@ import { TooltipModule } from "ng2-tooltip";
 import { FileUploader } from 'ng2-file-upload';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
+import { FileDropModule, UploadFile, UploadEvent } from 'ngx-file-drop';
+
 
 @Component({
   templateUrl: "./addsitevisit.html",
@@ -29,6 +31,7 @@ export class addsitevisitComponent implements OnInit{
 	Utilityfiles:any;
 	files: FileList;
 	uploadFile: any;
+    FileEvent:any;
 	
 	
 	sizeLimit = 2000000;
@@ -41,7 +44,9 @@ export class addsitevisitComponent implements OnInit{
     ElectricalfileInputNames: string;
     UtilityfileInputNames: string;
     siteId:any;
-	
+    public filesUp: UploadFile[] = [];
+    //public fileBack:any;
+	 //public fileBack: string[];  
 	constructor(private router: Router,private activatedRoute: ActivatedRoute,private solarService: SolarService, toasterService: ToasterService,private http:Http) { 
 		this.toasterService = toasterService;
 		this.StructuralfilesToUpload = [];
@@ -186,6 +191,27 @@ export class addsitevisitComponent implements OnInit{
 			
 		}
 	}
+
+
+     public dropped(event: UploadEvent) {
+    this.filesUp = event.files;
+    //this.fileBack=this.filesUp;
+    for (var file of event.files) {
+      file.fileEntry.file(info => {
+        console.log(info);
+      });
+    }
+  }
+
+  public fileOver(event){
+    this.FileEvent=event;
+    console.log(event); 
+  }
+ 
+  public fileLeave(event){
+    console.log(event);
+  }
+
 	
 	onFileSelect(event: EventTarget) {
 		let eventObj: MSInputMethodContext = <MSInputMethodContext>event;
@@ -401,7 +427,7 @@ export class addsitevisitComponent implements OnInit{
             console.log(formData);
             xhr.open("POST", url,true);
             xhr.setRequestHeader("Authorization", localStorage.getItem('token'));
-            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            //xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
             xhr.send(formData);
         });
     }

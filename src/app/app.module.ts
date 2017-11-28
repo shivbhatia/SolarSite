@@ -51,6 +51,8 @@ import {TooltipModule} from "ng2-tooltip";
 
 import { Ng2UploaderModule } from 'ng2-uploader';
 
+import { FileDropModule } from 'ngx-file-drop';
+
 
 @NgModule({
   declarations: [
@@ -82,6 +84,7 @@ import { Ng2UploaderModule } from 'ng2-uploader';
     Ng2DatetimePickerModule,
     Ng2UploaderModule,
     Ng2CompleterModule,
+    FileDropModule,
     //NKDatetimeModule,
     //DatePickerModule,
     //TooltipModule,
