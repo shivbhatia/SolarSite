@@ -17,24 +17,24 @@ import { FileDropModule, UploadFile, UploadEvent } from 'ngx-file-drop';
 })
 
 export class addsitevisitComponent implements OnInit{
-	model: any = {};
-	result : any;
-	token : any;
-	public message = '';
-	private toasterService: ToasterService;
-	isLoading: boolean = false;
-	fileNames: string = null;
-	fileNamesNew: string = null;
+    model: any = {};
+    result : any;
+    token : any;
+    public message = '';
+    private toasterService: ToasterService;
+    isLoading: boolean = false;
+    fileNames: string = null;
+    fileNamesNew: string = null;
 
-	Structurefiles:any;
-	Electricalfiles:any;
-	Utilityfiles:any;
-	files: FileList;
-	uploadFile: any;
+    Structurefiles:any;
+    Electricalfiles:any;
+    Utilityfiles:any;
+    files: FileList;
+    uploadFile: any;
     FileEvent:any;
-	
-	
-	sizeLimit = 2000000;
+    
+    
+    sizeLimit = 2000000;
 
     StructuralfilesToUpload: Array<File>;
     ElectricalfilesToUpload: Array<File>;
@@ -45,11 +45,19 @@ export class addsitevisitComponent implements OnInit{
     UtilityfileInputNames: string;
     siteId:any;
     public filesUp: UploadFile[] = [];
+    public fileBack: UploadFile[] = [];
+    
+    
+    
+
     //public fileBack:any;
-	 //public fileBack: string[];  
-	constructor(private router: Router,private activatedRoute: ActivatedRoute,private solarService: SolarService, toasterService: ToasterService,private http:Http) { 
-		this.toasterService = toasterService;
-		this.StructuralfilesToUpload = [];
+    
+    //public  fileBack: Array<File> ;
+    
+     //public fileBack: string[];  
+    constructor(private router: Router,private activatedRoute: ActivatedRoute,private solarService: SolarService, toasterService: ToasterService,private http:Http) { 
+        this.toasterService = toasterService;
+        this.StructuralfilesToUpload = [];
         this.ElectricalfilesToUpload = [];
         /***** START CODE TO SET FOCUS ON TOP AFTER CLICK ON NAVIGATION LINK *****/
         
@@ -57,11 +65,11 @@ export class addsitevisitComponent implements OnInit{
 
 /***** END CODE TO SET FOCUS ON TOP AFTER CLICK ON NAVIGATION LINK *****/
         
-	}
+    }
 
-	public options = {types: ['address'],componentRestrictions: { country: 'US' }}
-	getAddress(place:Object) {       
-		console.log("Address", place);
+    public options = {types: ['address'],componentRestrictions: { country: 'US' }}
+    getAddress(place:Object) {       
+        console.log("Address", place);
         //console.log(place["address_components"][0]["types"][0])
 
         if(place["address_components"][0]){
@@ -144,83 +152,92 @@ export class addsitevisitComponent implements OnInit{
             }
         }
     }
-	
-	ngOnInit(){
-		this.siteId = this.activatedRoute.snapshot.queryParams["id"];
-		if(this.siteId!=undefined){  
-			//console.log(this.siteId);
-			$('#mydiv').show();
-			this.solarService.editSiteVisit(<Solar>this.siteId).subscribe(result => {
-            	this.result = result;
-            	$('#mydiv').hide();
-            	console.log(result);
-            	
-            	this.model.relationship=result.Site.relationship;
-            	this.model.project_name=result.Site.project_name;
-            	this.model.projectContact=result.Site.projectContact;
-            	this.model.contactEmail=result.Site.contactEmail;
-            	this.model.contactPhone=result.Site.contactPhone;
-            	this.model.address=result.Site.address;
-            	this.model.city=result.Site.city;
-            	this.model.state=result.Site.state;
-            	this.model.zip=result.Site.zip;
-            	this.model.country=result.Site.country;
-            	this.model.survey_date=result.Site.survey_date;
-            	this.model.installation_date=result.Site.installation_date;
-            	this.model.electric_utility_provider=result.Site.electric_utility_provider;
-            	this.model.utility_bill_cost=result.Site.utility_bill_cost;
-            	this.model.home_type=result.Site.home_type;
-            	this.model.projectData_comment=result.Site.projectData_comment;
-            	this.model.building_voltage=result.Site.building_voltage;
-            	this.model.breaker_space=result.Site.breaker_space;
-            	this.model.installData_comment=result.Site.installData_comment;
-            	this.model.panel_rating=result.Site.panel_rating;
-            	this.model.panel_manufacturer=result.Site.panel_manufacturer;
-            	this.model.roof_age=result.Site.roof_age;
-            	this.model.designInfo_comment=result.Site.designInfo_comment;
+    
+    ngOnInit(){
+        this.siteId = this.activatedRoute.snapshot.queryParams["id"];
+        if(this.siteId!=undefined){  
+            //console.log(this.siteId);
+            $('#mydiv').show();
+            this.solarService.editSiteVisit(<Solar>this.siteId).subscribe(result => {
+                this.result = result;
+                $('#mydiv').hide();
+                console.log(result);
+                
+                this.model.relationship=result.Site.relationship;
+                this.model.project_name=result.Site.project_name;
+                this.model.projectContact=result.Site.projectContact;
+                this.model.contactEmail=result.Site.contactEmail;
+                this.model.contactPhone=result.Site.contactPhone;
+                this.model.address=result.Site.address;
+                this.model.city=result.Site.city;
+                this.model.state=result.Site.state;
+                this.model.zip=result.Site.zip;
+                this.model.country=result.Site.country;
+                this.model.survey_date=result.Site.survey_date;
+                this.model.installation_date=result.Site.installation_date;
+                this.model.electric_utility_provider=result.Site.electric_utility_provider;
+                this.model.utility_bill_cost=result.Site.utility_bill_cost;
+                this.model.home_type=result.Site.home_type;
+                this.model.projectData_comment=result.Site.projectData_comment;
+                this.model.building_voltage=result.Site.building_voltage;
+                this.model.breaker_space=result.Site.breaker_space;
+                this.model.installData_comment=result.Site.installData_comment;
+                this.model.panel_rating=result.Site.panel_rating;
+                this.model.panel_manufacturer=result.Site.panel_manufacturer;
+                this.model.roof_age=result.Site.roof_age;
+                this.model.designInfo_comment=result.Site.designInfo_comment;
 
 
-            	if (result.success == true) {
-                	alert("User added"); 
-                	this.message="Success";
-            	} else {
-                	//alert("Not added");
-            	}
-        	});
-		}else{ console.log("thththththt");
-			
-		}
-	}
-
-
-     public dropped(event: UploadEvent) {
-    this.filesUp = event.files;
-    //this.fileBack=this.filesUp;
-    for (var file of event.files) {
-      file.fileEntry.file(info => {
-        console.log(info);
-      });
+                if (result.success == true) {
+                    alert("User added"); 
+                    this.message="Success";
+                } else {
+                    //alert("Not added");
+                }
+            });
+        }else{ console.log("thththththt");
+            
+        }
     }
-  }
 
-  public fileOver(event){
-    this.FileEvent=event;
-    console.log(event); 
-  }
+
+     public dropped(event: UploadEvent) { 
+     console.log(event);
+        this.filesUp = event.files;
+        //this.fileBack = event.files;
+        
+        
+        //alert("test");console.log(this.fileBack[0]);
+        
+        //this.fileBack=event.files;
+        //this.fileBack=this.filesUp;
+        for (var file of event.files) {
+
+            file.fileEntry.file(info => {
+                //console.log(info); 
+                //alert("test");
+            });
+        }
+    }
+
+    public fileOver(event){ 
+        this.FileEvent=event;
+        console.log(event); 
+    }
  
-  public fileLeave(event){
-    console.log(event);
-  }
+    public fileLeave(event){
+        console.log(event);
+    }
 
-	
-	onFileSelect(event: EventTarget) {
-		let eventObj: MSInputMethodContext = <MSInputMethodContext>event;
-		let target: HTMLInputElement = <HTMLInputElement>eventObj.target;
-		this.files = target.files;
-	}
+    
+    onFileSelect(event: EventTarget) {
+        let eventObj: MSInputMethodContext = <MSInputMethodContext>event;
+        let target: HTMLInputElement = <HTMLInputElement>eventObj.target;
+        this.files = target.files;
+    }
 
-	sendFilesToServer() { 
-		/*this.http.post('http://localhost/test.php', this.files)
+    sendFilesToServer() { 
+        /*this.http.post('http://localhost/test.php', this.files)
             .map(res => res)
             .catch(error => Observable.throw(error))
             .subscribe(
@@ -231,11 +248,11 @@ export class addsitevisitComponent implements OnInit{
                     console.log(error);
                 }
             );*/
-		let formData:FormData = new FormData();
-		for (var i = 0; i < this.files.length; i++) { console.log(this.files[i]);
-			formData.append('filesList[]', this.files[0], this.files[0].name);
-		}
-		let headers = new Headers();
+        let formData:FormData = new FormData();
+        for (var i = 0; i < this.files.length; i++) { console.log(this.files[i]);
+            formData.append('filesList[]', this.files[0], this.files[0].name);
+        }
+        let headers = new Headers();
         /*
             this was the culprit:
             headers.append('Content-Type', 'multipart/form-data');
@@ -245,25 +262,25 @@ export class addsitevisitComponent implements OnInit{
         headers.append('Accept', 'application/json');
         let options = new RequestOptions({ headers: headers });
         /*  var xhr = new XMLHttpRequest();
-			xhr.open('POST', "http://localhost/test.php");
-			xhr.onreadystatechange = function () {
-				if (xhr.readyState == 4 && xhr.status == 200) {
-					console.log("Files Uploaded")
-				}
-			}
-		xhr.send(formData);*/
-	}
+            xhr.open('POST', "http://localhost/test.php");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    console.log("Files Uploaded")
+                }
+            }
+        xhr.send(formData);*/
+    }
 
-	onStructuralFileSelect(event) { 
-		this.Structurefiles = event.srcElement.files;
-		let fileNames = [];
-		for (let i=0; i<this.Structurefiles.length; i++) {
-			fileNames.push(this.Structurefiles[i].name);
-		}
-		this.fileNames = fileNames.join();
-		let formData:FormData = new FormData();
+    onStructuralFileSelect(event) { 
+        this.Structurefiles = event.srcElement.files;
+        let fileNames = [];
+        for (let i=0; i<this.Structurefiles.length; i++) {
+            fileNames.push(this.Structurefiles[i].name);
+        }
+        this.fileNames = fileNames.join();
+        let formData:FormData = new FormData();
         formData.append('uploadFile[]', this.Structurefiles, this.fileNames);
-		let headers = new Headers();
+        let headers = new Headers();
         headers.append('Accept', 'application/json');
         let options = new RequestOptions({ headers: headers });
         console.log(formData);
@@ -278,65 +295,65 @@ export class addsitevisitComponent implements OnInit{
                     console.log(error);
                 }
             )
-	}
-
-	onElectricalFileSelect(event) { 
-		this.Electricalfiles = event.srcElement.files;
-		let fileNamesNew = [];
-		for (let i=0; i<this.Electricalfiles.length; i++) {
-			fileNamesNew.push(this.Electricalfiles[i].name);
-		}
-		this.fileNamesNew = fileNamesNew.join();
     }
 
-	onUtilityFileSelect(event) { 
-		this.Utilityfiles = event.srcElement.files;
-		let fileNamesNew = [];
-		for (let i=0; i<this.Utilityfiles.length; i++) {
-			fileNamesNew.push(this.Utilityfiles[i].name);
-		}
-		this.fileNamesNew = fileNamesNew.join();
+    onElectricalFileSelect(event) { 
+        this.Electricalfiles = event.srcElement.files;
+        let fileNamesNew = [];
+        for (let i=0; i<this.Electricalfiles.length; i++) {
+            fileNamesNew.push(this.Electricalfiles[i].name);
+        }
+        this.fileNamesNew = fileNamesNew.join();
     }
 
-	AddSiteVisitOld() {
-		//  this.model['StructureFiles']=this.Structurefiles;
-		//  this.model['ElectricalFiles']=this.Electricalfiles;
-		//  this.model['UtilityFiles']=this.Utilityfiles;
+    onUtilityFileSelect(event) { 
+        this.Utilityfiles = event.srcElement.files;
+        let fileNamesNew = [];
+        for (let i=0; i<this.Utilityfiles.length; i++) {
+            fileNamesNew.push(this.Utilityfiles[i].name);
+        }
+        this.fileNamesNew = fileNamesNew.join();
+    }
+
+    AddSiteVisitOld() {
+        //  this.model['StructureFiles']=this.Structurefiles;
+        //  this.model['ElectricalFiles']=this.Electricalfiles;
+        //  this.model['UtilityFiles']=this.Utilityfiles;
         //console.log(files3);
-		let uploads;
-		const formData: FormData = new FormData();
-		//let input = new FormData();
-		//input.append("file", fileToUpload);
-		for (let i = 0; i < this.Structurefiles.length; i++) { console.log(this.Structurefiles[i]);
-			//const formData = new FormData();
-			formData.append("uploads[]", this.Structurefiles, this.Structurefiles.name);
-		}
-		$('#mydiv').show();
-		this.solarService.addsitevisit(<Solar>this.model).subscribe(result => {
-			this.result = result;
-			if (result.success == true) {
-				this.message="Success";
-				$('#mydiv').hide();
-				if(result.type=='company'){ 
-					this.toasterService.pop('success', 'Please make payment', '');
-					localStorage.setItem('token', result.token);
-					this.router.navigate(['/users/checkout']);
-				}else{
-					this.toasterService.pop('success', 'Successfully Registered', '');
-					this.router.navigate(['/users/login']);
-				}
-			} else {
-				alert("Not added");
-			}
-		});
-	}
+        let uploads;
+        const formData: FormData = new FormData();
+        //let input = new FormData();
+        //input.append("file", fileToUpload);
+        for (let i = 0; i < this.Structurefiles.length; i++) { console.log(this.Structurefiles[i]);
+            //const formData = new FormData();
+            formData.append("uploads[]", this.Structurefiles, this.Structurefiles.name);
+        }
+        $('#mydiv').show();
+        this.solarService.addsitevisit(<Solar>this.model).subscribe(result => {
+            this.result = result;
+            if (result.success == true) {
+                this.message="Success";
+                $('#mydiv').hide();
+                if(result.type=='company'){ 
+                    this.toasterService.pop('success', 'Please make payment', '');
+                    localStorage.setItem('token', result.token);
+                    this.router.navigate(['/users/checkout']);
+                }else{
+                    this.toasterService.pop('success', 'Successfully Registered', '');
+                    this.router.navigate(['/users/login']);
+                }
+            } else {
+                alert("Not added");
+            }
+        });
+    }
   
 
 /******** Final Code ******/
 
-	AddSiteVisit() {
-		console.log("testing");
-		//console.log(this.filesUpload);
+    AddSiteVisit() {
+        console.log("testing");
+        //console.log(this.filesUpload);
        // this.filesUpload=this.StructuralfilesToUpload.concat(this.StructuralfilesToUpload);
       //alert();
        window.scrollTo(0, 0);    
@@ -346,15 +363,15 @@ export class addsitevisitComponent implements OnInit{
             //console.log(result);
             $('#mydiv').hide();
             this.toasterService.pop('success', 'Successfully Added', '');
-                  this.router.navigate(['/users/sitevisitlisting']);  
+                  this.router.navigate(['/users/sitevisitlisting']);
         }, (error) => {
             console.error(error);
         });
 
     }
  
-	StructuralfileChangeEvent(StructuralfileInput: any){ 
-		this.StructuralfilesToUpload = <Array<File>> StructuralfileInput.target.files;
+    StructuralfileChangeEvent(StructuralfileInput: any){ 
+        this.StructuralfilesToUpload = <Array<File>> StructuralfileInput.target.files;
         let fileNamesNew = [];
         for (let i=0; i<this.StructuralfilesToUpload.length; i++) {
             fileNamesNew.push(this.StructuralfilesToUpload[i].name);
@@ -381,8 +398,8 @@ export class addsitevisitComponent implements OnInit{
     }
  
     makeFileRequest(url: string, postData: any, Structuralfiles: Array<File>, Electricalfiles: Array<File>, Utilityfiles: Array<File>) {
-		
-		console.log(postData);
+        
+        console.log(postData);
         return new Promise((resolve, reject) => {
             var formData: any = new FormData();
             var xhr = new XMLHttpRequest();
@@ -406,16 +423,16 @@ export class addsitevisitComponent implements OnInit{
             }
 
 
-			if(postData !=="" && postData !== undefined && postData !==null){
-				for (var property in postData) {
-					if (postData.hasOwnProperty(property)) {
-						formData.append(property, postData[property]);
-					}
-				}
-			}
+            if(postData !=="" && postData !== undefined && postData !==null){
+                for (var property in postData) {
+                    if (postData.hasOwnProperty(property)) {
+                        formData.append(property, postData[property]);
+                    }
+                }
+            }
             //const headers = new Headers({ 'Content-Type': 'application/json', 'Authorization': localStorage.getItem('token') });
             //const options = new RequestOptions({ headers: headers })
-			xhr.onreadystatechange = function () {
+            xhr.onreadystatechange = function () {
                 if (xhr.readyState == 4) {
                     if (xhr.status == 200) {
                         resolve((xhr.response));
@@ -432,5 +449,4 @@ export class addsitevisitComponent implements OnInit{
         });
     }
 }
-	
-
+    
