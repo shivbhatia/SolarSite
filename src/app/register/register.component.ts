@@ -57,10 +57,10 @@ export class registerComponent implements OnInit {
               if(result.type=='company'){ 
                   this.toasterService.pop('success', 'Please make payment', '');
                   localStorage.setItem('token', result.token);
-                  this.router.navigate(['/users/checkout']);
+                  this.router.navigate(['/checkout']);
                 }else{
                   this.toasterService.pop('success', 'Successfully Registered', '');
-                  this.router.navigate(['/users/login']);
+                  this.router.navigate(['/login']);
               }
             } else {
               alert("Not added");

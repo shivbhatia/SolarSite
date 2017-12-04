@@ -94,7 +94,7 @@ this.plans_array=[plans[0]._attributes.id,plans[0]._attributes.name,plans[0]._at
               this.message="Success";
               $('#mydiv').hide();
               this.toasterService.pop('success', 'Thank you for choosing Solar Site Design for Commercial Marketplace Partnership.Congratulation You have been registered with us.Please check your mail to complete the registration process.', '');
-              this.router.navigate(['/users/login']);
+              this.router.navigate(['login']);
             } else {
               alert("Not added");
             }
