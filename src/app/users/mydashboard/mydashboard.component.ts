@@ -28,6 +28,9 @@ export class mydashboardComponent implements OnInit{
     infoWindow:any;
     marker:any;
     locations:any;
+    marketplaceLength:any;
+    trackProjectLength:any;
+    marketLength:any;
 
     constructor(private router: Router,private solarService: SolarService, toasterService: ToasterService) { 
         this.toasterService = toasterService;
@@ -41,9 +44,12 @@ export class mydashboardComponent implements OnInit{
         this.solarService.getMydashboardData(<Solar>this.model).subscribe(results => {
             this.results=results;
             this.marketplace = results.MarketplaceProject;
+            this.marketplaceLength=this.marketplace.length;
             this.trackproject = results.TrackedProject;
+            this.trackProjectLength=results.TrackedProject.length;
             this.markets = results.Markets;
             this.markers=this.results;
+            this.marketLength=results.Markets.length;
             $('#mydiv').hide();
             if (this.results.success == "true") {
                 this.message="Success";
