@@ -1,15 +1,14 @@
-<div class="container">
-    <div class="col-lg-6 col-md-6 col-sm-6 text-center">
+<div class="container" style="padding-top: 0px;padding-bottom: 0px">
+    <!--<div class="col-lg-6 col-md-6 col-sm-6 text-center">
         <div id="banner">
             <a [routerLink]="['/']"><img src="../../assets/img/logo.png"/></a>
             <h1>Join our <strong>Commercial Marketplace</strong> Today!</h1>
-            <!--<h5><strong>solarsitedesign.com</strong></h5>-->
             <button type="submit" class="btn btn-warning" style="background-color: #ED5223">
                 <strong>Already Solarmarketplace Member?</strong>
             </button>
         </div>
-    </div>
-    <div class="col-lg-6 col-md-6 col-sm-6">
+    </div>-->
+    <div class="col-lg-12 col-md-12 col-sm-12">
         <div class="registrationform">
              <form  name="form" class="form-horizontal" (ngSubmit)="checkout()" #checkoutForm="ngForm" novalidate>
                 <fieldset>
@@ -22,8 +21,8 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="first_name" class="col-lg-3 control-label">Name on Card</label>
-                        <div class="col-lg-9">
+                        <label for="first_name" class="col-lg-2 control-label">Name on Card</label>
+                        <div class="col-lg-4">
                             <input type="text" name="ccnameoncard" [(ngModel)]="model.ccnameoncard" #ccnameoncard="ngModel" required  [minlength]="2" [maxlength]="20" pattern ="^[a-zA-z]*$" class="form-control" id="first_name" placeholder="Enter Name">
                             <div *ngIf="ccnameoncard.errors && ccnameoncard.touched" class="">
                                 <span class="error" *ngIf="ccnameoncard.errors?.required"> Name is mandatory.</span>
@@ -32,11 +31,9 @@
                                 <span class="error" *ngIf="ccnameoncard.errors?.pattern">Enter Only Alphabets.</span>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="card_number" class="col-lg-3 control-label">Card Number</label>
-                        <div class="col-lg-9">
+                    
+                        <label for="card_number" class="col-lg-2 control-label">Card Number</label>
+                        <div class="col-lg-4">
                             <input type="text" name="ccnumber" [(ngModel)]="model.ccnumber" #ccnumber="ngModel" required  [maxlength]="16" pattern ="^[a-zA-z]*$" class="form-control" id="card_number" placeholder="Enter Credit card number" creditCard>
                             <div *ngIf="ccnumber.errors && ccnumber.touched">   
                                 <span class="error" *ngIf="ccnumber.errors?.required">Credit card number is mandatory.</span>
@@ -45,9 +42,10 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="form-group">
-                        <label for="expiryMonth" class="col-lg-3 control-label">Month</label>
-                        <div class="col-lg-3">
+                        <label for="expiryMonth" class="col-lg-2 control-label">Month</label>
+                        <div class="col-lg-4">
                             <select [(ngModel)]="model.ccexp_month" id="expiryMonth" name="expiryMonth" class="form-control col-lg-3">
                                 <option>Expiry Month</option>
                                 <option *ngFor="let i of monthList" [value]="i">{{i}}</option>
@@ -65,8 +63,8 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="ccv" class="col-lg-3 control-label">CCV</label>
-                        <div class="col-lg-9">
+                        <label for="ccv" class="col-lg-2 control-label">CCV</label>
+                        <div class="col-lg-4">
                             <input type="text" name="cccvc" [(ngModel)]="model.cccvc" #cccvc="ngModel" autocomplete="off" required [maxlength]="4" class="form-control" id="ccv" pattern="^(0|[1-9][0-9]*)$" placeholder="Enter CCV number">
                             <div *ngIf="cccvc.errors && cccvc.touched">   
                                 <span class="error" *ngIf="cccvc.errors?.required">CCV number is mandatory.</span>
@@ -74,11 +72,10 @@
                                 
                             </div>  
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="UserAutocomplete" class="col-lg-3 control-label">
+                    
+                        <label for="UserAutocomplete" class="col-lg-2 control-label">
                             Credit Card Address</label>
-                        <div class="col-lg-9">
+                        <div class="col-lg-4">
                             <input type="text" name="autocomplete" required  class="form-control" id="UserAutocomplete" placeholder="Enter credit card address" 
                                 [(ngModel)] = "autocomplete" 
                                 [options]='options'  
@@ -91,19 +88,18 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="UserAddress" class="col-lg-3 control-label">
+                        <label for="UserAddress" class="col-lg-2 control-label">
                             Street Address</label>
-                        <div class="col-lg-9">
+                        <div class="col-lg-4">
                             <input type="text" name="address" [(ngModel)]="model.address" #address="ngModel" required class="form-control" id="UserAddress" placeholder="Enter street address">
                             <div *ngIf="address.errors && address.touched">   
                                 <span class="error" *ngIf="address.errors?.required">Street address is mandatory.</span>
                             </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="UserAddress1" class="col-lg-3 control-label">
+                   
+                        <label for="UserAddress1" class="col-lg-2 control-label">
                             Extended Address</label>
-                        <div class="col-lg-9">
+                        <div class="col-lg-4">
                             <input type="text" name="address1" [(ngModel)]="model.address1" #address1="ngModel" required  class="form-control" id="UserAddress1" placeholder="Enter street address1">
                             <div *ngIf="address1.errors && address1.touched">   
                                 <span class="error" *ngIf="address1.errors?.required">Extended address is mandatory.</span>
@@ -111,18 +107,17 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="UserCity" class="col-lg-3 control-label">City</label>
-                        <div class="col-lg-9">
+                        <label for="UserCity" class="col-lg-2 control-label">City</label>
+                        <div class="col-lg-4">
                             <input type="text" name="city" [(ngModel)]="model.city" #city="ngModel" required class="form-control" id="UserCity" placeholder="Enter city">
                             <div *ngIf="city.errors && city.touched">   
                                 <span class="error" *ngIf="city.errors?.required">City is mandatory.</span>
                             </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="UserState" class="col-lg-3 control-label">
+                    
+                        <label for="UserState" class="col-lg-2 control-label">
                             State</label>
-                        <div class="col-lg-9">
+                        <div class="col-lg-4">
                             <input type="text" name="state" [(ngModel)]="model.state" #state="ngModel" required class="form-control" id="UserState" placeholder="Enter State">
                             <div *ngIf="state.errors && state.touched">   
                                 <span class="error" *ngIf="state.errors?.required">State is mandatory.</span>
@@ -130,9 +125,9 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="UserZip" class="col-lg-3 control-label">
+                        <label for="UserZip" class="col-lg-2 control-label">
                             Zip</label>
-                        <div class="col-lg-9">
+                        <div class="col-lg-4">
                             <input type="text" name="zip" [(ngModel)]="model.zip" #zip="ngModel" required [minlength]="5" [maxlength]="5"  class="form-control" id="UserZip" placeholder="Enter zip code">
                             <div *ngIf="zip.errors && zip.touched">   
                                 <span class="error" *ngIf="zip.errors?.required">Zip is mandatory.</span>
@@ -141,11 +136,10 @@
                                
                             </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="UserCountry" class="col-lg-3 control-label">
+                    
+                        <label for="UserCountry" class="col-lg-2 control-label">
                             Country</label>
-                        <div class="col-lg-9">
+                        <div class="col-lg-4">
                             <input type="text" name="country" [(ngModel)]="model.country" #country="ngModel" required [minlength]="8" [maxlength]="25"  class="form-control" id="UserCountry" placeholder="Enter Country">
                             <div *ngIf="country.errors && country.touched">   
                                 <span class="error" *ngIf="country.errors?.required">Country is mandatory.</span>

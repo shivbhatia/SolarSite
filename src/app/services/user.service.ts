@@ -38,6 +38,7 @@ export class UserService {
         let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
         let options = new RequestOptions({ headers: headers, method: "post"});
         return this.http.post('http://192.155.246.146:8145/users/login_angular', user).map(res => <any> JSON.parse(res["_body"]));
+        //return this.http.post('https://www.solarsitedesign.com/webservicesangular/login_angular', user).map(res => <any> JSON.parse(res["_body"]));
     }
 
     forgotpassword(user: User) {

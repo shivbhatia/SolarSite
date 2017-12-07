@@ -20,6 +20,7 @@ export class SolarService {
         const headers = new Headers({ 'Content-Type': 'application/json', 'Authorization': localStorage.getItem('token') });
         const options = new RequestOptions({ headers: headers })
         return this.http.get(AppSettings.API_ENDPOINT+'solarDashboard',options).map(res => <any> JSON.parse(res["_body"]));
+        //return this.http.get('https://www.solarsitedesign.com/webservicesangular/solarDashboard',options).map(res => <any> JSON.parse(res["_body"]));
     }
 
     trackProject(project_id,checked) { 
@@ -32,12 +33,14 @@ export class SolarService {
         const headers = new Headers({ 'Content-Type': 'application/json', 'Authorization': localStorage.getItem('token') });
         const options = new RequestOptions({ headers: headers })
         return this.http.get(AppSettings.API_ENDPOINT+'myDashboard',options).map(res => <any> JSON.parse(res["_body"]));
+        //return this.http.get('https://www.solarsitedesign.com/webservicesangular/myDashboard',options).map(res => <any> JSON.parse(res["_body"]));
     }
 
     originatorDashboard(solar: Solar) { 
         const headers = new Headers({ 'Content-Type': 'application/json', 'Authorization': localStorage.getItem('token') });
         const options = new RequestOptions({ headers: headers })
         return this.http.get(AppSettings.API_ENDPOINT+'originatorDashboard',options).map(res => <any> JSON.parse(res["_body"]));
+        //return this.http.get('https://www.solarsitedesign.com/webservicesangular/originatorDashboard',options).map(res => <any> JSON.parse(res["_body"]));
     }
 
     getTrackedProjects(solar: Solar) {
@@ -156,8 +159,8 @@ export class SolarService {
     const headers = new Headers({ 'Content-Type': 'application/json', 'Authorization': localStorage.getItem('token') });
     const options = new RequestOptions({ headers: headers })
 
-    //return this.http.get('http://192.155.246.146:8145/users/solarDashboard_angular', solar,options ).map(res => <any> res);
     return this.http.get('http://192.155.246.146:8145/users/inspection_report_angular',options).map(res => <any> JSON.parse(res['_body']));
+    //return this.http.get('https://www.solarsitedesign.com/webservicesangular/inspection_report_angular',options).map(res => <any> JSON.parse(res['_body']));
   }
 
     

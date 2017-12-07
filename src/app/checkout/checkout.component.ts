@@ -21,10 +21,10 @@ export class checkoutComponent{
 	result : any;
   token : any;
   plans:any;
-plansId:any;
-plansName:any;
-price:any;
-plans_array: any[];
+  plansId:any;
+  plansName:any;
+  price:any;
+  plans_array: any[];
 	message:string;
   private toasterService: ToasterService;
   isLoading: boolean = false;
