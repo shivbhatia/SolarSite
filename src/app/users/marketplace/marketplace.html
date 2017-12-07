@@ -1,58 +1,32 @@
+<div id="map_wrapper">
+    <div id="map_canvas" class="mapping"></div>
+    <div id="legend1"><h3>Project Stage</h3></div>
+</div>
+<div class="ui-widget-header" style="padding:14px 10px;border-bottom: 0 none;height: 67px">
+    <i class="fa fa-search" style="margin:11px 4px 0 0;float: right;"></i>
+    <input #gb type="text" pInputText size="50" placeholder="Global Filter" style="float:right;height: 34px;margin-right: 5px;">
+</div>
 
 
-	
+<p-dataTable [value]="result" [rows]=recordsPerPage [paginator]="true" [globalFilter]="gb" [responsive]="true" [pageLinks]=pageLinks [rowsPerPageOptions]="rowsPerPageOptions" [totalRecords]="totalRecordsCount">
+    <p-column field="frost" header="Track"   [style]="{'width':'6em','text-align':'center'}">
+        <ng-template let-row="rowData" let-i="rowIndex" let-col pTemplate="body">
+            <div class="checkbox checkbox-primary checkbox-inline">
+                <input id="inlineCheckbox{{i}}" name="pitched_roof" type="checkbox"  [checked]="result[i].MarketplaceProject.trackChecked"   class="" (change)="trackProject($event,result[i].MarketplaceProject.id)">
+                <label for="inlineCheckbox{{i}}"> </label>
+            </div>
+        </ng-template>
+    </p-column>
+    <p-column field="MarketplaceProject.project_name" [sortable]="true" [style]="{width: '300px','text-align':'center','height':'68px'}" header="Name" [filter]="true" filterPlaceholder="Search"></p-column>
+    <p-column field="MarketplaceProject.project_size" [sortable]="true" [style]="{'text-align':'center'}" header="Project Size" [filter]="true" filterPlaceholder="Search"></p-column>
+    <p-column field="MarketplaceProject.stage" [sortable]="true" [style]="{'text-align':'center'}" header="Project Stage" [filter]="true" filterPlaceholder="Search"></p-column>
+    <p-column field="MarketplaceProject.city" [sortable]="true" [style]="{'text-align':'center'}" header="City" [filter]="true" filterPlaceholder="Search"></p-column>
+    <p-column field="MarketplaceProject.state" [sortable]="true" [style]="{'text-align':'center'}" header="State" [filter]="true" filterPlaceholder="Search"></p-column>
+</p-dataTable>
 
-    
-    <div id="map_wrapper">
-        <div id="map_canvas" class="mapping"></div>
-        <div id="legend1"><h3>Project Stage</h3></div>
-    </div>
-    
-    <div class="ui-widget-header" style="padding:14px 10px;border-bottom: 0 none;height: 67px">
-    	<i class="fa fa-search" style="margin:11px 4px 0 0;float: right;"></i>
-    	<input #gb type="text" pInputText size="50" placeholder="Global Filter" style="float:right;height: 34px;margin-right: 5px;">
-	</div>
-
-    <p-dataTable [value]="result" [rows]=recordsPerPage [paginator]="true" [globalFilter]="gb" [responsive]="true" [pageLinks]=pageLinks [rowsPerPageOptions]="rowsPerPageOptions" [totalRecords]="totalRecordsCount">
-
-
-     
-
-
- <!--<p-column field="frost1" header="Track1" [style]="{'width':'6em','text-align':'center'}">
-        <ng-template *ngFor="let track of result[i]; let j= index"  pTemplate="body" [header]="test" sortable="true" [filter]="true" filterMatchMode="in" [style]="{'overflow':'visible'}">
-           
-                <p>{{j}}</p>
-            </ng-template>
-        </p-column>-->
-
-<!-- <div *ngFor="let col of result[i].TrackedProject">
-</div> -->
-         
-
-
-
-
-
-        <p-column field="frost" header="Track"   [style]="{'width':'6em','text-align':'center'}">
-            <ng-template let-row="rowData" let-i="rowIndex" let-col pTemplate="body">
-                
-
-                <div class="checkbox checkbox-primary checkbox-inline">
-                    <input id="inlineCheckbox{{i}}" name="pitched_roof" type="checkbox"  [checked]="result[i].MarketplaceProject.trackChecked"   class="" (change)="trackProject($event,result[i].MarketplaceProject.id)">
-                    <label for="inlineCheckbox{{i}}"> </label>
-                </div>
-            </ng-template>
-        </p-column>
-        <p-column field="MarketplaceProject.project_name" [sortable]="true" [style]="{width: '300px','text-align':'center','height':'68px'}" header="Name" [filter]="true" filterPlaceholder="Search"></p-column>
-        <p-column field="MarketplaceProject.project_size" [sortable]="true" [style]="{'text-align':'center'}" header="Project Size" [filter]="true" filterPlaceholder="Search"></p-column>
-        <p-column field="MarketplaceProject.stage" [sortable]="true" [style]="{'text-align':'center'}" header="Project Stage" [filter]="true" filterPlaceholder="Search"></p-column>
-        <p-column field="MarketplaceProject.city" [sortable]="true" [style]="{'text-align':'center'}" header="City" [filter]="true" filterPlaceholder="Search"></p-column>
-        <p-column field="MarketplaceProject.state" [sortable]="true" [style]="{'text-align':'center'}" header="State" [filter]="true" filterPlaceholder="Search"></p-column>
-
-    </p-dataTable>
-
-
+<div *ngIf="result.length==0">
+    No values to display here
+</div>
 
 <style>
 #map_wrapper {
