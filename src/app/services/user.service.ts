@@ -25,7 +25,8 @@ export class UserService {
     checkout(user: User) { 
         const headers = new Headers({ 'Content-Type': 'application/json', 'Authorization': localStorage.getItem('token') });
         const options = new RequestOptions({ headers: headers })
-        return this.http.post('http://192.155.246.146:8145/users/checkout_angular', user,options ).map(res => <any> JSON.parse(res["_body"]));
+        //return this.http.post('http://192.155.246.146:8145/users/checkout_angular', user,options ).map(res => <any> JSON.parse(res["_body"]));
+        return this.http.post(AppSettings.API_ENDPOINT+'checkout_angular', user,options ).map(res => <any> JSON.parse(res["_body"]));
     }
 
     get_plans(user: User) {
