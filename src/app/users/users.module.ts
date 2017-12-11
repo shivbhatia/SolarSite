@@ -37,7 +37,7 @@ import { tokenlistingComponent } from './tokenlisting/tokenlisting.component';
 import {PopupModule} from 'ng2-opd-popup';
 
 import { FileDropModule } from 'ngx-file-drop';
-
+import { FileUploadModule } from 'ng2-file-upload';
 
 import { NguiMapModule} from '@ngui/map';
 
@@ -98,6 +98,7 @@ declare var require: any;
 		Ng2DatetimePickerModule,
 		Ng2UploaderModule,
 		FileDropModule,
+		FileUploadModule,
 
 		PopupModule.forRoot(),
 		

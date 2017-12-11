@@ -10,7 +10,7 @@
         <!--<p-column field="Siteangular.created" [sortable]="true" [style]="{width: '150px','text-align':'center','height':'68px'}" header="Date Uploaded" [filter]="true" filterPlaceholder="Search"></p-column>-->
         <p-column field="" [sortable]="true" [style]="{width: '100px','text-align':'center','height':'68px'}" header="Action"  >
             <ng-template let-car="rowData" let-i="rowIndex" pTemplate="body">
-                <button type="button" pButton icon="fa-pencil-square-o" (click)="edit_inspection(result[i].Site.uid)"></button>
+                <button type="button" pButton icon="fa-pencil-square-o" (click)="edit_inspection(result[i].Siteangular.uid)"></button>
                 <!-- <button type="button" pButton (click)="delete_inspection(result[i].Site.uid)"><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i></button>-->
                 <button type="text" (click)="delete_inspection(result[i].Siteangular.uid)" pButton icon="fa-trash-o" ></button>
             </ng-template>
@@ -37,55 +37,10 @@
                     <span (click)="popUp(result[i].Siteangular.uid,result[i].Siteangular.project_name,item,'UtilityFiles',result[i].Siteangular.box_folder_id)" style="color: blue;cursor: pointer;">{{item}}</span>
                     <br/>
                 </span>
-
-                
-
-
-
             </ng-template>
         </p-column> 
     </p-dataTable>
     <p-confirmDialog header="Confirmation" icon="fa fa-question-circle" width="400"></p-confirmDialog>
-
-    <!--<popup (confirmClick)="YourConfirmEvent()">
-    <img src="https://www.solarsitedesign.com/img/box1/11.21.2017%20Test%20Project%20JL/StructuralFiles/9.15.2017%20vincit3.png" width="550">
-</popup>-->
-
-<!--<popup  (confirmClick)="saveFileNew(proId,proProjectName,proFileName,proFileType)" style="margin-left: 10px;">
-    <iframe [src]="Ifreme"  width="500" height="400" frameborder="0" allowfullscreen webkitallowfullscreen msallowfullscreen></iframe>
-</popup>-->
-
-
-<popup  (confirmClick)="saveFileNew(proId,proProjectName,proFileName,proFileType,profolderId)" style="margin-left: 10px;">
-    <iframe [src]="Ifreme"  width="500" height="400" frameborder="0" allowfullscreen webkitallowfullscreen msallowfullscreen></iframe>
-</popup>
-
-
-
-
-
-  
-
-
-
-
-<!--<div class="video">
-    <video controls (click)="toggleVideo()" #videoPlayer>
-        <source src="{{videoSource}}" type="video/mp4" />
-        Browser not supported
-    </video>
-</div>-->
-
-  <!--<iframe src="http://solarsitedesign.box.com/s/sstwudpcclefxemujcn5eyvvixqewf0h" width="500" height="400" frameborder="0" allowfullscreen ></iframe> -->
-
-      <!--<iframe src="http://solarsitedesign.app.box.com/embed/s/5ytwu43muktgu8ubfqyu4l0dg0pi9mgc" width="100%"  height="400" frameborder="0" allowfullscreen webkitallowfullscreen msallowfullscreen></iframe> -->
-
-     <!--<video width="320" height="240" controls>
-  <source src="http://solarsitedesign.box.com/s/sstwudpcclefxemujcn5eyvvixqewf0h" type="video/mp4">
-  
-Your browser does not support the video tag.
-</video>-->
-
-<!--<video class="responsive-video" id="trailer">
-   <source src="http://solarsitedesign.box.com/s/sstwudpcclefxemujcn5eyvvixqewf0h" type="video/mp4">
- </video>-->
+    <popup  (confirmClick)="saveFileNew(proId,proProjectName,proFileName,proFileType,profolderId)" style="margin-left: 10px;">
+        <iframe [src]="Ifreme"  width="500" height="400" frameborder="0" allowfullscreen webkitallowfullscreen msallowfullscreen></iframe>
+    </popup>

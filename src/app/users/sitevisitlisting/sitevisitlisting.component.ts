@@ -69,7 +69,7 @@ downloadResult:any;
         });
     }
 
-    edit_inspection(id:any){
+    edit_inspection(id:any){ 
         this.router.navigate(['/users/addsitevisit'], { queryParams: { id: id } });
     }
 

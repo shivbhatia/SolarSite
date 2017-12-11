@@ -6,11 +6,14 @@ import { SolarService } from '../../services/solar.service';
 import { Solar } from '../../models/solar.model';
 import { DataTableModule,SharedModule } from 'primeng/primeng';
 import { TooltipModule } from "ng2-tooltip";
-import { FileUploader } from 'ng2-file-upload';
+import { FileSelectDirective, FileDropDirective, FileUploader } from 'ng2-file-upload/ng2-file-upload';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import { FileDropModule, UploadFile, UploadEvent } from 'ngx-file-drop';
 
+
+
+const URL = 'https://www.solarsitedesign.com/webservicesangular/upload';
 
 @Component({
   templateUrl: "./addsitevisit.html",
@@ -55,6 +58,21 @@ export class addsitevisitComponent implements OnInit{
     //public  fileBack: Array<File> ;
     
      //public fileBack: string[];  
+
+
+     public uploader:FileUploader = new FileUploader({url: URL});
+  public hasBaseDropZoneOver:boolean = false;
+  public hasAnotherDropZoneOver:boolean = false;
+ 
+  public fileOverBase(e:any):void {
+    this.hasBaseDropZoneOver = e;
+  }
+ 
+  public fileOverAnother(e:any):void {
+    this.hasAnotherDropZoneOver = e;
+  }
+
+
     constructor(private router: Router,private activatedRoute: ActivatedRoute,private solarService: SolarService, toasterService: ToasterService,private http:Http) { 
         this.toasterService = toasterService;
         this.StructuralfilesToUpload = [];
@@ -153,8 +171,15 @@ export class addsitevisitComponent implements OnInit{
         }
     }
     
-    ngOnInit(){
+    ngOnInit(){ 
         this.siteId = this.activatedRoute.snapshot.queryParams["id"];
+        // Add in the other upload form parameters.        
+        this.uploader.onBuildItemForm = (item, form) => {
+            form.append('id', this.siteId);
+        };
+
+
+
         if(this.siteId!=undefined){  
             //console.log(this.siteId);
             $('#mydiv').show();
@@ -163,29 +188,29 @@ export class addsitevisitComponent implements OnInit{
                 $('#mydiv').hide();
                 console.log(result);
                 
-                this.model.relationship=result.Site.relationship;
-                this.model.project_name=result.Site.project_name;
-                this.model.projectContact=result.Site.projectContact;
-                this.model.contactEmail=result.Site.contactEmail;
-                this.model.contactPhone=result.Site.contactPhone;
-                this.model.address=result.Site.address;
-                this.model.city=result.Site.city;
-                this.model.state=result.Site.state;
-                this.model.zip=result.Site.zip;
-                this.model.country=result.Site.country;
-                this.model.survey_date=result.Site.survey_date;
-                this.model.installation_date=result.Site.installation_date;
-                this.model.electric_utility_provider=result.Site.electric_utility_provider;
-                this.model.utility_bill_cost=result.Site.utility_bill_cost;
-                this.model.home_type=result.Site.home_type;
-                this.model.projectData_comment=result.Site.projectData_comment;
-                this.model.building_voltage=result.Site.building_voltage;
-                this.model.breaker_space=result.Site.breaker_space;
-                this.model.installData_comment=result.Site.installData_comment;
-                this.model.panel_rating=result.Site.panel_rating;
-                this.model.panel_manufacturer=result.Site.panel_manufacturer;
-                this.model.roof_age=result.Site.roof_age;
-                this.model.designInfo_comment=result.Site.designInfo_comment;
+                this.model.relationship=result.Siteangular.relationship;
+                this.model.project_name=result.Siteangular.project_name;
+                this.model.projectContact=result.Siteangular.projectContact;
+                this.model.contactEmail=result.Siteangular.contactEmail;
+                this.model.contactPhone=result.Siteangular.contactPhone;
+                this.model.address=result.Siteangular.address;
+                this.model.city=result.Siteangular.city;
+                this.model.state=result.Siteangular.state;
+                this.model.zip=result.Siteangular.zip;
+                this.model.country=result.Siteangular.country;
+                this.model.survey_date=result.Siteangular.survey_date;
+                this.model.installation_date=result.Siteangular.installation_date;
+                this.model.electric_utility_provider=result.Siteangular.electric_utility_provider;
+                this.model.utility_bill_cost=result.Siteangular.utility_bill_cost;
+                this.model.home_type=result.Siteangular.home_type;
+                this.model.projectData_comment=result.Siteangular.projectData_comment;
+                this.model.building_voltage=result.Siteangular.building_voltage;
+                this.model.breaker_space=result.Siteangular.breaker_space;
+                this.model.installData_comment=result.Siteangular.installData_comment;
+                this.model.panel_rating=result.Siteangular.panel_rating;
+                this.model.panel_manufacturer=result.Siteangular.panel_manufacturer;
+                this.model.roof_age=result.Siteangular.roof_age;
+                this.model.designInfo_comment=result.Siteangular.designInfo_comment;
 
 
                 if (result.success == true) {
