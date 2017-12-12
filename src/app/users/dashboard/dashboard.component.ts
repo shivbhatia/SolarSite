@@ -1,9 +1,9 @@
 import { Component,OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-declare var google: any;
 import { SolarService } from '../../services/solar.service';
 import { Solar } from '../../models/solar.model';
 import {ToasterModule, ToasterService} from 'angular2-toaster';
+declare var google: any;
 
 @Component({
   selector: 'dashboard',
@@ -33,14 +33,14 @@ export class dashboardComponent implements OnInit{
 	}
 	
 	ngOnInit(){
-		$('#mydiv').show();
+		$('#loader').show();
 		this.solarService.originatorDashboard(<Solar>this.model).subscribe(results => {
             this.results = results;
             //console.log(this.results);
             this.blockAddress = this.results.Addressdata.address;
             this.balance = this.results.Addressdata.results[0];
             this.markers=this.results;
-            $('#mydiv').hide();
+            $('#loader').hide();
             if (this.results.success == "true") {
                 this.message="Success";
             } else {

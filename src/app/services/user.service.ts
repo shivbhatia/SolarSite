@@ -47,5 +47,17 @@ export class UserService {
         let options = new RequestOptions({ headers: headers, method: "post"});
         return this.http.post(AppSettings.API_ENDPOINT+'forgotpassword', user).map(res => <any> JSON.parse(res["_body"]));
     }
+
+    editProfile(user: User) { //alert(SiteId);
+        const headers = new Headers({ 'Content-Type': 'application/json', 'Authorization': localStorage.getItem('token') });
+        const options = new RequestOptions({ headers: headers })
+        return this.http.get('https://www.solarsitedesign.com/webservicesangular/edit_profile',options).map(res => <any> JSON.parse(res['_body']));
+
+  }
+  editUser(user: User) {
+        let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': localStorage.getItem('token')});
+        let options = new RequestOptions({ headers: headers, method: "post"});
+        return this.http.post('https://www.solarsitedesign.com/webservicesangular/edit_user', user,options).map(res => <any> JSON.parse(res["_body"]));
+    }
   
 }

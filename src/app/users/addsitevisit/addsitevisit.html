@@ -120,9 +120,9 @@ support@solarsitedesign.com</span>
                                         (state)='model.state=$event'
                                         (postal_code)='model.zip=$event'
                                         (country)= 'model.country=$event'  ng2-google-place-autocomplete>
-                        <div *ngIf="autocomplete.errors && autocomplete.touched" class="">
-                            <span class="error" *ngIf="autocomplete.errors?.required">Project Address is mandatory.</span>
-                        </div>
+                            <div *ngIf="autocomplete.errors && autocomplete.touched" class="">
+                                <span class="error" *ngIf="autocomplete.errors?.required">Project Address is mandatory.</span>
+                            </div>
                     </div>
                 </div>
             </div>
@@ -264,11 +264,6 @@ support@solarsitedesign.com</span>
 
                                 <button (click)="utilityInput.click();" class="browse btn btn-primary input-lg" type="button"  [tooltip]=utilityTooltip ><i class="glyphicon glyphicon-search"></i> Upload Utility Bills</button>
 
-
-                               
-
-
-                               
                             </div>
                         </div>
                     </div>
@@ -347,9 +342,6 @@ support@solarsitedesign.com</span>
                         <input type="file" name="img[]" class="file">
                         <div class="row">
                             <div class="col-lg-9">
- 
-
-
                                 <input type="text" class="form-control input-lg" name="ElectrialfileNamesNew" [(ngModel)]="ElectricalfileInputNames" disabled placeholder="Upload one or more files">
                             </div>
                             <div class="col-lg-3">
@@ -405,7 +397,7 @@ support@solarsitedesign.com</span>
                     <div class="form-group">
                         <label>Roof Surface(Select One)</label>
                         <select class="form-control">
-                             <option>Please Select</option>
+                            <option>Please Select</option>
                             <option>Single ply asphalt</option>
                             <option>TPO</option>
                             <option>PVC</option>
@@ -438,7 +430,7 @@ support@solarsitedesign.com</span>
                         </div>
                     </div>
                 </div>
-                 <div class="col-lg-12">
+                <div class="col-lg-12">
                     <div class="form-group">
                         <label>Structural Data Documents & Additional Comments</label>
                         <input type="text" name="designInfo_comment" [(ngModel)]="model.designInfo_comment" #designInfo_comment="ngModel" required    class="form-control" id="SiteDesignInfoComment" placeholder="Please write any additional, relevant comments for our structure data here.">
@@ -460,10 +452,7 @@ support@solarsitedesign.com</span>
                                 </tooltip-content>
                                 <input #fileInput type="file" style="display: none;" (change)="StructuralfileChangeEvent($event)" accept="image/*" multiple />
                                 <button (click)="fileInput.click();" class="browse btn btn-primary input-lg" type="button"  [tooltip]="myTooltip" ><i class="glyphicon glyphicon-search"></i> Upload Structural Data Images</button>
-								
-								
-								
-                            </div>
+							</div>
                         </div>
                     </div>
                 </div>

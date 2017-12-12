@@ -1,78 +1,67 @@
 <div id="page-wrapper">
-	<div class="container-fluid">
-    	<!-- Page Heading -->
-        <div class="row">
-        	<div class="col-lg-12">
-            	<h2 class="page-header">Update Profile</h2>
-                <ol class="breadcrumb">
-                	<li class="active"><i class="fa fa-dashboard"></i> Dashboard</li>
-                </ol>
-            </div>
-        </div>
-    </div>
     <div class="container">
-        <form  name="form" class="" (ngSubmit)="EditProfile()" #editprofileForm="ngForm" novalidate>
+        <form  name="form" class="" (ngSubmit)="editUser()" #editUserForm="ngForm" novalidate>
             <div class="row">
                 <div class="col-lg-12">
                     <div class="form-group">
                         <label>Company Name*:</label>
-                        <input type="text" name="city" [(ngModel)]="model.city" #city="ngModel" required    class="form-control" id="City" placeholder="Enter city">
-                        <div *ngIf="city.errors && city.touched" class="">
-                            <span class="error" *ngIf="city.errors?.required">City is mandatory.</span>
+                        <input type="text" name="company_name" [(ngModel)]="model.company_name" #company_name="ngModel" required    class="form-control" id="companyName" placeholder="Enter company name">
+                        <div *ngIf="company_name.errors && company_name.touched" class="">
+                            <span class="error" *ngIf="company_name.errors?.required">Company Name is mandatory.</span>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-12">
                     <div class="form-group">
                         <label>First Name*:</label>
-                        <input type="text" name="city" [(ngModel)]="model.city" #city="ngModel" required    class="form-control" id="City" placeholder="Enter city">
-                        <div *ngIf="city.errors && city.touched" class="">
-                            <span class="error" *ngIf="city.errors?.required">City is mandatory.</span>
+                        <input type="text" name="first_name" [(ngModel)]="model.first_name" #first_name="ngModel" required    class="form-control" id="FirstName" placeholder="Enter first name">
+                        <div *ngIf="first_name.errors && first_name.touched" class="">
+                            <span class="error" *ngIf="first_name.errors?.required">First Name is mandatory.</span>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-12">
                     <div class="form-group">
                         <label>Last Name*:</label>
-                        <input type="text" name="city" [(ngModel)]="model.city" #city="ngModel" required    class="form-control" id="City" placeholder="Enter city">
-                        <div *ngIf="city.errors && city.touched" class="">
-                            <span class="error" *ngIf="city.errors?.required">City is mandatory.</span>
+                        <input type="text" name="last_name" [(ngModel)]="model.last_name" #last_name="ngModel" required    class="form-control" id="lastName" placeholder="Enter last name">
+                        <div *ngIf="last_name.errors && last_name.touched" class="">
+                            <span class="error" *ngIf="last_name.errors?.required">last name is mandatory.</span>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-12">
                     <div class="form-group">
                         <label>Email Address*:</label>
-                        <input type="text" name="city" [(ngModel)]="model.city" #city="ngModel" required    class="form-control" id="City" placeholder="Enter city">
-                        <div *ngIf="city.errors && city.touched" class="">
-                            <span class="error" *ngIf="city.errors?.required">City is mandatory.</span>
+                        <input type="text" name="email" [(ngModel)]="model.email" #email="ngModel" required    class="form-control" id="Email" placeholder="Enter email">
+                        <div *ngIf="email.errors && email.touched" class="">
+                            <span class="error" *ngIf="email.errors?.required">Email is mandatory.</span>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-12">
                     <div class="form-group">
                         <label>Business Phone Number*:</label>
-                        <input type="text" name="city" [(ngModel)]="model.city" #city="ngModel" required    class="form-control" id="City" placeholder="Enter city">
-                        <div *ngIf="city.errors && city.touched" class="">
-                            <span class="error" *ngIf="city.errors?.required">City is mandatory.</span>
+                        <input type="text" name="business_phone" [(ngModel)]="model.business_phone" #business_phone="ngModel" required    class="form-control" id="businessPhone" placeholder="Enter business phone">
+                        <div *ngIf="business_phone.errors && business_phone.touched" class="">
+                            <span class="error" *ngIf="business_phone.errors?.required">business phone is mandatory.</span>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-12">
                     <div class="form-group">
                         <label>Mobile Phone Number*:</label>
-                        <input type="text" name="city" [(ngModel)]="model.city" #city="ngModel" required    class="form-control" id="City" placeholder="Enter city">
-                        <div *ngIf="city.errors && city.touched" class="">
-                            <span class="error" *ngIf="city.errors?.required">City is mandatory.</span>
+                        <input type="text" name="phone" [(ngModel)]="model.phone" #phone="ngModel" required    class="form-control" id="Phone" placeholder="Enter phone">
+                        <div *ngIf="phone.errors && phone.touched" class="">
+                            <span class="error" *ngIf="phone.errors?.required">Phone is mandatory.</span>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-12">
                     <div class="form-group">
                         <label>Website Address*:</label>
-                        <input type="text" name="city" [(ngModel)]="model.city" #city="ngModel" required    class="form-control" id="City" placeholder="Enter city">
-                        <div *ngIf="city.errors && city.touched" class="">
-                            <span class="error" *ngIf="city.errors?.required">City is mandatory.</span>
+                        <input type="text" name="website" [(ngModel)]="model.website" #website="ngModel" required    class="form-control" id="Website" placeholder="Enter website">
+                        <div *ngIf="website.errors && website.touched" class="">
+                            <span class="error" *ngIf="website.errors?.required">Website is mandatory.</span>
                         </div>
                     </div>
                 </div>
@@ -97,14 +86,14 @@
                 </div>
                 <div class="col-lg-12">
                     <div class="form-group">
-                        <label>Street Number*:</label>
-                        <input type="text" name="city" [(ngModel)]="model.city" #city="ngModel" required    class="form-control" id="City" placeholder="Enter city">
-                        <div *ngIf="city.errors && city.touched" class="">
-                            <span class="error" *ngIf="city.errors?.required">City is mandatory.</span>
+                        <label>Street*:</label>
+                        <input type="text" name="route" [(ngModel)]="model.route" #route="ngModel" required    class="form-control" id="Route" placeholder="Enter street">
+                        <div *ngIf="route.errors && route.touched" class="">
+                            <span class="error" *ngIf="route.errors?.required">Route is mandatory.</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-12">
+                <!--<div class="col-lg-12">
                     <div class="form-group">
                         <label>Street Name*:</label>
                         <input type="text" name="city" [(ngModel)]="model.city" #city="ngModel" required    class="form-control" id="City" placeholder="Enter city">
@@ -112,7 +101,7 @@
                             <span class="error" *ngIf="city.errors?.required">City is mandatory.</span>
                         </div>
                     </div>
-                </div>
+                </div>-->
                 <div class="col-lg-12">
                     <div class="form-group">
                         <label>City*:</label>
@@ -134,9 +123,9 @@
                 <div class="col-lg-12">
                     <div class="form-group">
                         <label>Zip Code*:</label>
-                        <input type="text" name="city" [(ngModel)]="model.city" #city="ngModel" required    class="form-control" id="City" placeholder="Enter city">
-                        <div *ngIf="city.errors && city.touched" class="">
-                            <span class="error" *ngIf="city.errors?.required">City is mandatory.</span>
+                        <input type="text" name="zip" [(ngModel)]="model.zip" #zip="ngModel" required    class="form-control" id="Zip" placeholder="Enter zip">
+                        <div *ngIf="zip.errors && zip.touched" class="">
+                            <span class="error" *ngIf="zip.errors?.required">Zip is mandatory.</span>
                         </div>
                     </div>
                 </div>
