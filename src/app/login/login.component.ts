@@ -15,10 +15,12 @@ export class loginComponent{
     model: any = {};
 	result : any;
 	message:string;
+    userId:any;
     private toasterService: ToasterService;
 	
     constructor(private router: Router,private userService: UserService, toasterService: ToasterService) { 
-        if(localStorage.getItem('token')!=null){
+        this.userId=localStorage.getItem('token');
+        if(this.userId!=null){
             this.router.navigate(['/users/dashboard']);
         }
 		this.toasterService = toasterService;
@@ -26,6 +28,7 @@ export class loginComponent{
 	}
     
     ngOnInit(){
+        
     }
 
     login() {
@@ -37,13 +40,15 @@ export class loginComponent{
                 localStorage.setItem('token', result.token);
                 localStorage.setItem('firstname', result.firstname);
                 localStorage.setItem('lastname', result.lastname);
+                 $('#loader').hide();
                 this.toasterService.pop('success', 'Congratulations!!!', 'You have successfully logged in!!!');
                 this.router.navigate(['/users/dashboard']);
             } else {
+                 $('#loader').hide();
               this.toasterService.pop('error', 'Failure!!!', 'you have entered wrong data!!!');
             }
         });
-        $('#loader').hide();
+       
     }
 }
 	

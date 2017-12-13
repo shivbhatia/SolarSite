@@ -19,8 +19,8 @@ export class SolarService {
     getSolarProjects(solar: Solar) { 
         const headers = new Headers({ 'Content-Type': 'application/json', 'Authorization': localStorage.getItem('token') });
         const options = new RequestOptions({ headers: headers })
-        return this.http.get(AppSettings.API_ENDPOINT+'solarDashboard',options).map(res => <any> JSON.parse(res["_body"]));
-        //return this.http.get('https://www.solarsitedesign.com/webservicesangular/solarDashboard',options).map(res => <any> JSON.parse(res["_body"]));
+        //return this.http.get(AppSettings.API_ENDPOINT+'solarDashboard',options).map(res => <any> JSON.parse(res["_body"]));
+        return this.http.get('https://www.solarsitedesign.com/webservicesangular/solarDashboard',options).map(res => <any> JSON.parse(res["_body"]));
     }
 
     trackProject(project_id,checked) { 

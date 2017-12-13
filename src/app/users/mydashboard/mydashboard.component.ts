@@ -31,8 +31,10 @@ export class mydashboardComponent implements OnInit{
     marketplaceLength:any;
     trackProjectLength:any;
     marketLength:any;
+    userId:any;
 
     constructor(private router: Router,private solarService: SolarService, toasterService: ToasterService) { 
+        
         this.toasterService = toasterService;
         /***** START CODE TO SET FOCUS ON TOP AFTER CLICK ON NAVIGATION LINK *****/
         window.scrollTo(0, 0)
@@ -40,7 +42,7 @@ export class mydashboardComponent implements OnInit{
     }
 
     ngOnInit(){
-        $('#mydiv').show();
+        $('#loader').show();
         this.solarService.getMydashboardData(<Solar>this.model).subscribe(results => {
             this.results=results;
             this.marketplace = results.MarketplaceProject;
@@ -50,7 +52,7 @@ export class mydashboardComponent implements OnInit{
             this.markets = results.Markets;
             this.markers=this.results;
             this.marketLength=results.Markets.length;
-            $('#mydiv').hide();
+            $('#loader').hide();
             if (this.results.success == "true") {
                 this.message="Success";
             } else {

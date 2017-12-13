@@ -32,28 +32,41 @@ export class marketplaceComponent implements OnInit{
     windowContent:any;
     public totalRecords:number;
     public sum: number;
+    userId:any;
+
+    SortMeta:any;
+
 
     constructor(private router: Router,private solarService: SolarService, toasterService: ToasterService) { 
         this.toasterService = toasterService;
     }
 
-    ngOnInit(){
-        $('#mydiv').show();
+    ngOnInit(){ 
+        this.userId = localStorage.getItem('token');
+        if(this.userId==null){
+            this.router.navigate(['/login']);
+        }
+        $('#loader').show();
         this.solarService.getSolarProjects(<Solar>this.model).subscribe(result => {  
             this.result = result.data;
+            this.result = this.result.map(function(item){
+                item.MarketplaceProject.project_size = Number(item.MarketplaceProject.project_size)
+                return item;
+            });
             this.totalRecords=this.result.length;   
             this.sum = 20;
             
-            //console.log(this.result);
             this.markers=result.markers;
+
             this.marks=result.marknew;
+            console.log(result.userLat);
             this.windowContent=result.infowindow;
             this.pageLinks=Math.ceil(result.data.length/this.recordsPerPage);
             for (let i=1; i<=this.pageLinks; i++) {
                 this.perPage=this.perPage+this.recordsPerPage;
                 this.rowsPerPageOptions.push(this.perPage);
             }
-            $('#mydiv').hide();
+            $('#loader').hide();
             if (this.result.length > 0) {
                 /********************* MAP START **************************/
                 var markers;
@@ -67,7 +80,7 @@ export class marketplaceComponent implements OnInit{
                 //console.log(infoWindowContent);
                 var map;
                 var bounds = new google.maps.LatLngBounds();
-                var center = new google.maps.LatLng(42.3919956,-71.1245458);
+                var center = new google.maps.LatLng(result.userLat,result.userLng);
                 var mapOptions = {
                     //mapTypeId: 'roadmap',
                     mapTypeId : google.maps.MapTypeId.ROADMAP,
@@ -194,7 +207,7 @@ export class marketplaceComponent implements OnInit{
         }else{
             this.checked=false
         }
-        $('#mydiv').show();
+        $('#loader').show();
         this.solarService.trackProject(<Solar>project_id,this.checked).subscribe(result => { 
             if(result.success=='true'){ 
                 this.toasterService.pop('success', 'Project Successfully '+result.type, '');
@@ -202,7 +215,7 @@ export class marketplaceComponent implements OnInit{
             if(result.success=='false'){
                  this.toasterService.pop('success', 'Project can not be Tracked', '');    
             }
-            $('#mydiv').hide();   
+            $('#loader').hide();   
         });
     
     }
@@ -211,6 +224,23 @@ export class marketplaceComponent implements OnInit{
     alert(this.sum);
         return 2000;
     }
+
+    sortByColor1(e){
+        console.log(e);
+        
+    }
+
+    sortByColor(event) { console.log(event);}
+    /*let comparer = function (a: ReportCard, b: ReportCard): number {
+      let result: number = -1;
+
+      if (a.isComplete > b.isComplete) result = 1;
+
+      return result * event.order;
+    };
+
+    this.<data table value array: ReportCard[]>.sort(comparer);
+  }*/
     
 }
 	
