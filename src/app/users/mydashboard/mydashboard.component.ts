@@ -1,7 +1,7 @@
 import { Component,ViewEncapsulation,OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
-import {ToasterModule, ToasterService} from 'angular2-toaster';
+import { ToasterModule, ToasterService} from 'angular2-toaster';
 import { SolarService } from '../../services/solar.service';
 import { Solar } from '../../models/solar.model';
 import { Ng2MapModule} from 'ng2-map';
@@ -32,6 +32,9 @@ export class mydashboardComponent implements OnInit{
     trackProjectLength:any;
     marketLength:any;
     userId:any;
+    infowindow:any;
+    i:any;
+    markersMap:any;
 
     constructor(private router: Router,private solarService: SolarService, toasterService: ToasterService) { 
         
@@ -50,24 +53,36 @@ export class mydashboardComponent implements OnInit{
             this.trackproject = results.TrackedProject;
             this.trackProjectLength=results.TrackedProject.length;
             this.markets = results.Markets;
-            this.markers=this.results;
+            this.markersMap=this.results.markers;
             this.marketLength=results.Markets.length;
             $('#loader').hide();
             if (this.results.success == "true") {
                 this.message="Success";
-            } else {
-                alert("Not added");
-            }
-        });
-        var locations;
-        locations = [
-            ['Bondi Beach', -33.890542, 151.274856, 4],
-            ['Coogee Beach', -33.923036, 151.259052, 5],
+               
+//console.log(this.markersMap);                 //var locations;
+        /*this.locations = [
+            ['Bondi Beach', -33.890542, 151.274856, 1],
+            ['Coogee Beach', -33.923036, 151.259052, 2],
             ['Cronulla Beach', -34.028249, 151.157507, 3],
-            ['Manly Beach', -33.80010128657071, 151.28747820854187, 2],
-            ['Maroubra Beach', -33.950198, 151.259302, 1]
-        ];
-        var map = new google.maps.Map(document.getElementById('map'), {
+            ['Manly Beach', -33.80010128657071, 151.28747820854187, 4],
+            ['Maroubra Beach', -33.950198, 151.259302, 5]
+        ];*/
+        //var locations;
+        var locations = new Array();
+        locations=this.markersMap;
+
+               // this.markersMap=JSON.stringify(this.markersMap);  
+
+//console.log(this.locations[0][0]); 
+
+//this.markersMap =  this.markersMap.substring(1, this.markersMap.length-1);
+//this.markersMap = this.markersMap.split(",");
+
+this.markersMap =JSON.parse(this.markersMap);
+console.log(this.markersMap);
+alert(typeof(this.markersMap));       
+
+        this.map = new google.maps.Map(document.getElementById('map'), {
             zoom: 10,
             center: new google.maps.LatLng(-39.92, 151.25),
             mapTypeId: google.maps.MapTypeId.ROADMAP
@@ -75,32 +90,42 @@ export class mydashboardComponent implements OnInit{
         var infowindow = new google.maps.InfoWindow();
         var marker, i;
         var markers = new Array();
-        for (i = 0; i < locations.length; i++) {  
-            marker = new google.maps.Marker({
+        for (i = 0; i < locations.length; i++) { 
+            this.marker = new google.maps.Marker({
                 position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-                map: map
+                map: this.map
             });
-            markers.push(marker);
-            google.maps.event.addListener(marker, 'click', (function(marker, i) { 
+            markers.push(this.marker);
+            google.maps.event.addListener(this.marker, 'click', (function(marker, i) { 
                 return function() {
-                    infowindow.setContent(locations[i][0]);
-                    infowindow.open(map, marker);
+                    this.infowindow.setContent(locations[i][0]);
+                    this.infowindow.open(this.map, marker);
                 }
-            })(marker, i));
+            })(this.marker, i));
         }
  
-        function AutoCenter() {
+         
+        this.AutoCenter();
+
+
+            } else {
+                alert("Not added");
+            }
+        });
+       
+        
+    }
+
+    AutoCenter() {
             //  Create a new viewpoint bound
             var bounds = new google.maps.LatLngBounds();
             //  Go through each...
-            $.each(markers, function (index, marker) {
+            $.each(this.markers, function (index, marker) {
                 bounds.extend(marker.position);
             });
             //  Fit these bounds to the map
-            map.fitBounds(bounds);
+            this.map.fitBounds(bounds);
         }
-        AutoCenter();
-    }
 }
 	
 

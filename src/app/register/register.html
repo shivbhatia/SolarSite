@@ -57,9 +57,21 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="UserJobTitle" class="col-lg-3 control-label">Job Title</label>
+                        <label for="UserJobTitle" class="col-lg-3 control-label">Job Title<span style="color:red;">*</span></label>
                         <div class="col-lg-9">
                             <input type="text" name="job_title" [(ngModel)]="model.job_title" #job_title="ngModel" required [maxlength]="15" class="form-control" id="UserJobTitle" placeholder="Enter Job Title">
+                            <div *ngIf="job_title.errors && job_title.touched">   
+                                <span class="error" *ngIf="job_title.errors?.required">Job title is mandatory.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="UserCompanyName" class="col-lg-3 control-label">Company Name<span style="color:red;">*</span></label>
+                        <div class="col-lg-9">
+                            <input type="text" name="company_name" [(ngModel)]="model.company_name" #company_name="ngModel" required [maxlength]="15" class="form-control" id="UserCompanyName" placeholder="Enter Company Name">
+                            <div *ngIf="company_name.errors && company_name.touched">   
+                                <span class="error" *ngIf="company_name.errors?.required">Company Name is mandatory.</span>
+                            </div>
                         </div>
                     </div>
                     <div class="form-group">

@@ -23,6 +23,7 @@ export class dashboardComponent implements OnInit{
     unconfirmedBalance:any;
     finalBalance:any;
     private toasterService: ToasterService;
+    userId:any;
 	
 	constructor(private router: Router,private solarService: SolarService, toasterService: ToasterService) { 
 		/***** START CODE TO SET FOCUS ON TOP AFTER CLICK ON NAVIGATION LINK *****/
@@ -33,6 +34,12 @@ export class dashboardComponent implements OnInit{
 	}
 	
 	ngOnInit(){
+        this.userId = localStorage.getItem('token');
+        if(this.userId==null){
+            this.router.navigate(['login']);
+        }
+
+
 		$('#loader').show();
 		this.solarService.originatorDashboard(<Solar>this.model).subscribe(results => {
             this.results = results;

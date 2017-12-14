@@ -21,7 +21,7 @@ export class loginComponent{
     constructor(private router: Router,private userService: UserService, toasterService: ToasterService) { 
         this.userId=localStorage.getItem('token');
         if(this.userId!=null){
-            this.router.navigate(['/users/dashboard']);
+            this.router.navigate(['users/dashboard']);
         }
 		this.toasterService = toasterService;
         document.body.style.backgroundImage = "url('../../assets/img/Home-User/banner.jpg')";
@@ -30,8 +30,8 @@ export class loginComponent{
     ngOnInit(){
         
     }
-
-    login() {
+ 
+    login() { 
         $('#loader').show();
         this.userService.login(<User>this.model).subscribe(result => {
             this.result = result;

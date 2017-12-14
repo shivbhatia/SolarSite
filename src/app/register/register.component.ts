@@ -42,7 +42,7 @@ export class registerComponent implements OnInit {
 
    register() {
         console.log("register");
-         $('#mydiv').show();
+         $('#loader').show();
 
           this.userService.create(<User>this.model).subscribe(result => {
           //console.log(result);
@@ -53,7 +53,7 @@ export class registerComponent implements OnInit {
               //alert("User added");
               //alert(result.type); 
               this.message="Success";
-              $('#mydiv').hide();
+              $('#loader').hide();
               if(result.type=='company'){ 
                   this.toasterService.pop('success', 'Please make payment', '');
                   localStorage.setItem('token', result.token);
@@ -63,7 +63,9 @@ export class registerComponent implements OnInit {
                   this.router.navigate(['/login']);
               }
             } else {
-              alert("Not added");
+                $('#loader').hide();
+              this.toasterService.pop('error', this.result.message, '');
+
             }
           });
           

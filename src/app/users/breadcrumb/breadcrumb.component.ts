@@ -52,6 +52,9 @@ export class breadcrumbComponent {
 				}else if(this.currentUrl=='/users/editprofile'){
 					this.headerTitle='Update Profile';
 					this.breadcrumbLink='Update Profile';
+				}else if(this.currentUrl=='/users/marketlisting'){
+					this.headerTitle='Market Listing';
+					this.breadcrumbLink='Market Listing';
 				}else{
 					this.headerTitle='';
 					this.breadcrumbLink='';
