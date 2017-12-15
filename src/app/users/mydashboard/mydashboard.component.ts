@@ -127,8 +127,7 @@ alert(typeof(this.markersMap));
             this.map.fitBounds(bounds);
         }
         project_detail(id:any){
-        alert(id);
-        this.router.navigate(['/users/projectdetail'], { queryParams: { id: id } });
+            this.router.navigate(['/users/projectdetail'], { queryParams: { id: id } });
     }
 }
 	

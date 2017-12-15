@@ -20,7 +20,7 @@ export class marketplaceComponent implements OnInit{
     pageLinks:any;
     rowsPerPageOptions: number[] = [];
     perPage:number=0;  
-    recordsPerPage:number=25;
+    recordsPerPage:number=100;
     //center:any;
     mapTypeId:any;
     private map: any;
@@ -203,7 +203,6 @@ export class marketplaceComponent implements OnInit{
 
 
      project_detail(id:any){
-        alert(id);
         this.router.navigate(['/users/projectdetail'], { queryParams: { id: id } });
     }
 

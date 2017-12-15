@@ -35,6 +35,8 @@ export class projectdetailComponent implements OnInit{
     i:any;
     markersMap:any;
     siteId:any;
+    result:any;
+    
 
     constructor(private router: Router,private activatedRoute: ActivatedRoute,private solarService: SolarService, toasterService: ToasterService) { 
         
@@ -48,16 +50,11 @@ export class projectdetailComponent implements OnInit{
         this.siteId = this.activatedRoute.snapshot.queryParams["id"];
         $('#loader').show();
         this.solarService.getProjectDetail(<Solar>this.siteId).subscribe(results => {
-            this.results=results;
-            
-            $('#loader').hide();
-            if (this.results.success == "true") {
-              console.log(this.results);
- 
-
-
+            this.result=results;
+            if (this.result.success == "true") {
+                $('#loader').hide();
             } else {
-                alert("Not added");
+                $('#loader').hide();
             }
         });
        
