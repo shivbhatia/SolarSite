@@ -28,7 +28,7 @@ export class breadcrumbComponent {
 		this.router.events.subscribe(path => {
 			if(path instanceof NavigationEnd) {
 				this.currentUrl= path.url;
-    			if(this.currentUrl=='/users/marketplace'){
+				if(this.currentUrl=='/users/marketplace'){
 					this.headerTitle='Commercial Marketplace Dashboard - Updated Daily';
 					this.breadcrumbLink='Solar Marketplace';
 				}else if(this.currentUrl=='/users/mydashboard'){
@@ -41,7 +41,7 @@ export class breadcrumbComponent {
 					this.headerTitle='Add Site Visit';
 					this.breadcrumbLink='Add Site Visit';
 				}else if(this.currentUrl=='/users/sitevisitlisting'){
-					this.headerTitle='Manage Inspections';
+					this.headerTitle='Site Visit Listing';
 					this.breadcrumbLink='Manage Inspections';
 				}else if(this.currentUrl=='/users/inspectionreport'){
 					this.headerTitle='Manage Reports';
@@ -55,6 +55,9 @@ export class breadcrumbComponent {
 				}else if(this.currentUrl=='/users/marketlisting'){
 					this.headerTitle='Market Listing';
 					this.breadcrumbLink='Market Listing';
+				}else if(this.currentUrl.match(/projectdetail/g)){
+					this.headerTitle='Project Detail';
+					this.breadcrumbLink='Project Detail';
 				}else{
 					this.headerTitle='';
 					this.breadcrumbLink='';

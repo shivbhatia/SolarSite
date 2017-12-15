@@ -164,6 +164,15 @@ export class SolarService {
     //return this.http.get('https://www.solarsitedesign.com/webservicesangular/inspection_report_angular',options).map(res => <any> JSON.parse(res['_body']));
   }
 
+  getProjectDetail(SiteId: Solar){
+    const headers = new Headers({ 'Content-Type': 'application/json', 'Authorization': localStorage.getItem('token'), 'SiteId': SiteId });
+    const options = new RequestOptions({ headers: headers })
+
+    //return this.http.get('http://192.155.246.146:8145/users/solarDashboard_angular', solar,options ).map(res => <any> res);
+    return this.http.get('https://www.solarsitedesign.com/webservicesangular/get_project_detail',options).map(res => <any> JSON.parse(res['_body']));
+
+  }
+
     
 
 

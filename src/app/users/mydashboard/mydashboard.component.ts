@@ -126,6 +126,10 @@ alert(typeof(this.markersMap));
             //  Fit these bounds to the map
             this.map.fitBounds(bounds);
         }
+        project_detail(id:any){
+        alert(id);
+        this.router.navigate(['/users/projectdetail'], { queryParams: { id: id } });
+    }
 }
 	
 

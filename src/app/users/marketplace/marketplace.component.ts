@@ -201,6 +201,12 @@ export class marketplaceComponent implements OnInit{
         });
     }
 
+
+     project_detail(id:any){
+        alert(id);
+        this.router.navigate(['/users/projectdetail'], { queryParams: { id: id } });
+    }
+
     trackProject(e,project_id:any) { 
        if(e.target.checked){
             this.checked=true;
@@ -219,6 +225,8 @@ export class marketplaceComponent implements OnInit{
         });
     
     }
+
+
 
    sumValue() {
     alert(this.sum);

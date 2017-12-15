@@ -20,6 +20,7 @@ import { mytrackedprojectsComponent } from './mytrackedprojects/mytrackedproject
 import { mysolarprojectsComponent } from './mysolarprojects/mysolarprojects.component';
 import { transfertokensComponent } from './transfertokens/transfertokens.component';
 import { tokenlistingComponent } from './tokenlisting/tokenlisting.component';
+import { projectdetailComponent } from './projectdetail/projectdetail.component';
 
 
 
@@ -65,6 +66,7 @@ const routes: Routes = [
     { path: 'editprofile', component: editprofileComponent },
     { path: 'transfertokens', component: transfertokensComponent },
     { path: 'tokenlisting', component: tokenlistingComponent },
+    { path: 'projectdetail', component: projectdetailComponent },
     //{ path: 'profile', component: ProfileComponent },
     //{ path: 'cash-flow-investment', component: cashFlowInvestmentComponent },
     //{ path: 'users/adduser', component: AddUserComponent },

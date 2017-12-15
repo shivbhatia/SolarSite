@@ -33,6 +33,7 @@ import { mytrackedprojectsComponent } from './mytrackedprojects/mytrackedproject
 import { mysolarprojectsComponent } from './mysolarprojects/mysolarprojects.component';
 import { transfertokensComponent } from './transfertokens/transfertokens.component';
 import { tokenlistingComponent } from './tokenlisting/tokenlisting.component';
+import { projectdetailComponent } from './projectdetail/projectdetail.component';
 
 import {PopupModule} from 'ng2-opd-popup';
 
@@ -135,6 +136,7 @@ declare var require: any;
 		transfertokensComponent,
 		tokenlistingComponent,
 		breadcrumbComponent,
+		projectdetailComponent,
 		
 		//homemenuComponent,
 		//homebannerComponent,

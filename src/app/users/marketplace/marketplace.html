@@ -68,7 +68,17 @@
             </div>
         </ng-template>
     </p-column>
-    <p-column field="MarketplaceProject.project_name" [sortable]="true" [style]="{width: '300px','text-align':'center','height':'68px'}" header="Name" [filter]="true" filterPlaceholder="Search"></p-column>
+         
+    <p-column field="frost" header="Name"   [style]="{width: '300px','text-align':'center','height':'68px'}">
+        <ng-template let-row="rowData" let-i="rowIndex" let-col pTemplate="body">
+            <div class="">
+               <div (click)="project_detail(result[i].MarketplaceProject.id)" style="cursor: pointer;color: #EF7C38">{{result[i].MarketplaceProject.project_name}}</div> 
+            </div>
+        </ng-template>
+    </p-column>
+
+    <!--<p-column field="MarketplaceProject.project_name" [sortable]="true" [style]="{width: '300px','text-align':'center','height':'68px'}" header="Name" [filter]="true" filterPlaceholder="Search"></p-column>-->
+
     <p-column field="MarketplaceProject.project_size" [sortable]="true"   [style]="{'text-align':'center'}" header="Project Size" [filter]="true" filterPlaceholder="Search" (sortFunction)="sortByColor($event)"></p-column>
     <p-column field="MarketplaceProject.stage" [sortable]="false" header="Project Stage"   [style]="{'text-align':'center'}" [filter]="true" filterPlaceholder="Search">
         <ng-template let-row="rowData" let-i="rowIndex" let-col pTemplate="body">
