@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-md-offset-3">
+        <img src="../../assets/img/logo.png" style="margin-left: 120px;">
+        <div class="loginform">
+            <form  name="form" class="form-horizontal" (ngSubmit)="login()" #loginForm="ngForm" novalidate>
+                <fieldset>
+                    <span style="margin-left: 220px;">Login </span>
+                    
+                    <div class="form-group" style="margin-top: 20px;">
+                        <label for="UserUsername" class="col-lg-3 control-label">Email</label>
+                        <div class="col-lg-9">
+                            <input type="text" name="username" [(ngModel)]="model.username" #username="ngModel" autocomplete="off" required [maxlength]="40" pattern ="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" class="form-control" id="UserUsername" placeholder="Enter Username">
+                            <div *ngIf="username.errors && username.touched">   
+                                <span class="error" *ngIf="username.errors?.required">Email is mandatory.</span>
+                                <span class="error" *ngIf="username.errors?.pattern">Enter valid email pattern.</span>
+                            </div>  
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="UserPassword" class="col-lg-3 control-label">
+                            Password</label>
+                        <div class="col-lg-9">
+                            <input type="password" name="password" [(ngModel)]="model.password" #password="ngModel" required [minlength]="8" [maxlength]="25" class="form-control" id="UserPassword" placeholder="Enter Password">
+                            <div *ngIf="password.errors && password.touched">   
+                                <span class="error" *ngIf="password.errors?.required">Password is mandatory.</span>
+                                <span class="error" *ngIf="password.errors?.minlength">Min 8 characters required.</span>
+                                <span class="error" *ngIf="password.errors?.maxlength">Max 25 characters required.</span>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-10 col-lg-offset-9">
+                            <!--<button type="reset" class="btn btn-warning">Cancel</button>-->
+                            <button type="submit" class="btn btn-primary" [disabled]="! loginForm.valid">LOGIN</button>
+                        </div>
+                    </div>
+                    <div class="form-group links" style="margin-top: 40px;">
+                        <div class="col-lg-7 ">
+                            <a [routerLink]="['/register']">Register Now!</a>
+                        </div>
+                        <div class="col-lg-5 ">
+                             <a [routerLink]="['/forgotpassword']">Forgot Password!</a>
+                        </div>
+                    </div>
+                    <div class="form-group" style="margin-top: 34px;">
+                        <div class="col-lg-12 col-lg-offset-2">
+                            <span> 2017 Loyal Enterprises. All Rights Reserved.</span>
+                        </div>
+                        
+                    </div>
+                    
+                        
+                                    </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+<style>
+.container{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+</style>
+        

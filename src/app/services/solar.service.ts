@@ -39,8 +39,8 @@ export class SolarService {
     originatorDashboard(solar: Solar) { 
         const headers = new Headers({ 'Content-Type': 'application/json', 'Authorization': localStorage.getItem('token') });
         const options = new RequestOptions({ headers: headers })
-        return this.http.get(AppSettings.API_ENDPOINT+'originatorDashboard',options).map(res => <any> JSON.parse(res["_body"]));
-        //return this.http.get('https://www.solarsitedesign.com/webservicesangular/originatorDashboard',options).map(res => <any> JSON.parse(res["_body"]));
+        //return this.http.get(AppSettings.API_ENDPOINT+'originatorDashboard',options).map(res => <any> JSON.parse(res["_body"]));
+        return this.http.get('https://www.solarsitedesign.com/webservicesangular/originatorDashboard',options).map(res => <any> JSON.parse(res["_body"]));
     }
 
     getTrackedProjects(solar: Solar) {
@@ -135,6 +135,15 @@ export class SolarService {
 
     //return this.http.get('http://192.155.246.146:8145/users/solarDashboard_angular', solar,options ).map(res => <any> res);
     return this.http.get('https://www.solarsitedesign.com/webservicesangular/inspection_angular',options).map(res => <any> JSON.parse(res['_body']));
+
+  }
+  
+  getSiteFiles(SiteId: Solar) { //alert("test");
+    const headers = new Headers({ 'Content-Type': 'application/json', 'Authorization': localStorage.getItem('token'), 'SiteId': SiteId  });
+    const options = new RequestOptions({ headers: headers })
+
+    //return this.http.get('http://192.155.246.146:8145/users/solarDashboard_angular', solar,options ).map(res => <any> res);
+    return this.http.get('https://www.solarsitedesign.com/webservicesangular/get_site_files',options).map(res => <any> JSON.parse(res['_body']));
 
   }
 

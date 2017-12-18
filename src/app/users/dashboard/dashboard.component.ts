@@ -38,33 +38,29 @@ export class dashboardComponent implements OnInit{
         if(this.userId==null){
             this.router.navigate(['login']);
         }
-
-
 		$('#loader').show();
 		this.solarService.originatorDashboard(<Solar>this.model).subscribe(results => {
             this.results = results;
-            //console.log(this.results);
             this.blockAddress = this.results.Addressdata.address;
             this.balance = this.results.Addressdata.results[0];
             this.markers=this.results;
             $('#loader').hide();
             if (this.results.success == "true") {
-                this.message="Success";
-            } else {
-                alert("Not added");
+				/**** START CODE FOR GOOGLE MAP *****/
+				var myLatLng = {lat: this.results.Userlat, lng: this.results.Userlng};
+				var map = new google.maps.Map(document.getElementById('map'), {
+					zoom: 4,
+					center: myLatLng
+				});
+				var marker = new google.maps.Marker({
+					position: myLatLng,
+					map: map,
+					title: 'Hello World!'
+				});
+				/**** END CODE FOR GOOGLE MAP *****/
+			} else {
+                this.toasterService.pop('error', 'Error in loading', '');
             }
-        });
-        /**** START CODE FOR GOOGLE MAP *****/
-		var myLatLng = {lat: 42.8997702, lng: -78.7890054};
-		var map = new google.maps.Map(document.getElementById('map'), {
-          	    zoom: 4,
-          		center: myLatLng
-        });
-		var marker = new google.maps.Marker({
-         		position: myLatLng,
-          		map: map,
-          		title: 'Hello World!'
-        });
-		/**** END CODE FOR GOOGLE MAP *****/
+		});
 	}
 }

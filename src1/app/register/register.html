@@ -1,0 +1,136 @@
+<div class="container" style="padding-top: 0px;padding-bottom: 0px;">
+    <div class="col-lg-6 col-md-6 col-sm-6 text-center">
+        <div id="banner">
+            <a [routerLink]="['/']"><img src="../../assets/img/logo.png"/></a>
+            <h1>Join our <strong>Commercial Marketplace</strong> Today!</h1>
+            <!--<h5><strong>solarsitedesign.com</strong></h5>-->
+            <a [routerLink]="['/login']"><button type="submit" class="btn btn-warning" style="background-color: #ED5223">
+                <strong>Already Solarmarketplace Member?</strong>
+            </button></a>
+        </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6">
+        <div class="registrationform">
+             <form  name="form" class="form-horizontal" (ngSubmit)="register()" #signupForm="ngForm" novalidate>
+                <fieldset>
+                    <legend>Registration Form <i class="fa fa-pencil pull-right"></i></legend>
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Are You ?</label>
+                        <div class="col-lg-9">
+                            <div class="radio-register">
+                                <label>
+
+                                    <input type="radio" name="user_type" id="UserUserTypeOriginator" value="originator" [checked]="checked" [(ngModel)]="model.user_type" #user_type="ngModel" >
+                                    An Originator? - Subscribe for Free
+                                </label>
+                            </div>
+                            <div class="radio-register">
+                                <label>
+                                    <input type="radio" name="user_type" id="UserUserTypeCompany" value="company" [(ngModel)]="model.user_type" #user_type="ngModel">
+                                    A Fulfillment Company? <br/>Start 10 day Trial Access of Solar Site Design Commercial Marketplace then $79.00 Monthly Membership
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="UserFirstname" class="col-lg-3 control-label">First Name<span style="color:red;">*</span></label>
+                        <div class="col-lg-9">
+                            <input type="text" name="firstname" [(ngModel)]="model.firstname" #firstname="ngModel" required  [minlength]="2" [maxlength]="20" pattern ="^[a-zA-z]*$" class="form-control" id="UserFirstname" placeholder="Enter First Name">
+                            <div *ngIf="firstname.errors && firstname.touched" class="">
+                                <span class="error" *ngIf="firstname.errors?.required">First Name is mandatory.</span>
+                                <span class="error" *ngIf="firstname.errors?.minlength">Min 2 characters required.</span>
+                                <span class="error" *ngIf="firstname.errors?.maxlength">Max 20 characters allowed.</span>
+                                <span class="error" *ngIf="firstname.errors?.pattern">Enter Only Alphabets.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="UserLastname" class="col-lg-3 control-label">Last Name<span style="color:red;">*</span></label>
+                        <div class="col-lg-9">
+                            <input type="text" name="lastname" [(ngModel)]="model.lastname" #lastname="ngModel" required [minlength]="2" [maxlength]="20" pattern ="^[a-zA-z]*$" class="form-control" id="UserLastname" placeholder="Enter Last Name">
+                            <div *ngIf="lastname.errors && lastname.touched">   
+                                <span class="error" *ngIf="lastname.errors?.required">Last Name is mandatory.</span>
+                                <span class="error" *ngIf="lastname.errors?.minlength">Min 2 characters required.</span>
+                                <span class="error" *ngIf="lastname.errors?.maxlength">Max 20 characters allowed.</span>
+                                <span class="error" *ngIf="lastname.errors?.pattern">Enter Only Alphabets.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="UserJobTitle" class="col-lg-3 control-label">Job Title<span style="color:red;">*</span></label>
+                        <div class="col-lg-9">
+                            <input type="text" name="job_title" [(ngModel)]="model.job_title" #job_title="ngModel" required [maxlength]="15" class="form-control" id="UserJobTitle" placeholder="Enter Job Title">
+                            <div *ngIf="job_title.errors && job_title.touched">   
+                                <span class="error" *ngIf="job_title.errors?.required">Job title is mandatory.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="UserCompanyName" class="col-lg-3 control-label">Company Name<span style="color:red;">*</span></label>
+                        <div class="col-lg-9">
+                            <input type="text" name="company_name" [(ngModel)]="model.company_name" #company_name="ngModel" required [maxlength]="15" class="form-control" id="UserCompanyName" placeholder="Enter Company Name">
+                            <div *ngIf="company_name.errors && company_name.touched">   
+                                <span class="error" *ngIf="company_name.errors?.required">Company Name is mandatory.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="UserEmail" class="col-lg-3 control-label">Email Address<span style="color:red;">*</span></label>
+                        <div class="col-lg-9">
+                            <input type="text" name="email" [(ngModel)]="model.email" #email="ngModel" autocomplete="off" required [maxlength]="40" pattern ="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" class="form-control" id="UserEmail" placeholder="Enter Email Address">
+                            <div *ngIf="email.errors && email.touched">   
+                                <span class="error" *ngIf="email.errors?.required">Email is mandatory.</span>
+                                <span class="error" *ngIf="email.errors?.pattern">Enter valid email pattern.</span>
+                            </div>  
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="UserNewpassword" class="col-lg-3 control-label">
+                            Password<span style="color:red;">*</span></label>
+                        <div class="col-lg-9">
+                            <input type="password" name="newpassword" [(ngModel)]="model.newpassword" #newpassword="ngModel" required [minlength]="8" [maxlength]="25" class="form-control" id="UserNewpassword" placeholder="Enter Password" validateEqualTo="confirmpassword">
+                            <div *ngIf="newpassword.errors && newpassword.touched">   
+                                <span class="error" *ngIf="newpassword.errors?.required">Password is mandatory.</span>
+                                <span class="error" *ngIf="newpassword.errors?.minlength">Min 8 characters required.</span>
+                                <span class="error" *ngIf="newpassword.errors?.maxlength">Max 25 characters required.</span>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="UserConfirmpassword" class="col-lg-3 control-label">
+                            Confirm Password<span style="color:red;">*</span></label>
+                        <div class="col-lg-9">
+                            <input type="password" name="confirmpassword" [(ngModel)]="model.confirmpassword" #confirmpassword="ngModel" required [minlength]="8" [maxlength]="25" [equalTo]="newpassword" class="form-control" id="UserConfirmpassword" placeholder="Enter Confirm Password">
+                            <div *ngIf="confirmpassword.errors && confirmpassword.touched">   
+                                <span class="error" *ngIf="confirmpassword.errors?.required">Confirm Password is mandatory.</span>
+                                <span class="error" *ngIf="confirmpassword.errors?.minlength">Min 8 characters required.</span>
+                                <span class="error" *ngIf="confirmpassword.errors?.maxlength">Max 25 characters required.</span>
+                                <span class="error" *ngIf="confirmpassword.errors?.validateEqual">Passwords don't match</span>
+                                <span class="error" *ngIf="confirmpassword.errors?.equalTo">Confirm Password should match with password</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-10 col-lg-offset-1">
+                            <!--<button type="reset" class="btn btn-warning">Cancel</button>-->
+                            <button type="submit" class="btn btn-primary" [disabled]="! signupForm.valid">Submit</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+         </div>
+    </div>
+</div>
+<style>
+.container{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+label{
+    position: relative;
+}
+.form-group{
+    margin-top: 20px !important;
+}
+
+</style>

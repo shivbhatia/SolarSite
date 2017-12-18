@@ -1,0 +1,249 @@
+<div id="map_wrapper">
+    <div id="map_canvas" class="mapping"></div>
+    <div id="legend1"><h3>Project Stage</h3></div>
+</div>
+<div class="ui-widget-header" style="padding:14px 10px;border-bottom: 0 none;height: 67px">
+    <i class="fa fa-search" style="margin:11px 4px 0 0;float: right;"></i>
+    <input #gb type="text" pInputText size="50" placeholder=" Global Search" style="float:right;height: 34px;margin-right: 5px;">
+</div>
+<p-dataTable [value]="result" [rows]=recordsPerPage [paginator]="true" [globalFilter]="gb" [responsive]="true" [pageLinks]=pageLinks [rowsPerPageOptions]="rowsPerPageOptions" [totalRecords]="totalRecordsCount">
+    <p-column field="frost" header="Access"   [style]="{'width':'12em','text-align':'center'}">
+        <ng-template let-row="rowData" let-i="rowIndex" let-col pTemplate="body">
+            <div class="">
+                <div [ngSwitch]="result[i].bidcount">
+                    <div *ngSwitchCase="0">
+                        <div class="signal-bars mt1 sizing-box-signal very-bad no-bars" title="Accessed By {{result[i].bidcount}} Solar Site Design Member(s)">
+                            <div class="first-bar bar"></div>
+                            <div class="second-bar bar"></div>
+                            <div class="third-bar bar"></div>
+                            <div class="fourth-bar bar"></div>
+                            <div class="fifth-bar bar"></div>
+                        </div>
+                    </div>
+                    <div *ngSwitchCase="1">
+                        <div class="signal-bars mt1 sizing-box-signal bad one-bar" title="Accessed By {{result[i].bidcount}} Solar Site Design Member(s)">
+                            <div class="first-bar bar"></div>
+                            <div class="second-bar bar"></div>
+                            <div class="third-bar bar"></div>
+                            <div class="fourth-bar bar"></div>
+                            <div class="fifth-bar bar"></div>
+                        </div>
+                    </div>
+                    <div *ngSwitchCase="2">
+                        <div class="signal-bars mt1 sizing-box-signal bad two-bars" title="Accessed By {{result[i].bidcount}} Solar Site Design Member(s)">
+                            <div class="first-bar bar"></div>
+                            <div class="second-bar bar"></div>
+                            <div class="third-bar bar"></div>
+                            <div class="fourth-bar bar"></div>
+                            <div class="fifth-bar bar"></div>
+                        </div>
+                    </div>
+                    <div *ngSwitchCase="3">
+                        <div class="signal-bars mt1 sizing-box-signal ok three-bars" title="Accessed By {{result[i].bidcount}} Solar Site Design Member(s)">
+                            <div class="first-bar bar"></div>
+                            <div class="second-bar bar"></div>
+                            <div class="third-bar bar"></div>
+                            <div class="fourth-bar bar"></div>
+                            <div class="fifth-bar bar"></div>
+                        </div>
+                    </div>
+                    <div *ngSwitchDefault>
+                        <div class="signal-bars mt1 sizing-box-signal good four-bars" title="Accessed By {{result[i].bidcount}} Solar Site Design Member(s)">
+                            <div class="first-bar bar"></div>
+                            <div class="second-bar bar"></div>
+                            <div class="third-bar bar"></div>
+                            <div class="fourth-bar bar"></div>
+                            <div class="fifth-bar bar"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+    </p-column>
+    <p-column field="frost" header="Track"   [style]="{'width':'6em','text-align':'center'}">
+        <ng-template let-row="rowData" let-i="rowIndex" let-col pTemplate="body">
+            <div class="checkbox checkbox-primary checkbox-inline">
+                <input id="inlineCheckbox{{i}}" name="pitched_roof" type="checkbox"  [checked]="result[i].MarketplaceProject.trackChecked"   class="" (change)="trackProject($event,result[i].MarketplaceProject.id)">
+                <label for="inlineCheckbox{{i}}"> </label>
+            </div>
+        </ng-template>
+    </p-column>
+         
+    <p-column field="frost" header="Name"   [style]="{width: '300px','text-align':'center','height':'68px'}">
+        <ng-template let-row="rowData" let-i="rowIndex" let-col pTemplate="body">
+            <div class="">
+               <div (click)="project_detail(result[i].MarketplaceProject.id)" style="cursor: pointer;color: #EF7C38">{{result[i].MarketplaceProject.project_name}}</div> 
+            </div>
+        </ng-template>
+    </p-column>
+
+    <!--<p-column field="MarketplaceProject.project_name" [sortable]="true" [style]="{width: '300px','text-align':'center','height':'68px'}" header="Name" [filter]="true" filterPlaceholder="Search"></p-column>-->
+
+    <p-column field="MarketplaceProject.project_size" [sortable]="true"   [style]="{'text-align':'center'}" header="Project Size" [filter]="true" filterPlaceholder="Search" (sortFunction)="sortByColor($event)"></p-column>
+    <p-column field="MarketplaceProject.stage" [sortable]="false" header="Project Stage"   [style]="{'text-align':'center'}" [filter]="true" filterPlaceholder="Search">
+        <ng-template let-row="rowData" let-i="rowIndex" let-col pTemplate="body">
+            <div class="">
+                <div [ngSwitch]="result[i].MarketplaceProject.stage">
+                    <div *ngSwitchCase="0">
+                        <div>In Discussion</div>
+                    </div>
+                    <div *ngSwitchCase="1">
+                        <div>Working Model Presented</div>
+                    </div>
+                    <div *ngSwitchCase="2">
+                        <div>Letter of Intent</div>
+                    </div>
+                    
+                    <div *ngSwitchDefault>
+                        <div>-</div>
+                    </div>
+                    
+                </div>
+            </div>
+        </ng-template>
+    </p-column>
+    <p-column field="MarketplaceProject.city" [sortable]="true" [style]="{'text-align':'center'}" header="City" [filter]="true" filterPlaceholder="Search"></p-column>
+    <p-column field="MarketplaceProject.state" [sortable]="true" [style]="{'text-align':'center'}" header="State" [filter]="true" filterPlaceholder="Search"></p-column>
+</p-dataTable>
+
+
+<style>
+#map_wrapper {
+        height: 450px;
+        position: relative; 
+    }
+
+    #map_canvas {
+        width: 100%;
+        height: 100%;
+        float:left;
+        position: relative;
+    }
+    /*#map_canvas {background: transparent url(/img/loading-new.gif) no-repeat center center;}*/
+    #legend1 { 
+        position: absolute;
+        right: 0;
+        z-index: 0;
+        bottom  : 210px;
+        font-family: Arial, sans-serif;
+        background: #fff;
+        padding: 10px;
+        margin: 10px;  
+        display: none;     
+        
+        
+    }
+    #legend1 h3 {
+        margin-top: 0;
+    }
+    #legend1 img {
+        vertical-align: middle;
+        margin:2px;
+    }
+    #map{height:20px;}
+
+
+
+
+
+
+/***** access column css *****/
+
+
+
+
+
+
+
+.current{background-color:#ef7c38;margin-bottom:10px; color:#070707;padding:3px 5px;font-size:14px; 
+ border-radius:4px; -moz-border-radius:4px; -o-border-radius:4px; -webkit-border-radius:4px;}
+ .pagination { float:right; margin:15px 0; }
+/*========================================= 
+  Table
+===========================================*/
+
+
+.td1 { width:16%;}
+.td2 { width:18%;}
+.td3 { width:11%;}
+.td4 { width:11%;}
+.td5 { width:12%;}
+.td6 { width:12%;}
+.td7 { width:10%;}
+.td22 { width:22%;}
+
+
+$signal-strength-bar-height: 50px;
+$signal-strength-bar-width: 80px;
+
+
+* {
+  box-sizing: border-box;
+}
+
+.sizing-box-signal {
+  height: 30px;
+  width: 80%;
+}
+
+.signal-bars {
+  display: inline-block;
+}
+ 
+.signal-bars .bar {
+  width: 6%;
+  margin: 0;
+  min-height: 20%;
+  display: inline-block;
+}
+.signal-bars .bar.first-bar  { height: 20%; }
+.signal-bars .bar.second-bar { height: 40%; }
+.signal-bars .bar.third-bar  { height: 60%; }
+.signal-bars .bar.fourth-bar { height: 80%; }
+.signal-bars .bar.fifth-bar  { height: 99%; }
+
+.good .bar {
+  background-color: #16a085;
+  border: .5px solid #12967D;
+}
+.bad .bar {
+  background-color: #e74c3c;
+  border: .5px solid #E34B3B;
+}
+.very-bad .bar {
+  background-color: #EBF0F2;
+  border: .5px solid #E34B3B;
+}
+.ok .bar {
+  background-color: #f1c40f;
+  border: .5px solid #E8BD0E;
+}
+
+.no-bars .bar.fifth-bar,
+.no-bars .bar.fourth-bar,
+.no-bars .bar.third-bar,
+.no-bars .bar.second-bar,
+.no-bars .bar.first-bar,
+.four-bars .bar.fifth-bar,
+.three-bars .bar.fifth-bar,
+.three-bars .bar.fourth-bar,
+.one-bar .bar:not(.first-bar),
+.two-bars .bar:not(.first-bar):not(.second-bar) {       
+  background-color: #EBF0F2;
+  border: thin solid #CCC8C8;
+}
+
+
+
+.input-basic{ background:#fff; box-shadow:inset 1px 1px 1px #c6c6c6; border:1px solid #c6c6c6;  border-radius:2px;  padding:5px; color:#0c0c0c; }
+
+.panel, .paneltask{
+    margin: 10px 0; /*background-color:#DCDEE0;*/ height:150px; padding:6px; width:97%; float: left;display:none;   }
+
+
+
+
+
+
+
+</style>

@@ -1,0 +1,46 @@
+<div class="ui-widget-header" style="padding:14px 10px;border-bottom: 0 none;height: 67px">
+    <i class="fa fa-search" style="margin:11px 4px 0 0;float: right;"></i>
+    	<input #gb type="text" pInputText size="50" placeholder="Global Filter" style="float:right;height: 34px;margin-right: 5px;">
+	</div>
+    <p-dataTable [value]="result" [rows]=recordsPerPage [paginator]="true" [globalFilter]="gb" [responsive]="true" [pageLinks]=pageLinks [rowsPerPageOptions]="rowsPerPageOptions" >
+        <p-column field="Siteangular.project_name" [sortable]="true" [style]="{width: '300px','text-align':'center','height':'68px'}" header="Project Name" [filter]="true" filterPlaceholder="Search"></p-column>
+        <p-column field="User.email" [sortable]="true" [style]="{width: '200px','text-align':'center','height':'68px'}" header=" Username /email" [filter]="true" filterPlaceholder="Search"></p-column>
+        <!--<p-column field="Siteangular.city" [sortable]="true" [style]="{width: '150px','text-align':'center','height':'68px'}" header=" City" [filter]="true" filterPlaceholder="Search"></p-column>-->
+        <p-column field="Siteangular.survey_date" [sortable]="true" [style]="{width: '150px','text-align':'center','height':'68px'}" header="Date of Site Survey" [filter]="true" filterPlaceholder="Search"></p-column>
+        <!--<p-column field="Siteangular.created" [sortable]="true" [style]="{width: '150px','text-align':'center','height':'68px'}" header="Date Uploaded" [filter]="true" filterPlaceholder="Search"></p-column>-->
+        <p-column field="" [sortable]="true" [style]="{width: '100px','text-align':'center','height':'68px'}" header="Action"  >
+            <ng-template let-car="rowData" let-i="rowIndex" pTemplate="body">
+                <button type="button" pButton icon="fa-pencil-square-o" (click)="edit_inspection(result[i].Siteangular.uid)"></button>
+                <!-- <button type="button" pButton (click)="delete_inspection(result[i].Site.uid)"><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i></button>-->
+                <button type="text" (click)="delete_inspection(result[i].Siteangular.uid)" pButton icon="fa-trash-o" ></button>
+            </ng-template>
+        </p-column>
+        <p-column field="" [sortable]="true" [style]="{width: '200px','text-align':'center','height':'68px'}" header="Structured Files"  >
+            <ng-template let-car="rowData" let-i="rowIndex" pTemplate="body">
+                <span *ngFor="let item of result[i].Siteangular.str">
+                    <span (click)="popUp(result[i].Siteangular.uid,result[i].Siteangular.project_name,item,'StructuralFiles',result[i].Siteangular.box_folder_id)" style="color: blue;cursor: pointer;">{{item}}</span>
+                    <br/>
+                </span>
+            </ng-template>
+        </p-column> 
+        <p-column field="" [sortable]="true" [style]="{width: '200px','text-align':'center','height':'68px'}" header="Electrical Files"  >
+            <ng-template let-car="rowData" let-i="rowIndex" pTemplate="body">
+                <span *ngFor="let item of result[i].Siteangular.elt">
+                    <span (click)="popUp(result[i].Siteangular.uid,result[i].Siteangular.project_name,item,'ElectricFiles',result[i].Siteangular.box_folder_id)" style="color: blue;cursor: pointer;">{{item}}</span>
+                    <br/>
+                </span>
+            </ng-template>
+        </p-column> 
+        <p-column field="" [sortable]="true" [style]="{width: '200px','text-align':'center','height':'68px'}" header="Utility Files"  >
+            <ng-template let-car="rowData" let-i="rowIndex" pTemplate="body">
+                <span *ngFor="let item of result[i].Siteangular.uti">
+                    <span (click)="popUp(result[i].Siteangular.uid,result[i].Siteangular.project_name,item,'UtilityFiles',result[i].Siteangular.box_folder_id)" style="color: blue;cursor: pointer;">{{item}}</span>
+                    <br/>
+                </span>
+            </ng-template>
+        </p-column> 
+    </p-dataTable>
+    <p-confirmDialog header="Confirmation" icon="fa fa-question-circle" width="400"></p-confirmDialog>
+    <popup  (confirmClick)="saveFileNew(proId,proProjectName,proFileName,proFileType,profolderId)" style="margin-left: 10px;">
+        <iframe [src]="Ifreme"  width="500" height="400" frameborder="0" allowfullscreen webkitallowfullscreen msallowfullscreen></iframe>
+    </popup>

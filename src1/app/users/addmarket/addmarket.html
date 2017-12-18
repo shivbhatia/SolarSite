@@ -1,0 +1,105 @@
+<div id="page-wrapper">
+	<div class="container-fluid">
+    	<!-- Page Heading -->
+        <div class="row">
+        	<div class="col-lg-12">
+            	<h2 class="page-header">Add Markets</h2>
+                <ol class="breadcrumb">
+                	<li class="active"><i class="fa fa-dashboard"></i> Dashboard</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <form  name="form" class="" (ngSubmit)="AddMarket()" #addmarketForm="ngForm" novalidate>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label>Enter City and State*:</label>
+                        <!--<input type="text" name="autocomplete" [(ngModel)]="model.autocomplete" #autocomplete="ngModel" required  class="form-control" id="autocomplete" placeholder="Enter project address">-->
+                        <input type="text" name="autocomplete" required  class="form-control" #autocomplete="ngModel" id="SiteAutocomplete" placeholder="Enter project address" 
+                                [(ngModel)] = "model.autocomplete" 
+                                [options]='options'  
+                                        (setAddress) = "getAddress($event)"
+                                        (city)= 'model.city=$event'
+                                        (lat)='model.lat=$event' 
+                                        (lng)='model.lng=$event' 
+                                        
+                                        (state)='model.state=$event'
+                                        
+                                        (country)= 'model.country=$event'  ng2-google-place-autocomplete>
+                        <div *ngIf="autocomplete.errors && autocomplete.touched" class="">
+                            <span class="error" *ngIf="autocomplete.errors?.required">Project Address is mandatory.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label>City*:</label>
+                        <input type="text" name="city" [(ngModel)]="model.city" #city="ngModel" required    class="form-control" id="City" placeholder="Enter city">
+                        <div *ngIf="city.errors && city.touched" class="">
+                            <span class="error" *ngIf="city.errors?.required">City is mandatory.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label>State*:</label>
+                        <input type="text" name="state" [(ngModel)]="model.state" #state="ngModel" required  class="form-control" id="State" placeholder="Enter state">
+                        <div *ngIf="state.errors && state.touched" class="">
+                            <span class="error" *ngIf="state.errors?.required">State is mandatory.</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label>Country*:</label>
+                        <input type="text" name="country" [(ngModel)]="model.country" #country="ngModel" required    class="form-control" id="Country" placeholder="Enter country">
+                        <div *ngIf="country.errors && country.touched" class="">
+                            <span class="error" *ngIf="country.errors?.required">Country is mandatory.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        
+                        <input type="hidden" name="lat" [(ngModel)]="model.lat" #lat="ngModel" required    class="form-control" id="Lat" placeholder="">
+                       
+                    </div>
+                </div>
+
+                 <div class="col-lg-12">
+                    <div class="form-group">
+                        
+                        <input type="hidden" name="lng" [(ngModel)]="model.lng" #lng="ngModel" required    class="form-control" id="Lng" placeholder="">
+                       
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                
+                    <div class="form-group">
+                        <div class="col-lg-12 ">
+                             <button type="submit" class="btn btn-primary  pull-right" [disabled]="! addmarketForm.valid">SUBMIT</button>
+                        </div>
+                    
+                </div>
+            </div>
+        </form>
+       
+    </div>
+</div>
+
+
+
+
+
+

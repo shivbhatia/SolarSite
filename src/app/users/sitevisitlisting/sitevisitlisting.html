@@ -15,30 +15,35 @@
                 <button type="text" (click)="delete_inspection(result[i].Siteangular.uid)" pButton icon="fa-trash-o" ></button>
             </ng-template>
         </p-column>
-        <p-column field="" [sortable]="true" [style]="{width: '200px','text-align':'center','height':'68px'}" header="Structured Files"  >
+        <!--<p-column field="" [sortable]="true" [style]="{width: '200px','text-align':'center','height':'68px'}" header="Structured Files"  >
             <ng-template let-car="rowData" let-i="rowIndex" pTemplate="body">
                 <span *ngFor="let item of result[i].Siteangular.str">
                     <span (click)="popUp(result[i].Siteangular.uid,result[i].Siteangular.project_name,item,'StructuralFiles',result[i].Siteangular.box_folder_id)" style="color: blue;cursor: pointer;">{{item}}</span>
                     <br/>
                 </span>
             </ng-template>
-        </p-column> 
-        <p-column field="" [sortable]="true" [style]="{width: '200px','text-align':'center','height':'68px'}" header="Electrical Files"  >
+        </p-column> -->
+       <!-- <p-column field="" [sortable]="true" [style]="{width: '200px','text-align':'center','height':'68px'}" header="Electrical Files"  >
             <ng-template let-car="rowData" let-i="rowIndex" pTemplate="body">
                 <span *ngFor="let item of result[i].Siteangular.elt">
                     <span (click)="popUp(result[i].Siteangular.uid,result[i].Siteangular.project_name,item,'ElectricFiles',result[i].Siteangular.box_folder_id)" style="color: blue;cursor: pointer;">{{item}}</span>
                     <br/>
                 </span>
             </ng-template>
-        </p-column> 
-        <p-column field="" [sortable]="true" [style]="{width: '200px','text-align':'center','height':'68px'}" header="Utility Files"  >
+        </p-column> -->
+        <!--<p-column field="" [sortable]="true" [style]="{width: '200px','text-align':'center','height':'68px'}" header="Utility Files"  >
             <ng-template let-car="rowData" let-i="rowIndex" pTemplate="body">
                 <span *ngFor="let item of result[i].Siteangular.uti">
                     <span (click)="popUp(result[i].Siteangular.uid,result[i].Siteangular.project_name,item,'UtilityFiles',result[i].Siteangular.box_folder_id)" style="color: blue;cursor: pointer;">{{item}}</span>
                     <br/>
                 </span>
             </ng-template>
-        </p-column> 
+        </p-column> -->
+		<p-column field="" [sortable]="true" [style]="{width: '200px','text-align':'center','height':'68px'}" header="Files"  >
+            <ng-template let-car="rowData" let-i="rowIndex" pTemplate="body">
+                 <button type="button" pButton icon="fa-eye" (click)="view_files(result[i].Siteangular.uid)"></button>
+            </ng-template>
+        </p-column>
     </p-dataTable>
     <p-confirmDialog header="Confirmation" icon="fa fa-question-circle" width="400"></p-confirmDialog>
     <popup  (confirmClick)="saveFileNew(proId,proProjectName,proFileName,proFileType,profolderId)" style="margin-left: 10px;">

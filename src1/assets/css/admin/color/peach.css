@@ -1,0 +1,38 @@
+.theme-peach .navbar-default { background-color: #ff8273; }
+.theme-peach .admin-outer .navbar-nav > li.active > a, .theme-peach .admin-outer .navbar-nav > li > a:hover, .theme-peach .admin-outer .navbar-nav li.active .dropdown-menu li.active a, .theme-peach .chzn-container .chzn-drop .chzn-results > li.highlighted, .theme-peach .admin-outer .navbar-nav.admin > li:hover > a, .theme-peach .admin-outer .navbar-nav.admin > li.active > a, .theme-peach .admin-outer .navbar-nav.admin > li:focus > a,
+.theme-peach .customer-sec .profile-sec button { background-color: #ea6e5f;/*3 Apr 2015*/ opacity:1; }
+.theme-peach .admin-outer .en_box .head-rgt-details > li { color: #fff; }
+.theme-peach .navbar-nav > li > .dropdown-menu, .theme-peach .admin-outer .dropdown-menu .dropdown-submenu:hover .dropdown-menu { background: #ea6e5f;/*#7fda6d; */}
+.theme-peach .dropdown-menu > li:focus > a, .theme-peach .dropdown-menu > li:hover > a, .theme-peach .setting-wrapper .cmn-magenta-btn, .theme-peach .setting-btn-col .magenta-btns, .theme-peach .vendor-deal-head .rt-text, .theme-peach .v-deal .v-deal-box .bottom .p3 button, .theme-peach .staff-head a, .theme-peach .current { background: #ff8273 !important; color: #fff !important; }
+.theme-peach .dropdown-menu > li.active > a { background: #ff8273; color: #fff; }
+.theme-peach .v-deal .v-deal-box .bottom.dull .p3 button { background: #999; }
+.theme-peach .emp-detail-box .emp-other-info .emp-name-info .name-head p, .theme-peach .staff-content > p > a { color: #ff8273; }
+.theme-peach .business-list.vendor-deal-sec .tab-content h2,
+.theme-peach [type="checkbox"]:not(:checked) + label.new-chk:after, 
+.theme-peach [type="checkbox"]:checked + label.new-chk:after,
+.theme-peach .customer-sec .profile-sec .description h1 { color: #ff8273; }
+.theme-peach .admin-outer .navbar-nav > li.active > .dropdown-menu li.active > .dropdown-menu li a,
+.theme-peach .dropdown-menu{background:#ea6e5f /*#7fda6d*/ !important;}
+.theme-peach .admin-outer .navbar-nav > li.active > .dropdown-menu li.active > .dropdown-menu li.active a{background:#ff8273 !important; color:#fff;}
+.theme-peach .admin-outer .navbar-nav > li.active > .dropdown-menu li.active > .dropdown-menu li:hover a,
+.theme-peach .admin-outer .navbar-nav > li.active > .dropdown-menu li.active > .dropdown-menu li:focus a{background:#ff8273 !important; color:#fff !important;}
+
+.theme-peach .purple-btn, .theme-peach::-ms-backdrop .purple-btn, .theme-peach .voucher-box:hover .infograpic-box,
+.theme-peach .customer-sec .profile-sec button:hover{background:#ff8273;}
+.theme-peach .modal-dialog.login.marketing .voucher-box .infograpic-box .beauty{background: url("../../../img/admin/marketing-icons.png") no-repeat scroll -121px -1988px rgba(0, 0, 0, 0);}
+.theme-peach .modal-dialog.login.marketing .voucher-box .infograpic-box .inspiration{background: url("../../../img/admin/marketing-icons.png") no-repeat scroll 8px -1988px rgba(0, 0, 0, 0);}
+.theme-peach .voucher-box .infograpic-box{border:2px solid #ff8273;}
+.theme-peach .voucher-box h2, .theme-peach .vendor-setting .v-setting-right h4.panel-title > a .add_seista_new,
+.theme-peach .vendor-service-content .panel-default > .panel-heading a:hover{color:#ff8273;}
+.theme-peach .dataTables_filter label input:focus,  .theme-peach .form-control:focus, .theme-peach .select2-focused,
+.theme-peach .sell-service .form-group section .date input.datepicker:focus, .theme-peach #logout_time:focus,
+.theme-peach textarea#UserDetailBio, .theme-peach button.ms-choice:focus, .theme-peach .search input:focus,
+.theme-peach .treat-block .treat-head-col .search.purple-bod{border:1px solid #ff8273 !important;}
+.theme-peach .ui-state-default,.theme-peach .ui-widget-content .ui-state-default, .theme-peach .ui-widget-header .ui-state-default{color:#ff8273 !important;}
+.theme-peach .ui-datepicker .ui-datepicker-calendar td.ui-datepicker-current-day > a,
+.theme-peach .ui-datepicker .ui-datepicker-calendar td:hover > a{background:#ff8273 !important; color:#fff !important;}
+.theme-peach .ui-state-default,.theme-peach .ui-widget-content .ui-state-default,.theme-peach .ui-widget-header .ui-state-default{color:#ff8273 !important}
+.theme-peach .admin-outer .navbar-nav .open .dropdown-menu > li > a:hover, .theme-peach .purple-btn
+, .theme-peach .modal-dialog.login.marketing .voucher-box:hover .infograpic-box{background:#ff8273 !important;}
+.theme-peach .purple-bod{border:1px solid #ff8273 !important;}
+.theme-peach .head-color{color: #ff8273;}

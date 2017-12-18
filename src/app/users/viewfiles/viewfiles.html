@@ -1,0 +1,20 @@
+<div class="ui-widget-header" style="padding:14px 10px;border-bottom: 0 none;height: 67px">
+    <i class="fa fa-search" style="margin:11px 4px 0 0;float: right;"></i>
+    	<input #gb type="text" pInputText size="50" placeholder=" Global Search" style="float:right;height: 34px;margin-right: 5px;">
+	</div>
+    <p-dataTable [value]="result" [rows]=recordsPerPage [paginator]="true" [globalFilter]="gb" [responsive]="true" [pageLinks]=pageLinks [rowsPerPageOptions]="rowsPerPageOptions" >
+        <p-column field="" [sortable]="true" [style]="{width: '200px','text-align':'center','height':'68px'}" header="Files"  >
+            <ng-template let-car="rowData" let-i="rowIndex" pTemplate="body">
+                <span (click)="popUp(result[i].Siteangular.uid,result[i].Siteangular.project_name,result[i].Siteangular.value,'ElectricFiles',result[i].Siteangular.box_folder_id)" style="color: blue;cursor: pointer;">{{result[i].Siteangular.value}}</span>
+            </ng-template>
+        </p-column>
+		<p-column field="" [sortable]="true" [style]="{width: '100px','text-align':'center','height':'68px'}" header="Action"  >
+            <ng-template let-car="rowData" let-i="rowIndex" pTemplate="body">
+                <button type="text" (click)="delete_inspection(result[i].Siteangular.uid)" pButton icon="fa-trash-o" ></button>
+            </ng-template>
+        </p-column>
+    </p-dataTable>
+    <p-confirmDialog header="Confirmation" icon="fa fa-question-circle" width="400"></p-confirmDialog>
+    <popup  (confirmClick)="saveFileNew(proId,proProjectName,proFileName,proFileType,profolderId)" style="margin-left: 10px;">
+        <iframe [src]="Ifreme"  width="500" height="400" frameborder="0" allowfullscreen webkitallowfullscreen msallowfullscreen></iframe>
+    </popup>

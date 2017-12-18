@@ -72,6 +72,10 @@ downloadResult:any;
     edit_inspection(id:any){ 
         this.router.navigate(['/users/addsitevisit'], { queryParams: { id: id } });
     }
+	
+	view_files(id:any){ 
+        this.router.navigate(['/users/viewfiles'], { queryParams: { id: id } });
+    }
 
     delete_inspection(id:any) {
         this.confirmationService.confirm({

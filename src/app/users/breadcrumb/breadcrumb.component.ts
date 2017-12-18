@@ -58,6 +58,9 @@ export class breadcrumbComponent {
 				}else if(this.currentUrl.match(/projectdetail/g)){
 					this.headerTitle='Project Detail';
 					this.breadcrumbLink='Project Detail';
+				}else if(this.currentUrl.match(/viewfiles/g)){
+					this.headerTitle='View Files';
+					this.breadcrumbLink='View Files';
 				}else{
 					this.headerTitle='';
 					this.breadcrumbLink='';
