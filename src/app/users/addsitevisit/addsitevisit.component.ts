@@ -384,7 +384,7 @@ export class addsitevisitComponent implements OnInit{
        window.scrollTo(0, 0);    
        $('#mydiv').show();
         //this.makeFileRequest("http://192.155.246.146:8145/users/add_inspection_angular", this.model, this.StructuralfilesToUpload,  this.ElectricalfilesToUpload, this.UtilityfilesToUpload).then((result) => {
-            this.makeFileRequest("https://www.solarsitedesign.com/webservicesangular/add_inspection", this.model, this.StructuralfilesToUpload,  this.ElectricalfilesToUpload, this.UtilityfilesToUpload).then((result) => {
+            this.makeFileRequest("https://www.solarsitedesign.com/webservicesangular/add_inspection", this.model).then((result) => {
             //console.log(result);
             $('#mydiv').hide();
             this.toasterService.pop('success', 'Successfully Added', '');
@@ -422,21 +422,21 @@ export class addsitevisitComponent implements OnInit{
         this.UtilityfileInputNames = UtilityfileNamesNew.join();
     }
  
-    makeFileRequest(url: string, postData: any, Structuralfiles: Array<File>, Electricalfiles: Array<File>, Utilityfiles: Array<File>) {
+    makeFileRequest(url: string, postData: any) {
         
         console.log(postData);
         return new Promise((resolve, reject) => {
             var formData: any = new FormData();
             var xhr = new XMLHttpRequest();
             
-            if(Structuralfiles.length>0){ 
+           /* if(Structuralfiles.length>0){ 
                 for(var i = 0; i < Structuralfiles.length; i++) { 
                     formData.append("StructuralUploads[]", Structuralfiles[i], Structuralfiles[i].name);
                 }
-            }
-            console.log('formDataStr '+formData);
+            }*/
+            //console.log('formDataStr '+formData);
 
-            if(Electricalfiles.length>0){
+           /* if(Electricalfiles.length>0){
                 for(var i = 0; i < Electricalfiles.length; i++) {
                     formData.append("ElectricUploads[]", Electricalfiles[i], Electricalfiles[i].name);
                 }
@@ -445,7 +445,7 @@ export class addsitevisitComponent implements OnInit{
                 for(var i = 0; i < Utilityfiles.length; i++) {
                     formData.append("UtilityUploads[]", Utilityfiles[i], Utilityfiles[i].name);
                 }
-            }
+            }*/
 
 
             if(postData !=="" && postData !== undefined && postData !==null){

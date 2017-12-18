@@ -8,9 +8,7 @@ import {ToasterModule, ToasterService} from 'angular2-toaster';
 import { SolarService } from '../../services/solar.service';
 import { Solar } from '../../models/solar.model';
 import { saveAs } from 'file-saver/FileSaver';
-
 import {BrowserModule, DomSanitizer,SafeResourceUrl} from '@angular/platform-browser'
-
 import {Popup} from 'ng2-opd-popup';
 
 @Component({
@@ -35,65 +33,57 @@ export class viewfilesComponent implements OnInit{
 	proFileType:any;
 	proFileName:any;
 	profolderId:any;
+    filedata:any;
 	
     constructor(private router: Router,private activatedRoute: ActivatedRoute,private solarService: SolarService, toasterService: ToasterService, private confirmationService: ConfirmationService, private http: Http , private popup:Popup, private sanitizer: DomSanitizer) { 
         this.toasterService = toasterService;
         this.sanitizer=sanitizer;
     }
     
-    ngOnInit(){
-	this.siteId = this.activatedRoute.snapshot.queryParams["id"]; 
-	
-        $('#mydiv').show();
+    ngOnInit(){ 
+	    this.siteId = this.activatedRoute.snapshot.queryParams["id"]; 
+	    $('#loader').show();
         this.solarService.getSiteFiles(<Solar>this.siteId).subscribe(result => {
             this.result = result;
-            //console.log(this.result);
-            //alert(this.result);
             this.pageLinks=Math.ceil(this.result.length/this.recordsPerPage);
             for (let i=1; i<=this.pageLinks; i++) {
                 this.perPage=this.perPage+this.recordsPerPage;
                 this.rowsPerPageOptions.push(this.perPage);
             }
-            $('#mydiv').hide();
+            $('#loader').hide();
         });
     }
 
-	delete_inspection(id:any) {
+	delete_files(id:any, fileName:any) { 
+        this.filedata = {"id": id, 'name': fileName};
         this.confirmationService.confirm({
-            message: 'Are you sure that you want to delete this inspection?',
+            message: 'Are you sure that you want to delete this file?',
             accept: () => {
-                $('#mydiv').show();
-                this.solarService.deleteInspection(<Solar>id).subscribe(result => {
+                $('#loader').show();
+                console.log("data ", this.filedata)
+                this.solarService.deleteFile(this.filedata).subscribe(result => {
                     this.result = result;
-                    if (result.success == true) { 
+                    if (result.success == "true") { 
+                        $('#loader').hide();
                         this.toasterService.pop('success', 'Successfully deleted', '');
-                        $('#mydiv').hide();
-                        this.ngOnInit();
+                        
+                        this.router.navigate(['/users/sitevisitlisting']);
                     } else {
-                        $('#mydiv').hide();
+                        $('#loader').hide();
                         this.toasterService.pop('error', 'Error in deletion', '');
                     }
                 });
             }
         });
-        
     }
 	
-	 popUp(id:any,projectName:any,fileName:any,fileType:any,folderId:any) {  
-	 
-	// alert(fileName);
-        $('#mydiv').show();
-        //this.model.fileName=fileName;
-        //this.model.folderId=folderId;
-
+    popUp(id:any,projectName:any,fileName:any,fileType:any,folderId:any) {  
+	    $('#loader').show();
         this.model = {
             fileName: fileName,
             folderId: folderId
         };
-
-
-        
-         $('#mydiv').show();
+        $('#loader').show();
         this.solarService.getSharedLink(<Solar>this.model).subscribe(popupResult => {
             this.popupResult = popupResult; 
             this.shared_link=this.popupResult.expiring_embed_link.url; 
@@ -116,11 +106,9 @@ export class viewfilesComponent implements OnInit{
             this.proFileName=fileName;
             this.profolderId=folderId;
             this.popup.show(this.popup.options); 
-            $('#mydiv').hide();
+            $('#loader').hide();
         });
     }
-
-   
 }
 	
 

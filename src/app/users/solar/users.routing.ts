@@ -22,7 +22,9 @@ import { transfertokensComponent } from './transfertokens/transfertokens.compone
 import { tokenlistingComponent } from './tokenlisting/tokenlisting.component';
 import { projectdetailComponent } from './projectdetail/projectdetail.component';
 import { viewfilesComponent } from './viewfiles/viewfiles.component';
+
 import { CreditCardsComponent } from './credit_cards/credit_cards.component';
+
 
 
 
@@ -31,14 +33,14 @@ import { CreditCardsComponent } from './credit_cards/credit_cards.component';
 //import { ProfileComponent } from './profile/profile.component';
 //import { cashFlowInvestmentComponent } from './cash-flow-investment/cash-flow-investment.component';
 const routes: Routes = [
-	// { 
-	// 	path: 'cf_investment', 
-	// 	component:adminComponent, 
+	// {
+	// 	path: 'cf_investment',
+	// 	component:adminComponent,
 	// 	loadChildren: './cf_investment/cf_investment.module#CFInvestmentModule'
 	// },
-	// { 
-	// 	path: 'cash-flow-investment', 
-	// 	component:adminComponent, 
+	// {
+	// 	path: 'cash-flow-investment',
+	// 	component:adminComponent,
 	// 	loadChildren: './cash-flow-investment/cash-flow-investment.module#CashFlowInvestmentModule',
 	// 	canActivate: [DeactiveRouteGuard]
 	// },
@@ -49,10 +51,10 @@ const routes: Routes = [
 
 
 
-	{ path: 'users', component: usersComponent , children: 
+	{ path: 'users', component: usersComponent , children:
 
     [
-   
+
     { path: 'marketplace', component: marketplaceComponent },
     { path: 'dashboard', component: dashboardComponent },
     { path: 'mydashboard', component: mydashboardComponent },
@@ -68,17 +70,19 @@ const routes: Routes = [
     { path: 'transfertokens', component: transfertokensComponent },
     { path: 'tokenlisting', component: tokenlistingComponent },
     { path: 'projectdetail', component: projectdetailComponent },
-	{ path: 'viewfiles', component: viewfilesComponent },
-    { path: 'credit-cards', component: CreditCardsComponent },
+		{ path: 'viewfiles', component: viewfilesComponent },
+		{ path: 'credit-cards', component: CreditCardsComponent },
+
+
     //{ path: 'profile', component: ProfileComponent },
     //{ path: 'cash-flow-investment', component: cashFlowInvestmentComponent },
     //{ path: 'users/adduser', component: AddUserComponent },
 
-     
+
     ]
-    
+
     }
-	
+
 
 ];
 

@@ -104,7 +104,7 @@ declare var require: any;
 		FileUploadModule,
 
 		PopupModule.forRoot(),
-		
+
 		//DatePickerModule,
 		//TooltipModule,
 		NguiMapModule.forRoot({
@@ -141,14 +141,14 @@ declare var require: any;
 		projectdetailComponent,
 		viewfilesComponent,
 		CreditCardsComponent
-		
+
 		//homemenuComponent,
 		//homebannerComponent,
 		//homefeatureComponent,
 		//homeclientComponent,
 		//homecustomerComponent,
 		//homefooterComponent,
-		
+
 		//MainHeaderComponent,
 		//MainSideComponent,
 		//FooterComponent,

@@ -10,7 +10,9 @@
         </p-column>
 		<p-column field="" [sortable]="true" [style]="{width: '100px','text-align':'center','height':'68px'}" header="Action"  >
             <ng-template let-car="rowData" let-i="rowIndex" pTemplate="body">
-                <button type="text" (click)="delete_inspection(result[i].Siteangular.uid)" pButton icon="fa-trash-o" ></button>
+            <div *ngIf=result>
+                <button type="text" (click)="delete_files(result[i].Siteangular.uid,result[i].Siteangular.value)" pButton icon="fa-trash-o" ></button>
+                </div>
             </ng-template>
         </p-column>
     </p-dataTable>

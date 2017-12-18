@@ -50,17 +50,17 @@ downloadResult:any;
     
     ngOnInit(){
         this.videoSource='https://solarsitedesign.app.box.com/embed/s/sstwudpcclefxemujcn5eyvvixqewf0h';
-        $('#mydiv').show();
+        $('#loader').show();
         this.solarService.getSiteVisit(<Solar>this.model).subscribe(result => {
             this.result = result;
-            console.log(this.result);
+            //console.log(this.result);
             //alert(this.result);
             this.pageLinks=Math.ceil(this.result.length/this.recordsPerPage);
             for (let i=1; i<=this.pageLinks; i++) {
                 this.perPage=this.perPage+this.recordsPerPage;
                 this.rowsPerPageOptions.push(this.perPage);
             }
-            $('#mydiv').hide();
+            $('#loader').hide();
             //if (result!='') { 
                 //this.message="Success";
             //} else {

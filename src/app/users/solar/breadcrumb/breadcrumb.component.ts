@@ -3,7 +3,7 @@ import { Router,ActivatedRoute,NavigationEnd } from '@angular/router';
 import { ToasterModule, ToasterService} from 'angular2-toaster';
 
 import { marketplaceComponent } from '../marketplace/marketplace.component';
-	
+
 @Component({
  	selector: 'breadcrumb',
  	templateUrl: "./breadcrumb.html",
@@ -18,12 +18,12 @@ export class breadcrumbComponent {
 	breadcrumbLink:any;
 	currentUrl:any;
 	private sum: number;
-   
 
-	
+
+
 	constructor(private router:Router,toasterService: ToasterService,private route:ActivatedRoute, public marketPlace: marketplaceComponent){
 		//console.log(this.totalRecords);
-		this.sum = this.marketPlace.sum; 
+		this.sum = this.marketPlace.sum;
 		//alert(this.sum);
 		this.router.events.subscribe(path => {
 			if(path instanceof NavigationEnd) {

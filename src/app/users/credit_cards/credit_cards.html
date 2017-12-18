@@ -1,0 +1,186 @@
+<div class="ui-widget-header" style="padding:14px 10px;border-bottom: 0 none;height: 67px">
+  <i class="fa fa-search" style="margin:11px 4px 0 0;float: right;"></i>
+	<input #gb type="text" pInputText size="50" placeholder="Global Filter" style="float:right;height: 34px;margin-right: 5px;">
+</div>
+
+<p-dataTable
+  [value]="result"
+  [rows]=recordsPerPage
+  [paginator]="true"
+  [globalFilter]="gb"
+  [responsive]="true"
+  [pageLinks]=pageLinks
+  [rowsPerPageOptions]="rowsPerPageOptions"
+>
+
+    <p-column field="_attributes.maskedNumber" [sortable]="true" [style]="{width: '300px','height':'68px'}" header="Cards" [filter]="true" filterPlaceholder="Search">
+      <ng-template let-row="rowData" let-i="rowIndex" pTemplate="body">
+        ({{row._attributes.cardType}}) {{row._attributes.maskedNumber}}
+      </ng-template>
+    </p-column>
+
+    <p-column field="_attributes.cardholderName" [sortable]="true" [style]="{width: '200px','height':'68px'}" header="Name on Card" [filter]="true" filterPlaceholder="Search"></p-column>
+
+    <p-column field="_attributes.expirationDate" [sortable]="true" [style]="{width: '150px','height':'68px'}" header="Expire On" [filter]="true" filterPlaceholder="Search"></p-column>
+
+    <p-column field="" [sortable]="true" [style]="{width: '100px','text-align':'center','height':'68px'}" header="Action"  >
+      <ng-template let-row="rowData" let-i="rowIndex" pTemplate="body">
+        <button type="button" pButton icon="fa-pencil-square-o" (click)="edit(row)"></button>
+        <button type="text" (click)="delete(row._attributes.uniqueNumberIdentifier)" pButton icon="fa-trash-o" ></button>
+      </ng-template>
+    </p-column>
+
+</p-dataTable>
+<p-confirmDialog header="Confirmation" icon="fa fa-question-circle" width="400"></p-confirmDialog>
+<popup #editCreditCardForm>
+    <form  name="form" class="" (ngSubmit)="update()" #updateCreditCardForm="ngForm" novalidate>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="form-group">
+            <label>Card Number*:</label>
+            <input type="text" name="card_number" [(ngModel)]="model.card_number" #cardNumber="ngModel" required
+              id="card_number" class="form-control" >
+
+            <div *ngIf="cardNumber.errors && cardNumber.touched" class="">
+                <span class="error" *ngIf="cardNumber.errors?.required">Card Number is mandatory.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="form-group">
+            <label>Expiry*:</label>
+            <input type="text" name="expiry" [(ngModel)]="model.expiry" #expiry="ngModel" required
+              id="expiry" class="form-control" >
+
+            <div *ngIf="expiry.errors && expiry.touched" class="">
+                <span class="error" *ngIf="expiry.errors?.required">Expiry is mandatory.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-12">
+          <div class="form-group">
+            <label>CVV*:</label>
+            <input type="text" name="cvv" [(ngModel)]="model.cvv" #cvv="ngModel" required
+              id="cvv" class="form-control" >
+
+            <div *ngIf="cvv.errors && cvv.touched" class="">
+                <span class="error" *ngIf="cvv.errors?.required">CVV is mandatory.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-12">
+          <div class="form-group">
+            <input type="checkbox" name="default_card" [(ngModel)]="model.default_card"
+              id="default_card" class="form-control" >
+            <label>Make this credit card default</label>
+          </div>
+        </div>
+
+        <div class="col-lg-12">
+          <div class="form-group">
+            <label>Personal Details</label>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="form-group">
+            <label>Name on the card*:</label>
+            <input type="text" name="name" [(ngModel)]="model.name" #name="ngModel" required
+              id="name" class="form-control" >
+
+            <div *ngIf="name.errors && name.touched" class="">
+                <span class="error" *ngIf="name.errors?.required">Name is mandatory.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="form-group">
+            <label>Credit Card Address*:</label>
+            <input type="text" name="address" [(ngModel)]="model.address" #address="ngModel" required
+              id="address" class="form-control" >
+
+            <div *ngIf="address.errors && address.touched" class="">
+                <span class="error" *ngIf="address.errors?.required">Address is mandatory.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="form-group">
+            <label>Street Address*:</label>
+            <input type="text" name="street" [(ngModel)]="model.street" #street="ngModel" required
+              id="street" class="form-control" >
+
+            <div *ngIf="street.errors && street.touched" class="">
+                <span class="error" *ngIf="street.errors?.required">Street Address is mandatory.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="form-group">
+            <label>Extended Address*:</label>
+            <input type="text" name="street" [(ngModel)]="model.extended_address" #extendedAddress="ngModel" required
+              id="extended_address" class="form-control" >
+
+            <div *ngIf="extendedAddress.errors && extendedAddress.touched" class="">
+                <span class="error" *ngIf="extendedAddress.errors?.required">Extended Address is mandatory.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="form-group">
+            <label>City*:</label>
+            <input type="text" name="city" [(ngModel)]="model.city" #city="ngModel" required
+              id="city" class="form-control" >
+
+            <div *ngIf="city.errors && city.touched" class="">
+                <span class="error" *ngIf="city.errors?.required">City is mandatory.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="form-group">
+            <label>State*:</label>
+            <input type="text" name="state" [(ngModel)]="model.state" #state="ngModel" required
+              id="state" class="form-control" >
+
+            <div *ngIf="state.errors && state.touched" class="">
+                <span class="error" *ngIf="state.errors?.required">State is mandatory.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="form-group">
+            <label>Zip Code*:</label>
+            <input type="text" name="zipcode" [(ngModel)]="model.zipcode" #zipcode="ngModel" required
+              id="zipcode" class="form-control" >
+
+            <div *ngIf="zipcode.errors && zipcode.touched" class="">
+                <span class="error" *ngIf="zipcode.errors?.required">Zip Code is mandatory.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="form-group">
+            <label>Country*:</label>
+            <input type="text" name="country" [(ngModel)]="model.country" #country="ngModel" required
+              id="country" class="form-control" >
+
+            <div *ngIf="country.errors && country.touched" class="">
+                <span class="error" *ngIf="country.errors?.required">Country is mandatory.</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </form>
+</popup>

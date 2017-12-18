@@ -16,27 +16,27 @@ export class SolarService {
     constructor(private http: Http) {
     }
 
-    getSolarProjects(solar: Solar) { 
+    getSolarProjects(solar: Solar) {
         const headers = new Headers({ 'Content-Type': 'application/json', 'Authorization': localStorage.getItem('token') });
         const options = new RequestOptions({ headers: headers })
         //return this.http.get(AppSettings.API_ENDPOINT+'solarDashboard',options).map(res => <any> JSON.parse(res["_body"]));
         return this.http.get('https://www.solarsitedesign.com/webservicesangular/solarDashboard',options).map(res => <any> JSON.parse(res["_body"]));
     }
 
-    trackProject(project_id,checked) { 
+    trackProject(project_id,checked) {
         const headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': localStorage.getItem('token'), 'ProjectId': project_id,'Checked': checked });
         const options = new RequestOptions({ headers: headers, method: "post"});
         return this.http.get(AppSettings.API_ENDPOINT+'trackProjects', options).map(res => <any> JSON.parse(res["_body"]));
     }
 
-    getMydashboardData(solar: Solar) { 
+    getMydashboardData(solar: Solar) {
         const headers = new Headers({ 'Content-Type': 'application/json', 'Authorization': localStorage.getItem('token') });
         const options = new RequestOptions({ headers: headers })
         //return this.http.get(AppSettings.API_ENDPOINT+'myDashboard',options).map(res => <any> JSON.parse(res["_body"]));
         return this.http.get('https://www.solarsitedesign.com/webservicesangular/myDashboard',options).map(res => <any> JSON.parse(res["_body"]));
     }
 
-    originatorDashboard(solar: Solar) { 
+    originatorDashboard(solar: Solar) {
         const headers = new Headers({ 'Content-Type': 'application/json', 'Authorization': localStorage.getItem('token') });
         const options = new RequestOptions({ headers: headers })
         //return this.http.get(AppSettings.API_ENDPOINT+'originatorDashboard',options).map(res => <any> JSON.parse(res["_body"]));
@@ -55,25 +55,25 @@ export class SolarService {
         return this.http.get(AppSettings.API_ENDPOINT+'mySolarProjects',options).map(res => <any> JSON.parse(res['_body']));
     }
 
-    getMarkets(solar: Solar) { 
+    getMarkets(solar: Solar) {
         const headers = new Headers({ 'Content-Type': 'application/json', 'Authorization': localStorage.getItem('token') });
         const options = new RequestOptions({ headers: headers })
         return this.http.get(AppSettings.API_ENDPOINT+'my_market',options).map(res => <any> JSON.parse(res['_body']));
     }
 
-    deleteMarket(SiteId: Solar) { 
+    deleteMarket(SiteId: Solar) {
         const headers = new Headers({ 'Content-Type': 'application/json', 'Authorization': localStorage.getItem('token'), 'MarketId': SiteId });
         const options = new RequestOptions({ headers: headers })
         return this.http.get(AppSettings.API_ENDPOINT+'delete_market',options).map(res => <any> JSON.parse(res['_body']));
     }
 
-    getEmailAddress(email_id) {//alert(email_id); 
+    getEmailAddress(email_id) {//alert(email_id);
         const headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': localStorage.getItem('token'), 'email_id': email_id });
         const options = new RequestOptions({ headers: headers, method: "post"});
         return this.http.get(AppSettings.API_ENDPOINT+'getAdressBlock', options).map(res => <any> JSON.parse(res["_body"]));
     }
 
-     getEmailIds(solar: Solar) { 
+     getEmailIds(solar: Solar) {
         const headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded', 'Authorization': localStorage.getItem('token') });
         const options = new RequestOptions({ headers: headers, method: "post"});
         return this.http.get(AppSettings.API_ENDPOINT+'getEmailIds', options).map(res => <any> JSON.parse(res["_body"]));
@@ -85,7 +85,7 @@ export class SolarService {
         return this.http.post(AppSettings.API_ENDPOINT+'transferTokens', solar,options).map(res => <any> JSON.parse(res["_body"]));
     }
 
-    getTokenTransactions(solar: Solar) { 
+    getTokenTransactions(solar: Solar) {
         const headers = new Headers({ 'Content-Type': 'application/json', 'Authorization': localStorage.getItem('token') });
         const options = new RequestOptions({ headers: headers })
         return this.http.get(AppSettings.API_ENDPOINT+'gettokentransactions',options).map(res => <any> JSON.parse(res['_body']));
@@ -116,7 +116,7 @@ export class SolarService {
       return data;
     });
   }
-  
+
   addsitevisit(formData) {
     let headers = new Headers();
     /** No need to include Content-Type in Angular 4 */
@@ -128,7 +128,7 @@ export class SolarService {
     //console.log(solar);
     return this.http.post('http://192.155.246.146:8145/users/add_inspection_angular', formData).map(res => <any> res["_body"]);
   }
-  
+
   getSiteVisit(solar: Solar) { //alert("test");
     const headers = new Headers({ 'Content-Type': 'application/json', 'Authorization': localStorage.getItem('token') });
     const options = new RequestOptions({ headers: headers })
@@ -137,7 +137,7 @@ export class SolarService {
     return this.http.get('https://www.solarsitedesign.com/webservicesangular/inspection_angular',options).map(res => <any> JSON.parse(res['_body']));
 
   }
-  
+
   getSiteFiles(SiteId: Solar) { //alert("test");
     const headers = new Headers({ 'Content-Type': 'application/json', 'Authorization': localStorage.getItem('token'), 'SiteId': SiteId  });
     const options = new RequestOptions({ headers: headers })
@@ -182,16 +182,7 @@ export class SolarService {
 
   }
 
-   deleteFile(Site) { console.log(Site.id);
-    const headers = new Headers({ 'Content-Type': 'application/json', 'Authorization': localStorage.getItem('token'), 'SiteId': Site.id,'fileName': Site.name});
-    const options = new RequestOptions({ headers: headers })
-
-    //return this.http.get('http://192.155.246.146:8145/users/solarDashboard_angular', solar,options ).map(res => <any> res);
-    return this.http.get('https://www.solarsitedesign.com/webservicesangular/delete_files',options).map(res => <any> JSON.parse(res['_body']));
-
-  } 
-
-   getCreditCards() {
+  getCreditCards() {
     const headers = new Headers({ 'Content-Type': 'application/json', 'Authorization': localStorage.getItem('token') });
     const options = new RequestOptions({ headers: headers })
 
@@ -211,7 +202,5 @@ export class SolarService {
 
     return this.http.delete('https://www.solarsitedesign.com/webservicesangular/get_project_detail',options).map(res => <any> JSON.parse(res['_body']));
   }
-
-
 
 }
